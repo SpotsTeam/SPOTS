@@ -18,7 +18,7 @@
 		}
 	?>
 	<h2>Please Sign Up as Homeowner</h2>
-	<form method = "post" action="sample.php">
+	<form method = "post" action="homeownerPage.php">
 		Username: <input type="text" name="username" /><br/>
 		Password: <input type="text" name="password" /><br/>
 		Full Name: <input type="text" name="name" /><br/>
