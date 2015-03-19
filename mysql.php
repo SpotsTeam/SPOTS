@@ -1,31 +1,20 @@
-<html>
-
-<body>
-
+<html><h2>
 <?php
-$servername = "projweb";
-$username = "egabrielsen";
-$password = "sharpclaw";
+	$con = mysql_connect("localhost", "phpuser", "sharpclaw");
+	if (!$con) {
+		die('could not connect: ' .mysql_error());
+	}
+ 
+	mysql_select_db("phptest", $con) or die("Unable to select database:" .mysql_error());
 
-//creating connection
-$conn = new mysqli($servername, $username, $password);
-//check connection
-if ($conn->connect_error) {
-	die("Connection failed: " . $conn->connect_error);
-	echo "ERROR";
-}
+	//$input = mysql_query("Create table HomeOwners(id int primary key, fname varchar(25), lname varchar(25), houseAddress varchar(50), zipcode int, spotsAvailable int");
+	//mysql_query("Insert into HomeOwners values(0, "Erik","Gabrielsen", "810 Barton Creek Drive", 78620, 10)")
 
-//create database
-$sql = "CREATE DATABASE myDB";
-if ($conn->query($sql) === TRUE) {
-	echo "Database created successfully";
-} else {
-	echo "Error creating database: " . $conn->error;
-}
-
-$conn->close();
+	$result = mysql_query("select * from students");
+	while ($row = mysql_fetch_array($result)) {
+		echo $row['id'] . " " . $row['fname'];
+		echo "<br />";
+	}
+	mysql_close($con);
 ?>
-
-</body>
-
-</html>
+</h2></html>
