@@ -7,11 +7,11 @@
 
 	Please select who you would like to login as:
 	<form method="post" action="drivePage.php"> 
-		<input type="submit" name="driver">
+		<input type="submit" value="driver">
 	</form>
 
 	<form method="post" action="homeownerPage.php">
-		<input type="submit" name="homeowner">
+		<input type="submit" value="homeowner">
 	</form>
 </body>
 </html>
