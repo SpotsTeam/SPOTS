@@ -20,7 +20,7 @@
 			echo "<h2> Your car is a $carModel and your license plate is $licensePlate";
 		}
 	?>
-	<h2>Please Sign Up as Homeowner</h2>
+	<h2>Please Sign Up as Driver</h2>
 	<form method = "post" action="drivePage.php">
 		Username: <input type="text" name="username" /><br/>
 		Password: <input type="text" name="password" /><br/>
