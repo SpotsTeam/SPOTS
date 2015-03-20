@@ -6,6 +6,7 @@
 		Username: <input type="text" name="username" /><br/>
 		Password: <input type="text" name="password" /><br/>
 		Full Name: <input type="text" name="name" /><br/>
+		Email: <input type="email" name="email" /><br/>
 		Enter Address:</br>
 		<span style="padding: 0 20px">&nbsp;</span>Street: <input type="text" name="address" /><br/>
 		<span style="padding: 0 20px">&nbsp;</span>City: <input type="text" name="city" /><br/>

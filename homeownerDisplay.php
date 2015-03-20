@@ -11,8 +11,10 @@
 			$state = $_POST['state'];
 			$zipcode = $_POST['zipcode'];
 			$spots = $_POST['spots'];
+			$email = $_POST['email'];
 			echo "<h1> Welcome Homeowner $name </h1>";
 			echo "<h2> Your Username is: $username </h2>";
+			echo "<h2> Your email is: $email </h2>";
 			echo "<h2> Address: $address, $city, $state, $zipcode</h2>";
 			echo "<h2> Spots available to park: $spots </h2>";
 		}
