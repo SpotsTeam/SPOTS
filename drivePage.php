@@ -1,30 +1,13 @@
 <html>
 <head><title>SPOTS Driver Page</title></head>
 <body>
-	<?
-		if(isset($_POST['username'])) {
-			$username = $_POST['username'];
-			$password = $_POST['password'];
-			$name = $_POST['name'];
-			$address = $_POST['address'];
-			$city = $_POST['city'];
-			$state = $_POST['state'];
-			$zipcode = $_POST['zipcode'];
-			$carModel = $_POST['carModel'];
-			$licensePlate = $_POST['licensePlate'];
-
-			//print up the information of the driver
-			echo "<h1> Welcome Driver $name </h1>";
-			echo "<h2> Your Username is: $username </h2>";
-			echo "<h2> Address: $address, $city, $state, $zipcode</h2>";
-			echo "<h2> Your car is a $carModel and your license plate is $licensePlate";
-		}
-	?>
+	
 	<h2>Please Sign Up as Driver</h2>
 	<form method = "post" action="drivePage.php">
 		Username: <input type="text" name="username" /><br/>
 		Password: <input type="text" name="password" /><br/>
 		Full Name: <input type="text" name="name" /><br/>
+		Email: <input type="text" name="email" /><br/>
 		Enter Address:</br>
 		<span style="padding: 0 20px">&nbsp;</span>Street: <input type="text" name="address" /><br/>
 		<span style="padding: 0 20px">&nbsp;</span>City: <input type="text" name="city" /><br/>
