@@ -2,7 +2,7 @@
 <head><title>SPOTS Driver Page</title></head>
 <body>
 	
-	<h2>Please Sign Up as Homeowner</h2>
+	<h2>Please Sign Up as Driver</h2>
 	<form method = "post" action="driverDisplay.php">
 		Username: <input type="text" name="username" /><br/>
 		Password: <input type="text" name="password" /><br/>
