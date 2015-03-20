@@ -45,4 +45,15 @@
 			echo "homeowner table not created " . $conn->mysql_error();
 		}
 
-		$table
+		//events should contain name, date, location
+		$tableEvent = "create table event(eventName varchar(50), eventDate DATE(), location varchar(60))";
+
+		//make sure the table has been created
+		if($conn->mysql_query($tableEvent) == TRUE)
+		{
+			echo "event table created";
+		}
+		else
+		{
+			echo "event table not created " . $conn->mysql_error();
+		}
