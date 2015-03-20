@@ -10,13 +10,18 @@
 			$city = $_POST['city'];
 			$state = $_POST['state'];
 			$zipcode = $_POST['zipcode'];
+			$carModel = $_POST['carModel'];
+			$licensePlate = $_POST['licensePlate'];
+
+			//print up the information of the driver
 			echo "<h1> Welcome Driver $name </h1>";
 			echo "<h2> Your Username is: $username </h2>";
 			echo "<h2> Address: $address, $city, $state, $zipcode</h2>";
+			echo "<h2> Your car is a $carModel and your license plate is $licensePlate";
 		}
 	?>
 	<h2>Please Sign Up as Homeowner</h2>
-	<form method = "post" action="sample.php">
+	<form method = "post" action="drivePage.php">
 		Username: <input type="text" name="username" /><br/>
 		Password: <input type="text" name="password" /><br/>
 		Full Name: <input type="text" name="name" /><br/>
@@ -77,6 +82,8 @@
 						<option value="DC">DC</option>
 					</select></br>
 		<span style="padding: 0 20px">&nbsp;</span>ZipCode: <input type="text" name="zipcode" /></br>
+		<span style="padding: 0 20px">&nbsp;</span>CarModel: <input type="text" name="carModel" /></br>
+		<span style="padding: 0 20px">&nbsp;</span>LicensePlate: <input type="text" name="licensePlate" /></br>
 		<input type="submit" />
 	</form>
 </body>
