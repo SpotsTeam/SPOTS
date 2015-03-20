@@ -3,27 +3,6 @@
 <body>
 	
 	<h2>Please Sign Up as Driver</h2>
-	<form method = "post" action="driverDisplay.php">
-	<?
-		if(isset($_POST['username'])) {
-			$username = $_POST['username'];
-			$password = $_POST['password'];
-			$name = $_POST['name'];
-			$address = $_POST['address'];
-			$city = $_POST['city'];
-			$state = $_POST['state'];
-			$zipcode = $_POST['zipcode'];
-			$carModel = $_POST['carModel'];
-			$licensePlate = $_POST['licensePlate'];
-
-			//print up the information of the driver
-			echo "<h1> Welcome Driver $name </h1>";
-			echo "<h2> Your Username is: $username </h2>";
-			echo "<h2> Address: $address, $city, $state, $zipcode</h2>";
-			echo "<h2> Your car is a $carModel and your license plate is $licensePlate";
-		}
-	?>
-	<h2>Please Sign Up as Driver</h2>
 	<form method = "post" action="drivePage.php">
 		Username: <input type="text" name="username" /><br/>
 		Password: <input type="text" name="password" /><br/>

@@ -2,11 +2,8 @@
 <head><title>SPOTS</title></head>
 <body>
 	<h2>Please Sign Up as Homeowner</h2>
-<<<<<<< HEAD
-	<form method = "post" action="homeownerDisplay.php">
-=======
+
 	<form method = "post" action="homeownerPage.php">
->>>>>>> d44589807daa5e1c1193b5eb2e01a53a69ce7ac5
 		Username: <input type="text" name="username" /><br/>
 		Password: <input type="text" name="password" /><br/>
 		Full Name: <input type="text" name="name" /><br/>
