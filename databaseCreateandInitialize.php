@@ -1,17 +1,18 @@
 <html>
 	<head><title> Database Creation and Initliazaiton </title></head>
 	<body>
-	<?
-		$serverName = "localhost";
+	<?php
+		$servername = "localhost";
 
 		//here we're going to use the root because it would be easier
 		//WILL BE CHANGED EVENUTALLY TO A USER
 		$username = "root";
-		$password = "nightcrawler";
+		$password = "sharpclaw";
 		$database = "spots";
 
 		// Create connection, we're assuming that there is already a database created
-		$conn = mysql_connect($servername, $username, $password, $database);
+		global $conn;
+		$conn = mysql_connect($servername, $username, $password);
 
 		// Check connection
 		if (!$conn) 
@@ -20,10 +21,12 @@
     		die("Connection failed: " . $conn->mysql_error());
 		}	 
 
+		mysql_select_db($database, $conn) or die("Unable to select database:" .mysql_error());
+
 		//assuming connection worked we then create tables
 
-		//HOMEOWNER NEEDS A NAME, STREET ADDRESS, USERNAME, PASSWORD, NUMSPOTS
-		$tableHome = "CREATE TABLE homeowner(fname VARCHAR(50), lname VARCHAR(50), username VARCHAR(50), password VARCHAR(50), streetAddress VARCHAR(75), numSpots INT)";
+		//HOMEOWNER NEEDS A ID, NAME, STREET ADDRESS, USERNAME, PASSWORD, NUMSPOTS
+		$tableHome = "CREATE TABLE homeowner(UserId INT, fname VARCHAR(50), lname VARCHAR(50), username VARCHAR(50), password VARCHAR(50), streetAddress VARCHAR(75), numSpots INT)";
 
 		//have to make sure that the connection is working
 		if($conn->mysql_query($tableHome) == TRUE)
@@ -62,3 +65,7 @@
 		{
 			echo "event table not created " . $conn->mysql_error();
 		}
+
+	?>
+</body>
+</html>
