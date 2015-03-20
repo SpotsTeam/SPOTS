@@ -5,35 +5,39 @@
 		$serverName = "localhost";
 
 		//here we're going to use the root because it would be easier
+		//WILL BE CHANGED EVENUTALLY TO A USER
 		$username = "root";
 		$password = "nightcrawler";
 		$database = "spots";
 
-		// Create connection
+		// Create connection, we're assuming that there is already a database created
 		$conn = mysql_connect($servername, $username, $password, $database);
+
 		// Check connection
 		if (!$conn) 
 		{
+			//if the connection fails then we kill the whole thing
     		die("Connection failed: " . $conn->mysql_error());
 		}	 
 
-		//assuming connection worked we not create tables
+		//assuming connection worked we then create tables
 
-		//homeowner should have an address, a name, number of spots, and price of spot
+		//HOMEOWNER NEEDS A NAME, STREET ADDRESS, USERNAME, PASSWORD, NUMSPOTS
+		$tableHome = "CREATE TABLE homeowner(fname VARCHAR(50), lname VARCHAR(50), username VARCHAR(50), password VARCHAR(50), streetAddress VARCHAR(75), numSpots INT)";
 
-		$tableHome = "create table homeowner(fname varchar(50), lname varchar(50), streetAddress varchar(75), numSpots int, priceOfSpot int)";
+		//have to make sure that the connection is working
 		if($conn->mysql_query($tableHome) == TRUE)
 		{
 			echo "homeowner table created";
 		}
 		else
 		{
-			echo "homeowner table not created " . $conn->mysql_error();
+			//it'd be easier for me to go ahead and kill the program so that way we can figure out what is the problem
+			die("homeowner table not created " . $conn->mysql_error());
 		}
 
-		//driver needs a car, license plate, name
-
-		$tableDriver = "create table driver(fname varchar(50), lname varchar(50), carModel varchar(50), licensePlate int)";
+		//DRIVER NEEDS A NAME, CAR MODEL, LICENSE PLATE
+		$tableDriver = "CREATE TABLE driver(fname VARCHAR(50), lname VARCHAR(50), carModel VARCHAR(50), licensePlate INT)";
 
 		//make sure the table has been created
 		if($conn->mysql_query($tableDriver) == TRUE)
@@ -42,7 +46,8 @@
 		}
 		else
 		{
-			echo "homeowner table not created " . $conn->mysql_error();
+			//again kill the program if this does not work
+			die("homeowner table not created " . $conn->mysql_error());
 		}
 
 		//events should contain name, date, location
