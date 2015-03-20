@@ -1,13 +1,13 @@
 <html>
-<head><title>SPOTS</title></head>
+<head><title>SPOTS Driver Page</title></head>
 <body>
-	<h2>Please Sign Up as Homeowner</h2>
-
-	<form method = "post" action="homeownerPage.php">
+	
+	<h2>Please Sign Up as Driver</h2>
+	<form method = "post" action="drivePage.php">
 		Username: <input type="text" name="username" /><br/>
 		Password: <input type="text" name="password" /><br/>
 		Full Name: <input type="text" name="name" /><br/>
-		Email: <input type="email" name="email" /><br/>
+		Email: <input type="text" name="email" /><br/>
 		Enter Address:</br>
 		<span style="padding: 0 20px">&nbsp;</span>Street: <input type="text" name="address" /><br/>
 		<span style="padding: 0 20px">&nbsp;</span>City: <input type="text" name="city" /><br/>
@@ -65,7 +65,8 @@
 						<option value="DC">DC</option>
 					</select></br>
 		<span style="padding: 0 20px">&nbsp;</span>ZipCode: <input type="text" name="zipcode" /></br>
-		How many parking spots are available? <input type="text" name="spots" /><br/>
+		<span style="padding: 0 20px">&nbsp;</span>CarModel: <input type="text" name="carModel" /></br>
+		<span style="padding: 0 20px">&nbsp;</span>LicensePlate: <input type="text" name="licensePlate" /></br>
 		<input type="submit" />
 	</form>
 </body>
