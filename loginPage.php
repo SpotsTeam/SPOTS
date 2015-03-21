@@ -5,13 +5,17 @@
 
 <body>
 
-	Please select who you would like to login as:
+	<h1>Please select who you would like to login as:</h1>
 	<form method="post" action="drivePage.php"> 
 		<input type="submit" value="driver">
 	</form>
 
 	<form method="post" action="homeownerPage.php">
 		<input type="submit" value="homeowner">
+	</form>
+</br>
+<form method="post" action="index.html">
+		<input type="submit" value="HOME PAGE">
 	</form>
 </body>
 </html>
