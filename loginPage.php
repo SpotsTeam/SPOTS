@@ -1,21 +1,83 @@
-<html>
-<head><title>Login Page</title></head>
+<!DOCTYPE html>
+<html lang="en">
 
-<!--I want to try and create a login page that will direct you to the page specified -->
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Spots - Find Parking Near Events! </title>
+
+	<!-- Bootstrap CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
+    <!-- TipueDrop CSS -->
+    <link href="css/tipuedrop.css" rel="stylesheet">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="css/leaflet.css"
+    <!-- Custom CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+
+</head>
 
 <body>
+	<!-- Fixed Top Navbar -->
+	<div class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
 
-	<h1>Please select who you would like to login as:</h1>
-	<form method="post" action="drivePage.php"> 
-		<input type="submit" value="driver">
-	</form>
+                </button>
+                <a href="index.html">
+					<img alt="" src="img/spotslogo2.png" class="img-brand"></img>
+				</a>
+            </div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<div class="navbar-left">
+				
+				</div>
+				<ul class="nav navbar-nav navbar-right">
+					<li> <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none"> 
+						<i class="fa fa-1x fa-car"></i> My Spots </button></li>
+					<li> <form action="/SPOTS/loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+						<i class="fa fa-1x fa-street-view"> </i>Sign in </button></form></li>
+					<li> <form action="/SPOTS/aboutMe.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+						<i class="fa fa-1x fa-car"> </i>About SPOTS </button></form></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 
-	<form method="post" action="homeownerPage.php">
-		<input type="submit" value="homeowner">
-	</form>
-</br>
-<form method="post" action="index.html">
-		<input type="submit" value="HOME PAGE">
-	</form>
+
+	<!-- Main Body -->
+	<section>
+	<div class="col-md-10 col-md-offset-1 col-body">
+		<div class="container">
+			<div class="centered">
+				<h1> Welcome to <img alt="" src="img/spotslogo2.png" style="width:250px; padding-top:7px"></img> </h1>
+			</div>
+
+			<!-- Content -->
+			<div style="margin-top:-20px">
+				<div class="centered">
+					Please select who you would like to login as:
+						<form method="post" action="drivePage.php"><button class="dlink btn btn-lg btn-info"  style="outline:none">Driver</button></form>
+						<br>
+						<form method="post" action="homeownerPage.php"><button class="dlink btn btn-lg btn-info"  style="outline:none">Homeowner</button></form>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	</section>
+
 </body>
 </html>
