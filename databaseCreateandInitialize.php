@@ -18,54 +18,97 @@
 		if (!$conn) 
 		{
 			//if the connection fails then we kill the whole thing
-    		die("Connection failed: " . $conn->mysql_error());
+    		die("Connection failed: " . mysql_error());
 		}	 
 
-		mysql_select_db($database, $conn) or die("Unable to select database:" .mysql_error());
 
+		mysql_select_db("spots");
 		//assuming connection worked we then create tables
 
-		//HOMEOWNER NEEDS A ID, NAME, STREET ADDRESS, USERNAME, PASSWORD, NUMSPOTS
-		$tableHome = "CREATE TABLE homeowner(UserId INT, fname VARCHAR(50), lname VARCHAR(50), username VARCHAR(50), password VARCHAR(50), streetAddress VARCHAR(75), numSpots INT)";
+		//HOMEOWNER NEEDS A NAME, STREET ADDRESS, USERNAME, PASSWORD, NUMSPOTS
+		$tableHome = "CREATE TABLE homeowner(fname VARCHAR(50), lname VARCHAR(50), username VARCHAR(50), password VARCHAR(50), streetAddress VARCHAR(75), numSpots INT)";
 
-		//have to make sure that the connection is working
-		if($conn->mysql_query($tableHome) == TRUE)
+		$valHome = mysql_query("select 1 from homeowner");
+
+		if($valHome == TRUE)
 		{
-			echo "homeowner table created";
+			echo "homeowner table exists";
+			echo "<br />";
 		}
 		else
 		{
-			//it'd be easier for me to go ahead and kill the program so that way we can figure out what is the problem
-			die("homeowner table not created " . $conn->mysql_error());
+			//have to make sure that the connection is working
+			if(mysql_query($tableHome, $conn) == TRUE)
+			{
+				echo "homeowner table created";
+				echo "<br />";
+			}
+			else
+			{
+				//it'd be easier for me to go ahead and kill the program so that way we can figure out what is the problem
+				die("homeowner table not created " . mysql_error());
+				echo "<br />";
+			}
 		}
+		
 
-		//DRIVER NEEDS A NAME, CAR MODEL, LICENSE PLATE
-		$tableDriver = "CREATE TABLE driver(fname VARCHAR(50), lname VARCHAR(50), carModel VARCHAR(50), licensePlate INT)";
+		//DRIVER NEEDS A NAME, USERNAME, PASSWORD, STREET ADDRESS, CAR MODEL, LICENSE PLATE
+		$tableDriver = "CREATE TABLE driver(fname VARCHAR(50), lname VARCHAR(50), username VARCHAR(50), password VARCHAR(50), carModel VARCHAR(50), licensePlate INT)";
+		mysql_select_db("spots");
 
-		//make sure the table has been created
-		if($conn->mysql_query($tableDriver) == TRUE)
+		$valDriver = mysql_query("select 1 from driver");
+
+		if($valDriver == TRUE)
 		{
-			echo "homeowner table created";
+			echo "Driver table exists";
+			echo "<br />";
 		}
 		else
 		{
-			//again kill the program if this does not work
-			die("homeowner table not created " . $conn->mysql_error());
+			//make sure the table has been created
+			if(mysql_query($tableDriver, $conn) == TRUE)
+			{
+				echo "driver table created";
+				echo "<br />";
+			}
+			else
+			{
+				//again kill the program if this does not work
+				die("driver table not created " . mysql_error());
+				echo "<br />";
+			}	
 		}
+		
 
 		//events should contain name, date, location
-		$tableEvent = "create table event(eventName varchar(50), eventDate DATE(), location varchar(60))";
+		$tableEvent = "CREATE TABLE event(eventName VARCHAR(50), location VARCHAR(60))";
 
-		//make sure the table has been created
-		if($conn->mysql_query($tableEvent) == TRUE)
+		mysql_select_db("spots");
+
+		$val = mysql_query("select 1 from event");
+
+		if($val == TRUE)
 		{
-			echo "event table created";
+			echo "event table exists";
+			echo "<br />";
 		}
 		else
 		{
-			echo "event table not created " . $conn->mysql_error();
+			//make sure the table has been created
+			if(mysql_query($tableEvent, $conn) == TRUE)
+			{
+				echo "event table created";
+				echo "<br />";
+			}
+			else
+			{
+				die("event table not created " . mysql_error());
+				echo "<br />";
+			}	
 		}
+		
 
 	?>
+
 </body>
 </html>
