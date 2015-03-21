@@ -48,8 +48,8 @@
 			//insert values into table
 			//NEED TO GO AHEAD AND FIX THIS
 			$sqlDriver = "INSERT INTO homeowner " .
-						"(name, username, password, carModel, licensePlate) " .
-						"VALUES('$name', '$username', '$password', '$carModel', $licensePlate)";
+						"(name, username, password, streetAddress, numSpots) " .
+						"VALUES('$name', '$username', '$password', '$address', $spots)";
 
 			$storeVal = mysql_query($sqlDriver, $conn);
 
