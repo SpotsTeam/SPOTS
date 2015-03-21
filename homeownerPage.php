@@ -2,7 +2,10 @@
 <head><title>SPOTS</title></head>
 <body>
 	<h2>Please Sign Up as Homeowner</h2>
-
+	<form method="post" action="index.html">
+		<input type="submit" value="homeowner">
+	</form>
+	
 	<form method = "post" action="homeownerDisplay.php">
 		Username: <input type="text" name="username" /><br/>
 		Password: <input type="text" name="password" /><br/>
@@ -67,7 +70,7 @@
 		<span style="padding: 0 20px">&nbsp;</span>ZipCode: <input type="text" name="zipcode" /></br>
 		How many parking spots are available? <input type="text" name="spots" /><br/>
 		<input type="submit" />
-	</form>
+	
 </body>
 
 <html>
