@@ -53,7 +53,7 @@
 		
 
 		//DRIVER NEEDS A NAME, USERNAME, PASSWORD, STREET ADDRESS, CAR MODEL, LICENSE PLATE
-		$tableDriver = "CREATE TABLE driver(fname VARCHAR(50), lname VARCHAR(50), username VARCHAR(50), password VARCHAR(50), carModel VARCHAR(50), licensePlate INT)";
+		$tableDriver = "CREATE TABLE driver(name VARCHAR(50), username VARCHAR(50), password VARCHAR(50), carModel VARCHAR(50), licensePlate INT)";
 		mysql_select_db("spots");
 
 		$valDriver = mysql_query("select 1 from driver");
