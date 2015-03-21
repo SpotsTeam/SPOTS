@@ -56,7 +56,6 @@
 	</div>
 
 
-
 	<!-- Main Body -->
 	<section>
 	<div class="col-md-10 col-md-offset-1 col-body">
@@ -65,74 +64,20 @@
 				<h1> Welcome to <img alt="" src="img/spotslogo2.png" style="width:250px; padding-top:7px"></img> </h1>
 			</div>
 
-			<!-- Search Bar -->
+			<!-- Content -->
 			<div style="margin-top:-20px">
-				<div class="col-md-4 search">
-					<h3> Search For An Event </h3>
-					<form>
-						
-	      					<input type="text" class="form-control" placeholder="Search for..." name="q" autocomplete="off"id="tipue_drop_input" required>
-	      					
-	      				
-	      			</form>
-	      			<div id="tipue_drop_content"></div>
-				</div>
-
-				<!-- Map -->
-				<div class="col-md-8">
-					<div id="map" class="map"></div>
+				<div class="centered">
+					Please select who you would like to login as:
+						<form method="post" action="drivePage.php"><button class="dlink btn btn-lg btn-info"  style="outline:none">Driver</button></form>
+						<br>
+						<form method="post" action="homeownerPage.php"><button class="dlink btn btn-lg btn-info"  style="outline:none">Homeowner</button></form>
+					</ul>
 				</div>
 			</div>
-
 		</div>
+
 	</div>
 	</section>
 
-
-
-		<!-- Modal -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	 	<div class="modal-dialog modal-lg">
-	   		<div class="modal-content">
-	     		<div class="modal-header">
-	        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        		<h4 class="modal-title" id="myModalLabel">My Spots</h4>
-		      	</div>
-		      	<div class="modal-body">
-		  	  		Stuff about your spots will go here
-		   		</div>
-			    <div class="modal-footer">
-			       	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			    </div>
-		    </div>
-		</div>
-	</div>
-
-
-
-
-	<!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- TipueDrop JavaScript -->
-    <script src="js/tipuedrop.js"></script>
-    <script src="js/tipuedrop_content.js"></script>
-    <script>
-		$(document).ready(function() {
-		     $('#tipue_drop_input').tipuedrop();
-		});
-	</script>
-
-    <!-- Leaflet Maps JavaScript -->
-    <script src="js/leaflet.js"> </script>
-    <script src="js/maps.js"> </script>
-
-    <!-- Custom JavaScript -->
-    <script src="js/jscript.js"></script>
-
 </body>
-
 </html>
