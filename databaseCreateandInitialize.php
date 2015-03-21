@@ -6,9 +6,9 @@
 
 		//here we're going to use the root because it would be easier
 		//WILL BE CHANGED EVENUTALLY TO A USER
-		$username = "root";
+		$username = "phpuser";
 		$password = "sharpclaw";
-		$database = "spots";
+		$database = "phptest";
 
 		// Create connection, we're assuming that there is already a database created
 		global $conn;

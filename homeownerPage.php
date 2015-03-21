@@ -64,7 +64,8 @@
 	<form method = "post" action="homeownerDisplay.php">
 		<label>Username:</label> <input type="text" name="username" /><br/>
 		<label>Password:</label> <input type="text" name="password" /><br/>
-		<label>Full Name:</label> <input type="text" name="name" /><br/>
+		<label>First Name:</label> <input type="text" name="fname" /><br/>
+		<label>Last Name:</label> <input type="text" name="lname" /><br/>
 		<label>Email:</label> <input type="email" name="email" /><br/>
 		<label>Enter Address:</label></br>
 		<span style="padding: 0 20px">&nbsp;</span><label>Street:</label> <input type="text" name="address" /><br/>
