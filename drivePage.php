@@ -62,7 +62,7 @@
 	<h2>Please Sign Up as Driver</h2>
 
 	<form method = "post" action="driverDisplay.php">
-		<label>Username:</label> <input type="text" name="username" align="middle"/><br/>
+		<label>Username:</label> <input type="text" name="username"/><br/>
 		<label>Password:</label> <input type="text" name="password" /><br/>
 		<label>Full Name:</label> <input type="text" name="name" /><br/>
 		<label>Email:</label> <input type="text" name="email" /><br/>
