@@ -26,7 +26,7 @@
 		//assuming connection worked we then create tables
 
 		//HOMEOWNER NEEDS A NAME, STREET ADDRESS, USERNAME, PASSWORD, NUMSPOTS
-		$tableHome = "CREATE TABLE homeowner(fname VARCHAR(50), lname VARCHAR(50), username VARCHAR(50), password VARCHAR(50), streetAddress VARCHAR(75), numSpots INT)";
+		$tableHome = "CREATE TABLE homeowner(name VARCHAR(50), username VARCHAR(50), password VARCHAR(50), streetAddress VARCHAR(75), numSpots INT)";
 
 		$valHome = mysql_query("select 1 from homeowner");
 
