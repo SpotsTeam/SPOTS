@@ -14,8 +14,8 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `spots` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `spots` ;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`ComponentType`
@@ -32,30 +32,32 @@ USE `mydb` ;
 -- -----------------------------------------------------
 -- Table `mydb`.`Driver`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Driver` ;
+DROP TABLE IF EXISTS `spots`.`Driver` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Driver` (
-  `username` VARCHAR(25) NOT NULL AUTO_INCREMENT,
-  `fName` VARCHAR(25) NULL,
-  `lName` VARCHAR(25) NULL,
-  `email` VARCHAR(30) NULL,
-  `password` VARCHAR(15) NOT NULL,
-  `street` VARCHAR(30) NULL,
-  `city` VARCHAR(20) NULL,
-  `state` VARCHAR(15) NULL,
-  `zip` int NULL,
-  `carModel` VARCHAR(25) NULL,
-  `liscensePlate` VARCHAR(10) NULL,
-  PRIMARY KEY (`username`))
+CREATE TABLE IF NOT EXISTS `spots`.`Driver` (
+  userId INT(11) NOT NULL AUTO_INCREMENT,
+  username VARCHAR(25) NOT NULL, 
+  fName VARCHAR(25) NULL,
+  lName VARCHAR(25) NULL,
+  email VARCHAR(30) NULL,
+  password VARCHAR(15) NOT NULL,
+  street VARCHAR(30) NULL,
+  city VARCHAR(20) NULL,
+  state VARCHAR(15) NULL,
+  zip int(5) NULL,
+  carModel VARCHAR(25) NULL,
+  licensePlate VARCHAR(10) NULL,
+  PRIMARY KEY (`userId`))
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`Homeowner`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Homeowner` ;
+DROP TABLE IF EXISTS `spots`.`Homeowner` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Homeowner` (
-  `username` VARCHAR(25) NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `spots`.`Homeowner` (
+  userId INT(11) NOT NULL AUTO_INCREMENT, 
+  `username` VARCHAR(25) NOT NULL,
   `fName` VARCHAR(25) NULL,
   `lName` VARCHAR(25) NULL,
   `email` VARCHAR(30) NULL,
@@ -63,11 +65,24 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Homeowner` (
   `street` VARCHAR(30) NULL,
   `city` VARCHAR(20) NULL,
   `state` VARCHAR(15) NULL,
-  `zip` int NULL,
+  `zip` int(5) NULL,
   `numOfSpots` int NULL,
-  PRIMARY KEY (`username`))
+  PRIMARY KEY (userId))
 ENGINE = InnoDB;
 
+CREATE TABLE IF NOT EXISTS `spots`.`Events` (
+	eventId INT(11) NOT NULL AUTO_INCREMENT,
+    `eventname` VARCHAR(50) NOT NULL, 
+    `date` INT(8) NOT NULL, 
+    `startTime` INT(4) NULL, 
+    `endTime` INT(4) NULL, 
+    `category` VARCHAR(25) NOT NULL, 
+    `address` VARCHAR(50) NOT NULL,
+    `city` VARCHAR(20) NOT NULL, 
+    `state` VARCHAR(2) NOT NULL, 
+    `zipcode` INT(5) NOT NULL, 
+    PRIMARY KEY (eventId))
+ENGINE = InnoDB;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
