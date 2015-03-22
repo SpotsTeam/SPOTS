@@ -47,7 +47,7 @@
 					<li> <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none"> 
 						<i class="fa fa-1x fa-car"></i> My Spots </button></li>
 					<li> <form action="/SPOTS/loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
-						<i class="fa fa-1x fa-street-view"> </i>Sign in </button></form></li>
+						<i class="fa fa-1x fa-street-view"> </i>Register </button></form></li>
 					<li> <form action="/SPOTS/aboutMe.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
 						<i class="fa fa-1x fa-car"> </i>About SPOTS </button></form></li>
 				</ul>
@@ -67,7 +67,7 @@
 			<!-- Content -->
 			<div style="margin-top:-20px">
 				<div class="centered">
-					Please select who you would like to login as:
+					<h3>Please select who you would like to register as:</h3>
 						<form method="post" action="drivePage.php"><button class="dlink btn btn-lg btn-info"  style="outline:none">Driver</button></form>
 						<br>
 						<form method="post" action="homeownerPage.php"><button class="dlink btn btn-lg btn-info"  style="outline:none">Homeowner</button></form>

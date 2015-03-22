@@ -40,7 +40,7 @@
 
 			mysql_select_db($database);
 
-			$insert = "INSERT INTO homeowner (fname, lname, username, password, email, address, city, state, zipcode, numSpots) VALUES ('$fname', '$lname', '$username', '$password', '$email', '$address', '$city', '$state', $zipcode, $spots)";
+			$insert = "INSERT INTO Homeowner (username, fname, lname, email, password, street, city, state, zip, numOfSpots) VALUES ('$username', '$fname', '$lname', '$email', '$password', '$address', '$city', '$state', $zipcode, $spots)";
 
 			if (mysql_query($insert) === TRUE) {
 				echo "New Record created successfully";
