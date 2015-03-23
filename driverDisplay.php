@@ -1,6 +1,9 @@
 <html>
 <head><title>SPOTS Driver Information Page</title></head>
 <body>
+	<form method="post" action="index.html">
+		<input type="submit" value="HOME PAGE">
+	</form>
 	<?
 		if(isset($_POST['username'])) {
 			$username = $_POST['username'];
