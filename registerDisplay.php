@@ -5,18 +5,19 @@
 		<input type="submit" value="HOME PAGE">
 	</form>
 	<?php
-		if(isset($_POST['username'])) {
-			$username = $_POST['username'];
-			$password = $_POST['password'];
-			$fname = $_POST['fname'];
-			$lname = $_POST['lname'];
+		if(isset($_POST['eventName'])) {
+			$eventName = $_POST['eventName'];
+			$startMonth = $_POST['startMonth'];
+			$startDay = $_POST['startDay'];
+			$startYear = $_POST['startYear'];
+			$endMonth = $_POST['endMonth'];
+			$endDay = $_POST['endDay'];
+			$endYear = $_POST['endYear'];
+			$category = $_POST['category'];
 			$address = $_POST['address'];
 			$city = $_POST['city'];
 			$state = $_POST['state'];
 			$zipcode = $_POST['zipcode'];
-			$carModel = $_POST['carModel'];
-			$licensePlate = $_POST['licensePlate'];
-			$email = $_POST['email'];
 
 			$servername = "localhost";
 
@@ -40,7 +41,7 @@
 
 			mysql_select_db($database);
 
-			$insert = "INSERT INTO Driver (username, fname, lname, email, password, street, city, state, zip, carModel, licensePlate) VALUES ('$username', '$fname', '$lname', '$email', '$password', '$address', '$city', '$state', $zipcode, '$carModel', '$licensePlate')";
+			$insert = "INSERT INTO Events (eventname, startDate, endDate, category, address, city, state, zipcode) VALUES ('$eventName', '$startYear-$startMonth-$startDay', '$endYear-$endMonth-$endDay', '$category', '$address', '$city', '$state', $zipcode)";
 
 			if (mysql_query($insert) === TRUE) {
 				echo "New Record created successfully";
@@ -51,11 +52,7 @@
 
 
 			//print up the information of the driver
-			echo "<h1> Welcome Driver $name </h1>";
-			echo "<h2> Your Username is: $username </h2>";
-			echo "<h2> Your email is: $email </h2>";
-			echo "<h2> Address: $address, $city, $state, $zipcode</h2>";
-			echo "<h2> Your car is a $carModel and your license plate is $licensePlate";
+			echo "<h2>$eventName has been created</h2>";
 		}
 	?>
 </body>

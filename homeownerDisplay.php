@@ -4,7 +4,7 @@
 	<form method="post" action="index.html">
 		<input type="submit" value="HOME PAGE">
 	</form>
-	<?
+	<?php
 		if(isset($_POST['username'])) {
 			$username = $_POST['username'];
 			$password = $_POST['password'];
