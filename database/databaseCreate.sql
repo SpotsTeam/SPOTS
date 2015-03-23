@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `spots`.`Homeowner` (
 ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `spots`.`Events` (
-	eventId INT(11) NOT NULL AUTO_INCREMENT,
+  eventId INT(11) NOT NULL AUTO_INCREMENT,
     `eventname` VARCHAR(50) NOT NULL, 
     `date` INT(8) NOT NULL, 
     `startTime` VARCHAR(6), 
@@ -85,14 +85,14 @@ CREATE TABLE IF NOT EXISTS `spots`.`Events` (
 ENGINE = InnoDB;
 
 -- Insert Events into table
-INSERT INTO Events values("SMU Basketball Game", 032915, "0600PM", "1100PM", "Basketball", "6024 Airline Road", "Dallas", "TX", 75275);
-INSERT INTO Events values("SMU Football Game", 092515, "0600PM", "1100PM", "Football", "5801 Airline Road", "Dallas", "TX", 75275);
-INSERT INTO Events values("Meadows Dance Recital", 040215, "0600PM", "0900PM", "Dance", "6101 Bishop Boulevard", "Dallas", "TX", 75205);
+INSERT INTO Events values(1, "SMU Basketball Game", 032915, "0600PM", "1100PM", "Basketball", "6024 Airline Road", "Dallas", "TX", 75275);
+INSERT INTO Events values(2, "SMU Football Game", 092515, "0600PM", "1100PM", "Football", "5801 Airline Road", "Dallas", "TX", 75275);
+INSERT INTO Events values(3, "Meadows Dance Recital", 040215, "0600PM", "0900PM", "Dance", "6101 Bishop Boulevard", "Dallas", "TX", 75205);
 
 -- Insert Parking places into event
 
-INSERT INTO Homeowner values("Binkley Garage", NULL, NULL, NULL, "smu1", "3105 Binkley Avenue", "Dallas", "TX", 75275);
-INSERT INTO Homeowner values("Moody Garage", NULL, NULL, NULL, "smu2", "3063 SMU Boulevard", "Dallas", "TX", 75275);
+INSERT INTO Homeowner values(1, "Binkley Garage", NULL, NULL, NULL, "smu1", "3105 Binkley Avenue", "Dallas", "TX", 75275, 200);
+INSERT INTO Homeowner values(2, "Moody Garage", NULL, NULL, NULL, "smu2", "3063 SMU Boulevard", "Dallas", "TX", 75275, 200);
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
