@@ -21,8 +21,8 @@
 
 			//here we're going to use the root because it would be easier
 			//WILL BE CHANGED EVENUTALLY TO A USER
-			$databaseUsername = "root";
-			$databasePassword = "sharpclaw";
+			$databaseUsername = "spotsuser";
+			$databasePassword = "spots123";
 			$database = "spots";
 
 			// Create connection, we're assuming that there is already a database created
