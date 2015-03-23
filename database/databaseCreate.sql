@@ -72,22 +72,23 @@ ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `spots`.`Events` (
   eventId INT(11) NOT NULL AUTO_INCREMENT,
-    `eventname` VARCHAR(50) NOT NULL, 
-    `date` INT(8) NOT NULL, 
-    `startTime` VARCHAR(6), 
-    `endTime` VARCHAR(6), 
-    `category` VARCHAR(25) NOT NULL, 
-    `address` VARCHAR(50) NOT NULL,
-    `city` VARCHAR(20) NOT NULL, 
-    `state` VARCHAR(2) NOT NULL, 
-    `zipcode` INT(5) NOT NULL, 
-    PRIMARY KEY (eventId))
+  `eventname` VARCHAR(50) NOT NULL, 
+  `startDate` VARCHAR(10) NOT NULL, 
+  `startTime` timestamp NULL, 
+  `endDate` VARCHAR(10) NOT NULL,
+  `endTime` timestamp NULL, 
+  `category` VARCHAR(25) NOT NULL, 
+  `address` VARCHAR(50) NOT NULL,
+  `city` VARCHAR(20) NOT NULL, 
+  `state` VARCHAR(2) NOT NULL, 
+  `zipcode` INT(5) NOT NULL, 
+  PRIMARY KEY (eventId))
 ENGINE = InnoDB;
 
 -- Insert Events into table
-INSERT INTO Events values(1, "SMU Basketball Game", 032915, "0600PM", "1100PM", "Basketball", "6024 Airline Road", "Dallas", "TX", 75275);
-INSERT INTO Events values(2, "SMU Football Game", 092515, "0600PM", "1100PM", "Football", "5801 Airline Road", "Dallas", "TX", 75275);
-INSERT INTO Events values(3, "Meadows Dance Recital", 040215, "0600PM", "0900PM", "Dance", "6101 Bishop Boulevard", "Dallas", "TX", 75205);
+INSERT INTO Events values(1, "SMU Basketball Game", '2015-03-29', NULL, '2015-03-30', NULL, "Basketball", "6024 Airline Road", "Dallas", "TX", 75275);
+INSERT INTO Events values(2, "SMU Football Game", '2015-09-15', NULL, '2015-09-16', NULL, "Football", "5801 Airline Road", "Dallas", "TX", 75275);
+INSERT INTO Events values(3, "Meadows Dance Recital", '2015-04-02', NULL, '2015-04-03', NULL, "Dance", "6101 Bishop Boulevard", "Dallas", "TX", 75205);
 
 -- Insert Parking places into event
 
