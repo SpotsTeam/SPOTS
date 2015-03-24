@@ -36,7 +36,7 @@
 
                 </button>
                 <a href="index.html">
-					<img alt="" src="img/spotslogo2.png" class="img-brand"></img>
+					return to <img alt="" src="img/spotslogo2.png" class="img-brand"></img>
 				</a>
             </div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -60,7 +60,7 @@
 
 	<div style="margin-top:80px" class="centered">
 	<h2>Please Sign Up as Homeowner</h2>
-
+	
 	<form method = "post" action="homeownerDisplay.php">
 		<label>Username:</label> <input type="text" name="username" /><br/>
 		<label>Password:</label> <input type="text" name="password" /><br/>

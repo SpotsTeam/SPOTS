@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Spots - Find Parking Near Events! </title>
+	<title>Spots Homeowner Page</title>
 
 	<!-- Bootstrap CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -36,7 +36,7 @@
 
                 </button>
                 <a href="index.html">
-					return to <img alt="" src="img/spotslogo2.png" class="img-brand"></img>
+					<img alt="" src="img/spotslogo2.png" class="img-brand"></img>
 				</a>
             </div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -50,36 +50,75 @@
 						<i class="fa fa-1x fa-street-view"> </i>Register </button></form></li>
 					<li> <form action="/SPOTS/aboutMe.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
 						<i class="fa fa-1x fa-car"> </i>About SPOTS </button></form></li>
-					<li> <form action="/SPOTS/signin.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
-						<i class="fa fa-1x fa-car"> </i>Sign In </button></form></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 
 
-	<!-- Main Body -->
-	<section>
-	<div class="col-md-10 col-md-offset-1 col-body">
-		<div class="container">
-			<div class="centered">
-				<h1> Register for <img alt="" src="img/spotslogo2.png" style="width:250px; padding-top:7px"></img> </h1>
-			</div>
+	<!-- Main Body -->	
 
-			<!-- Content -->
-			<div style="margin-top:-20px">
-				<div class="centered">
-					<h3>Please select who you would like to register as:</h3>
-						<form method="post" action="drivePage.php"><button class="dlink btn btn-lg btn-info"  style="outline:none">Driver</button></form>
-						<br>
-						<form method="post" action="homeownerPage.php"><button class="dlink btn btn-lg btn-info"  style="outline:none">Homeowner</button></form>
-					</ul>
-				</div>
-			</div>
-		</div>
+	<div style="margin-top:80px" class="centered">
+	<?php
+		if(isset($_POST['eventName'])) {
+			$eventName = $_POST['eventName'];
+			$startMonth = $_POST['startMonth'];
+			$startDay = $_POST['startDay'];
+			$startYear = $_POST['startYear'];
+			$endMonth = $_POST['endMonth'];
+			$endDay = $_POST['endDay'];
+			$endYear = $_POST['endYear'];
+			$category = $_POST['category'];
+			$address = $_POST['address'];
+			$city = $_POST['city'];
+			$state = $_POST['state'];
+			$zipcode = $_POST['zipcode'];
 
-	</div>
-	</section>
+			if ($address != '' && $city != '' && $zipcode != NULL) {
+				?> <h2><br><br><br>New Event Added!<br></h2><?php
+			} else {
+				header("Location: /SPOTS/registerEvent.php");
+				exit;
+			}
 
+
+			$servername = "localhost";
+
+
+			//here we're going to use the root because it would be easier
+			//WILL BE CHANGED EVENUTALLY TO A USER
+			$databaseUsername = "spotsuser";
+			$databasePassword = "spots123";
+			$database = "spots";
+
+			global $conn;
+			$conn = mysql_connect($servername, $databaseUsername, $databasePassword);
+
+			// Check connection
+			if (!$conn) 
+			{
+				//if the connection fails then we kill the whole thing
+    			die("Connection failed: " . mysql_error());
+			} else {
+				echo "database successfully connected<br>";
+			}
+
+			mysql_select_db($database);
+
+			$insert = "INSERT INTO Events (eventname, startDate, endDate, category, address, city, state, zipcode) VALUES ('$eventName', '$startYear-$startMonth-$startDay', '$endYear-$endMonth-$endDay', '$category', '$address', '$city', '$state', $zipcode)";
+
+			if (mysql_query($insert) === TRUE) {
+				echo "Event entered into database successfully<br>";
+			} else {
+				echo "Error: " . $insert . "<br>" . mysql_error();
+			}
+
+
+
+			//print up the information of the driver
+			//echo "<h2>$eventName has been created</h2>";
+		}
+	?>
+</div>
 </body>
 </html>
