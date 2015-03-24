@@ -60,7 +60,7 @@
 
 	<div style="margin-top:80px" class="centered">
 	<h2>Please Sign Up as Homeowner</h2>
-
+	
 	<form method = "post" action="homeownerDisplay.php">
 		<label>Username:</label> <input type="text" name="username" /><br/>
 		<label>Password:</label> <input type="text" name="password" /><br/>
