@@ -33,7 +33,7 @@
 
                 </button>
                 <a href="index.html">
-                    <img alt="" src="img/spotslogo2.png" class="img-brand"></img>
+                    return to <img alt="" src="img/spotslogo2.png" class="img-brand"></img>
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
