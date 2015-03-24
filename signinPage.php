@@ -1,30 +1,50 @@
+<?php
+
+if(empty($_GET['submit']))
+{
+	echo "form is not submitted";
+	exit;
+}
+
+$username = $_GET['username'];
+$password = $_GET['password'];
+
+?>
+
+
+
+
+
+
+
+<!-- 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Spots - Find Parking Near Events! </title>
+	<title>Spots Homeowner Page</title>
 
-	<!-- Bootstrap CSS -->
+	<!~~ Bootstrap CSS ~~>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
+    <!~~ Font Awesome ~~>
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <!-- Google Fonts -->
+    <!~~ Google Fonts ~~>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
-    <!-- TipueDrop CSS -->
+    <!~~ TipueDrop CSS ~~>
     <link href="css/tipuedrop.css" rel="stylesheet">
-    <!-- Leaflet CSS -->
+    <!~~ Leaflet CSS ~~>
     <link rel="stylesheet" href="css/leaflet.css"
-    <!-- Custom CSS -->
+    <!~~ Custom CSS ~~>
     <link href="css/styles.css" rel="stylesheet">
 
 </head>
 
 <body>
-	<!-- Fixed Top Navbar -->
+	<!~~ Fixed Top Navbar ~~>
 	<div class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header page-scroll">
@@ -50,36 +70,29 @@
 						<i class="fa fa-1x fa-street-view"> </i>Register </button></form></li>
 					<li> <form action="/SPOTS/aboutMe.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
 						<i class="fa fa-1x fa-car"> </i>About SPOTS </button></form></li>
-					<li> <form action="/SPOTS/signin.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
-						<i class="fa fa-1x fa-car"> </i>Sign In </button></form></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 
 
-	<!-- Main Body -->
-	<section>
-	<div class="col-md-10 col-md-offset-1 col-body">
-		<div class="container">
-			<div class="centered">
-				<h1> Welcome to <img alt="" src="img/spotslogo2.png" style="width:250px; padding-top:7px"></img> </h1>
-			</div>
+	<!~~ Main Body ~~>	
 
-			<!-- Content -->
-			<div style="margin-top:-20px">
-				<div class="centered">
-					<h3>Please select who you would like to register as:</h3>
-						<form method="post" action="drivePage.php"><button class="dlink btn btn-lg btn-info"  style="outline:none">Driver</button></form>
-						<br>
-						<form method="post" action="homeownerPage.php"><button class="dlink btn btn-lg btn-info"  style="outline:none">Homeowner</button></form>
-					</ul>
-				</div>
-			</div>
-		</div>
+	<div style="margin-top:80px" class="centered">
+	<h2>Please Sign In</h2>
 
+	<form method = "get" action="signin.php">
+		<label>Username:</label> <input type="text" name="username" /><br/>
+		<label>Password:</label> <input type="text" name="password" /><br/>
+		
+		
+		
+		
+		
+		<button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 150px"> 
+						<i class="fa fa-1x fa-car"></i> Submit </button>
 	</div>
-	</section>
-
 </body>
-</html>
+
+<html>
+ -->
