@@ -1,3 +1,4 @@
+<!-- 
 <?php
 
 if(empty($_GET['submit']))
@@ -10,14 +11,9 @@ $username = $_GET['username'];
 $password = $_GET['password'];
 
 ?>
+ -->
 
 
-
-
-
-
-
-<!-- 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,25 +22,25 @@ $password = $_GET['password'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Spots Homeowner Page</title>
 
-	<!~~ Bootstrap CSS ~~>
+	<!-- Bootstrap CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-    <!~~ Font Awesome ~~>
+    <!-- Font Awesome -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <!~~ Google Fonts ~~>
+    <!-- Google Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
-    <!~~ TipueDrop CSS ~~>
+    <!-- TipueDrop CSS -->
     <link href="css/tipuedrop.css" rel="stylesheet">
-    <!~~ Leaflet CSS ~~>
+    <!-- Leaflet CSS -->
     <link rel="stylesheet" href="css/leaflet.css"
-    <!~~ Custom CSS ~~>
+    <!-- Custom CSS -->
     <link href="css/styles.css" rel="stylesheet">
 
 </head>
 
 <body>
-	<!~~ Fixed Top Navbar ~~>
+	<!-- Fixed Top Navbar -->
 	<div class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header page-scroll">
@@ -76,7 +72,7 @@ $password = $_GET['password'];
 	</div>
 
 
-	<!~~ Main Body ~~>	
+	<!-- Main Body -->	
 
 	<div style="margin-top:80px" class="centered">
 	<h2>Please Sign In</h2>
@@ -95,4 +91,3 @@ $password = $_GET['password'];
 </body>
 
 <html>
- -->
