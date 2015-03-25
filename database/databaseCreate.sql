@@ -67,6 +67,7 @@ CREATE TABLE IF NOT EXISTS `spots`.`Homeowner` (
   `state` VARCHAR(15) NULL,
   `zip` int(5) NULL,
   `numOfSpots` int NULL,
+  `priceOfSpot` int NULL,
   PRIMARY KEY (userId))
 ENGINE = InnoDB;
 
@@ -92,8 +93,8 @@ INSERT INTO Events values(3, "Meadows Dance Recital", '2015-04-02', NULL, '2015-
 
 -- Insert Parking places into event
 
-INSERT INTO Homeowner values(1, "Binkley Garage", NULL, NULL, NULL, "smu1", "3105 Binkley Avenue", "Dallas", "TX", 75275, 200);
-INSERT INTO Homeowner values(2, "Moody Garage", NULL, NULL, NULL, "smu2", "3063 SMU Boulevard", "Dallas", "TX", 75275, 200);
+INSERT INTO Homeowner values(1, "Binkley Garage", NULL, NULL, NULL, "smu1", "3105 Binkley Avenue", "Dallas", "TX", 75275, 200, NULL);
+INSERT INTO Homeowner values(2, "Moody Garage", NULL, NULL, NULL, "smu2", "3063 SMU Boulevard", "Dallas", "TX", 75275, 200, NULL);
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
