@@ -28,9 +28,27 @@
 			mysql_select_db($database);
 
 			//When we display the spots we need location, number of spots available, the price, start date, start time, end date, end time
-			$databaseQuery = mysql_query("SELECT startDate, startTime, endDate, endTime, street, city, state, zip, numOfSpots, priceOfSpot, fname, lname 
+			//QUESTION: HOW DO WE QUERY THE DATABASE?
+			$databaseQuery = mysql_query("SELECT numOfSpots, priceOfSpot, startDate, startTime, endDate, endTime, street, city, state, zip, numOfSpots, priceOfSpot, fname, lname 
 										  FROM Homeowner");
 
 			//need to figure out how to print all this stuff properly to the screen
+			if($databaseQuery == TRUE)
+			{
+				//retrieve the dates
+				$dates = $row['startDate'] . " to " . $row['endDate'] . " at " . $row['startTime'] . " till " . $row['endTime'];
+				$spotOwner = $row['fname'] . " " . $row['lname'];
+				$address = $['street'] . " " . $row['city'] . ", " . $row['state'] . " " . $row['zip']
+				$numSpotsAndPrice = $['numOfSpots']
+
+
+
+				echo $var;
+			}
+			else
+			{
+				die("homeowner table not available " . mysql_error());
+					
+			}
 
 	</body>
