@@ -27,5 +27,10 @@
 			//select the database that we need to pull from
 			mysql_select_db($database);
 
-			//When we display the spots we need location, 
+			//When we display the spots we need location, number of spots available, the price, start date, start time, end date, end time
+			$databaseQuery = mysql_query("SELECT startDate, startTime, endDate, endTime, street, city, state, zip, numOfSpots, priceOfSpot, fname, lname 
+										  FROM Homeowner");
+
+			//need to figure out how to print all this stuff properly to the screen
+
 	</body>
