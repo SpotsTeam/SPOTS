@@ -1,3 +1,19 @@
+<!-- 
+<?php
+
+if(empty($_GET['submit']))
+{
+	echo "form is not submitted";
+	exit;
+}
+
+$username = $_GET['username'];
+$password = $_GET['password'];
+
+?>
+ -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,10 +60,12 @@
 				
 				</div>
 				<ul class="nav navbar-nav navbar-right">
-					
+					<li> <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none"> 
+						<i class="fa fa-1x fa-car"></i> My Spots </button></li>
 					<li> <form action="/SPOTS/loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
 						<i class="fa fa-1x fa-street-view"> </i>Register </button></form></li>
-					
+					<li> <form action="/SPOTS/aboutMe.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+						<i class="fa fa-1x fa-car"> </i>About SPOTS </button></form></li>
 				</ul>
 			</div>
 		</div>
@@ -57,68 +75,18 @@
 	<!-- Main Body -->	
 
 	<div style="margin-top:80px" class="centered">
-	
-	
-	<?php
-		if(isset($_POST['username'])) {
-			$username = $_POST['username'];
-			$password = $_POST['password'];
-			$fname = $_POST['fname'];
-			$lname = $_POST['lname'];
-			$address = $_POST['address'];
-			$city = $_POST['city'];
-			$state = $_POST['state'];
-			$zipcode = intval($_POST['zipcode']);
-			$spots = intval($_POST['spots']);
-			$email = $_POST['email'];
+	<h2>Please Sign In</h2>
 
-			if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-				?> <h2><br><br><br>You are now a registered Homeowner!<br></h2> <?php
-			} else {
-				//go back to sign up page
-				//echo "<h3>$email is an invalid email <br>Please enter valid email</h3>";
-				header("Location: /SPOTS/HomeownerPage.php");
-				exit;
-			}
-			
-			$servername = "localhost";
-
-			//here we're going to use the root because it would be easier
-			//WILL BE CHANGED EVENUTALLY TO A USER
-			$databaseUsername = "spotsuser";
-			$databasePassword = "spots123";
-			$database = "spots";
-
-			// Create connection, we're assuming that there is already a database created
-			global $conn;
-			$conn = mysql_connect($servername, $databaseUsername, $databasePassword);
-
-			// Check connection
-			if (!$conn) 
-			{
-				//if the connection fails then we kill the whole thing
-    			die("Connection failed: " . mysql_error());
-			} else {
-				echo "database successfully connected<br>";
-			}
-
-			mysql_select_db($database);
-
-			$insert = "INSERT INTO Homeowner (username, fname, lname, email, password, street, city, state, zip, numOfSpots) VALUES ('$username', '$fname', '$lname', '$email', '$password', '$address', '$city', '$state', $zipcode, $spots)";
-
-			if (mysql_query($insert) === TRUE) {
-				echo "New Record created successfully<br>";
-			} else {
-				echo "Error: " . $insert . "<br>" . mysql_error();
-			}
-
-			// print '<h3> Welcome Homeowner $fname $lname </h3>';
-			// print "<h3> Your Username is: $username </h3>";
-			// print "<h3> Your email is: $email </h3>";
-			// print "<h3> Address: $address, $city, $state, $zipcode</h3>";
-			// print "<h3> Spots available to park: $spots </h3>";
-		}
-	?>
+	<form method = "get" action="signin.php">
+		<label>Username:</label> <input type="text" name="username" /><br/>
+		<label>Password:</label> <input type="text" name="password" /><br/>
+		
+		
+		
+		
+		
+		<button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 150px"> 
+						<i class="fa fa-1x fa-car"></i> Submit </button>
 	</div>
 </body>
 
