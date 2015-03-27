@@ -36,7 +36,7 @@
 
                 </button>
                 <a href="index.html">
-					return to <img alt="" src="img/spotslogo2.png" class="img-brand"></img>
+					<img alt="" src="img/spotslogo2.png" class="img-brand"></img>
 				</a>
             </div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -44,14 +44,8 @@
 				
 				</div>
 				<ul class="nav navbar-nav navbar-right">
-					<li> <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none"> 
-						<i class="fa fa-1x fa-car"></i> My Spots </button></li>
 					<li> <form action="/SPOTS/loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
 						<i class="fa fa-1x fa-street-view"> </i>Register </button></form></li>
-					<li> <form action="/SPOTS/aboutMe.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
-						<i class="fa fa-1x fa-car"> </i>About SPOTS </button></form></li>
-					<li> <form action="/SPOTS/signin/signIn.html" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
-						<i class="fa fa-1x fa-car"> </i>Log In </button></form></li>
 				</ul>
 			</div>
 		</div>
