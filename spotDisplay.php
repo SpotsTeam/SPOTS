@@ -6,8 +6,11 @@
 	<body>
 		<?php
 
-			//How do we query the database based on information from the point we click on?
-			//Erik created a javascript to convert the address to lat and long, I don't know if I need to convert back
+			//Could probably use the post action in order to retrieve the information
+			$street = $_POST['street'];
+			$city = $_POST['city'];
+			$state = $_POST['state'];
+			$zip = $_POST['zip'];
 
 			$servername = "localhost";
 
@@ -31,24 +34,27 @@
 			//select the database that we need to pull from
 			mysql_select_db($database);
 
-			//When we display the spots we need location, number of spots available, the price, and homeowner
-			//QUESTION: WHAT IS THE CONNECTION BETWEEN THE DATABASES?
-			//In a sense, we want to get the spot based on the location that we click on because that is how we determine what is the 
-			$databaseQuery = mysql_query("SELECT numOfSpots, priceOfSpot, street, city, state, zip, numOfSpots, priceOfSpot, fname, lname 
-										  FROM Homeowner
-										  WHERE Homeowner.street = street AND Homeowner.city = city AND Homeowner.zip = zip and Homeowner.state = state");
+			//query the whole table and we can display based on certain information
+			$databaseQuery = mysql_query("SELECT * FROM Homeowner");
 
 			//need to figure out how to print all this stuff properly to the screen
 			if($databaseQuery == TRUE)
 			{	
-				//retrieving the information of the homeowner
-				$spotOwner = $row['fname'] . " " . $row['lname'];
-				$address = $['street'] . " " . $row['city'] . ", " . $row['state'] . " " . $row['zip']
-				$numSpotsAndPrice = $['numOfSpots']
+				//retrieving the information of the homeowner based on whether or not the clicked on information matches up
+				if($street = $row['street'] && $city = $row['city'] && $state = $row['state'] && $zip = $row['zip'])
+				{	
 
+					$spotOwner = $row['fname'] . " " . $row['lname'];
+					$address = $['street'] . " " . $row['city'] . ", " . $row['state'] . " " . $row['zip'];
+					$numSpotsAndPrice = $['numOfSpots'] . " priced at " . $row['priceOfSpot'] . " each.";
 
+					//proceed to print out the information
+					echo $spotOwner;
+					echo $address;
+					echo $numSpotsAndPrice;
 
-				echo $var;
+				}
+				
 			}
 			else
 			{
