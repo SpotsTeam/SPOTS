@@ -44,10 +44,12 @@
 				
 				</div>
 				<ul class="nav navbar-nav navbar-right">
-					
+					<li> <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none"> 
+						<i class="fa fa-1x fa-car"></i> My Spots </button></li>
 					<li> <form action="/SPOTS/loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
 						<i class="fa fa-1x fa-street-view"> </i>Register </button></form></li>
-					
+					<li> <form action="/SPOTS/aboutMe.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+						<i class="fa fa-1x fa-car"> </i>About SPOTS </button></form></li>
 				</ul>
 			</div>
 		</div>
@@ -57,31 +59,38 @@
 	<!-- Main Body -->	
 
 	<div style="margin-top:80px" class="centered">
-	
-	
 	<?php
-		if(isset($_POST['username'])) {
-			$username = $_POST['username'];
-			$password = $_POST['password'];
-			$fname = $_POST['fname'];
-			$lname = $_POST['lname'];
+		if(isset($_POST['eventName'])) {
+			session_start();
+			$eventName = $_POST['eventName'];
+			$startMonth = $_POST['startMonth'];
+			$startDay = $_POST['startDay'];
+			$startYear = $_POST['startYear'];
+			$endMonth = $_POST['endMonth'];
+			$endDay = $_POST['endDay'];
+			$endYear = $_POST['endYear'];
+			$category = $_POST['category'];
 			$address = $_POST['address'];
 			$city = $_POST['city'];
 			$state = $_POST['state'];
-			$zipcode = intval($_POST['zipcode']);
-			$spots = intval($_POST['spots']);
-			$email = $_POST['email'];
+			$zipcode = $_POST['zipcode'];
+			$completeAddress = $address .', ' . $city .', ' . $state; 
 
-			if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-				?> <h2><br><br><br>You are now a registered Homeowner!<br></h2> <?php
+			$_SESSION['address'] = $address;
+			$_SESSION['city'] = $city;
+			$_SESSION['state'] = $state;
+			$_SESSION['zipcode'] = $zipcode;
+
+			if ($address != '' && $city != '' && $zipcode != NULL) {
+				?> <h2><br><br><br>New Event Added!<br></h2><?php
 			} else {
-				//go back to sign up page
-				//echo "<h3>$email is an invalid email <br>Please enter valid email</h3>";
-				header("Location: /SPOTS/HomeownerPage.php");
+				header("Location: /SPOTS/registerEvent.php");
 				exit;
 			}
-			
+
+
 			$servername = "localhost";
+
 
 			//here we're going to use the root because it would be easier
 			//WILL BE CHANGED EVENUTALLY TO A USER
@@ -89,7 +98,6 @@
 			$databasePassword = "spots123";
 			$database = "spots";
 
-			// Create connection, we're assuming that there is already a database created
 			global $conn;
 			$conn = mysql_connect($servername, $databaseUsername, $databasePassword);
 
@@ -104,22 +112,22 @@
 
 			mysql_select_db($database);
 
-			$insert = "INSERT INTO Homeowner (username, fname, lname, email, password, street, city, state, zip, numOfSpots) VALUES ('$username', '$fname', '$lname', '$email', '$password', '$address', '$city', '$state', $zipcode, $spots)";
+			$insert = "INSERT INTO Events (eventname, startDate, endDate, category, address, city, state, zipcode) VALUES ('$eventName', '$startYear-$startMonth-$startDay', '$endYear-$endMonth-$endDay', '$category', '$address', '$city', '$state', $zipcode)";
 
 			if (mysql_query($insert) === TRUE) {
-				echo "New Record created successfully<br>";
+				echo "Event entered into database successfully<br>";
+				header("Location: /SPOTS/geo.html?Address=$address&City=$city&State=$state");
+				exit;
 			} else {
 				echo "Error: " . $insert . "<br>" . mysql_error();
 			}
 
-			// print '<h3> Welcome Homeowner $fname $lname </h3>';
-			// print "<h3> Your Username is: $username </h3>";
-			// print "<h3> Your email is: $email </h3>";
-			// print "<h3> Address: $address, $city, $state, $zipcode</h3>";
-			// print "<h3> Spots available to park: $spots </h3>";
+
+
+			//print up the information of the driver
+			//echo "<h2>$eventName has been created</h2>";
 		}
 	?>
-	</div>
+</div>
 </body>
-
-<html>
+</html>

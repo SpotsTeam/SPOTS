@@ -44,12 +44,8 @@
 				
 				</div>
 				<ul class="nav navbar-nav navbar-right">
-					<li> <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none"> 
-						<i class="fa fa-1x fa-car"></i> My Spots </button></li>
 					<li> <form action="/SPOTS/loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
-						<i class="fa fa-1x fa-street-view"> </i>Sign in </button></form></li>
-					<li> <form action="/SPOTS/aboutMe.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
-						<i class="fa fa-1x fa-car"> </i>About SPOTS </button></form></li>
+						<i class="fa fa-1x fa-street-view"> </i>Back </button></form></li>
 				</ul>
 			</div>
 		</div>
@@ -64,7 +60,8 @@
 	<form method = "post" action="driverDisplay.php">
 		<label>Username:</label> <input type="text" name="username"/><br/>
 		<label>Password:</label> <input type="text" name="password" /><br/>
-		<label>Full Name:</label> <input type="text" name="name" /><br/>
+		<label>First Name:</label> <input type="text" name="fname" /><br/>
+		<label>Last Name:</label> <input type="text" name="lname" /><br/>
 		<label>Email:</label> <input type="text" name="email" /><br/>
 		<label>Enter Address:</label></br>
 		<span style="padding: 0 20px">&nbsp;</span><label>Street:</label> <input type="text" name="address" /><br/>
