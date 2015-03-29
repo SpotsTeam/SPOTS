@@ -44,12 +44,19 @@
 				
 				</div>
 				<ul class="nav navbar-nav navbar-right">
+<<<<<<< HEAD
 					<li> <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none"> 
 						<i class="fa fa-1x fa-car"></i> My Spots </button></li>
-					<li> <form action="/SPOTS/loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+					<li> <form action="loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
 						<i class="fa fa-1x fa-street-view"> </i>Register </button></form></li>
-					<li> <form action="/SPOTS/aboutMe.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+					<li> <form action="aboutMe.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
 						<i class="fa fa-1x fa-car"> </i>About SPOTS </button></form></li>
+=======
+					
+					<li> <form action="/SPOTS/loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+						<i class="fa fa-1x fa-street-view"> </i>Back </button></form></li>
+					
+>>>>>>> 78c207e029d1c880d60019cd38d62063550e030d
 				</ul>
 			</div>
 		</div>
@@ -60,7 +67,7 @@
 
 	<div style="margin-top:80px" class="centered">
 	<h2>Please Sign Up as Homeowner</h2>
-
+	
 	<form method = "post" action="homeownerDisplay.php">
 		<label>Username:</label> <input type="text" name="username" /><br/>
 		<label>Password:</label> <input type="text" name="password" /><br/>

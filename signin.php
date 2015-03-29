@@ -1,3 +1,4 @@
+<!-- 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,25 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Spots Homeowner Page</title>
 
-	<!-- Bootstrap CSS -->
+	<!~~ Bootstrap CSS ~~>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
+    <!~~ Font Awesome ~~>
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <!-- Google Fonts -->
+    <!~~ Google Fonts ~~>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
-    <!-- TipueDrop CSS -->
+    <!~~ TipueDrop CSS ~~>
     <link href="css/tipuedrop.css" rel="stylesheet">
-    <!-- Leaflet CSS -->
+    <!~~ Leaflet CSS ~~>
     <link rel="stylesheet" href="css/leaflet.css"
-    <!-- Custom CSS -->
+    <!~~ Custom CSS ~~>
     <link href="css/styles.css" rel="stylesheet">
 
 </head>
 
 <body>
-	<!-- Fixed Top Navbar -->
+	<!~~ Fixed Top Navbar ~~>
 	<div class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header page-scroll">
@@ -44,61 +45,54 @@
 				
 				</div>
 				<ul class="nav navbar-nav navbar-right">
-<<<<<<< HEAD
 					<li> <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none"> 
 						<i class="fa fa-1x fa-car"></i> My Spots </button></li>
-					<li> <form action="loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
-						<i class="fa fa-1x fa-street-view"> </i>Register </button></form></li>
-					<li> <form action="aboutMe.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
-						<i class="fa fa-1x fa-car"> </i>About SPOTS </button></form></li>
-=======
-					
 					<li> <form action="/SPOTS/loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
 						<i class="fa fa-1x fa-street-view"> </i>Register </button></form></li>
-					
->>>>>>> 78c207e029d1c880d60019cd38d62063550e030d
+					<li> <form action="/SPOTS/aboutMe.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+						<i class="fa fa-1x fa-car"> </i>About SPOTS </button></form></li>
 				</ul>
 			</div>
 		</div>
 	</div>
+ -->
+<!-- 
 
 
-	<!-- Main Body -->	
 
-	<div style="margin-top:80px" class="centered">
+
+
+<html>
+<head><title>Sign In</title></head>
+<body>
+
+<h3> Sign In </h3>
+<form method = "post" action = "/SPOTS/signin.php">
+	Username: <input type = "text" name = "username" /><br />
+	Password: <input type = "text" name = "password" /><br />
+	<input type = "submit" name = "submit" value = "submit form"/>
+	</form>
+
 	
-	
-	<?php
-		if(isset($_POST['username'])) {
-			$username = $_POST['username'];
-			$password = $_POST['password'];
-			$fname = $_POST['fname'];
-			$lname = $_POST['lname'];
-			$address = $_POST['address'];
-			$city = $_POST['city'];
-			$state = $_POST['state'];
-			$zipcode = intval($_POST['zipcode']);
-			$spots = intval($_POST['spots']);
-			$email = $_POST['email'];
+ 
 
-			if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-				?> <h2><br><br><br>You are now a registered Homeowner!<br></h2> <?php
-			} else {
-				//go back to sign up page
-				//echo "<h3>$email is an invalid email <br>Please enter valid email</h3>";
-				header("Location: /SPOTS/HomeownerPage.php");
-				exit;
-			}
-			
-			$servername = "localhost";
+ <form method="post" action="/SPOTS/index.html">
+ 		<input type="submit" value="HOME PAGE">
+ 	</form>
+ 	
+ 	<?php
+ 		if(isset($_POST['username'])) {
+ 			$username = $_POST['username'];
+ 			$password = $_POST['password'];
+ 			echo "Your username is $username";
+ 			echo "Your password is $password";
+ 			}
 
-			//here we're going to use the root because it would be easier
-			//WILL BE CHANGED EVENUTALLY TO A USER
+
 			$databaseUsername = "spotsuser";
 			$databasePassword = "spots123";
 			$database = "spots";
 
-			// Create connection, we're assuming that there is already a database created
 			global $conn;
 			$conn = mysql_connect($servername, $databaseUsername, $databasePassword);
 
@@ -107,28 +101,43 @@
 			{
 				//if the connection fails then we kill the whole thing
     			die("Connection failed: " . mysql_error());
-			} else {
-				echo "database successfully connected<br>";
+			} 
+			else 
+			{
+				echo "database successfully connected";
 			}
 
 			mysql_select_db($database);
 
-			$insert = "INSERT INTO Homeowner (username, fname, lname, email, password, street, city, state, zip, numOfSpots) VALUES ('$username', '$fname', '$lname', '$email', '$password', '$address', '$city', '$state', $zipcode, $spots)";
-
-			if (mysql_query($insert) === TRUE) {
-				echo "New Record created successfully<br>";
-			} else {
-				echo "Error: " . $insert . "<br>" . mysql_error();
+//			$insert = "INSERT INTO Driver (username, fname, lname, email, password, street, city, state, zip, carModel, licensePlate) VALUES ('$username', '$fname', '$lname', '$email', '$password', '$address', '$city', '$state', $zipcode, '$carModel', '$licensePlate')";
+	
+			$selectUsername = "SELECT username FROM Driver WHERE username = '$username'";
+			$selectPassword = "SELECT password FROM Driver WHERE password = '$password'";
+			echo "YO - $selectUsername";
+			
+			if(mysql_query($selectUsername) == '$username')
+			{
+				echo "Hey - $username";
+			} 
+			else
+			{
+				echo "Error";
 			}
+			if(mysql_query($selectPassword) == '$password')
+			{
+				echo "You - $password";
+			} 
+			else
+			{
+				echo "Error";
+			}
+							
 
-			// print '<h3> Welcome Homeowner $fname $lname </h3>';
-			// print "<h3> Your Username is: $username </h3>";
-			// print "<h3> Your email is: $email </h3>";
-			// print "<h3> Address: $address, $city, $state, $zipcode</h3>";
-			// print "<h3> Spots available to park: $spots </h3>";
-		}
-	?>
-	</div>
+?>
+ 
+
+	
+</form>
 </body>
-
-<html>
+</html>
+ -->

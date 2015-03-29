@@ -1,10 +1,26 @@
+<!-- 
+<?php
+
+if(empty($_GET['submit']))
+{
+	echo "form is not submitted";
+	exit;
+}
+
+$username = $_GET['username'];
+$password = $_GET['password'];
+
+?>
+ -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Spots - Find Parking Near Events! </title>
+	<title>Spots Homeowner Page</title>
 
 	<!-- Bootstrap CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -44,45 +60,34 @@
 				
 				</div>
 				<ul class="nav navbar-nav navbar-right">
-<<<<<<< HEAD
 					<li> <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none"> 
 						<i class="fa fa-1x fa-car"></i> My Spots </button></li>
-					<li> <form action="loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
-						<i class="fa fa-1x fa-street-view"> </i>Register </button></form></li>
-					<li> <form action="aboutMe.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
-						<i class="fa fa-1x fa-car"> </i>About SPOTS </button></form></li>
-=======
 					<li> <form action="/SPOTS/loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
 						<i class="fa fa-1x fa-street-view"> </i>Register </button></form></li>
->>>>>>> 78c207e029d1c880d60019cd38d62063550e030d
+					<li> <form action="/SPOTS/aboutMe.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+						<i class="fa fa-1x fa-car"> </i>About SPOTS </button></form></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 
 
-	<!-- Main Body -->
-	<section>
-	<div class="col-md-10 col-md-offset-1 col-body">
-		<div class="container">
-			<div class="centered">
-				<h1> Register for <img alt="" src="img/spotslogo2.png" style="width:250px; padding-top:7px"></img> </h1>
-			</div>
+	<!-- Main Body -->	
 
-			<!-- Content -->
-			<div style="margin-top:-20px">
-				<div class="centered">
-					<h3>Please select who you would like to register as:</h3>
-						<form method="post" action="drivePage.php"><button class="dlink btn btn-lg btn-info"  style="outline:none">Driver</button></form>
-						<br>
-						<form method="post" action="homeownerPage.php"><button class="dlink btn btn-lg btn-info"  style="outline:none">Homeowner</button></form>
-					</ul>
-				</div>
-			</div>
-		</div>
+	<div style="margin-top:80px" class="centered">
+	<h2>Please Sign In</h2>
 
+	<form method = "get" action="signin.php">
+		<label>Username:</label> <input type="text" name="username" /><br/>
+		<label>Password:</label> <input type="text" name="password" /><br/>
+		
+		
+		
+		
+		
+		<button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 150px"> 
+						<i class="fa fa-1x fa-car"></i> Submit </button>
 	</div>
-	</section>
-
 </body>
-</html>
+
+<html>
