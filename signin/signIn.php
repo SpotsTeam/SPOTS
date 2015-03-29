@@ -8,7 +8,7 @@
  		$password = $_POST['password'];
  		echo "Your username is $username";
  		echo "Your password is $password";
- 	}
+ 	
 
 
 		$databaseUsername = "spotsuser";
@@ -36,16 +36,19 @@
 		$query = "SELECT * FROM Driver WHERE username = $username";
 		$query = $query . $_POST['username'] . " and password = $password" . $_POST['password'] . "";
 
-		$result = mysql_query($query);
-		if (mysql_num_rows($result) == 0)
+		$result = mysql_query($selectUsername);
+		$result2 = mysql_query($selectPassword);
+		if (mysql_num_rows($result) == 0 || mysql_num_rows($result2) == 0)
 		{
-			echo "BOO";
+			//echo "BOO";
 			header(('Location: /SPOTS/signin/error.html'));
+			exit;
 		}
 		else
 		{
-			echo "YAY";
+			//echo "YAY";
 			header('Location: /SPOTS/signin/success.html');
+			exit;
 		}
 
 		// if(mysql_query($selectUsername) == '$username')
@@ -64,6 +67,7 @@
 		// {
 		// 	echo "Error";
 		// }
+	}
 
 		?>
 </body>

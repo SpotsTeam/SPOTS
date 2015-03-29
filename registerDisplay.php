@@ -46,9 +46,9 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li> <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none"> 
 						<i class="fa fa-1x fa-car"></i> My Spots </button></li>
-					<li> <form action="/SPOTS/loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+					<li> <form action="loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
 						<i class="fa fa-1x fa-street-view"> </i>Register </button></form></li>
-					<li> <form action="/SPOTS/aboutMe.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+					<li> <form action="aboutMe.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
 						<i class="fa fa-1x fa-car"> </i>About SPOTS </button></form></li>
 				</ul>
 			</div>
@@ -61,6 +61,7 @@
 	<div style="margin-top:80px" class="centered">
 	<?php
 		if(isset($_POST['eventName'])) {
+			session_start();
 			$eventName = $_POST['eventName'];
 			$startMonth = $_POST['startMonth'];
 			$startDay = $_POST['startDay'];
@@ -73,6 +74,12 @@
 			$city = $_POST['city'];
 			$state = $_POST['state'];
 			$zipcode = $_POST['zipcode'];
+			$completeAddress = $address .', ' . $city .', ' . $state; 
+
+			$_SESSION['address'] = $address;
+			$_SESSION['city'] = $city;
+			$_SESSION['state'] = $state;
+			$_SESSION['zipcode'] = $zipcode;
 
 			if ($address != '' && $city != '' && $zipcode != NULL) {
 				?> <h2><br><br><br>New Event Added!<br></h2><?php
@@ -109,6 +116,8 @@
 
 			if (mysql_query($insert) === TRUE) {
 				echo "Event entered into database successfully<br>";
+				header("Location: /SPOTS/geo.html?Address=$address&City=$city&State=$state");
+				exit;
 			} else {
 				echo "Error: " . $insert . "<br>" . mysql_error();
 			}
