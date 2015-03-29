@@ -4,6 +4,9 @@
 <html>
 	<head><title>Spot Information </title></head>
 	<body>
+		<!-- Using script, looking at Eric's page in order to maybe understand it better -->
+		<script type = "text/javascript" src="http://maps.google.com/maps/api/js?/sensor=false"></script>
+		<script type = "text/javascript">
 		<?php
 
 			//Could probably use the post action in order to retrieve the information
