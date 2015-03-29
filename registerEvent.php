@@ -41,12 +41,14 @@
                 
                 </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li> <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none"> 
-                        <i class="fa fa-1x fa-car"></i> My Spots </button></li>
+                   
                     <li> <form action="loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
                         <i class="fa fa-1x fa-street-view"> </i>Register </button></form></li>
+<<<<<<< HEAD
                     <li> <form action="aboutMe.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
                         <i class="fa fa-1x fa-car"> </i>About SPOTS </button></form></li>
+=======
+>>>>>>> 7b686f2b5487af9a82eeb059aaec0290ad6897eb
                 </ul>
             </div>
         </div>
