@@ -6,12 +6,12 @@
 	<body>
 		<?php
 
-			//should be able to pull the information from the page with this
-			//NOTE NEED TO GO AHEAD AND USE A TESTING PAGE
-			$street = $_GET['address'];
-			$city = $_GET['city'];
-			$state = $_GET['state'];
-			$zip = $_GET['zip'];
+			//We should have this as a second page in order to display information on the spot that we are looking at
+			$street = $_POST['address'];
+			$city = $_POST['city'];
+			$state = $_POST['state'];
+			$zip = $_POST['zip'];
+
 
 			$servername = "localhost";
 
@@ -32,16 +32,19 @@
     			die("Connection failed: " . mysql_error());
 			}
 
+
+
 			//select the database that we need to pull from
 			mysql_select_db($database);
 
 			//query the whole table and we can display based on certain information
-			$databaseQuery = mysql_query("SELECT * FROM Homeowner");
+			$databaseQuery = mysql_query("select * from Homeowner");
 
 			//need to figure out how to print all this stuff properly to the screen
 			if($databaseQuery == TRUE)
 			{	
 				//retrieving the information of the homeowner based on whether or not the clicked on information matches up
+				//We're only looking for one thing
 				if($street = $row['street'] && $city = $row['city'] && $state = $row['state'] && $zip = $row['zip'])
 				{	
 
@@ -55,6 +58,10 @@
 					echo $numSpotsAndPrice;
 
 				}
+				else
+				{
+					echo "Spot location could not be located, are you sure you have the correct information?";
+				}
 				
 			}
 			else
@@ -62,5 +69,6 @@
 				die("homeowner table not available " . mysql_error());
 					
 			}
-
+			?>
 	</body>
+</html>
