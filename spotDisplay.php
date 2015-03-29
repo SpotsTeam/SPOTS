@@ -4,16 +4,14 @@
 <html>
 	<head><title>Spot Information </title></head>
 	<body>
-		<!-- Using script, looking at Eric's page in order to maybe understand it better -->
-		<script type = "text/javascript" src="http://maps.google.com/maps/api/js?/sensor=false"></script>
-		<script type = "text/javascript">
 		<?php
 
-			//Could probably use the post action in order to retrieve the information
-			$street = $_POST['street'];
-			$city = $_POST['city'];
-			$state = $_POST['state'];
-			$zip = $_POST['zip'];
+			//should be able to pull the information from the page with this
+			//NOTE NEED TO GO AHEAD AND USE A TESTING PAGE
+			$street = $_GET['address'];
+			$city = $_GET['city'];
+			$state = $_GET['state'];
+			$zip = $_GET['zip'];
 
 			$servername = "localhost";
 
