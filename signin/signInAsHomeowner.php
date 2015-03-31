@@ -6,12 +6,7 @@
 	{
  		$username = $_POST['username'];
  		$password = $_POST['password'];
- 		echo "Your username is $username";
- 		echo "Your password is $password";
- 	
-
-
-		$databaseUsername = "spotsuser";
+ 		$databaseUsername = "spotsuser";
 		$databasePassword = "spots123";
 		$database = "spots";
 
