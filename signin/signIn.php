@@ -1,7 +1,7 @@
 <?php
     include('login.php');
     if (isset($_SESSION['login_user'])) {
-        header("location: success.html");
+        header("location: homePage.php");
     }
 ?>
 

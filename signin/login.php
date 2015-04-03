@@ -29,7 +29,7 @@
 
 			if ($rows == 1) {
 				$_SESSION['login_user'] = $username; // starting session
-				header("Location: success.html");
+				header("Location: homePage.php");
 			} else {
 				$error = "Username of Passoword is Invalid";
 			}

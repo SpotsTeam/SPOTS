@@ -44,7 +44,7 @@
 		else
 		{
 			//echo $row[1];
-			header('Location: /SPOTS/signin/success.html');
+			header('Location: /SPOTS/signin/homePage.php');
 			exit;
 		}
 
