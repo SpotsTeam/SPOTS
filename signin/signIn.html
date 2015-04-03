@@ -1,3 +1,10 @@
+<?php
+    include('login.php');
+    if (isset($_SESSION['login_user'])) {
+        header("location: success.html");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="utf-8">
@@ -54,7 +61,7 @@
     	<div style="margin-top:80px" class="centered">
                 <h2>Log In to <img alt="" src="/SPOTS/img/spotslogo2.png" class="img-brand"></img> </h2></br></br>
         <h2> Sign in as Driver</h2> 
-        <form method = "post" action="signInAsDriver.php">
+        <form method = "post" action="">
                 <label>Username: </label><input type="text" name="username"/><br/><br/>
                 <label>Password: </label><input type="password" name="password" /><br/><br/>
              <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 150px"> 

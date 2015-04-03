@@ -120,7 +120,8 @@
 						<option value="DC">DC</option>
 					</select></br>
 		<span style="padding: 0 20px">&nbsp;</span><label>ZipCode:</label> <input type="text" name="zipcode" /></br>
-		<span style="padding: 0 20px">&nbsp;</span><label>CarModel:</label> <input type="text" name="carModel" /></br>
+		<span style="padding: 0 20px">&nbsp;</span><label>Car Make:</label> <input type="text" name="carMake" /></br>
+		<span style="padding: 0 20px">&nbsp;</span><label>Car Model:</label> <input type="text" name="carModel" /></br>
 		<span style="padding: 0 20px">&nbsp;</span><label>LicensePlate:</label> <input type="text" name="licensePlate" /></br>
 		<br><br><br><br><br><br>
 		<button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 150px"> 
