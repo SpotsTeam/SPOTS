@@ -46,10 +46,13 @@
 				</div>
 				<ul class="nav navbar-nav navbar-right">
 					<li> <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none"> 
-						<i class="fa fa-1x fa-car"></i> About SPOTS </button></li>
-					
-					<li> <form action="/SPOTS/signin/logout.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
-						<i class="fa fa-1x fa-street-view"> </i>Log Out </button></form></li>
+						<i class="fa fa-1x fa-car"></i> 
+						<?php
+							include("yourCar.php"); 
+							$user = $_SESSION['username'];
+							echo "$user";
+						
+						?> </button></li>
 				</ul>
 			</div>
 		</div>
@@ -97,21 +100,23 @@
 	   		<div class="modal-content">
 	     		<div class="modal-header">
 	        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        		<h4 class="modal-title" id="myModalLabel">About Spots</h4>
+	        		<h4 class="modal-title" id="myModalLabel">Your Spots</h4>
 		      	</div>
 		      	<div class="modal-body">
-		      		<h4>Have you ever attended an event (football game, concert, festival) and tried to avoid high parking prices by parking in residential or commercial lots for sale near the event location? If this is you, then Spots is the app you need to pursue. <br><br> Spots is a web and mobile app that will help you to find a parking spot
-					at any event in your area.  Spots does this through the help of you, the user.
-					As the user of this app, you can register as both a homeowner and a driver.
-					As a homeowner, you indicate how many spots you have available in your lot.
-					This information is readily available to users if they search for an event in
-					your area.  As a driver, you register your car and you can reserves spots at a
-					lot before the game as well as pull up the app on game day to find which homes have parking spaces available.<br><br>
+		      		<h4>
+		      			<?php 
+		      				
+		      				$car = $_SESSION['car'];
+		      				echo "$car";
+		      			?>
 
 					</h4>
 		   		</div>
-			    <div class="modal-footer">
-			       	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		   		<div class="modal-footer">
+		   		<form action="/SPOTS/signin/logout.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+						<i class="fa fa-1x fa-street-view"> </i>Log Out </button>
+				</form>
+			       
 			    </div>
 		    </div>
 		</div>

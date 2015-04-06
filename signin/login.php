@@ -8,6 +8,8 @@
 		else {
 			$username = $_POST['username'];
 			$password = $_POST['password'];
+			$_SESSION["username"] = $username;
+			$_SESSION["password"] = $password;
 			$usertype = $_POST['select'];
 
 			//connect to sql database
