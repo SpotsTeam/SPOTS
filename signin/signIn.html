@@ -1,8 +1,15 @@
+<?php
+    include('login.php');
+    if (isset($_SESSION['login_user'])) {
+        header("location: success.html");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spots Events Page</title>
+    <title>Spots Sign In</title>
 
     <!-- Bootstrap CSS -->
     <link href="/SPOTS/css/bootstrap.min.css" rel="stylesheet">
@@ -52,14 +59,39 @@
     </div>
     
     	<div style="margin-top:80px" class="centered">
-        <h2>Log In to <img alt="" src="/SPOTS/img/spotslogo2.png" class="img-brand"></img> </h2></br></br>
-        <form method = "post" action="signIn.php">
-                <label>Username: </label><input type="text" name="username" /><br/><br/>
+                <h2>Log In to <img alt="" src="/SPOTS/img/spotslogo2.png" class="img-brand"></img> </h2></br></br>
+        <h2> Sign in as Driver</h2> 
+        <form method = "post" action="">
+                <label>Username: </label><input type="text" name="username"/><br/><br/>
                 <label>Password: </label><input type="password" name="password" /><br/><br/>
-			 <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 150px"> 
+             <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 150px"> 
                         <i class="fa fa-1x fa-car"></i> Submit </button>
-			</form>
-		</div>
+            </form>
+            
+        </div>
+
+        <div style="margin-top:80px" class="centered">
+        <h2> Sign in as Homeowner</h2> 
+            <form method = "post" action="signInAsHomeowner.php">
+                <label>Username: </label><input type="text" name="username"/><br/><br/>
+                <label>Password: </label><input type="password" name="password" /><br/><br/>
+             <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 150px"> 
+                        <i class="fa fa-1x fa-car"></i> Submit </button>
+            </form>  
+        </div>
+
+         <div style="margin-top:80px" class="centered">
+            <form action="forgotUserPass.html"><button type="submit">Forgot Username or Password? 
+            </button>
+            </form>
+        </div>
+
+
+
+        
+</body>    
+            
+		
 
 <!-- <<<<<<< HEAD
 <h3> Sign In </h3>
