@@ -51,8 +51,8 @@
 					<li> <form action="aboutMe.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
 						<i class="fa fa-1x fa-car"> </i>About SPOTS </button></form></li>
 					
-					<li> <form action="/SPOTS/loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
-						<i class="fa fa-1x fa-street-view"> </i>Register </button></form></li>
+					<li> <form action="/SPOTS/signin/signIn.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+						<i class="fa fa-1x fa-street-view"> </i>Sign In </button></form></li>
 					
 				</ul>
 			</div>
@@ -74,6 +74,7 @@
 			$city = $_POST['city'];
 			$state = $_POST['state'];
 			$zipcode = $_POST['zipcode'];
+			$carMake = $_POST['carMake'];
 			$carModel = $_POST['carModel'];
 			$licensePlate = $_POST['licensePlate'];
 			$email = $_POST['email'];
@@ -109,9 +110,9 @@
 
 			mysql_select_db($database);
 
-			$insert = "INSERT INTO Driver (username, fname, lname, email, password, street, city, state, zip, carModel, licensePlate) VALUES ('$username', '$fname', '$lname', '$email', '$password', '$address', '$city', '$state', $zipcode, '$carModel', '$licensePlate')";
+			$insert = "INSERT INTO Driver (username, fname, lname, email, password, street, city, state, zip, carMake, carModel, licensePlate) VALUES ('$username', '$fname', '$lname', '$email', '$password', '$address', '$city', '$state', $zipcode, '$carMake', '$carModel', '$licensePlate')";
 
-			if (mysql_query($insert) === TRUE) {
+			if (mysql_query($insert) === TRUE) {	
 				echo "New Record created successfully<br>";
 			} else {
 				echo "Error: " . $insert . "<br>" . mysql_error();
