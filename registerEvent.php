@@ -32,7 +32,7 @@
                     <span class="icon-bar"></span>
 
                 </button>
-                <a href="index.html">
+                <a href="/SPOTS/signin/homePage.php">
                     <img alt="" src="img/spotslogo2.png" class="img-brand"></img>
                 </a>
             </div>
@@ -40,11 +40,11 @@
                 <div class="navbar-left">
                 
                 </div>
-                <ul class="nav navbar-nav navbar-right">
+                <!-- <ul class="nav navbar-nav navbar-right">
                    
                     <li> <form action="loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
                         <i class="fa fa-1x fa-street-view"> </i>Register </button></form></li>
-                </ul>
+                </ul> -->
             </div>
         </div>
     </div>
