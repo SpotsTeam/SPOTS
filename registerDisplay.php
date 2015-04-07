@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Spots Homeowner Page</title>
+	<title>Spots Register Page</title>
 
 	<!-- Bootstrap CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -44,10 +44,12 @@
 				
 				</div>
 				<ul class="nav navbar-nav navbar-right">
-					
-					<li> <form action="/SPOTS/loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+					<li> <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none"> 
+						<i class="fa fa-1x fa-car"></i> My Spots </button></li>
+					<li> <form action="loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
 						<i class="fa fa-1x fa-street-view"> </i>Register </button></form></li>
-					
+					<li> <form action="aboutMe.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+						<i class="fa fa-1x fa-car"> </i>About SPOTS </button></form></li>
 				</ul>
 			</div>
 		</div>
@@ -57,32 +59,38 @@
 	<!-- Main Body -->	
 
 	<div style="margin-top:80px" class="centered">
-	
-	
 	<?php
-		if(isset($_POST['username'])) {
-			$username = $_POST['username'];
-			$password = $_POST['password'];
-			$fname = $_POST['fname'];
-			$lname = $_POST['lname'];
+		if(isset($_POST['eventName'])) {
+			session_start();
+			$eventName = $_POST['eventName'];
+			$startMonth = $_POST['startMonth'];
+			$startDay = $_POST['startDay'];
+			$startYear = $_POST['startYear'];
+			$endMonth = $_POST['endMonth'];
+			$endDay = $_POST['endDay'];
+			$endYear = $_POST['endYear'];
+			$category = $_POST['category'];
 			$address = $_POST['address'];
 			$city = $_POST['city'];
 			$state = $_POST['state'];
-			$zipcode = intval($_POST['zipcode']);
-			$spots = intval($_POST['spots']);
-			$email = $_POST['email'];
-			$price = $_POST['price'];
+			$zipcode = $_POST['zipcode'];
+			$completeAddress = $address .', ' . $city .', ' . $state; 
 
-			if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-				?> <h2><br><br><br>You are now a registered Homeowner!<br></h2> <?php
+			$_SESSION['address'] = $address;
+			$_SESSION['city'] = $city;
+			$_SESSION['state'] = $state;
+			$_SESSION['zipcode'] = $zipcode;
+
+			if ($address != '' && $city != '' && $zipcode != NULL) {
+				?> <h2><br><br><br>New Event Added!<br></h2><?php
 			} else {
-				//go back to sign up page
-				//echo "<h3>$email is an invalid email <br>Please enter valid email</h3>";
-				header("Location: /SPOTS/HomeownerPage.php");
+				header("Location: /SPOTS/registerEvent.php");
 				exit;
 			}
-			
+
+
 			$servername = "localhost";
+
 
 			//here we're going to use the root because it would be easier
 			//WILL BE CHANGED EVENUTALLY TO A USER
@@ -90,7 +98,6 @@
 			$databasePassword = "spots123";
 			$database = "spots";
 
-			// Create connection, we're assuming that there is already a database created
 			global $conn;
 			$conn = mysql_connect($servername, $databaseUsername, $databasePassword);
 
@@ -105,45 +112,22 @@
 
 			mysql_select_db($database);
 
-			$insert = "INSERT INTO Homeowner (username, fname, lname, email, password) values ('$username', '$fname', '$lname', '$email', '$password')";
-			
-			if (mysql_query($insert) == TRUE) {
-				echo "Homeowner info entered successfully<br>";
+			$insert = "INSERT INTO Events (eventname, startDate, endDate, category, address, city, state, zipcode) VALUES ('$eventName', '$startYear-$startMonth-$startDay', '$endYear-$endMonth-$endDay', '$category', '$address', '$city', '$state', $zipcode)";
+
+			if (mysql_query($insert) === TRUE) {
+				echo "Event entered into database successfully<br>";
+				header("Location: /SPOTS/geo.html?Address=$address&City=$city&State=$state");
+				exit;
 			} else {
-				echo "Error: ". $insert . "<br>" . mysql_error();
-			}
-			
-			$query = mysql_query("SELECT userId FROM Homeowner where username = '$username'", $conn);
-			$row = mysql_fetch_row($query);
-			$homeownerId = $row[0];
-
-			$insertHome =  "INSERT INTO Home (userId, address, city, state, zipcode) VALUES ($homeownerId, '$address', '$city', '$state', $zipcode)";
-
-			if (mysql_query($insertHome) === TRUE) {
-				echo "Home info entered successfully<br>";
-			} else {
-				echo "Error: " . $insertHome . "<br>" . mysql_error();
+				echo "Error: " . $insert . "<br>" . mysql_error();
 			}
 
-			$query2 = mysql_query("SELECT homeId from Home where userId = $homeownerId", $conn);
-			$row2 = mysql_fetch_row($query2);
-			$home_id = $row2[0];
-			//echo $row2[0];
 
-			$insertSpots = "INSERT INTO Spots (homeId, price, taken, license) values ($home_id, $price, false, NULL)";
 
-			for ($i = 0; $i < $spots; $i++) {
-				if (mysql_query($insertSpots) == TRUE) {
-					echo "*";
-				} else {
-					echo "Error: " . $insertSpots . "<br>" . mysql_error();
-				}
-			}
-
-			
+			//print up the information of the driver
+			//echo "<h2>$eventName has been created</h2>";
 		}
 	?>
-	</div>
+</div>
 </body>
-
-<html>
+</html>
