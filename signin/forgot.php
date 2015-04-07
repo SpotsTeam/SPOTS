@@ -30,6 +30,8 @@
 			$driverQuery = "Select username, password from Driver where email = '$email'";
 			$homeQuery = "Select username, password from Homeowner where email = '$email'";
 
+
+
 			if ($select == 'Driver') {
 				echo "Driver";
 				$result = mysql_query($driverQuery);
