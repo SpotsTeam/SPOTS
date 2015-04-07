@@ -104,12 +104,24 @@
 
 			mysql_select_db($database);
 
-			$insert = "INSERT INTO Driver (username, fname, lname, email, password, street, city, state, zip, carMake, carModel, licensePlate) VALUES ('$username', '$fname', '$lname', '$email', '$password', '$address', '$city', '$state', $zipcode, '$carMake', '$carModel', '$licensePlate')";
+			$insert = "INSERT INTO Driver (username, fname, lname, email, password, street, city, state, zip) VALUES ('$username', '$fname', '$lname', '$email', '$password', '$address', '$city', '$state', $zipcode)";
 
 			if (mysql_query($insert) === TRUE) {	
-				echo "New Record created successfully<br>";
+				echo "Driver info entered successfully<br>";
 			} else {
 				echo "Error: " . $insert . "<br>" . mysql_error();
+			}
+
+			$query = mysql_query("SELECT userId FROM Driver where username = '$username'", $conn);
+			$row = mysql_fetch_row($query);
+			
+			$userId = $row[0];
+			$insert2 =  "INSERT INTO Vehicle (licensePlate, carMake, carModel, userId) values ('$licensePlate', '$carMake', '$carModel', $userId)";
+
+			if (mysql_query($insert2) === TRUE) {	
+				echo "Car added to $username<br>";
+			} else {
+				echo "Error: " . $insert2 . "<br>" . mysql_error();
 			}
 
 
