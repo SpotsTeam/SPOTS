@@ -71,6 +71,7 @@
 			$zipcode = intval($_POST['zipcode']);
 			$spots = intval($_POST['spots']);
 			$email = $_POST['email'];
+			$price = $_POST['price'];
 
 			if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 				?> <h2><br><br><br>You are now a registered Homeowner!<br></h2> <?php
@@ -104,19 +105,42 @@
 
 			mysql_select_db($database);
 
-			$insert = "INSERT INTO Homeowner (username, fname, lname, email, password, street, city, state, zip, numOfSpots) VALUES ('$username', '$fname', '$lname', '$email', '$password', '$address', '$city', '$state', $zipcode, $spots)";
-
-			if (mysql_query($insert) === TRUE) {
-				echo "New Record created successfully<br>";
+			$insert = "INSERT INTO Homeowner (username, fname, lname, email, password) values ('$username', '$fname', '$lname', '$email', '$password')";
+			
+			if (mysql_query($insert) == TRUE) {
+				echo "Homeowner info entered successfully<br>";
 			} else {
-				echo "Error: " . $insert . "<br>" . mysql_error();
+				echo "Error: ". $insert . "<br>" . mysql_error();
+			}
+			
+			$query = mysql_query("SELECT userId FROM Homeowner where username = '$username'", $conn);
+			$row = mysql_fetch_row($query);
+			$homeownerId = $row[0];
+
+			$insertHome =  "INSERT INTO Home (userId, address, city, state, zipcode) VALUES ($homeownerId, '$address', '$city', '$state', $zipcode)";
+
+			if (mysql_query($insertHome) === TRUE) {
+				echo "Home info entered successfully<br>";
+			} else {
+				echo "Error: " . $insertHome . "<br>" . mysql_error();
 			}
 
-			// print '<h3> Welcome Homeowner $fname $lname </h3>';
-			// print "<h3> Your Username is: $username </h3>";
-			// print "<h3> Your email is: $email </h3>";
-			// print "<h3> Address: $address, $city, $state, $zipcode</h3>";
-			// print "<h3> Spots available to park: $spots </h3>";
+			$query2 = mysql_query("SELECT homeId from Home where userId = $homeownerId", $conn);
+			$row2 = mysql_fetch_row($query2);
+			$home_id = $row2[0];
+			//echo $row2[0];
+
+			$insertSpots = "INSERT INTO Spots (homeId, price, taken, license) values ($home_id, $price, false, NULL)";
+
+			for ($i = 0; $i < $spots; $i++) {
+				if (mysql_query($insertSpots) == TRUE) {
+					echo "*";
+				} else {
+					echo "Error: " . $insertSpots . "<br>" . mysql_error();
+				}
+			}
+
+			
 		}
 	?>
 	</div>
