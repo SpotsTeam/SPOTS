@@ -17,7 +17,7 @@
 		$result = mysql_query($table, $conn);
 
 		$tab = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-		$out = "<h4>Spot # $tab &nbsp;&nbsp; Price $tab Reserved By $tab License Plate #<br>";
+		$out = "<h4>Spot ID $tab &nbsp;&nbsp; Price $tab Reserved By $tab License Plate #<br>";
 		if (mysql_num_rows($result) > 0) {
 			while($row = mysql_fetch_assoc($result)) {
 				$lic = $row["license"];

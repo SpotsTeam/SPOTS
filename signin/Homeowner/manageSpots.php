@@ -68,6 +68,7 @@
                 echo "<h4>Current House Address: $address</h4>";
                     
             ?>
+
             </fieldset><br><br><br><br>
         </div>
     </div>
@@ -129,10 +130,14 @@
     <div style="margin-left:80px" class="centered">
         <div style="margin-right:80px" class="centered">       
                 <fieldset>
-                    <form>
                     <legend>Edit Spots Pricing</legend>
-                    <label >New Price: </label> <input >
-                     </form>
+                <form method = "post" action="changeHome.php">
+                    <label >New Price: </label> <input type="text" name="newPrice"><br><br>
+                    <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 150px"> 
+                    <i class="fa fa-1x fa-car"></i> Change </button>
+                    
+                </form>
+                    
         </div>
     </div>
 
@@ -144,7 +149,7 @@
                 </fieldset><br><br><br><br>
         </div>
     </div>
-    
+
         
 </body>
 
