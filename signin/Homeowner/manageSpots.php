@@ -65,10 +65,18 @@
             <?php 
                 include("../home.php");
                 $address = $_SESSION['home'];
-                echo "<h4>Current House Address: $address</h4>";
-                    
+                echo "<h4>Current House Address: $address</h4>";    
             ?>
-
+             <form method = "post" action="addHome.html">
+                    <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 150px"> 
+                    <i class="fa fa-1x fa-car"></i> Add House </button>
+                    
+            </form><br>
+            <form method = "post" action="changeHome.html">
+                    <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 140px"> 
+                    <i class="fa fa-1x fa-car"></i> Change House </button>
+                    
+                </form>
             </fieldset><br><br><br><br>
         </div>
     </div>
@@ -131,7 +139,7 @@
         <div style="margin-right:80px" class="centered">       
                 <fieldset>
                     <legend>Edit Spots Pricing</legend>
-                <form method = "post" action="changeHome.php">
+                <form method = "post" action="changePrice.php">
                     <label >New Price: </label> <input type="text" name="newPrice"><br><br>
                     <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 150px"> 
                     <i class="fa fa-1x fa-car"></i> Change </button>

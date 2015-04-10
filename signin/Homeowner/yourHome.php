@@ -5,7 +5,7 @@
 		
 		$username = $_SESSION['username'];
 		$password = $_SESSION['password'];
-
+		$homeId = $_SESSION['homeId'];
 		//connect to sql database
 		$conn = mysql_connect("localhost", "spotsuser", "spots123");
 
@@ -26,10 +26,10 @@
 
 		$addressQuery = mysql_query("SELECT address, city, state from Home where userId = (select userId from Homeowner where username = '$username')", $conn);
 
-		$addressRow =
+		//$addressRow =
 
-		$numOfSpotsAvailable = "SELECT count(spotId) from Spots where homeId = (Select homeId from Home where userId = (Select userId from Homeowner where username = '$username')) and taken = false";
-		$numOfSpotsTaken = "SELECT count(spotId) from Spots where homeId = (Select homeId from Home where userId = (Select userId from Homeowner where username = '$username')) and taken = true";
+		$numOfSpotsAvailable = "SELECT count(spotId) from Spots where homeId = $homeId and taken = false";
+		$numOfSpotsTaken = "SELECT count(spotId) from Spots where homeId = $homeId and taken = true";
 
 		$spotsAvailableQuery = mysql_query($numOfSpotsAvailable, $conn);
 		$spotsTakenQuery = mysql_query($numOfSpotsTaken, $conn);
