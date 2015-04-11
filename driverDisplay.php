@@ -45,8 +45,8 @@
 				</div>
 				<ul class="nav navbar-nav navbar-right">
 					
-					<li> <form action="/SPOTS/loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
-						<i class="fa fa-1x fa-street-view"> </i>Register </button></form></li>
+					<li> <form action="/SPOTS/signin/signIn.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+						<i class="fa fa-1x fa-street-view"> </i>Sign In </button></form></li>
 					
 				</ul>
 			</div>
@@ -68,6 +68,7 @@
 			$city = $_POST['city'];
 			$state = $_POST['state'];
 			$zipcode = $_POST['zipcode'];
+			$carMake = $_POST['carMake'];
 			$carModel = $_POST['carModel'];
 			$licensePlate = $_POST['licensePlate'];
 			$email = $_POST['email'];
@@ -103,12 +104,24 @@
 
 			mysql_select_db($database);
 
-			$insert = "INSERT INTO Driver (username, fname, lname, email, password, street, city, state, zip, carModel, licensePlate) VALUES ('$username', '$fname', '$lname', '$email', '$password', '$address', '$city', '$state', $zipcode, '$carModel', '$licensePlate')";
+			$insert = "INSERT INTO Driver (username, fname, lname, email, password, street, city, state, zip) VALUES ('$username', '$fname', '$lname', '$email', '$password', '$address', '$city', '$state', $zipcode)";
 
-			if (mysql_query($insert) === TRUE) {
-				echo "New Record created successfully<br>";
+			if (mysql_query($insert) === TRUE) {	
+				echo "Driver info entered successfully<br>";
 			} else {
 				echo "Error: " . $insert . "<br>" . mysql_error();
+			}
+
+			$query = mysql_query("SELECT userId FROM Driver where username = '$username'", $conn);
+			$row = mysql_fetch_row($query);
+			
+			$userId = $row[0];
+			$insert2 =  "INSERT INTO Vehicle (licensePlate, carMake, carModel, userId) values ('$licensePlate', '$carMake', '$carModel', $userId)";
+
+			if (mysql_query($insert2) === TRUE) {	
+				echo "Car added to $username<br>";
+			} else {
+				echo "Error: " . $insert2 . "<br>" . mysql_error();
 			}
 
 
