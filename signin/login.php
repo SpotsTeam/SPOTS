@@ -1,7 +1,5 @@
 <?php 
-	if (!isset($_SESSION)) {
-		session_start();
-	}
+	session_start();
 	$error = '';
 	if (isset($_POST['submit'])) {
 		if (empty($_POST['username']) || empty($_POST['password'])) {
@@ -10,11 +8,9 @@
 		else {
 			$username = $_POST['username'];
 			$password = $_POST['password'];
-			$usertype = $_POST['select'];
 			$_SESSION["username"] = $username;
 			$_SESSION["password"] = $password;
-			$_SESSION["select"] = $usertype;
-			
+			$usertype = $_POST['select'];
 
 			//connect to sql database
 			$conn = mysql_connect("localhost", "spotsuser", "spots123");
