@@ -44,12 +44,10 @@
 				
 				</div>
 				<ul class="nav navbar-nav navbar-right">
-					<li> <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none"> 
-						<i class="fa fa-1x fa-car"></i> My Spots </button></li>
-					<li> <form action="/SPOTS/loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
-						<i class="fa fa-1x fa-street-view"> </i>Sign in </button></form></li>
-					<li> <form action="/SPOTS/aboutMe.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
-						<i class="fa fa-1x fa-car"> </i>About SPOTS </button></form></li>
+					
+					<li> <form action="loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+						<i class="fa fa-1x fa-street-view"> </i>Register </button></form></li>
+					
 				</ul>
 			</div>
 		</div>
@@ -61,13 +59,13 @@
 	<div class="col-md-10 col-md-offset-1 col-body">
 		<div class="container">
 			<div class="centered">
-				<h1> Welcome to <img alt="" src="img/spotslogo2.png" style="width:250px; padding-top:7px"></img> </h1>
+				<h1> Register for <img alt="" src="img/spotslogo2.png" style="width:250px; padding-top:7px"></img> </h1>
 			</div>
 
 			<!-- Content -->
 			<div style="margin-top:-20px">
 				<div class="centered">
-					Please select who you would like to login as:
+					<h3>Please select who you would like to register as:</h3>
 						<form method="post" action="drivePage.php"><button class="dlink btn btn-lg btn-info"  style="outline:none">Driver</button></form>
 						<br>
 						<form method="post" action="homeownerPage.php"><button class="dlink btn btn-lg btn-info"  style="outline:none">Homeowner</button></form>
