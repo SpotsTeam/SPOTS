@@ -1,6 +1,3 @@
-# SPOTS
-Our Spots repository.  An Application that assists you with parking
-
 About Spots
 
 Have you ever attended an event (football game, concert, festival) and tried to avoid high parking prices by parking in residential or commercial lots for sale near the event location?  If this is you, then Spots is the app you need to pursue.  
