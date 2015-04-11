@@ -65,6 +65,7 @@
 		<label>First Name:</label> <input type="text" name="fname" /><br/>
 		<label>Last Name:</label> <input type="text" name="lname" /><br/>
 		<label>Email:</label> <input type="email" name="email" /><br/>
+		<label>Phone Number: </label> <input type="text" name="phone" /><br/>
 		<label>Enter Address:</label></br>
 		<span style="padding: 0 20px">&nbsp;</span><label>Street:</label> <input type="text" name="address" /><br/>
 		<span style="padding: 0 20px">&nbsp;</span><label>City:</label> <input type="text" name="city" /><br/>
@@ -124,7 +125,7 @@
 		<span style="padding: 0 20px">&nbsp;</span><label>ZipCode:</label> <input type="text" name="zipcode" /></br>
 		<label>Number of Parking Spots Available: </label> <input type="text" name="spots" /><br/>
 		<label>Price Per Spot:  $</label> <input type="text" name="price" /><br/>
-		<br><br><br><br><br><br>
+		<br><br><br><br><br><br><br>
 		<button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 150px"> 
 						<i class="fa fa-1x fa-car"></i> Submit </button>
 	</div>
