@@ -34,7 +34,10 @@ CREATE TABLE IF NOT EXISTS `spots`.`Driver` (
   city VARCHAR(20) NULL,
   state VARCHAR(15) NULL,
   zip int(5) NULL,
+<<<<<<< HEAD
   phone VARCHAR(10) NULL,
+=======
+>>>>>>> 1bd8214d859cf8df5e9dc5a7e881ae151ee67b1f
   PRIMARY KEY (`userId`))
 ENGINE = InnoDB;
 
@@ -65,7 +68,10 @@ CREATE TABLE IF NOT EXISTS `spots`.`Homeowner` (
   `lName` VARCHAR(25) NULL,
   `email` VARCHAR(30) NULL,
   `password` VARCHAR(15) NOT NULL,
+<<<<<<< HEAD
   `phone` VARCHAR(10) NULL,
+=======
+>>>>>>> 1bd8214d859cf8df5e9dc5a7e881ae151ee67b1f
   PRIMARY KEY (userId))
 ENGINE = InnoDB;
 
@@ -137,7 +143,11 @@ INSERT INTO Events values(7, "Express Game", '2015-06-02', NULL, '2015-06-03', N
 
 -- Insert Parking places
 
+<<<<<<< HEAD
 INSERT INTO Homeowner values(1, "Binkley Garage", NULL, NULL, NULL, "smu1", "2148583215");
+=======
+INSERT INTO Homeowner values(1, "Binkley Garage", NULL, NULL, NULL, "smu1");
+>>>>>>> 1bd8214d859cf8df5e9dc5a7e881ae151ee67b1f
 INSERT INTO Home values(1, 1, "3105 Binkley Avenue", "Dallas", "TX", "75275", 2);
 INSERT INTO Spots values(1, 1, 25.00, false, NULL);
 INSERT INTO Spots values(2, 1, 25.00, false, NULL);
@@ -145,7 +155,11 @@ INSERT INTO Spots values(3, 1, 25.00, false, NULL);
 INSERT INTO Spots values(4, 1, 25.00, false, NULL);
 INSERT INTO Spots values(5, 1, 25.00, false, NULL);
 
+<<<<<<< HEAD
 INSERT INTO Homeowner values(2, "Moody Garage", NULL, NULL, NULL, "smu2", "2147994132");
+=======
+INSERT INTO Homeowner values(2, "Moody Garage", NULL, NULL, NULL, "smu2");
+>>>>>>> 1bd8214d859cf8df5e9dc5a7e881ae151ee67b1f
 INSERT INTO Home values(2, 2, "3063 SMU Boulevard", "Dallas", "TX", "75275", 1);
 INSERT INTO Spots values(1, 2, 25.00, false, NULL);
 INSERT INTO Spots values(2, 2, 25.00, false, NULL);
@@ -154,8 +168,13 @@ INSERT INTO Spots values(4, 2, 25.00, false, NULL);
 INSERT INTO Spots values(5, 2, 25.00, false, NULL);
 
 -- Insert Driver info
+<<<<<<< HEAD
 INSERT INTO Driver values(1, "egabrielsen", "Erik", "Gabrielsen", "erik.gabe@gmail.com", "sharpclaw", "810 Barton Creek Drive", "Dripping Springs", "TX", 78620, "5127871391");
 INSERT INTO Driver values(2, "spotsuser", "John", "Doe", "john.doe@gmail.com", "spots123", "6004 Bishop Boulevard", "University Park", "TX", 75275, "2141234567");
+=======
+INSERT INTO Driver values(1, "egabrielsen", "Erik", "Gabrielsen", "erik.gabe@gmail.com", "sharpclaw", "810 Barton Creek Drive", "Dripping Springs", "TX", 78620);
+INSERT INTO Driver values(2, "spotsuser", "John", "Doe", "john.doe@gmail.com", "spots123", "6004 Bishop Boulevard", "University Park", "TX", 75275);
+>>>>>>> 1bd8214d859cf8df5e9dc5a7e881ae151ee67b1f
 -- Insert Drivers vehicles
 INSERT INTO Vehicle values("123EGAB", "Chevy", "2004 Black Tahoe", 1);
 INSERT INTO Vehicle values("456ERIK", "Dodge", "2008 Silver Ram 1500", 1);

@@ -72,7 +72,10 @@
 			$spots = intval($_POST['spots']);
 			$email = $_POST['email'];
 			$price = $_POST['price'];
+<<<<<<< HEAD
 			$phone = $_POST['phone'];
+=======
+>>>>>>> 1bd8214d859cf8df5e9dc5a7e881ae151ee67b1f
 
 			if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 				?> <h2><br><br><br>You are now a registered Homeowner!<br></h2> <?php
@@ -106,7 +109,11 @@
 
 			mysql_select_db($database);
 
+<<<<<<< HEAD
 			$insert = "INSERT INTO Homeowner (username, fname, lname, email, password, phone) values ('$username', '$fname', '$lname', '$email', '$password', '$phone')";
+=======
+			$insert = "INSERT INTO Homeowner (username, fname, lname, email, password) values ('$username', '$fname', '$lname', '$email', '$password')";
+>>>>>>> 1bd8214d859cf8df5e9dc5a7e881ae151ee67b1f
 			
 			if (mysql_query($insert) == TRUE) {
 				echo "Homeowner info entered successfully<br>";
