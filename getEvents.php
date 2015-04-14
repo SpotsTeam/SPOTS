@@ -49,13 +49,14 @@
 			$city = $row['city'];
 			$state = $row['state'];
 			$event['title'] = $eventName;
-			$event['thumb'] = "img/drop.png";
+			$event['thumb'] = "img&#47drop.png";
 			$event['text'] = "a SPOTS suggested event";
 		 	$event['tags'] = $category;
 		 	$fullAddress = "$address" . ", " . "$city" . ", " . "$state";
 		 	$longLat = get_lonlat($fullAddress);
-		 	//echo "$longLat->lat  $longLat->lng<br>";d
-		 	$event['loc'] = "$longLat->lat" . ", " . "$longLat->lng";
+		 	unset($event['loc']);
+		 	$event['loc'][] = $longLat->lat; 
+		 	$event['loc'][] = $longLat->lng;
 			$events[] = $event;
 		}
 	} else {
@@ -80,17 +81,19 @@
 			$address = $row['address']; 
 			$city = $row['city'];
 			$state = $row['state'];
-			$homeownerName = $row['fname'];
+			$homeownerName = $row['username'];
 			$homeownerPhone = $row['phone'];
 			$homeownerEmail = $row['email'];
 			$homeownerContact = "Phone number: " . $homeownerPhone . " Email: " . $homeownerEmail;
 			$fullAddress = "$address" . ", " . "$city" . ", " . "$state";
 			$homeLonLat = get_lonlat($fullAddress);
 			$home['title'] = "House parking by: " . $homeownerName;
-			$home['thumb'] = "img/drop.png";
+			$home['thumb'] = 'img&#47drop.png';
 			$home['text'] = "$homeownerContact";
 		 	$home['tags'] = "Parking";
-		 	$home['loc'] = "$homeLonLat->lat" . ", " . "$homeLonLat->lng";
+		 	unset($home['loc']);
+		 	$home['loc'][] = $homeLonLat->lat; 
+		 	$home['loc'][] = $homeLonLat->lng;
 		 	$homes[] = $home;
 		}
 		
