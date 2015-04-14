@@ -48,14 +48,13 @@
 			$address = $row['address'];
 			$city = $row['city'];
 			$state = $row['state'];
-			$zipcode = $row['zipcode'];
 			$event['title'] = $eventName;
 			$event['thumb'] = "img/drop.png";
 			$event['text'] = "a SPOTS suggested event";
 		 	$event['tags'] = $category;
 		 	$fullAddress = "$address" . ", " . "$city" . ", " . "$state";
 		 	$longLat = get_lonlat($fullAddress);
-		 	//echo "$longLat->lat  $longLat->lng<br>";
+		 	//echo "$longLat->lat  $longLat->lng<br>";d
 		 	$event['loc'] = "$longLat->lat" . ", " . "$longLat->lng";
 			$events[] = $event;
 		}
@@ -70,8 +69,43 @@
 	
 	}
 
+	$homeQuery = "SELECT * from Home natural join Homeowner";
+	$homeResult = mysql_query($homeQuery, $conn);
 
-	echo json_encode($events);
+	echo "<br> HOMES <br>";
+
+	$homes = array();
+	if (mysql_num_rows($homeResult) > 0) {
+		while ($row = mysql_fetch_assoc($homeResult)) {
+			$address = $row['address']; 
+			$city = $row['city'];
+			$state = $row['state'];
+			$homeownerName = $row['fname'];
+			$homeownerPhone = $row['phone'];
+			$homeownerEmail = $row['email'];
+			$homeownerContact = "Phone number: " . $homeownerPhone . " Email: " . $homeownerEmail;
+			$fullAddress = "$address" . ", " . "$city" . ", " . "$state";
+			$homeLonLat = get_lonlat($fullAddress);
+			$home['title'] = "House parking by: " . $homeownerName;
+			$home['thumb'] = "img/drop.png";
+			$home['text'] = "$homeownerContact";
+		 	$home['tags'] = "Parking";
+		 	$home['loc'] = "$homeLonLat->lat" . ", " . "$homeLonLat->lng";
+		 	$homes[] = $home;
+		}
+		
+	} else {
+			echo "<h4> NO RESULTS </h4>";
+	}
+
+	foreach ($homes as $i => $value) {
+		$value = $homes[$i];
+		echo  json_encode($value);
+		echo "<br>";
+	}
+
+
+	//echo json_encode($events);
 
 	
 	
