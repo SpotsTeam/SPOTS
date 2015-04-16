@@ -6,5 +6,6 @@
      {"title": "Another event", "thumb": "img/tipr.png", "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.", "tags": "Tipue", "loc": [53.83763, -43.78306]},
      {"title": "Another event", "thumb": "img/tipr.png", "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.", "tags": "Tipue", "loc": [23.83763, -93.78306]},
      {"title": "Another event with a really really really really really really really really really really really really long title", "thumb": "img/tipr.png", "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.", "tags": "Tipue", "loc": [33.83763, -96.78306]},
-     {"title": "Another event", "thumb": "img/tipr.png", "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.", "tags": "Tipue", "loc": [34.83763, -92.78306]}	]
+     {"title": "Another event", "thumb": "img/tipr.png", "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.", "tags": "Tipue", "loc": [34.83763, -92.78306]}
+     ]
 }

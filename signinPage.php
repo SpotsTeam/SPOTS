@@ -1,10 +1,26 @@
+<!-- 
+<?php
+
+if(empty($_GET['submit']))
+{
+	echo "form is not submitted";
+	exit;
+}
+
+$username = $_GET['username'];
+$password = $_GET['password'];
+
+?>
+ -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Spots Event Registration</title>
+	<title>Spots Homeowner Page</title>
 
 	<!-- Bootstrap CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -35,7 +51,7 @@
                     <span class="icon-bar"></span>
 
                 </button>
-                <a href="/SPOTS/signin/homePage.php">
+                <a href="index.html">
 					<img alt="" src="img/spotslogo2.png" class="img-brand"></img>
 				</a>
             </div>
@@ -44,7 +60,12 @@
 				
 				</div>
 				<ul class="nav navbar-nav navbar-right">
-
+					<li> <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none"> 
+						<i class="fa fa-1x fa-car"></i> My Spots </button></li>
+					<li> <form action="/SPOTS/loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+						<i class="fa fa-1x fa-street-view"> </i>Register </button></form></li>
+					<li> <form action="/SPOTS/aboutMe.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+						<i class="fa fa-1x fa-car"> </i>About SPOTS </button></form></li>
 				</ul>
 			</div>
 		</div>
@@ -54,38 +75,19 @@
 	<!-- Main Body -->	
 
 	<div style="margin-top:80px" class="centered">
-<script type = "text/javascript" src="http://maps.google.com/maps/api/js?/sensor=false"></script>
-<script type = "text/javascript">
-	var geocoder = new google.maps.Geocoder();
-	
-	function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-	}
-	var address1 = getParameterByName('Address') + ", ";
-	var city = getParameterByName('City') + ", ";
-	var state = getParameterByName('State');
-	var temp = address1.concat(city);
-	var address = temp.concat(state);
- 	alert("Your address is: " + address);
-	geocoder.geocode({'address': address}, function(results, status) {
-		if (status == google.maps.GeocoderStatus.OK) {
-			var latitude = results[0].geometry.location.lat();
-			var longitude = results[0].geometry.location.lng();
-			alert("lat: " + latitude + "	long: " + longitude);
-			//alert(longitude);
-		}
-	});
-	
-</script>
+	<h2>Please Sign In</h2>
 
-<div> <h2>Event has been Added!</h2> </div>
-
-<form action="/SPOTS/signin/homePage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
-	<i class="fa fa-1x fa-car"> </i>Return to Home Page </button></form>
-
-</div>
+	<form method = "get" action="signin.php">
+		<label>Username:</label> <input type="text" name="username" /><br/>
+		<label>Password:</label> <input type="text" name="password" /><br/>
+		
+		
+		
+		
+		
+		<button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 150px"> 
+						<i class="fa fa-1x fa-car"></i> Submit </button>
+	</div>
 </body>
-</html>
+
+<html>
