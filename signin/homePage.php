@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 <?php
 	include("login.php");
 	$choice = "";
 	$choice = $_SESSION['select'];
 
 ?>
+=======
+
+>>>>>>> 1bd8214d859cf8df5e9dc5a7e881ae151ee67b1f
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,6 +54,7 @@
 				
 				</div>
 				<ul class="nav navbar-nav navbar-right">
+<<<<<<< HEAD
 					<?php if ($choice == "Homeowner") { ?>
 					<li> <form action="/SPOTS/signin/Homeowner/manageSpots.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
                         <i class="fa fa-1x fa-street-view"> </i>Manage Spots </button></form></li>
@@ -67,6 +72,14 @@
 							$name = $_SESSION['name'];
 							echo "$user";
 						}
+=======
+					<li> <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none"> 
+						<i class="fa fa-1x fa-car"></i> 
+						<?php
+							include("yourCar.php"); 
+							$user = $_SESSION['username'];
+							echo "$user";
+>>>>>>> 1bd8214d859cf8df5e9dc5a7e881ae151ee67b1f
 						
 						?> </button></li>
 				</ul>
@@ -81,6 +94,7 @@
 	<div class="col-md-10 col-md-offset-1 col-body">
 		<div class="container">
 			<div class="centered">
+<<<<<<< HEAD
 				<h1> <?php 
 					if ($choice == "Driver") {
 						echo "Driver";
@@ -89,6 +103,9 @@
 					}
 
 				?> <img alt="" src="/SPOTS/img/spotslogo2.png" style="width:250px; padding-top:7px"></img> </h1>
+=======
+				<h1> Welcome to <img alt="" src="/SPOTS/img/spotslogo2.png" style="width:250px; padding-top:7px"></img> </h1>
+>>>>>>> 1bd8214d859cf8df5e9dc5a7e881ae151ee67b1f
 			</div>
 
 			<!-- Search Bar -->
@@ -126,6 +143,7 @@
 	        		<h4 class="modal-title" id="myModalLabel">Your Spots</h4>
 		      	</div>
 		      	<div class="modal-body">
+<<<<<<< HEAD
 		      		<h2>
 		      			<?php 
 			      			if ($choice =='Driver') {
@@ -153,6 +171,16 @@
 		      			?>
 
 					</h2>
+=======
+		      		<h4>
+		      			<?php 
+		      				
+		      				$car = $_SESSION['car'];
+		      				echo "$car";
+		      			?>
+
+					</h4>
+>>>>>>> 1bd8214d859cf8df5e9dc5a7e881ae151ee67b1f
 		   		</div>
 		   		<div class="modal-footer">
 		   		<form action="/SPOTS/signin/logout.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
