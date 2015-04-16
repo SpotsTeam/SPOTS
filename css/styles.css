@@ -12,27 +12,62 @@ html, body {
 }
 
 .parent {
-	background-color:#3887BE;
+	background-color:#28B8D0;
+	font: 32px/1.7 'Montserrat', sans-serif;
 	color:white;
 	height:80%; 
-	min-height:600px;
+	min-height:590px;
 	margin:0;
 }
+
 .navbar {
-	background-color:#46B9FF;
+	font: 32px/1.7 'Montserrat', sans-serif;
+	background-color:#EC5E50;
+	text-shadow:2px;
 	height:80px;
 	color:white;
 	margin:0;
+	transition: all 0.2s linear 0s;
+}
+.navbar:hover {
+	height:100px;
+	padding-top:10px;
+}
+.navbar-default .navbar-nav li a, 
+.navbar-default .navbar-nav li a:hover, 
+.navbar-default .navbar-nav li a:visited
+.navbar-default .navbar-nav li a:active  {
+	text-decoration: none;
+	text-decoration: none;
+	color:white;
+	padding-top:10px;
 }
 .navbar .navbar-brand {
 	color:white;
 	font-size:32pt;
+	transition: all 0.2s linear 0s;
 }
 .navbar .navbar-brand:hover {
-	color:#40469B;
+	margin-top:-3px;
+	margin-right: -3px;
+	font-size:38pt;
+	color:white;
 }
+.navStyle
+{
+	cursor:pointer;
+	transition: all 0.2s linear 0s;
+
+}
+.navStyle:hover {
+	margin-top:-10px;
+	margin-right: -3px;
+	font-size:32pt;
+}
+
 .myButton {
   border: 0 none;
+  background: none repeat scroll 0 0 #EC5E50;
   border-radius: 9px;
   outline:none;
   cursor: pointer;
@@ -47,12 +82,14 @@ html, body {
   -moz-transition: all 0.3s ease 0s;
   -webkit-transition: all 0.3s ease 0s;
   text-align: center;
-  background: none repeat scroll 0 0 #444444;
   color: white;
 }
 .myButton:hover {
-      background: none repeat scroll 0 0 #FFFF8D;
-      color: black;
+      background: none repeat scroll 0 0 #E8756A;
+      width:350px;
+      height:220px;
+      margin-left:-24px;
+      margin-top:0px;
 }
 .vert-center {
 	position: relative;
@@ -63,17 +100,43 @@ html, body {
 }
 
 .child {
-	background-color:#46b98a;
+	background-color:white;
 	color:black;
 	height:80%;
-	min-height:600px;
+	padding:50px;
+	padding-left:100px;
+	padding-right:100px;
+	min-height:700px;
 }
 .child2 {
-	background-color:white;
-	color:#1F1F1F;
+	display:block;
+	color:black;
 	height:80%;
-	min-height:600px;
+	min-height:700px;
 	font: 28px/1.7 'Open Sans', sans-serif;
+	position:relative;
+}
+.child2::after {
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-image: url("../img/mapBground.png");
+  background-repeat:none;
+  background-size:cover;
+  opacity: 0.16;
+}
+.child2 h1 {
+	padding:0;
+	margin:0;
+	line-height:2;
+	text-align:center;
+}
+.child2 h4 {
+	line-height:1.35;
 }
 
 .btn {
@@ -116,9 +179,12 @@ html, body {
 }
 
 .map {
+	position:relative;
 	border:1px;
 	border-style:solid;
 	height:100%;
+	width:100%;
+	z-index:1;
 }
 .map-container {
 	min-height:200px;
@@ -129,22 +195,20 @@ html, body {
 	width:100%;
 	height:75%;
 	overflow-y:scroll;
+	z-index:-1;
 }
 .navbar .container {
 	padding:15px;
 }
 .block-height {
-	height:80%;
-	position: relative;
-  		top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    padding:30px;
+	float:right;
+	width:360px;
+	height:auto;
+	padding:0px;
+    z-index:1;
 }
 
 .maxheight {
-	padding-left:7%;
 	padding-right:7%;
 	height:100%;
 
@@ -157,7 +221,7 @@ h3 {
 }
 h1 {
 	font-family: 'Montserrat', sans-serif;
-	font-size: 60pt;
+	font-size: 50pt;
 	font-weight:700;
 	text-align:center;
 }
@@ -176,22 +240,21 @@ input, select {
 	margin-bottom: 5px;
 }
 
-::-webkit-scrollbar {
+.result-container::-webkit-scrollbar {
     width: 15px;
 }
 
-::-webkit-scrollbar-track {
+.result-container::-webkit-scrollbar-track {
     background-color: #eaeaea;
     border-left: 1px solid #ccc;
-    border-radius:10px;
 }
 
-::-webkit-scrollbar-thumb {
+.result-container::-webkit-scrollbar-thumb {
     background-color: #ccc;
     border-radius:10px;
     
 }
-::-webkit-scrollbar-thumb:hover {
+.result-container::-webkit-scrollbar-thumb:hover {
     background-color: #aaa;
 }
 
@@ -231,11 +294,11 @@ input, select {
 }
 
 .footer {
-	position:relative;
-	opacity:0.4;	
-	bottom:0%;
-	height:100px;
-	background-color:white;
+	position:relative;	
+	display:block;
+	height:60px;
+	background-color:#EC5E50;
 	color:white;
+	font-size:32pt;
 	text-align:center;
 }
