@@ -1,6 +1,3 @@
-<?php include("changeHome.php"); 
-		echo "<br><br><br><br><br><br><br><br>Hello";?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,26 +57,29 @@
 	<!-- Main Body -->	
 
 	<div style="margin-top:80px" class="centered">
-	<h2>Add a new Home to your <img alt="" src="/SPOTS/img/spotslogo2.png" class="img-brand"></img></h2>
+	<h2>Choose Home for Managing <img alt="" src="/SPOTS/img/spotslogo2.png" class="img-brand"></img></h2>
 	
-	<form method = "get" action="changeHome.php">
+	<form method = "post" action="changeHome.php">
 		
 		<span style="padding: 0 20px">&nbsp;</span><label>Select Home:</label> 
 		<select name="Home" id="selectHome">
 					
 		</select>
 
-		
+		<?php include("changeHome.php"); 
+		?>
 		<script>
 			(function () {
 				
 			    var elm = document.getElementById('selectHome'),
 			        df = document.createDocumentFragment();
-			    //var homes = <?php echo json_encode($add); ?>;
-			    for (var i = 1; i <= 42; i++) {
+			    var homes = <?php echo json_encode($address); ?>;
+			    var count = <?php echo json_encode($count); ?>;
+			    var homeId = <?php echo json_encode($homeId); ?>;
+			    for (var i = 0; i < count; i++) {
 			        var option = document.createElement('option');
-			        option.value = "blah";  //the value that is sent in the post
-			        option.appendChild(document.createTextNode("option" + i));  //what the select option is
+			        option.value = homeId[i];  //the value that is sent in the post
+			        option.appendChild(document.createTextNode(homes[i]));  //what the select option is
 			        df.appendChild(option);
 			    }
 			    elm.appendChild(df);
