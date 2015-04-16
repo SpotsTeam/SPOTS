@@ -20,11 +20,12 @@ function authenticate() {
 
 function signin() {
 
+alert("YAY");
     if(validLogin()) {
         var data = authenticate();
         if(data.success) {
             alert("Welcome, " + data.email + "!");
-            window.location = "signIn.php";
+            window.location = "/SPOTS/testMyApi.html";
         }
         else
             alert(data);
@@ -44,27 +45,6 @@ function validEmail() {
     }
 }
 
-// function validFName() {
-//     var regex = /[A-Z][a-z]+/;
-//     var name = document.getElementById("f_name").value;
-//     if(regex.test(name))
-//         return true;
-//     else {
-//         alert("Your first name must start with uppercase letter");
-//         return false;
-//     }
-// }
-
-// function validLName() { 
-//     var regex = /[A-Z][a-zA-Z]+/;
-//     var name = document.getElementById("l_name").value;
-//     if(regex.test(name))
-//         return true;
-//     else {
-//         alert("Your last name start with an uppercase letter");
-//         return false;
-//     }
-// }
 
 function validLogin() {
     return (validEmail() && validPass());
@@ -105,15 +85,4 @@ function validPass() {
     return false;
 }
 
-function validRegister() {
-    if(!validEmail())
-        return false;
-    else if(!validPass())
-        return false;
-    // else if(!validFName())
-    //     return false;
-    // else if(!validLName())
-    //     return false;
-    else 
-        return true;
 }

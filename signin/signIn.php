@@ -5,14 +5,14 @@
     }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spots Sign In</title>
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="jshelper/relay.js"></script>
+
 
     <!-- Bootstrap CSS -->
     <link href="/SPOTS/css/bootstrap.min.css" rel="stylesheet">
@@ -65,7 +65,7 @@
                 <h2>Sign in to <img alt="" src="/SPOTS/img/spotslogo2.png" class="img-brand"></img> </h2></br></br>
         
         
-        <form method = "post" action="javascript:signin()">
+        <form method = "post" onsubmit = "javascript:signin()"> 
         	<span style="padding: 0 20px">&nbsp;</span><label>User Type:  </label> 
                 <select name="select"> 
                         <option value="Driver">Driver</option> 
@@ -97,8 +97,10 @@
         </div>
 
 
-
-        
+<script type = "text/javascript" src = "/SPOTS/jshelper/relay.js"> </script>
+<script type = "text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<!-- <script type = "text/javascript" onsubmit = "javascript:signin()" ></script>
+ -->        
 </body>    
             
 		
