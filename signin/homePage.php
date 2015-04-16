@@ -4,6 +4,7 @@
 	$choice = $_SESSION['select'];
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,6 +68,7 @@
 							$name = $_SESSION['name'];
 							echo "$user";
 						}
+
 						
 						?> </button></li>
 				</ul>
@@ -89,7 +91,7 @@
 					}
 
 				?> <img alt="" src="/SPOTS/img/spotslogo2.png" style="width:250px; padding-top:7px"></img> </h1>
-			</div>
+				
 
 			<!-- Search Bar -->
 			<div style="margin-top:-20px">
@@ -153,6 +155,7 @@
 		      			?>
 
 					</h2>
+
 		   		</div>
 		   		<div class="modal-footer">
 		   		<form action="/SPOTS/signin/logout.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
