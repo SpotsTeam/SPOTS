@@ -78,6 +78,7 @@
 			$carModel = $_POST['carModel'];
 			$licensePlate = $_POST['licensePlate'];
 			$email = $_POST['email'];
+			$phone = $_POST['phone'];
 
 			$servername = "localhost";
 
@@ -110,7 +111,7 @@
 
 			mysql_select_db($database);
 
-			$insert = "INSERT INTO Driver (username, fname, lname, email, password, street, city, state, zip) VALUES ('$username', '$fname', '$lname', '$email', '$password', '$address', '$city', '$state', $zipcode)";
+			$insert = "INSERT INTO Driver (username, fname, lname, email, password, street, city, state, zip, phone) VALUES ('$username', '$fname', '$lname', '$email', '$password', '$address', '$city', '$state', $zipcode, '$phone')";
 
 			if (mysql_query($insert) === TRUE) {	
 				echo "Driver info entered successfully<br>";
