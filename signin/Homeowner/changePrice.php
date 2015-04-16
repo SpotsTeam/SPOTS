@@ -10,7 +10,14 @@
 		$db = mysql_select_db("spots", $conn);
 
 		//Fetch info for users
-		$query = mysql_query("UPDATE Spots set price = $newPrice where homeId = $homeId", $conn);
+		$query = mysql_query("UPDATE Spots SET price = CASE 
+								WHEN taken = false THEN $newPrice 
+								ELSE price 
+							END
+							WHERE homeId = $homeId", $conn);
+
+		//should be able to just use a case statement in order to update the price
+		// will experiment with another database
 
 		mysql_close($conn);
 
