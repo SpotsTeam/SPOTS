@@ -12,7 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spots Sign In</title>
 
-
+    <script type = "text/javascript" src = "/SPOTS/jshelper/relay.js"> </script>
+    <script type = "text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 
     <!-- Bootstrap CSS -->
     <link href="/SPOTS/css/bootstrap.min.css" rel="stylesheet">
@@ -97,8 +98,7 @@
         </div>
 
 
-<script type = "text/javascript" src = "/SPOTS/jshelper/relay.js"> </script>
-<script type = "text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
 <!-- <script type = "text/javascript" onsubmit = "javascript:signin()" ></script>
  -->        
 </body>    

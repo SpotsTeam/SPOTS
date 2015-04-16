@@ -1,4 +1,9 @@
+<?php
+	include("login.php");
+	$choice = "";
+	$choice = $_SESSION['select'];
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,12 +50,23 @@
 				
 				</div>
 				<ul class="nav navbar-nav navbar-right">
+					<?php if ($choice == "Homeowner") { ?>
+					<li> <form action="/SPOTS/signin/Homeowner/manageSpots.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+                        <i class="fa fa-1x fa-street-view"> </i>Manage Spots </button></form></li>
+                    <?php } ?>
 					<li> <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none"> 
 						<i class="fa fa-1x fa-car"></i> 
 						<?php
-							include("yourCar.php"); 
+						if ($choice === "Driver") {
+							include("Driver/yourCar.php"); 
 							$user = $_SESSION['username'];
 							echo "$user";
+						} else {
+							include("home.php");
+							$user = $_SESSION['username'];
+							$name = $_SESSION['name'];
+							echo "$user";
+						}
 						
 						?> </button></li>
 				</ul>
@@ -65,7 +81,14 @@
 	<div class="col-md-10 col-md-offset-1 col-body">
 		<div class="container">
 			<div class="centered">
-				<h1> Welcome to <img alt="" src="/SPOTS/img/spotslogo2.png" style="width:250px; padding-top:7px"></img> </h1>
+				<h1> <?php 
+					if ($choice == "Driver") {
+						echo "Driver";
+					} else {
+						echo "Homeowner";
+					}
+
+				?> <img alt="" src="/SPOTS/img/spotslogo2.png" style="width:250px; padding-top:7px"></img> </h1>
 			</div>
 
 			<!-- Search Bar -->
@@ -103,14 +126,33 @@
 	        		<h4 class="modal-title" id="myModalLabel">Your Spots</h4>
 		      	</div>
 		      	<div class="modal-body">
-		      		<h4>
+		      		<h2>
 		      			<?php 
+			      			if ($choice =='Driver') {
+								$car = $_SESSION['car'];
+		      					echo "$car";
+		      					?> 
+		      					<form action="/SPOTS/signin/Driver/editInfo.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+									<i class="fa fa-1x fa-street-view"> </i>Edit Driver Information </button>
+								</form>
+
+		      			<?php
+							} else {
+								$name = $_SESSION['name'];
+								$home = $_SESSION['home'];
+								echo "$name";
+								echo "<h2>Current address: $home </h2>";
+								include("Homeowner/yourHome.php");
+								$spotsA = $_SESSION['spotsAvailable'];
+								$spotsT = $_SESSION['spotsTaken'];
+								echo "$spotsA";
+								echo "$spotsT";
+							}
 		      				
-		      				$car = $_SESSION['car'];
-		      				echo "$car";
+		      				
 		      			?>
 
-					</h4>
+					</h2>
 		   		</div>
 		   		<div class="modal-footer">
 		   		<form action="/SPOTS/signin/logout.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
