@@ -2,9 +2,18 @@
 <body>
 	<?php 
 		
-		if(isset($_POST['email'])) {
-			$email = $_POST['email'];
-			$select = $_POST['select'];
+		if(isset($_REQUEST['email'])) {
+			$email = $_REQUEST['email'];
+			$select = $_REQUEST['select'];
+			$admin_email = "erik.gabe@gmail.com";
+			$subject = "Hello";
+			$comment = "Hi";
+			
+			// if (mail($email, "$subject", $comment, "From: " . $admin_email)) {
+			// 	echo "mail sent";
+			// } else {
+			// 	echo "mail not sent";
+			// }
 			
 			$servername = "localhost";
 			$databaseUsername = "spotsuser";
@@ -30,22 +39,23 @@
 			$driverQuery = "Select username, password from Driver where email = '$email'";
 			$homeQuery = "Select username, password from Homeowner where email = '$email'";
 
-
+			$email_from = "erik.gabe@gmail.com";
 
 			if ($select == 'Driver') {
 				echo "Driver";
 				$result = mysql_query($driverQuery);
 				$row = mysql_fetch_row($result);
-				$msg = 'username = $row[0] \n password = $row[1]';
+				$msg = 'username = ' . $row[0] . '\n password = ' .$row[1];
 				$msg = wordwrap($msg,70);
-				mail("$email", "SPOTS Driver Username/Password", $msg);
+				@mail($email, "SPOTS Driver Username/Password", $msg);
+
 			} else if ($select == 'Homeowner') {
 				echo "Homeowner";
 				$result = mysql_query($homeQuery);
 				$row = mysql_fetch_row($result);
-				$msg ='username = $row[0] \n password = $row[1]';
+				$msg = 'username = ' . $row[0] . '\n password = ' .$row[1];				
 				$msg = wordwrap($msg,70);
-				mail('$email', 'SPOTS Homeowner Username/Password', $msg);
+				mail($email, "SPOTS Homeowner Username/Password", $msg);
 				
 			}
 

@@ -63,7 +63,7 @@
 						<i class="fa fa-1x fa-car"></i> 
 						<?php
 						if ($choice === "Driver") {
-							include("yourCar.php"); 
+							include("Driver/yourCar.php"); 
 							$user = $_SESSION['username'];
 							echo "$user";
 						} else {
@@ -149,6 +149,12 @@
 			      			if ($choice =='Driver') {
 								$car = $_SESSION['car'];
 		      					echo "$car";
+		      					?> 
+		      					<form action="/SPOTS/signin/Driver/editInfo.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+									<i class="fa fa-1x fa-street-view"> </i>Edit Driver Information </button>
+								</form>
+
+		      			<?php
 							} else {
 								$name = $_SESSION['name'];
 								$home = $_SESSION['home'];
