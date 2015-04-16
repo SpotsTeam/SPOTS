@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-w<!-- So when we open the file what we want is for the information of the spot to be displayed -->
-=======
 <!-- So when we open the file what we want is for the information of the spot to be displayed -->
->>>>>>> 1bd8214d859cf8df5e9dc5a7e881ae151ee67b1f
 <!-- First we need to access the database in order to get the information -->
 <!-- wanting to create a pop up menu just like for the about spots page -->
 <html>
