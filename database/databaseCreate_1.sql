@@ -156,6 +156,7 @@ INSERT INTO Spots values(5, 2, 25.00, false, NULL);
 -- Insert Driver info
 INSERT INTO Driver values(1, "egabrielsen", "Erik", "Gabrielsen", "erik.gabe@gmail.com", "sharpclaw", "810 Barton Creek Drive", "Dripping Springs", "TX", 78620, "5127871391");
 INSERT INTO Driver values(2, "spotsuser", "John", "Doe", "john.doe@gmail.com", "spots123", "6004 Bishop Boulevard", "University Park", "TX", 75275, "2141234567");
+
 -- Insert Drivers vehicles
 INSERT INTO Vehicle values("123EGAB", "Chevy", "2004 Black Tahoe", 1);
 INSERT INTO Vehicle values("456ERIK", "Dodge", "2008 Silver Ram 1500", 1);
