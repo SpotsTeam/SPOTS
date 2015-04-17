@@ -46,7 +46,7 @@
 					<li class="navStyle">
 						<a href="#about"><i class="fa fa-1x fa-car"></i> About </button></a></li>
 					<li class="navStyle"> 
-						<a href="/SPOTS/loginPage.php" ><i class="fa fa-1x fa-street-view"> </i>Register </a></li>
+						<a href="/SPOTS/registerPage.php" ><i class="fa fa-1x fa-street-view"> </i>Register </a></li>
 					
 					<li class="navStyle"> 
 						<a href="/SPOTS/signin/signIn.php" ><i class="fa fa-1x fa-street-view"> </i>Log In </li>
@@ -70,8 +70,6 @@
 		</div>
 		
 		<div class="child">
-			<!-- Map -->
-			<div id="map" class="map">
 			<!-- Search Bar -->
 			<div ng-app="locations" class="block-height">
 				<div class="maxheight" data-ng-controller="myCtrl">
@@ -92,8 +90,10 @@
 					
 				</div>
 			</div>
-			</div>
 			
+			<!-- Map -->
+			<div id="map" class="col-md-12 map">			
+			</div>
 			
 		</div>
 

@@ -162,10 +162,12 @@ html, body {
 .search {
 	text-align:center;
 	background-color:#f0f0f0;
-	border:1px;
+	border:3px;
 	color:black;
 	border-style:solid;
-	border-radius:10px;
+	/*border-radius:10px; */
+	border-right: none;
+	border-color: #C1C1BB;
 	min-height:200px;
 	height:100%;
 }
@@ -180,10 +182,11 @@ html, body {
 
 .map {
 	position:relative;
-	border:1px;
+	border:3px;
 	border-style:solid;
+	border-color: #C1C1BB;
 	height:100%;
-	width:100%;
+	width:60%;
 	z-index:1;
 }
 .map-container {
@@ -201,15 +204,15 @@ html, body {
 	padding:15px;
 }
 .block-height {
-	float:right;
+	float:left;
 	width:360px;
-	height:auto;
+	height:100%;
 	padding:0px;
     z-index:1;
 }
 
 .maxheight {
-	padding-right:7%;
+	/*margin-right:0px;*/
 	height:100%;
 
 }
