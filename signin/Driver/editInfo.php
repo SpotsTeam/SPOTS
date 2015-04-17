@@ -20,8 +20,6 @@
 			$error = "";
 		}
 
-
-
 		unset($_POST['oldLicense']);
 		unset($_POST['updateCarModel']);
 		unset($_POST['updateLicense']);

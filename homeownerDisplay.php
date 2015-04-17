@@ -106,7 +106,7 @@
 
 			mysql_select_db($database);
 
-			$insert = "INSERT INTO Homeowner (username, fname, lname, email, password) values ('$username', '$fname', '$lname', '$email', '$password')";
+			$insert = "INSERT INTO Homeowner (username, fname, lname, email, password, phone) values ('$username', '$fname', '$lname', '$email', '$password', '$phone')";
 			
 			if (mysql_query($insert) == TRUE) {
 				echo "Homeowner info entered successfully<br>";

@@ -1,11 +1,11 @@
-<?php 
-<<<<<<< HEAD
 	if (!isset($_SESSION)) {
 		session_start();
 	}
-=======
-	session_start();
->>>>>>> 1bd8214d859cf8df5e9dc5a7e881ae151ee67b1f
+
+	if (!isset($_SESSION)) {
+		session_start();
+	}
+
 	$error = '';
 	if (isset($_POST['submit'])) {
 		if (empty($_POST['username']) || empty($_POST['password'])) {
@@ -14,17 +14,14 @@
 		else {
 			$username = $_POST['username'];
 			$password = $_POST['password'];
-<<<<<<< HEAD
 			$usertype = $_POST['select'];
 			$_SESSION["username"] = $username;
 			$_SESSION["password"] = $password;
 			$_SESSION["select"] = $usertype;
 			
-=======
 			$_SESSION["username"] = $username;
 			$_SESSION["password"] = $password;
 			$usertype = $_POST['select'];
->>>>>>> 1bd8214d859cf8df5e9dc5a7e881ae151ee67b1f
 
 			//connect to sql database
 			$conn = mysql_connect("localhost", "spotsuser", "spots123");
