@@ -73,8 +73,8 @@
                         <option value="Homeowner">Homeowner</option>
 
                 </select> 
-            <label>email: </label><input type="text" name="email"/><br/><br/>
-            <label>Password: </label><input type="password" name="password" /><br/><br/><br/>
+            <label>email: </label><input type="text" id="email"/><br/><br/>
+            <label>Password: </label><input type="password" id="password" /><br/><br/><br/>
          	<input name="submit" type="submit" value=" Login " class="centered" >
             <span><br/><br/><br/><?php echo $error; ?></span></div>
         </form>
