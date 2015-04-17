@@ -134,7 +134,7 @@
 								$car = $_SESSION['car'];
 		      					echo "$car";
 		      					?> 
-		      					<form action="/SPOTS/signin/Driver/editInfo.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+		      					<form action="/SPOTS/signin/Driver/editInfo.html" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
 									<i class="fa fa-1x fa-street-view"> </i>Edit Driver Information </button>
 								</form>
 
