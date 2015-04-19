@@ -46,12 +46,10 @@
 						<a href="#map-scroll">Map</a>
 					</li>
 					<li> 
-						<a href="signin/signIn.php">Log In</a>
+						<a href="" data-toggle="modal" data-target=".login-modal">Log In</a>
 					</li>
-					
-					
 					<li>
-						 <a href="loginPage.php"><div class="login-button">Register</div></a>
+						 <a data-toggle="modal" data-target=".register-modal"><div class="login-button">Register</div></a>
 					</li>
 				</ul>
 			</div>
@@ -175,9 +173,77 @@
 
 
 		<div class="footer">
-			Footer here 
+			<a href="https://github.com/SpotsTeam/SPOTS"> <div class="icon-small"><i class="fa fa-1x fa-github"></i></div></a>
+			<a href="" data-toggle="modal" data-target=".contact-modal"><div class="icon-small"><i class="fa fa-1x fa-envelope"></i></div></a>
+			<a href=""><div class="icon-small"><i class="fa fa-1x fa-facebook"></i></div></a>
+			<a href=""> <div class="icon-small"><i class="fa fa-1x fa-twitter"></i></div></a>
 		</div>
 	</section>
+
+	<div class="modal fade register-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+	      <div class="modal-header">
+          <h4 class="modal-title" id="gridSystemModalLabel">Register</h4>
+	        </div>
+	        <div class="modal-body">
+	          <div class="container-fluid">
+	            <div class="row">
+	            </div>
+	          </div>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="modal fade login-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+	      <div class="modal-header">
+          <h4 class="modal-title" id="gridSystemModalLabel">Login</h4>
+	        </div>
+	        <div class="modal-body">
+	          <div class="container-fluid">
+	            <input type="text" class="form-control" placeholder="Username">
+	            <input type="password" class="form-control" hidden="true" placeholder="Password">
+	          </div>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="modal fade contact-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+	      <div class="modal-header">
+          <h4 class="modal-title" id="gridSystemModalLabel">Contact us!</h4>
+	        </div>
+	        <div class="modal-body">
+	          <div class="container-fluid">
+	            <h3> 
+	            	JD Francis - jdfrancis@smu.edu  <br>
+	            	Nariana Sands <br>
+	            	D'Marquis Allen <br>
+	            	Erik Gabrielsen <br>
+	            	Aurora Havens <br>
+	            	Blaise Graham <br>
+	            	Alex Hibbard
+	            </h3>
+	          </div>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	    </div>
+	  </div>
+	</div>
+
 
 
 	<!-- jQuery -->

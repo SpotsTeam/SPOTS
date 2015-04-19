@@ -1,6 +1,6 @@
 html, body {
 	height:100%;
-	font-family: 'Open-Sans', Helvetica, Arial, sans-serif;
+	font: 'Montserrat', sans-serif;
 	color:#2c2c2c;
 	background-color:#f6f6f6;
 }
@@ -100,23 +100,20 @@ a, a:hover, a:active, a:visited, a.active {
 .child {
 	color:black;
 	height:80%;
-	padding:120px;
-	padding-left:100px;
-	padding-right:100px;
-	min-height:700px;
+	min-height:600px;
 }
 .child3 {
 	display:block;
 	background-color:white;
 	color:black;
 	height:80%;
-	min-height:700px;
+	min-height:600px;
 }
 .child2 {
 	display:block;
 	color:black;
 	height:80%;
-	min-height:700px;
+	min-height:600px;
 	font: 28px/1.7 'Open Sans', sans-serif;
 	position:relative;
 }
@@ -307,10 +304,11 @@ input, select {
 
 .footer {
 	width:100%;
-	height:60px;
+	height:90px;
+	padding-top:20px;
 	background-color:#485660;
 	color:#d1d1d1;
-	font-size:20pt;
+	font-size:22pt;
 	text-align:center;
 }
 
@@ -482,6 +480,25 @@ input, select {
 	background-color:#E8756A;
 	border-color:#DB3C34;
 }
+.icon-small {
+	outline:none;
+	border-radius:225px;
+	background-color:#6f6f6f;
+	width:50px;
+	height:50px;
+	line-height:1.7;
+	margin-left:auto;
+	margin-right:auto;
+	display:inline-block;
+	transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-webkit-transition: all 0.3s ease 0s;
+}
+
+.icon-small:hover {
+	background-color:#418AC6;
+}
+
 .right-image {
 	width:240%;
 	margin:0;
@@ -552,10 +569,11 @@ input, select {
 .child4 {
 	color:black;
 	height:80%;
-	min-height:700px;
+	min-height:600px;
 	padding-top:20px;
 	padding-left:150px; 
-	padding-right:150px
+	padding-right:150px;
+	padding-bottom:10px;
 }
 .scroll-down {
     position: fixed;
@@ -588,4 +606,24 @@ input, select {
 }
 .scroll-down i.fa {
     line-height: inherit;
+}
+.modal-header {
+	font: 32px/1.7 'Montserrat', sans-serif;
+	background-color: #337AB7;
+	color:white;
+	border-top-right-radius:22px;
+	border-top-left-radius:22px;
+}
+.modal-content {
+	border-radius:25px;
+}
+.modal-footer {
+	background-color:#314555;
+	color:white;
+}
+.footer-li {
+	display: inline;
+}
+.footer a {
+	color:#e6e6e6;
 }
