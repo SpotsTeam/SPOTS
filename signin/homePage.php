@@ -3,6 +3,7 @@
 	$choice = "";
 	$choice = $_SESSION['select'];
 
+
 ?>
 
 <!DOCTYPE html>
@@ -69,6 +70,7 @@
 							echo "$user";
 						}
 
+
 						
 						?> </button></li>
 				</ul>
@@ -91,7 +93,9 @@
 					}
 
 				?> <img alt="" src="/SPOTS/img/spotslogo2.png" style="width:250px; padding-top:7px"></img> </h1>
-				
+
+			</div>
+
 
 			<!-- Search Bar -->
 			<div style="margin-top:-20px">
@@ -139,6 +143,7 @@
 								</form>
 
 		      			<?php
+
 							} else {
 								$name = $_SESSION['name'];
 								$home = $_SESSION['home'];
