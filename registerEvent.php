@@ -1,8 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="utf-8">
+
+<head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spots Events Page</title>
+    <title>Spots - Find Parking Near Events! </title>
 
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -12,16 +15,15 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
-    <!-- TipueDrop CSS -->
-    <link href="css/tipuedrop.css" rel="stylesheet">
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="css/leaflet.css"
     <!-- Custom CSS -->
     <link href="css/styles.css" rel="stylesheet">
 
 </head>
+
 <body>
-        <!-- Fixed Top Navbar -->
+    <!-- Static Top Navbar -->
     <div class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header page-scroll">
@@ -32,23 +34,31 @@
                     <span class="icon-bar"></span>
 
                 </button>
-                <a href="/SPOTS/signin/homePage.php">
-                    <img alt="" src="img/spotslogo2.png" class="img-brand"></img>
+                <a class="navbar-brand" href="#top"> <img class="logo" src="img/spotslogo2.png"/>
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <div class="navbar-left">
-                
-                </div>
-                <!-- <ul class="nav navbar-nav navbar-right">
-                   
-                    <li> <form action="loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
-                        <i class="fa fa-1x fa-street-view"> </i>Register </button></form></li>
-                </ul> -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#about">About </button></a>
+                    </li>
+                    <li> 
+                        <a href="#map-scroll">Map</a>
+                    </li>
+                    <li> 
+                        <a href="signin/signIn.php">Log In</a>
+                    </li>
+                    
+                    
+                    <li>
+                         <a href="loginPage.php"><div class="login-button">Register</div></a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 
+    <!-- Main body -->
         <div style="margin-top:80px" class="centered">
         <h2>Register Event</h2></br></br>
         <form method = "post" action="registerDisplay.php">

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,8 +15,6 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
-    <!-- TipueDrop CSS -->
-    <link href="css/tipuedrop.css" rel="stylesheet">
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="css/leaflet.css"
     <!-- Custom CSS -->
@@ -24,8 +23,8 @@
 </head>
 
 <body>
-	<!-- Fixed Top Navbar -->
-	<div class="navbar navbar-default navbar-static-top">
+	<!-- Static Top Navbar -->
+	<div class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -35,23 +34,24 @@
                     <span class="icon-bar"></span>
 
                 </button>
-                <a class="navbar-brand" href="index.html"> Spots
+                <a class="navbar-brand" href="#top"> <img class="logo" src="img/spotslogo2.png"/>
 				</a>
             </div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<div class="navbar-left">
-				
-				</div>
 				<ul class="nav navbar-nav navbar-right">
-					<li class="navStyle">
-						<a href="#about"><i class="fa fa-1x fa-car"></i> About </button></a>
+					<li>
+						<a href="#about">About </button></a>
 					</li>
-					<li class="navStyle"> 
-						<a href="loginPage.php"><i class="fa fa-1x fa-street-view"> </i>Register</a>
+					<li> 
+						<a href="#map-scroll">Map</a>
+					</li>
+					<li> 
+						<a href="signin/signIn.php">Log In</a>
 					</li>
 					
-					<li class="navStyle">
-						<a href="signin/signIn.php"><i class="fa fa-1x fa-street-view"> </i>Log In</a>
+					
+					<li>
+						 <a href="loginPage.php"><div class="login-button">Register</div></a>
 					</li>
 				</ul>
 			</div>
@@ -60,22 +60,14 @@
 
 
 	<!-- Main Body -->
-	<section>
+	<section id="top" class="col-md-12 col-body">
 	<div class="parent">
-		<div class="container">
-			<h1> Register for Spots! </h1>
-
-			<!-- Content -->
-			<div class="">
-				<div class="centered">
-					<h3>Please select who you would like to register as:</h3>
-						<form method="post" action="drivePage.php"><button class="dlink btn btn-lg btn-info"  style="outline:none">Driver</button></form>
-						<br>
-						<form method="post" action="homeownerPage.php"><button class="dlink btn btn-lg btn-info"  style="outline:none">Homeowner</button></form>
-					</ul>
-				</div>
+		<div class="vert-center col-md-8">
+				<h1> Register for Spots</h1> 
+				<h2> Select one of the following </h2>
+				 <div class="col-sm-6 button-left"><a href="homeownerPage.php"><div class="click-button-left blue-button"> Homeowner </div> </a> </div> 
+				 <div class="col-sm-6 button-right"><a href="driverPage.php"> <div class="click-button-right red-button"> Driver </div> </a> </div>
 			</div>
-		</div>
 
 	</div>
 	</section>
