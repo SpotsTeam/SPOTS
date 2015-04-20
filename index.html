@@ -23,9 +23,8 @@
 </head>
 
 <body>
-
 	<!-- Static Top Navbar -->
-	<div class="navbar navbar-default navbar-static-top">
+	<div class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -35,21 +34,25 @@
                     <span class="icon-bar"></span>
 
                 </button>
-                <a class="navbar-brand" href="index.html"> Spots
+                <a class="navbar-brand" href="#top"> <img class="logo" src="img/spotslogo2.png"/>
 				</a>
             </div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<div class="navbar-left">
-				
-				</div>
 				<ul class="nav navbar-nav navbar-right">
-					<li class="navStyle">
-						<a href="#about"><i class="fa fa-1x fa-car"></i> About </button></a></li>
-					<li class="navStyle"> 
-						<a href="/SPOTS/registerPage.php" ><i class="fa fa-1x fa-street-view"> </i>Register </a></li>
+					<li>
+						<a href="#about">About </button></a>
+					</li>
+					<li> 
+						<a href="#map-scroll">Map</a>
+					</li>
+					<li> 
+						<a href="signin/signIn.php">Log In</a>
+					</li>
 					
-					<li class="navStyle"> 
-						<a href="/SPOTS/signin/signIn.php" ><i class="fa fa-1x fa-street-view"> </i>Log In </li>
+					
+					<li>
+						 <a href="loginPage.php"><div class="login-button">Register</div></a>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -58,48 +61,27 @@
 
 
 	<!-- Main Body -->
-	<section class="col-md-12 col-body">
+	<section id="top" class="col-md-12 col-body">
 		<div class="parent">
 			<div class="vert-center col-md-8">
 				<h1> Welcome to Spots</h1> 
-				<h2 style="text-align:center"> The Revolutionary Parking App </h2>
+				<h2> The Revolutionary Parking App </h2>
+				 <div class="col-sm-6 button-left"><a href="#map-scroll"><div class="click-button-left blue-button"> Find Parking Now </div> </a> </div> 
+				 <div class="col-sm-6 button-right"><a href="#about"> <div class="click-button-right red-button"> Find Out More </div> </a> </div>
 			</div>
 			<div class="vert-center col-md-2">
-				<a href="#about"><button class="myButton">Find out more</button></a>
+				<img class="right-image" src="img/mobile-icon.png"/>
 			</div>
-		</div>
-		
-		<div class="child">
-			<!-- Search Bar -->
-			<div ng-app="locations" class="block-height">
-				<div class="maxheight" data-ng-controller="myCtrl">
-					<div class="col-md-12 search">
-						<h3> Search For An Event</h3> 
-						<input class="form-control" type="search" ng-model="q" placeholder="Find an event..." />
-		      			<div class="result-container">
-			      			<ul>
-			      				<li class= "animate-repeat" ng-repeat="event in locations | filter:q as results">
-			      					<div class="myStyle" ng-click="changeMap(event.loc)">
-			      					 <div class="event-title"> {{event.title}}</div>
-			      					 <div class="event-text">{{event.text}}</div>
-			      					</div>
-			      				</li>
-			      			</ul>
-			      		</div>
-					</div>
-					
-				</div>
-			</div>
-			
-			<!-- Map -->
-			<div id="map" class="col-md-12 map">			
-			</div>
-			
 		</div>
 
-		<div class = "child2">
+		<a class="scroll-down">
+        	<i class="fa fa-3x fa-arrow-circle-down"></i>
+    	</a>
+
+		
+		<div class = "child2 scroll">
 			<div id="about" class="col-md-8 col-md-offset-2  vert-center">
-			<h1 > About SPOTS <h1>
+			<h1> About SPOTS <h1>
 				<h4 class="col-md-5">Have you ever attended an event (football game, concert, festival) and tried to avoid high parking prices by parking in residential or commercial lots for sale near the event location? If this is you, then Spots is the app you need to pursue.</h4>
 				<h4 class="col-md-7"> Spots is a web and mobile app that will help you to find a parking spot
 				at any event in your area.  Spots does this through the help of you, the user.
@@ -111,18 +93,96 @@
 			</div>
 		</div>
 
+		<div id="about" class="child3 scroll">
+			<div class="container vert-center">
+				<div class="col-md-4">
+					<img class="icon-lg icon-green" src="img/icons/multicolor/Flat/Street-View.svg"/>
+				</div>
+				<div class="col-md-8">
+					<h1> Drivers </h1>
+					<h2> We Find Parking, So you don't have to </h2>
+				</div>
+			</div>
+		</div>
+
+		<div id="about" class="child scroll">
+			<div  class="container vert-center">
+				<div class="col-md-8">
+					<h1> Homeowners </h1>
+					<h2> Bacon ipsum dolor amet prosciutto filet mignon shank, ground round biltong brisket sirloin chicken andouille turducken landjaeger ball tip jowl. Landjaeger capicola leberkas pork belly ham pig tail jowl tri-tip.  
+					</h2>
+				</div>
+				<div class="col-md-4">
+					<img class="icon-lg icon-no-border" src="img/icons/multicolor/Round/Apartment.svg"/>
+				</div>
+			</div>
+		</div>
+
+		<div class="child3 scroll">
+			<div class="container vert-center">
+				<div class="col-md-3">
+					<div class="col-md-12"><div class="icon icon-blue"><i class="fa fa-4x fa-car"></i></div></div>
+					<h2> Icon 1</h2>
+					Bacon ipsum dolor amet prosciutto filet mignon shank, ground round biltong brisket sirloin chicken andouille turducken landjaeger ball tip jowl. Landjaeger capicola leberkas pork belly ham pig tail jowl tri-tip. 
+				</div>
+				<div class="col-md-3">
+					<div class="col-md-12"><div class="icon icon-yellow"><i class="fa fa-4x fa-clock-o"></i></div></div>
+					<h2>Icon 2</h2>
+					Bacon ipsum dolor amet prosciutto filet mignon shank, ground round biltong brisket sirloin chicken andouille turducken landjaeger ball tip jowl. Landjaeger capicola leberkas pork belly ham pig tail jowl tri-tip. 
+				</div>
+				<div class="col-md-3">
+					<div class="col-md-12"><div class="icon icon-green"><i class="fa fa-4x fa-dollar"></i></div></div>
+					<h2>Icon 3</h2>
+					Bacon ipsum dolor amet prosciutto filet mignon shank, ground round biltong brisket sirloin chicken andouille turducken landjaeger ball tip jowl. Landjaeger capicola leberkas pork belly ham pig tail jowl tri-tip. 
+				</div>
+				<div class="col-md-3">
+					<div class="col-md-12"><div class="icon icon-red"><i class="fa fa-4x fa-street-view"></i></div></div>
+					<h2>Icon 4</h2>
+					Bacon ipsum dolor amet prosciutto filet mignon shank, ground round biltong brisket sirloin chicken andouille turducken landjaeger ball tip jowl. Landjaeger capicola leberkas pork belly ham pig tail jowl tri-tip. 
+				</div>
+			</div>
+		</div>
+
+		<div class="child4 scroll">
+			<h1 id="map-scroll"> Try it out </h1>
+			<!-- Search bar -->
+			<div class="map-block-container">
+			<div ng-app="locations" class="block-height">
+				<div class="maxheight" data-ng-controller="myCtrl">
+					<div class="col-md-12 search">
+						<h3> Search For An Event</h3> 
+						<input class="form-control" type="search" ng-model="q" placeholder="Find an event..." />
+		      			<div class="result-container">
+			      			<ul>
+			      				<li ng-animate="'animate'" ng-repeat="event in locations | filter:q as results">
+			      					<div class="listStyle" ng-click="changeMap(event.loc)">
+			      					<div class="event-title"> {{event.title}}</div>
+			      					<div class="event-text">{{event.text}}</div>
+			      					</div>
+			      				</li>
+			      			</ul>
+			      		</div>
+					</div>
+				</div>
+			</div>
+			
+				<!-- Map -->
+				<div id="map" class="map">			
+				</div>
+			</div>
+		</div>
 		
 
+
 		<div class="footer">
-			<h4>Brought to you by HackStreet Boys INC. <br>
-				<i>WE CODE, SO YOU DONT HAVE TO <i></h4> 
-			
+			Footer here 
 		</div>
 	</section>
 
 
 	<!-- jQuery -->
     <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
 
 	<!-- Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>

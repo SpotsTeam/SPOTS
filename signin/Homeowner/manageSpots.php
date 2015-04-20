@@ -72,7 +72,7 @@
                     <i class="fa fa-1x fa-car"></i> Add House </button>
                     
             </form><br>
-            <form method = "post" action="changeHome_1.php">
+            <form method = "post" action="changeHome.html">
                     <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 140px"> 
                     <i class="fa fa-1x fa-car"></i> Change House </button>
                     
@@ -162,4 +162,3 @@
 </body>
 
 <html>
-

@@ -25,28 +25,36 @@
 			$name = "<h2>Welcome " .$rows[0]. " ".  $rows[1]."</h2>";
 		}
 
-		
+		$homeQuery = mysql_query("SELECT address, city, state FROM Home where userId = (SELECT userId from Homeowner where username = '$username')", $conn);
+
+		$homeRows = mysql_fetch_row($homeQuery);
+		$home = $homeRows[0].", " . $homeRows[1] . ", " . $homeRows[2];
 
 		$homeIdQuery = mysql_query("SELECT homeId FROM Home where userId = (SELECT userId from Homeowner where username = '$username')", $conn);
 
 		$homeIdRows = mysql_fetch_row($homeIdQuery);
 		$homeId = $homeIdRows[0];
 
+		// $table = "SELECT price, taken, license from Spots where homeId = (Select homeId from Home where userId = (Select userId from Homeowner where username = '$username'))";
+
+		// $result = mysql_query($table, $conn);
+
+		// $tab = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+		// $out = "<h2>Price $tab Taken $tab License<br>";
+		// if (mysql_num_rows($result) > 0) {
+		// 	while($row = mysql_fetch_assoc($result)) {
+		// 		$out .= "$".$row["price"] . "$tab" . $row["taken"] . "$tab". $row["license"] . "<br>";
+		// 	}
+		// } else {
+		// 	$out .= "<h2>No results";
+		// }
+		// $out .= "</h2>";
+
 		$_SESSION['name'] = $name;
+		$_SESSION['home'] = $home;
+		$_SESSION['homeId'] = $homeId;
+		//$_SESSION['table'] = $out;
 		
-		if (isset($_SESSION['homeId'])) {
-			$homeId = $_SESSION['homeId'];
-		} else {
-			$_SESSION['homeId'] = $homeId;
-		}
-
-		$homeQuery = mysql_query("SELECT address, city, state FROM Home where homeId = '$homeId'", $conn);
-
-		$homeRows = mysql_fetch_row($homeQuery);
-		$home = $homeRows[0].", " . $homeRows[1] . ", " . $homeRows[2];
-
-
-		$_SESSION['home'] = $home;		
 		mysql_close($conn);
 		
 	}

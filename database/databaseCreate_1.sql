@@ -146,7 +146,6 @@ INSERT INTO Spots values(4, 1, 25.00, false, NULL);
 INSERT INTO Spots values(5, 1, 25.00, false, NULL);
 
 INSERT INTO Homeowner values(2, "Moody Garage", NULL, NULL, NULL, "smu2", "2147994132");
-INSERT INTO Homeowner values(2, "Moody Garage", NULL, NULL, NULL, "smu2", "2147994132");
 INSERT INTO Home values(2, 2, "3063 SMU Boulevard", "Dallas", "TX", "75275", 1);
 INSERT INTO Spots values(1, 2, 25.00, false, NULL);
 INSERT INTO Spots values(2, 2, 25.00, false, NULL);
@@ -157,9 +156,6 @@ INSERT INTO Spots values(5, 2, 25.00, false, NULL);
 -- Insert Driver info
 INSERT INTO Driver values(1, "egabrielsen", "Erik", "Gabrielsen", "erik.gabe@gmail.com", "sharpclaw", "810 Barton Creek Drive", "Dripping Springs", "TX", 78620, "5127871391");
 INSERT INTO Driver values(2, "spotsuser", "John", "Doe", "john.doe@gmail.com", "spots123", "6004 Bishop Boulevard", "University Park", "TX", 75275, "2141234567");
-INSERT INTO Driver values(1, "egabrielsen", "Erik", "Gabrielsen", "erik.gabe@gmail.com", "sharpclaw", "810 Barton Creek Drive", "Dripping Springs", "TX", 78620, "5127871391");
-INSERT INTO Driver values(2, "spotsuser", "John", "Doe", "john.doe@gmail.com", "spots123", "6004 Bishop Boulevard", "University Park", "TX", 75275, "2141234567");
-
 -- Insert Drivers vehicles
 INSERT INTO Vehicle values("123EGAB", "Chevy", "2004 Black Tahoe", 1);
 INSERT INTO Vehicle values("456ERIK", "Dodge", "2008 Silver Ram 1500", 1);
