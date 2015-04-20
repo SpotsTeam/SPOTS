@@ -1,7 +1,7 @@
 function authenticate() {
     var result = "";
     $.ajax({
-        url: "../api/Slim/signin",
+        url: "../api/Slim/signinDriver",
         type: "post",
         async: false,
         data: {
@@ -18,6 +18,36 @@ function authenticate() {
 }
 
 
+function myInformation() {
+
+    // url: "../api/Slim/signin",
+    //         type: "post",
+    //         async: false,
+    //         dataType = "json",
+    //         success:function(data) {
+    //             loggedIn = data;
+    //         }
+}
+
+function myProfile() {
+        alert("hey you");
+        $.ajax({
+        url: "../api/Slim/getMyProfile",
+        type: "post",
+        dataType: "json",
+        success: function(data) {
+            if(data.success) {
+                $('#cur_fName').text(data.fName);
+                $('#cur_lName').text(data.lName);
+                $('#cur_email').text(data.email);
+            }
+            else 
+                window.location = "login.html";
+        }
+    });
+}
+
+
 
 function signin() {
 
@@ -25,7 +55,8 @@ function signin() {
         var data = authenticate();
         if(data.success) {
             alert("Welcome, " + data.fName + "!");
-            window.location = "/SPOTS/testMyApi.html";
+            //window.location = "../signin/homePage.php";
+            window.open("/SPOTS/signin/profile.html");// = "/SPOTS/index.html";
         }
         else
             alert(data);
