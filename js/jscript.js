@@ -28,10 +28,12 @@ $(function(){
  
   $(document).on('scroll', function(){
  
-    if ($(window).scrollTop() > 600) {
+    if ($(window).scrollTop() > 500) {
       $('.scroll-down').addClass('show');
+      $('.scroll-up').addClass('show');
     } else {
       $('.scroll-down').removeClass('show');
+      $('.scroll-up').removeClass('show');
     }
   });
 });
