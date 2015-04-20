@@ -4,6 +4,7 @@
 	$choice = $_SESSION['select'];
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,7 +59,7 @@
 						<i class="fa fa-1x fa-car"></i> 
 						<?php
 						if ($choice === "Driver") {
-							include("yourCar.php"); 
+							include("Driver/yourCar.php"); 
 							$user = $_SESSION['username'];
 							echo "$user";
 						} else {
@@ -67,6 +68,7 @@
 							$name = $_SESSION['name'];
 							echo "$user";
 						}
+
 						
 						?> </button></li>
 				</ul>
@@ -89,7 +91,7 @@
 					}
 
 				?> <img alt="" src="/SPOTS/img/spotslogo2.png" style="width:250px; padding-top:7px"></img> </h1>
-			</div>
+				
 
 			<!-- Search Bar -->
 			<div style="margin-top:-20px">
@@ -131,6 +133,12 @@
 			      			if ($choice =='Driver') {
 								$car = $_SESSION['car'];
 		      					echo "$car";
+		      					?> 
+		      					<form action="/SPOTS/signin/Driver/editInfo.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+									<i class="fa fa-1x fa-street-view"> </i>Edit Driver Information </button>
+								</form>
+
+		      			<?php
 							} else {
 								$name = $_SESSION['name'];
 								$home = $_SESSION['home'];
@@ -147,6 +155,7 @@
 		      			?>
 
 					</h2>
+
 		   		</div>
 		   		<div class="modal-footer">
 		   		<form action="/SPOTS/signin/logout.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 

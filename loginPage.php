@@ -25,7 +25,7 @@
 
 <body>
 	<!-- Fixed Top Navbar -->
-	<div class="navbar navbar-default navbar-static-top">
+	<div class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -35,7 +35,8 @@
                     <span class="icon-bar"></span>
 
                 </button>
-                <a class="navbar-brand" href="index.html"> Spots
+                <a href="index.html">
+					<img alt="" src="img/spotslogo2.png" class="img-brand"></img>
 				</a>
             </div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -43,16 +44,10 @@
 				
 				</div>
 				<ul class="nav navbar-nav navbar-right">
-					<li class="navStyle">
-						<a href="#about"><i class="fa fa-1x fa-car"></i> About </button></a>
-					</li>
-					<li class="navStyle"> 
-						<a href="loginPage.php"><i class="fa fa-1x fa-street-view"> </i>Register</a>
-					</li>
 					
-					<li class="navStyle">
-						<a href="signin/signIn.php"><i class="fa fa-1x fa-street-view"> </i>Log In</a>
-					</li>
+					<li> <form action="loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+						<i class="fa fa-1x fa-street-view"> </i>Register </button></form></li>
+					
 				</ul>
 			</div>
 		</div>
@@ -61,12 +56,14 @@
 
 	<!-- Main Body -->
 	<section>
-	<div class="parent">
+	<div class="col-md-10 col-md-offset-1 col-body">
 		<div class="container">
-			<h1> Register for Spots! </h1>
+			<div class="centered">
+				<h1> Register for <img alt="" src="img/spotslogo2.png" style="width:250px; padding-top:7px"></img> </h1>
+			</div>
 
 			<!-- Content -->
-			<div class="">
+			<div style="margin-top:-20px">
 				<div class="centered">
 					<h3>Please select who you would like to register as:</h3>
 						<form method="post" action="drivePage.php"><button class="dlink btn btn-lg btn-info"  style="outline:none">Driver</button></form>
