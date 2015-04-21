@@ -71,13 +71,25 @@
 	</div>
 	</section>
 	<?php include("selectSpots.php");?>
-	<form method = "post" action="registerSpot.php">
-
+	
+	<form method="post" action="listView.php">
+	<span style="padding: 0 20px">&nbsp;</span><label>Enter a City to Search:</label><input type="Search" name="city"></input>
+	<span style="padding: 0 20px">&nbsp;</span><label>Order By: </label> <select name="groupBy"> 
+						<option value="spotNumber">spotId</option>
+						<option value="price">Price</option>
+						<option value="address">Address</option>
+						<option value="city">City</option>
+						<option value="state">State</option>
+						<option value="zipcode">Zipcode</option>
+		</select>
+		<button style="outline:bold; margin-left: 60px">Search</button><br><br><br>
+	</form>
+	<form enctype="multipart/form-data"method = "post" action="registerSpot.php">
 		<script>
 			(function () {
 				
 			    
-			    document.write('<table border="2" cellspacing="100" cellpadding="100" align="center">')
+			    document.write('<table style="width:80%" border="2" cellspacing="100" cellpadding="10" align="center">')
 			    document.write('<tr>')
 			    document.write('<th>Spot Number</th>')
 			    document.write('<th>Price</th>')
@@ -93,6 +105,7 @@
 				var city = <?php echo json_encode($city)?>;
 				var state = <?php echo json_encode($state)?>;
 				var zipcode = <?php echo json_encode($zipcode)?>;
+				var homeId = <?php echo json_encode($homeId)?>;
 				var count = <?php echo json_encode($count)?>;
 
 			    for (var i = 0; i < count; i++) {
@@ -102,17 +115,23 @@
 			        document.write('<td>' + address[i] + '</td>')
 			        document.write('<td>' + city[i] + '</td>')
 					document.write('<td>' + state[i] + '</td>')
-			        document.write('<td>' + zipcode[i] + '</td>')
-			        document.write('<td><input type="radio" name="spot" value="'+ spotId[i]+'"></td>')
+			        document.write('<td>' + zipcode[i] + '</td>') 
+			        var tempArr = [spotId[i], homeId[i]];
+			        var arr = [];
+			        arr[i] = tempArr;
+			        document.write('<td><input type="radio" name="spot" value="'+ arr[i]+'"></td>')
 		     	    document.write('</tr>')
 			    }
+			    document.write('</table>')
 			}());
 		</script>
-			
 		
-		<button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 500px"> 
-						<i class="fa fa-1x fa-car"></i> Select </button>
-	</div>
+		<br><br>
+		<div style="text-align:center;verticle-align:bottom">
+		<button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-bottom: 10px"> 
+						<i class="fa fa-1x fa-car"></i> Reserve </button>
+					</div> </form> 
+		<br><br><br><br>
 
 
 

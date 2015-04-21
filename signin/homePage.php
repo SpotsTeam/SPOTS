@@ -54,7 +54,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<?php if ($choice == "Homeowner") { ?>
 					<li> 
-						<a href="/SPOTS/signin/Homeowner/manageSpots.php">Edit Info </button></a>
+						<a href="/SPOTS/signin/Homeowner/manageSpots.php">Manage Spots </button></a>
 					</li>
 					
                     <?php } else { ?>
