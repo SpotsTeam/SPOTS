@@ -53,11 +53,23 @@
 				</div>
 				<ul class="nav navbar-nav navbar-right">
 					<?php if ($choice == "Homeowner") { ?>
-					<li> <form action="/SPOTS/signin/Homeowner/manageSpots.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
-                        <i class="fa fa-1x fa-street-view"> </i>Manage Spots </button></form></li>
-                    <?php } ?>
-					<li> <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none"> 
-						<i class="fa fa-1x fa-car"></i> 
+					<li> 
+						<a href="/SPOTS/signin/Homeowner/manageSpots.php">Edit Info </button></a>
+					</li>
+					
+                    <?php } else { ?>
+                    <li> 
+						<a href="Driver/listView.php">Find a Spot </button></a>
+					</li> 
+					<li> 
+						<a href="Driver/editInfo.html">Edit Info </button></a>
+					</li>
+
+					<?php } ?>
+
+					<li> <a data-toggle="modal" href="#myModal">
+
+
 						<?php
 						if ($choice === "Driver") {
 							include("Driver/yourCar.php"); 
@@ -72,14 +84,15 @@
 
 
 						
-						?> </button></li>
+						?> </button></a></li>
+						
 				</ul>
 			</div>
 		</div>
 	</div>
 
 
-
+	<br><br><br>
 	<!-- Main Body -->
 	<section>
 	<div class="col-md-10 col-md-offset-1 col-body">
@@ -137,11 +150,14 @@
 			      			if ($choice =='Driver') {
 								$car = $_SESSION['car'];
 		      					echo "$car";
+								$currentSpots = "None";
+								if ($currentSpots == "None") {
+									echo "<h2>Currently Not Parked Anywhere</h2>";
+								} else {
+									echo "<h2><b>Currently Parked:</b> $currentSpots</h2>";
+								}
 		      					?> 
-		      					<form action="/SPOTS/signin/Driver/editInfo.html" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
-									<i class="fa fa-1x fa-street-view"> </i>Edit Driver Information </button>
-								</form>
-
+		      					
 		      			<?php
 
 							} else {

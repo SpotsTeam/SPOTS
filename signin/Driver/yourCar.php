@@ -21,7 +21,7 @@
 		if ($rowNum == 0) {
 			$car = "You have no cars registered. You can register them on your home page";
 		} else {
-			$car = "<h2>Your Car:  " .$rows[0]. " ".  $rows[1]."</h2>";
+			$car = "<h2><b>Your Car: </b>" .$rows[0]. " ".  $rows[1]."</h2>";
 		}
 
 		$_SESSION['car'] = $car;
