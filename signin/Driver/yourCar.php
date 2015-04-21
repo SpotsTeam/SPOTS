@@ -20,11 +20,16 @@
 
 		if ($rowNum == 0) {
 			$car = "You have no cars registered. You can register them on your home page";
+			$spotsParked = "None";
 		} else {
 			$car = "<h2><b>Your Car: </b>" .$rows[0]. " ".  $rows[1]."</h2>";
 			$_SESSION['licenseP'] = $rows[2];
+			$license = $rows[2];
+			$parkedQuery = mysql_query("select address, city, state, price, phone, email from Spots natural join Home natural join Homeowner where license = '$license'", $conn);
+
 		}
 
+		$_SESSION['parked'] = "None";
 		$_SESSION['car'] = $car;
 		
 		mysql_close($conn);

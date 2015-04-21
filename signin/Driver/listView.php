@@ -107,22 +107,27 @@
 				var zipcode = <?php echo json_encode($zipcode)?>;
 				var homeId = <?php echo json_encode($homeId)?>;
 				var count = <?php echo json_encode($count)?>;
-
-			    for (var i = 0; i < count; i++) {
-			    	document.write('<tr>')
-				   	document.write('<td>'+ spotId[i]+'</td>')
-					document.write('<td>' + price[i] + '</td>')
-			        document.write('<td>' + address[i] + '</td>')
-			        document.write('<td>' + city[i] + '</td>')
-					document.write('<td>' + state[i] + '</td>')
-			        document.write('<td>' + zipcode[i] + '</td>') 
-			        var tempArr = [spotId[i], homeId[i]];
-			        var arr = [];
-			        arr[i] = tempArr;
-			        document.write('<td><input type="radio" name="spot" value="'+ arr[i]+'"></td>')
-		     	    document.write('</tr>')
-			    }
-			    document.write('</table>')
+				if (count > 0) {
+				    for (var i = 0; i < count; i++) {
+				    	document.write('<tr>')
+					   	document.write('<td>'+ spotId[i]+'</td>')
+						document.write('<td>' + price[i] + '</td>')
+				        document.write('<td>' + address[i] + '</td>')
+				        document.write('<td>' + city[i] + '</td>')
+						document.write('<td>' + state[i] + '</td>')
+				        document.write('<td>' + zipcode[i] + '</td>') 
+				        var tempArr = [spotId[i], homeId[i]];
+				        var arr = [];
+				        arr[i] = tempArr;
+				        document.write('<td><input type="radio" name="spot" value="'+ arr[i]+'"></td>')
+			     	    document.write('</tr>')
+				    }
+				    document.write('</table>')
+				} else {
+					document.write('</table>')
+					document.write('<div align="center"><h2>NO RESULTS</h2></div>')
+				}
+			    
 			}());
 		</script>
 		

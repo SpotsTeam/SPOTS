@@ -118,7 +118,6 @@
 					<form>
 						
 	      					<input type="text" class="form-control" placeholder="Search for..." name="q" autocomplete="off"id="tipue_drop_input" required>
-	      					
 	      				
 	      			</form>
 	      			<br/><div id="tipue_drop_content"></div>
@@ -150,7 +149,7 @@
 			      			if ($choice =='Driver') {
 								$car = $_SESSION['car'];
 		      					echo "$car";
-								$currentSpots = "None";
+								$currentSpots = $_SESSION['parked'];
 								if ($currentSpots == "None") {
 									echo "<h2>Currently Not Parked Anywhere</h2>";
 								} else {
@@ -182,7 +181,6 @@
 		   		<form action="/SPOTS/signin/logout.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
 						<i class="fa fa-1x fa-street-view"> </i>Log Out </button>
 				</form>
-			       
 			    </div>
 		    </div>
 		</div>
