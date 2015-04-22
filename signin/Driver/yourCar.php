@@ -31,7 +31,9 @@
 			$priceArr = array();
 			$phoneArr = array();
 			$emailArr = array();
-			$parkedQuery = mysql_query("select address, city, state, price, phone, email from Spots natural join Home natural join Homeowner where license = '$license'", $conn);
+			$spotIdArr = array();
+			$homeIdArr = array();
+			$parkedQuery = mysql_query("select homeId, spotId, address, city, state, price, phone, email from Spots natural join Home natural join Homeowner where license = '$license'", $conn);
 			if (mysql_num_rows($parkedQuery)) {
 				while($row = mysql_fetch_assoc($parkedQuery)) {
 					$count += 1;
@@ -41,7 +43,9 @@
 					$priceArr[] = $row['price'];
 					$phoneArr[] = $row['phone'];
 					$emailArr[] = $row['email'];
-					$park = "laskd";
+					$spotIdArr[] = $row['spotId'];
+					$homeIdArr[] = $row['homeId'];
+					$park = "";
 				}
 			} else {
 				$park = "None";

@@ -153,7 +153,9 @@
 								if ($park == "None") {
 									echo "<h2>Currently Not Parked Anywhere</h2>";
 								} else {
+									echo "<h2><b>Spots You Reserved: </b></h2>";
 									?> 
+									<form enctype="multipart/form-data"method = "post" action="Driver/cancelReservation.php">
 									<script>
 								(function () {
 									
@@ -166,6 +168,7 @@
 								    document.write('<th>Price</th>')
 								    document.write('<th>Phone Number</th>')
 								    document.write('<th>Email</th>')
+								    document.write('<th>Cancel Reservation</th>')
 									document.write('</tr>')
 									var address = <?php echo json_encode($addressArr)?>;
 									var city = <?php echo json_encode($cityArr)?>;
@@ -174,15 +177,21 @@
 									var phone = <?php echo json_encode($phoneArr)?>;
 									var email = <?php echo json_encode($emailArr)?>;
 									var count = <?php echo json_encode($count)?>;
+									var spotId = <?php echo json_encode($spotIdArr)?>;
+									var homeId = <?php echo json_encode($homeIdArr)?>;
 									if (count > 0) {
 									    for (var i = 0; i < count; i++) {
 									    	document.write('<tr>')
 										   	document.write('<td>'+ address[i]+'</td>')
 											document.write('<td>' + city[i] + '</td>')
 									        document.write('<td>' + state[i] + '</td>')
-									        document.write('<td>' + price[i] + '</td>')
+									        document.write('<td>$' + price[i] + '</td>')
 											document.write('<td>' + phone[i] + '</td>')
 									        document.write('<td>' + email[i] + '</td>') 
+									        var tempArr = [spotId[i], homeId[i]];
+				        					var arr = [];
+				       						arr[i] = tempArr;
+									        document.write('<td><input type="radio" name="cancel" value="'+ arr[i]+'">Cancel</td>')
 								     	    document.write('</tr>')
 									    }
 									    document.write('</table>')
@@ -193,8 +202,11 @@
 								    
 								}());
 								</script>
-
-									<?php
+								<div style="text-align:center;verticle-align:bottom">
+										<button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-bottom: 10px"> 
+														<i class="fa fa-1x fa-car"></i> Cancel </button>
+													</div> </form> 									
+							<?php
 								}
 
 							} else {
