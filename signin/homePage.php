@@ -150,14 +150,52 @@
 								$car = $_SESSION['car'];
 		      					echo "$car";
 								$currentSpots = $_SESSION['parked'];
-								if ($currentSpots == "None") {
+								if ($park == "None") {
 									echo "<h2>Currently Not Parked Anywhere</h2>";
 								} else {
-									echo "<h2><b>Currently Parked:</b> $currentSpots</h2>";
+									?> 
+									<script>
+								(function () {
+									
+								    
+								    document.write('<table style="width:80%" border="2" cellspacing="100" cellpadding="10" align="center">')
+								    document.write('<tr>')
+								    document.write('<th>Address</th>')
+								    document.write('<th>City</th>')
+								    document.write('<th>State</th>')
+								    document.write('<th>Price</th>')
+								    document.write('<th>Phone Number</th>')
+								    document.write('<th>Email</th>')
+									document.write('</tr>')
+									var address = <?php echo json_encode($addressArr)?>;
+									var city = <?php echo json_encode($cityArr)?>;
+									var state = <?php echo json_encode($stateArr)?>;
+									var price = <?php echo json_encode($priceArr)?>;
+									var phone = <?php echo json_encode($phoneArr)?>;
+									var email = <?php echo json_encode($emailArr)?>;
+									var count = <?php echo json_encode($count)?>;
+									if (count > 0) {
+									    for (var i = 0; i < count; i++) {
+									    	document.write('<tr>')
+										   	document.write('<td>'+ address[i]+'</td>')
+											document.write('<td>' + city[i] + '</td>')
+									        document.write('<td>' + state[i] + '</td>')
+									        document.write('<td>' + price[i] + '</td>')
+											document.write('<td>' + phone[i] + '</td>')
+									        document.write('<td>' + email[i] + '</td>') 
+								     	    document.write('</tr>')
+									    }
+									    document.write('</table>')
+									} else {
+										document.write('</table>')
+										document.write('<div align="center"><h2>NO RESULTS</h2></div>')
+									}
+								    
+								}());
+								</script>
+
+									<?php
 								}
-		      					?> 
-		      					
-		      			<?php
 
 							} else {
 								$name = $_SESSION['name'];

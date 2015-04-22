@@ -17,7 +17,7 @@
 
 		$rows = mysql_fetch_row($query);
 		$rowNum = mysql_num_rows($query);
-
+		$count =0;
 		if ($rowNum == 0) {
 			$car = "You have no cars registered. You can register them on your home page";
 			$spotsParked = "None";
@@ -25,8 +25,27 @@
 			$car = "<h2><b>Your Car: </b>" .$rows[0]. " ".  $rows[1]."</h2>";
 			$_SESSION['licenseP'] = $rows[2];
 			$license = $rows[2];
+			$addressArr = array();
+			$cityArr = array();
+			$stateArr = array();
+			$priceArr = array();
+			$phoneArr = array();
+			$emailArr = array();
 			$parkedQuery = mysql_query("select address, city, state, price, phone, email from Spots natural join Home natural join Homeowner where license = '$license'", $conn);
-
+			if (mysql_num_rows($parkedQuery)) {
+				while($row = mysql_fetch_assoc($parkedQuery)) {
+					$count += 1;
+					$addressArr[] = $row['address'];
+					$cityArr[] = $row['city'];
+					$stateArr[] = $row['state'];
+					$priceArr[] = $row['price'];
+					$phoneArr[] = $row['phone'];
+					$emailArr[] = $row['email'];
+					$park = "laskd";
+				}
+			} else {
+				$park = "None";
+			}
 		}
 
 		$_SESSION['parked'] = "None";
