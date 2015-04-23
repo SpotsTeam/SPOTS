@@ -130,7 +130,15 @@
 		<span style="padding: 0 20px">&nbsp;</span><label>ZipCode:</label> <input type="text" name="zipcode" /></br>
 		<label>Number of Parking Spots Available: </label> <input type="text" name="spots" /><br/>
 		<label>Price Per Spot:  $</label> <input type="text" name="price" /><br/>
+<<<<<<< HEAD
 		<br><br><br><br><br><br><br>
+=======
+
+
+		<br><br><br><br><br><br><br>
+
+
+>>>>>>> 7c40d0bd2e0bfc94476338f2f59268a3c87a495f
 		<button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 150px"> 
 						<i class="fa fa-1x fa-car"></i> Submit </button>
 	</div>

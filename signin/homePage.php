@@ -3,7 +3,9 @@
 	$choice = "";
 	$choice = $_SESSION['select'];
 
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,14 +53,26 @@
 				</div>
 				<ul class="nav navbar-nav navbar-right">
 					<?php if ($choice == "Homeowner") { ?>
-					<li> <form action="/SPOTS/signin/Homeowner/manageSpots.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
-                        <i class="fa fa-1x fa-street-view"> </i>Manage Spots </button></form></li>
-                    <?php } ?>
-					<li> <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none"> 
-						<i class="fa fa-1x fa-car"></i> 
+					<li> 
+						<a href="/SPOTS/signin/Homeowner/manageSpots.php">Manage Spots </button></a>
+					</li>
+					
+                    <?php } else { ?>
+                    <li> 
+						<a href="Driver/listView.php">Find a Spot </button></a>
+					</li> 
+					<li> 
+						<a href="Driver/editInfo.html">Edit Info </button></a>
+					</li>
+
+					<?php } ?>
+
+					<li> <a data-toggle="modal" href="#myModal">
+
+
 						<?php
 						if ($choice === "Driver") {
-							include("yourCar.php"); 
+							include("Driver/yourCar.php"); 
 							$user = $_SESSION['username'];
 							echo "$user";
 						} else {
@@ -67,15 +81,18 @@
 							$name = $_SESSION['name'];
 							echo "$user";
 						}
+
+
 						
-						?> </button></li>
+						?> </button></a></li>
+						
 				</ul>
 			</div>
 		</div>
 	</div>
 
 
-
+	<br><br><br>
 	<!-- Main Body -->
 	<section>
 	<div class="col-md-10 col-md-offset-1 col-body">
@@ -89,7 +106,9 @@
 					}
 
 				?> <img alt="" src="/SPOTS/img/spotslogo2.png" style="width:250px; padding-top:7px"></img> </h1>
+
 			</div>
+
 
 			<!-- Search Bar -->
 			<div style="margin-top:-20px">
@@ -99,7 +118,6 @@
 					<form>
 						
 	      					<input type="text" class="form-control" placeholder="Search for..." name="q" autocomplete="off"id="tipue_drop_input" required>
-	      					
 	      				
 	      			</form>
 	      			<br/><div id="tipue_drop_content"></div>
@@ -131,6 +149,66 @@
 			      			if ($choice =='Driver') {
 								$car = $_SESSION['car'];
 		      					echo "$car";
+								$currentSpots = $_SESSION['parked'];
+								if ($park == "None") {
+									echo "<h2>Currently Not Parked Anywhere</h2>";
+								} else {
+									echo "<h2><b>Spots You Reserved: </b></h2>";
+									?> 
+									<form enctype="multipart/form-data"method = "post" action="Driver/cancelReservation.php">
+									<script>
+								(function () {
+									
+								    
+								    document.write('<table style="width:80%" border="2" cellspacing="100" cellpadding="10" align="center">')
+								    document.write('<tr>')
+								    document.write('<th>Address</th>')
+								    document.write('<th>City</th>')
+								    document.write('<th>State</th>')
+								    document.write('<th>Price</th>')
+								    document.write('<th>Phone Number</th>')
+								    document.write('<th>Email</th>')
+								    document.write('<th>Cancel Reservation</th>')
+									document.write('</tr>')
+									var address = <?php echo json_encode($addressArr)?>;
+									var city = <?php echo json_encode($cityArr)?>;
+									var state = <?php echo json_encode($stateArr)?>;
+									var price = <?php echo json_encode($priceArr)?>;
+									var phone = <?php echo json_encode($phoneArr)?>;
+									var email = <?php echo json_encode($emailArr)?>;
+									var count = <?php echo json_encode($count)?>;
+									var spotId = <?php echo json_encode($spotIdArr)?>;
+									var homeId = <?php echo json_encode($homeIdArr)?>;
+									if (count > 0) {
+									    for (var i = 0; i < count; i++) {
+									    	document.write('<tr>')
+										   	document.write('<td>'+ address[i]+'</td>')
+											document.write('<td>' + city[i] + '</td>')
+									        document.write('<td>' + state[i] + '</td>')
+									        document.write('<td>$' + price[i] + '</td>')
+											document.write('<td>' + phone[i] + '</td>')
+									        document.write('<td>' + email[i] + '</td>') 
+									        var tempArr = [spotId[i], homeId[i]];
+				        					var arr = [];
+				       						arr[i] = tempArr;
+									        document.write('<td><input type="radio" name="cancel" value="'+ arr[i]+'">Cancel</td>')
+								     	    document.write('</tr>')
+									    }
+									    document.write('</table>')
+									} else {
+										document.write('</table>')
+										document.write('<div align="center"><h2>NO RESULTS</h2></div>')
+									}
+								    
+								}());
+								</script>
+								<div style="text-align:center;verticle-align:bottom">
+										<button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-bottom: 10px"> 
+														<i class="fa fa-1x fa-car"></i> Cancel </button>
+													</div> </form> 									
+							<?php
+								}
+
 							} else {
 								$name = $_SESSION['name'];
 								$home = $_SESSION['home'];
@@ -147,12 +225,12 @@
 		      			?>
 
 					</h2>
+
 		   		</div>
 		   		<div class="modal-footer">
 		   		<form action="/SPOTS/signin/logout.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
 						<i class="fa fa-1x fa-street-view"> </i>Log Out </button>
 				</form>
-			       
 			    </div>
 		    </div>
 		</div>
