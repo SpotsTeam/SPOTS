@@ -108,29 +108,39 @@
 				?> <img alt="" src="/SPOTS/img/spotslogo2.png" style="width:250px; padding-top:7px"></img> </h1>
 
 			</div>
-
-
-			<!-- Search Bar -->
-			<div style="margin-top:-20px">
-				<div class="col-md-4 search">
-					<form action="/SPOTS/registerEvent.php" class="inline"><h3> Search For An Event <button class="dlink btn btn-lg btn-info"  style="outline:none"> 
-						+</button></form> </h3> 
-					<form>
-						
-	      					<input type="text" class="form-control" placeholder="Search for..." name="q" autocomplete="off"id="tipue_drop_input" required>
-	      				
-	      			</form>
-	      			<br/><div id="tipue_drop_content"></div>
-				</div>
-
-				<!-- Map -->
-				<div class="col-md-8">
-					<div id="map" class="map"></div>
-				</div>
-			</div>
-
+		</div>
 		</div>
 	</div>
+
+
+			<div class="child4 scroll">
+			<br><br><br><br><br><br><br><br><br><br>
+			<!-- Search bar -->
+			<div class="map-block-container">
+			<div ng-app="locations" class="block-height">
+				<div class="maxheight" data-ng-controller="myCtrl">
+					<div class="col-md-12 search">
+						<h3> Search For An Event</h3> 
+						<input class="form-control" type="search" ng-model="q" placeholder="Find an event..." />
+		      			<div class="result-container">
+			      			<ul>
+			      				<li ng-animate="'animate'" ng-repeat="event in locations | filter:q as results">
+			      					<div class="listStyle" ng-click="changeMap(event.loc)">
+			      					<div class="event-title"> {{event.title}}</div>
+			      					<div class="event-text">{{event.text}}</div>
+			      					</div>
+			      				</li>
+			      			</ul>
+			      		</div>
+					</div>
+				</div>
+			</div>
+			
+				<!-- Map -->
+				<div id="map" class="map">			
+				</div>
+			</div>
+		
 	</section>
 
 
@@ -203,7 +213,7 @@
 								}());
 								</script>
 								<div style="text-align:center;verticle-align:bottom">
-										<button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-bottom: 10px"> 
+										<button onclick="return confirm('You sure you want to cancel your reservation?');" data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-bottom: 10px"> 
 														<i class="fa fa-1x fa-car"></i> Cancel </button>
 													</div> </form> 									
 							<?php
@@ -241,6 +251,10 @@
 
 	<!-- jQuery -->
     <script src="/SPOTS/js/jquery.js"></script>
+    <script src="/SPOTS/js/jquery.easing.min.js"></script>
+
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="/SPOTS/js/bootstrap.min.js"></script>
@@ -261,6 +275,14 @@
     <!-- Custom JavaScript -->
     <script src="/SPOTS/js/jscript.js"></script>
 
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    
+
+	
+
+    
 </body>
 
 </html>

@@ -1,4 +1,7 @@
-var map = L.map('map').setView([51.505, -0.09], 13);
+var map = L.map('map', {
+    center: [32.83993, -96.7831],
+    zoom: 13
+});
 
 		L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
 			maxZoom: 18,
@@ -9,8 +12,8 @@ var map = L.map('map').setView([51.505, -0.09], 13);
 		}).addTo(map);
 
 
-		L.marker([51.5, -0.09]).addTo(map)
-			.bindPopup("<b>Hello world!</b><br />Welcome To Spots.").openPopup();
+		L.marker([32.83993, -96.7831]).addTo(map)
+			.bindPopup("<b>Hello world!</b><br><button>Hello</button>").openPopup();
 		
 
 		var popup = L.popup();
@@ -18,8 +21,8 @@ var map = L.map('map').setView([51.505, -0.09], 13);
 		function onMapClick(e) {
 			popup
 				.setLatLng(e.latlng)
-				.setContent("You clicked the map at " + e.latlng.toString())
-				.openOn(map);
+				//.setContent("You clicked the map at " + e.latlng.toString())
+				//.openOn(map);
 		}
 
 		map.on('click', onMapClick);
