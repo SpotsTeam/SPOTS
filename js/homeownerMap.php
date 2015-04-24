@@ -22,7 +22,7 @@ for (var i = 0; i < events.length; i++) {
 for (var i = 0; i < homes.length; i++) {
 	var homeId = homes[i]['homeId'];
 	marker = new L.marker([homes[i]['loc'][0],homes[i]['loc'][1]])
-		.bindPopup(homes[i]['title'] + "<br><form action=\"../mapRegister.php\" method=\"post\"><input type=\"text\" name=\"spot\" value =\""+ homeId + "\" hidden><button type=\"submit\" onclick=\"return confirm(\'Reserve this spot?\')\";>Reserve</button></form>")
+		.bindPopup(homes[i]['title'])
 		.addTo(map);
 }
 

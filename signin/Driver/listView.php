@@ -110,7 +110,7 @@
 				    for (var i = 0; i < count; i++) {
 				    	document.write('<tr>')
 					   	document.write('<td>'+ spotId[i]+'</td>')
-						document.write('<td>' + price[i] + '</td>')
+						document.write('<td> $' + price[i] + '</td>')
 				        document.write('<td>' + address[i] + '</td>')
 				        document.write('<td>' + city[i] + '</td>')
 						document.write('<td>' + state[i] + '</td>')

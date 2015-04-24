@@ -22,8 +22,6 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
-    <!-- TipueDrop CSS -->
-    <link href="/SPOTS/css/tipuedrop.css" rel="stylesheet">
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="/SPOTS/css/leaflet.css"
     <!-- Custom CSS -->
@@ -270,8 +268,11 @@
 
     <!-- Leaflet Maps JavaScript -->
     <script src="/SPOTS/js/leaflet.js"> </script>
-    <script src="/SPOTS/js/maps.php"> </script>
-
+    <?php if ($choice == 'Driver') {  ?>
+    	<script src="/SPOTS/js/maps.php"> </script>
+    <?php } else { ?>
+        <script src="/SPOTS/js/homeownerMap.php"> </script>
+    <?php } ?>
     <!-- Custom JavaScript -->
     <script src="/SPOTS/js/jscript.js"></script>
 

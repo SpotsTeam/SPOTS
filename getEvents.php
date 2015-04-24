@@ -99,6 +99,7 @@
 		 	unset($home['loc']);
 		 	$home['loc'][] = $homeLonLat->lat; 
 		 	$home['loc'][] = $homeLonLat->lng;
+		 	$home['homeId'] = $homeId;
 		 	$homes[] = $home;
 		}
 		
