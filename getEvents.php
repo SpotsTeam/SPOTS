@@ -4,7 +4,7 @@
 	            $coordinates = @file_get_contents('http://maps.googleapis.com/maps/api/geocode/json?address=' . urlencode($addr) . '&sensor=true');
 	            $e=json_decode($coordinates);
 	            // call to google api failed so has ZERO_RESULTS -- i.e. rubbish address...
-	            if ( isset($e->status)) { if ( $e->status == 'ZERO_RESULTS' ) {echo '1:'; $err_res=true; } else {echo '2:'; $err_res=false; } } else { echo '3:'; $err_res=false; }
+	            if ( isset($e->status)) { if ( $e->status == 'ZERO_RESULTS' ) { $err_res=true; } else { $err_res=false; } } else {  $err_res=false; }
 	            // $coordinates is false if file_get_contents has failed so create a blank array with Longitude/Latitude.
 	            if ( $coordinates == false   ||  $err_res ==  true  ) {
 	                $a = array( 'lat'=>0,'lng'=>0);
@@ -36,7 +36,7 @@
 	$table = "SELECT * from Events";
 	$result = mysql_query($table, $conn);
 
-	echo "TEST<br>";
+	//echo "TEST<br>";
 
 	$events = array();
 	if (mysql_num_rows($result) > 0) {
@@ -60,20 +60,20 @@
 			$events[] = $event;
 		}
 	} else {
-		echo "<h4>No results</h4>";
+		//echo "<h4>No results</h4>";
 	}
 	
 	foreach ($events as $i => $value) {
 		$value = $events[$i];
-		echo  json_encode($value);
-		echo "<br>";
+		//echo  json_encode($value);
+		//echo "<br>";
 	
 	}
 
 	$homeQuery = "SELECT * from Home natural join Homeowner";
 	$homeResult = mysql_query($homeQuery, $conn);
 
-	echo "<br> HOMES <br>";
+	//echo "<br> HOMES <br>";
 
 	$homes = array();
 	if (mysql_num_rows($homeResult) > 0) {
@@ -98,17 +98,17 @@
 		}
 		
 	} else {
-			echo "<h4> NO RESULTS </h4>";
+			//echo "<h4> NO RESULTS </h4>";
 	}
 
 	foreach ($homes as $i => $value) {
 		$value = $homes[$i];
-		echo  json_encode($value);
-		echo "<br>";
+		//echo  json_encode($value);
+		//echo "<br>";
 	}
 
 
-	//echo json_encode($events);
+	
 
 	
 	

@@ -270,7 +270,7 @@
 
     <!-- Leaflet Maps JavaScript -->
     <script src="/SPOTS/js/leaflet.js"> </script>
-    <script src="/SPOTS/js/maps.js"> </script>
+    <script src="/SPOTS/js/maps.php"> </script>
 
     <!-- Custom JavaScript -->
     <script src="/SPOTS/js/jscript.js"></script>
