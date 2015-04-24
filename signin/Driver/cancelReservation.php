@@ -20,5 +20,7 @@
 
 	mysql_close();
 
+	header("Location: ../homePage.php");
+
 
 ?>

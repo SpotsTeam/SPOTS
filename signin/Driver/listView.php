@@ -70,8 +70,7 @@
 		</div>
 	</div>
 	</section>
-	<?php include("selectSpots.php");?>
-	
+	<?php include("selectSpots.php"); ?>	
 	<form method="post" action="listView.php">
 	<span style="padding: 0 20px">&nbsp;</span><label>Enter a City to Search:</label><input type="Search" name="city"></input>
 	<span style="padding: 0 20px">&nbsp;</span><label>Order By: </label> <select name="groupBy"> 
@@ -111,7 +110,7 @@
 				    for (var i = 0; i < count; i++) {
 				    	document.write('<tr>')
 					   	document.write('<td>'+ spotId[i]+'</td>')
-						document.write('<td>' + price[i] + '</td>')
+						document.write('<td> $' + price[i] + '</td>')
 				        document.write('<td>' + address[i] + '</td>')
 				        document.write('<td>' + city[i] + '</td>')
 						document.write('<td>' + state[i] + '</td>')
@@ -127,14 +126,15 @@
 					document.write('</table>')
 					document.write('<div align="center"><h2>NO RESULTS</h2></div>')
 				}
-			    
+		
 			}());
 		</script>
 		
 		<br><br>
 		<div style="text-align:center;verticle-align:bottom">
-		<button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-bottom: 10px"> 
+		<button onclick="return confirm('Reserve this spot?');" data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-bottom: 10px"> 
 						<i class="fa fa-1x fa-car"></i> Reserve </button>
+						
 					</div> </form> 
 		<br><br><br><br>
 

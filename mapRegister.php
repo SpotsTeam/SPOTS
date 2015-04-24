@@ -1,12 +1,9 @@
 <?php 
 	if (isset($_POST['spot'])) {
-		include("yourCar.php");
+		include("signin/Driver/yourCar.php");
 		$out = $_POST['spot'];
-		$arr = explode(",", $out);
-		echo "<h1>$arr[0]</h1>";
-		echo "<h1>$arr[1]</h1>";
-		$spotId = $arr[0];
-		$homeId = $arr[1];
+		echo "$out";
+		$homeId = $out;
 		$license = $_SESSION['licenseP'];
 		echo "License: $license";
 
@@ -15,14 +12,19 @@
 		//choose database
 		$db = mysql_select_db("spots", $conn);
 
+		$selectSpot = mysql_query("SELECT spotId from Spots where homeId = $homeId and taken = false limit 1", $conn);
+
+		$row = mysql_fetch_array($selectSpot);
+		$spotId = $row[0];
+
 		//make query for registering for a spot
 		$query = "Update Spots set taken = true, license = '$license' where spotId = $spotId and homeId = $homeId";
 
-		$result = mysql_query($query, $conn);
+		$result = mysql_query($query, $conn);	
 
 		mysql_close();
 		
-		header("Location: listView.php");
+		header("Location: signin/homePage.php");
 }
 
 ?>
