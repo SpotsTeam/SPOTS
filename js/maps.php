@@ -15,13 +15,13 @@ L.tileLayer(
 
 for (var i = 0; i < events.length; i++) {
 	marker = new L.marker([events[i]['loc'][0],events[i]['loc'][1]])
-		.bindPopup(events[i]['title'])
+		.bindPopup("<b>" + events[i]['title'] + "</b>")
 		.addTo(map);
 }
 
 for (var i = 0; i < homes.length; i++) {
 	marker = new L.marker([homes[i]['loc'][0],homes[i]['loc'][1]])
-		.bindPopup(homes[i]['title'])
+		.bindPopup(homes[i]['title'] + "<br><button>Reserve</button>")
 		.addTo(map);
 }
 

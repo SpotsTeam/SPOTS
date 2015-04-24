@@ -82,12 +82,17 @@
 			$city = $row['city'];
 			$state = $row['state'];
 			$homeownerName = $row['username'];
+			$homeId = $row['homeId'];
+			$spotsAvailableQuery = mysql_query("SELECT count(spotId), price from Spots where homeId = $homeId and taken = false", $conn);
+			$row2 = mysql_fetch_assoc($spotsAvailableQuery);
+			$spotsAvailable = $row2['count(spotId)'];
+			$price = $row2['price'];
 			$homeownerPhone = $row['phone'];
 			$homeownerEmail = $row['email'];
 			$homeownerContact = "Phone number: " . $homeownerPhone . " Email: " . $homeownerEmail;
 			$fullAddress = "$address" . ", " . "$city" . ", " . "$state";
 			$homeLonLat = get_lonlat($fullAddress);
-			$home['title'] = "House parking by: " . $homeownerName;
+			$home['title'] = "Parking By: " . $homeownerName . "<br>Spots Available: " . $spotsAvailable . "<br>Price: $" . $price;
 			$home['thumb'] = 'img&#47drop.png';
 			$home['text'] = "$homeownerContact";
 		 	$home['tags'] = "Parking";
