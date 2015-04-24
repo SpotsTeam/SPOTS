@@ -1,5 +1,5 @@
 
-//Angular functions
+//Angular functions (Event search/filtering)
 angular.module('locations', []).controller('myCtrl', function($scope, $http){
   	$http.get("loc-data.php")
     	.success(function(response) {$scope.locations = response.data;});
@@ -20,8 +20,6 @@ $(function() {
         event.preventDefault();
     });
 });
-
-
 
 //Pop up the scroll bar button
 $(function(){
