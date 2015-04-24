@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Spots Driver Page</title>
 
+	<script type = "text/javascript" src = "/SPOTS/jshelper/relay.js"> </script>
+    <script type = "text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
 	<!-- Bootstrap CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -57,7 +60,7 @@
 	<div style="margin-top:80px" class="centered">
 	<h2>Please Sign Up as Driver</h2>
 
-	<form method = "post" action="driverDisplay.php">
+	<form method = "post" onsubmit = "javascript:registerDriver()">
 		<label>Username:</label> <input type="text" name="username"/><br/>
 		<label>Password:</label> <input type="text" name="password" /><br/>
 		<label>First Name:</label> <input type="text" name="fname" /><br/>

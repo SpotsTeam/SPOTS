@@ -8,6 +8,9 @@
 <html lang="en">
 
 <head>
+
+	<script type = "text/javascript" src = "/SPOTS/jshelper/relay.js"> </script>
+    <script type = "text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Spots - Find Parking Near Events! </title>
