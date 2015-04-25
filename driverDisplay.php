@@ -100,7 +100,7 @@
 				//if the connection fails then we kill the whole thing
     			die("Connection failed: " . mysql_error());
 			} else {
-				echo "database successfully connected<br>";
+				
 			}
 
 			mysql_select_db($database);
@@ -108,9 +108,9 @@
 			$insert = "INSERT INTO Driver (username, fname, lname, email, password, street, city, state, zip, phone) VALUES ('$username', '$fname', '$lname', '$email', '$password', '$address', '$city', '$state', $zipcode, '$phone')";
 
 			if (mysql_query($insert) === TRUE) {	
-				echo "Driver info entered successfully<br>";
+				//echo "Driver info entered successfully<br>";
 			} else {
-				echo "Error: " . $insert . "<br>" . mysql_error();
+				
 			}
 
 			$query = mysql_query("SELECT userId FROM Driver where username = '$username'", $conn);
@@ -120,9 +120,9 @@
 			$insert2 =  "INSERT INTO Vehicle (licensePlate, carMake, carModel, userId) values ('$licensePlate', '$carMake', '$carModel', $userId)";
 
 			if (mysql_query($insert2) === TRUE) {	
-				echo "Car added to $username<br>";
+				//echo "Car added to $username<br>";
 			} else {
-				echo "Error: " . $insert2 . "<br>" . mysql_error();
+				
 			}
 
 
@@ -153,7 +153,7 @@
 				//if the connection fails then we kill the whole thing
     			die("Connection failed: " . mysql_error());
 			} else {
-				echo "database successfully connected<br>";
+				
 			}
 
 			mysql_select_db($database);
@@ -161,9 +161,9 @@
 			$insert = "INSERT INTO Driver (username, fname, lname, email, password, street, city, state, zip) VALUES ('$username', '$fname', '$lname', '$email', '$password', '$address', '$city', '$state', $zipcode)";
 
 			if (mysql_query($insert) === TRUE) {	
-				echo "Driver info entered successfully<br>";
+				//echo "Driver info entered successfully<br>";
 			} else {
-				echo "Error: " . $insert . "<br>" . mysql_error();
+				
 			}
 
 			$query = mysql_query("SELECT userId FROM Driver where username = '$username'", $conn);
@@ -173,9 +173,9 @@
 			$insert2 =  "INSERT INTO Vehicle (licensePlate, carMake, carModel, userId) values ('$licensePlate', '$carMake', '$carModel', $userId)";
 
 			if (mysql_query($insert2) === TRUE) {	
-				echo "Car added to $username<br>";
+				//echo "Car added to $username<br>";
 			} else {
-				echo "Error: " . $insert2 . "<br>" . mysql_error();
+				
 			}
 
 
