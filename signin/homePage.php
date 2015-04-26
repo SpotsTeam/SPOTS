@@ -158,7 +158,7 @@
 								$car = $_SESSION['car'];
 		      					echo "$car";
 								$currentSpots = $_SESSION['parked'];
-								if ($park == "None") {
+								if ($park == "dfj") {
 									echo "<h2>Currently Not Parked Anywhere</h2>";
 								} else {
 									echo "<h2><b>Spots You Reserved: </b></h2>";
