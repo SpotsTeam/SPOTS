@@ -26,9 +26,3 @@ for (var i = 0; i < homes.length; i++) {
 		.addTo(map);
 }
 
-//L.marker([32.83990, -96.7825]).addTo(map)
-//		.bindPopup("<b>Hello world!</b><br><button onclick="return confirm('Reserve this spot?')";>Hello</button>").openPopup();
-//
-//		L.marker([32.83988, -96.78]).addTo(map)
-//		.bindPopup("<b>"+sample+"</b><br><button>Hello</button>").openPopup();
-

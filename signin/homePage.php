@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="/SPOTS/css/leaflet.css"
     <!-- Custom CSS -->
     <link href="/SPOTS/css/styles.css" rel="stylesheet">
+    <!-- VENMO STUFF -->
+    <script src='https://platform.venmo.com/sdk.js'></script>
 
 </head>
 
@@ -138,6 +140,10 @@
 				<div id="map" class="map">			
 				</div>
 			</div>
+
+			
+			
+
 		
 	</section>
 
