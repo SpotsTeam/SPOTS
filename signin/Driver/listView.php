@@ -71,7 +71,7 @@
 	</div>
 	</section>
 	<?php include("selectSpots.php"); ?>	
-	<form method="post" action="listView.php">
+	<form method="post" action="Driver/registerSpot.php">
 	<span style="padding: 0 20px">&nbsp;</span><label>Enter a City to Search:</label><input type="Search" name="city"></input>
 	<span style="padding: 0 20px">&nbsp;</span><label>Order By: </label> <select name="groupBy"> 
 						<option value="spotNumber">spotId</option>
