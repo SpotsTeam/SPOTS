@@ -19,8 +19,6 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
-    <!-- TipueDrop CSS -->
-    <link href="/SPOTS/css/tipuedrop.css" rel="stylesheet">
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="/SPOTS/css/leaflet.css"
     <!-- Custom CSS -->
@@ -61,7 +59,7 @@
                 <h2>Sign in to <img alt="" src="/SPOTS/img/spotslogo2.png" class="img-brand"></img> </h2></br></br>
         
         
-        <form method = "post" action="">
+        <form method = "post" action="login.php">
         	<span style="padding: 0 20px">&nbsp;</span><label>User Type:  </label> 
                 <select name="select"> 
                         <option value="Driver">Driver</option> 
@@ -75,16 +73,6 @@
         </form>
             
         </div>
-
-        <!-- <div style="margin-top:80px" class="centered">
-        <h2> Sign in as Homeowner</h2> 
-            <form method = "post" action="signInAsHomeowner.php">
-                <label>Username: </label><input type="text" name="username"/><br/><br/>
-                <label>Password: </label><input type="password" name="password" /><br/><br/>
-	            <input name="submit" type="submit" value=" Login ">
-	            <span><?php echo $error; ?></span>  
-            </form>  
-        </div> -->
 
         <div style="margin-top:80px" class="centered">
             <form action="forgotUserPass.html"><button type="submit">Forgot Username or Password? 
