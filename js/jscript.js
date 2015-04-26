@@ -1,12 +1,12 @@
 
 //Angular functions
 angular.module('locations', []).controller('myCtrl', function($scope, $http){
-  	$http.get("loc-data.php")
-    	.success(function(response) {$scope.locations = response.data;});
+    $http.get("loc-data.php")
+      .success(function(response) {$scope.locations = response.data;});
     $scope.changeMap = function(loc){
-  		L.marker(loc).addTo(map);
-  		map.setView(loc, 15);
-  	}
+      L.marker(loc).addTo(map);
+      map.setView(loc, 15);
+    }
 });
 
 
@@ -28,12 +28,10 @@ $(function(){
  
   $(document).on('scroll', function(){
  
-    if ($(window).scrollTop() > 500) {
+    if ($(window).scrollTop() > 600) {
       $('.scroll-down').addClass('show');
-      $('.scroll-up').addClass('show');
     } else {
       $('.scroll-down').removeClass('show');
-      $('.scroll-up').removeClass('show');
     }
   });
 });
