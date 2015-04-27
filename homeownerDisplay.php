@@ -142,7 +142,7 @@
 				}
 			}
 
-			?><h2><br><br><br>Congratulations, you have now registered as a Homeowner. Please return to the home page to login.<br></h2> <?php
+			?><h1><br><br><br>Congratulations, you have now registered as a Homeowner. Please return to the home page to login.<br></h1> <?php
 
 			
 		}

@@ -181,7 +181,7 @@
 				
 			}
 
-			?><h2><br><br><br>Congratulations, you have now registered as a Driver. Please return to the home page to login<br></h2> <?php
+			?><h1><br><br><br>Congratulations, you have now registered as a Driver. Please return to the home page to login.<br></h1> <?php
 
 
 			//print up the information of the driver
