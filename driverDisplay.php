@@ -76,8 +76,10 @@
 
 			$servername = "localhost";
 
+			//<h2><br><br><br>You are now a registered Driver!<br></h2> 
+
 			if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-				?> <h2><br><br><br>You are now a registered Driver!<br></h2> <?php
+				?> <?php
 			} else {
 				//go back to sign up page
 				//echo "<h3>$email is an invalid email <br>Please enter valid email</h3>";
@@ -129,8 +131,9 @@
 
 			$servername = "localhost";
 
+			//<h2><br><br><br>You are now a registered Driver!<br></h2> 
 			if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-				?> <h2><br><br><br>You are now a registered Driver!<br></h2> <?php
+				?> <?php
 			} else {
 				//go back to sign up page
 				//echo "<h3>$email is an invalid email <br>Please enter valid email</h3>";
@@ -178,6 +181,7 @@
 				
 			}
 
+			?><h2><br><br><br>Congratulations, you have now registered as a Driver. Please return to the home page to login<br></h2> <?php
 
 
 			//print up the information of the driver
