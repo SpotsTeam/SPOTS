@@ -2,9 +2,12 @@
 <body>
 	<?php 
 		
+
+
 		if(isset($_POST['email'])) {
 			$email = $_POST['email'];
 			$select = $_POST['select'];
+
 			
 			$servername = "localhost";
 			$databaseUsername = "spotsuser";
@@ -31,11 +34,11 @@
 			$homeQuery = "Select username, password from Homeowner where email = '$email'";
 
 
-
 			if ($select == 'Driver') {
 				echo "Driver";
 				$result = mysql_query($driverQuery);
 				$row = mysql_fetch_row($result);
+
 				$msg = 'username = $row[0] \n password = $row[1]';
 				$msg = wordwrap($msg,70);
 				mail("$email", "SPOTS Driver Username/Password", $msg);
@@ -43,6 +46,7 @@
 				echo "Homeowner";
 				$result = mysql_query($homeQuery);
 				$row = mysql_fetch_row($result);
+
 				$msg ='username = $row[0] \n password = $row[1]';
 				$msg = wordwrap($msg,70);
 				mail('$email', 'SPOTS Homeowner Username/Password', $msg);
