@@ -107,7 +107,7 @@
 				//if the connection fails then we kill the whole thing
     			die("Connection failed: " . mysql_error());
 			} else {
-				echo "database successfully connected<br>";
+				//echo "database successfully connected<br>";
 			}
 
 			mysql_select_db($database);
