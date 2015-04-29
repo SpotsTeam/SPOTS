@@ -47,10 +47,10 @@
 						<a href="#map-scroll">Map</a>
 					</li>
 					<li> 
-						<a href="" data-toggle="modal" data-target=".login-modal">Register</a>
+						<a href="" data-toggle="modal" data-target=".register-modal">Register</a>
 					</li>
 					<li>
-						 <a data-toggle="modal" data-target=".register-modal"><div class="login-button">Log In</div></a>
+						 <a data-toggle="modal" data-target=".login-modal"><div class="login-button">Log In</div></a>
 					</li>
 				</ul>
 			</div>
@@ -187,7 +187,7 @@
 		</div>
 	</section>
 
-	<div class="modal fade register-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div class="modal fade login-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-lg">
 	    <div class="modal-content">
 	      <div class="modal-header">
@@ -223,20 +223,263 @@
 	  </div>
 	</div>
 
-	<div class="modal fade login-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div class="modal fade register-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-lg">
 	    <div class="modal-content">
 	      <div class="modal-header">
           <h4 class="modal-title" id="gridSystemModalLabel">Register</h4>
 	        </div>
 	        <div class="modal-body">
-	          <div class="container-fluid">
-	            <input type="text" class="form-control" placeholder="Username">
-	            <input type="password" class="form-control" hidden="true" placeholder="Password">
-	          </div>
-	        </div>
+	        	<div class="container">
+			    <ul class="nav nav-tabs">
+			        <li class="nav active"><a href="#A" data-toggle="tab">Driver</a></li>
+			        <li class="nav"><a href="#B" data-toggle="tab">Homeowner</a></li>
+			    </ul>
+
+			    <!-- Tab panes -->
+			    <div class="tab-content">
+			        <div class="tab-pane fade in active" id="A">
+			        	<form class="form-horizontal" role="form" method="post" action="driverDisplay.php" id="driverForm">
+			        		<div class="form-group">
+							    <label class="control-label col-sm-3" for="username">Username:</label>
+							    <div class="col-sm-8">
+							      <input type="username" class="form-control" id="username" placeholder="Enter username...">
+							    </div>
+							  </div>
+							  <div class="form-group">
+							    <label class="control-label col-sm-3" for="password">Password:</label>
+							    <div class="col-sm-8">
+							      <input type="password" class="form-control" id="password" placeholder="Enter password...">
+							    </div>
+							  </div>
+							  <div class="form-group">
+							    <label class="control-label col-sm-3" for="fname">Name:</label>
+							    <div class="col-sm-4">
+							      <input type="fname" class="form-control" id="fname" placeholder="Enter first name...">
+							    </div>
+							    <div class="col-sm-4" style="padding-left:0">
+							    	<input type="lname" class="form-control" id="lname" placeholder="Enter last name...">
+							    </div>
+							  </div>
+							  <div class="form-group">
+							    <label class="control-label col-sm-3" for="email">Email:</label>
+							    <div class="col-sm-8">
+							      <input type="email" class="form-control" id="email" placeholder="Enter email...">
+							    </div>
+							  </div>
+							  <div class="form-group">
+							    <label class="control-label col-sm-3" for="address">Street Address:</label>
+							    <div class="col-sm-8">
+							      <input type="address" class="form-control" id="address" placeholder="Enter address...">
+							    </div>
+							  </div>
+							  <div class="form-group">
+							    <label class="control-label col-sm-3" for="city">City:</label>
+							    <div class="col-sm-4">
+							      <input type="city" class="form-control" id="city" placeholder="Enter city...">
+							    </div>
+							    <div class="col-sm-1" style="padding-left:0">
+							    	<select class="form-control" name="state" style="padding:0"> 
+							    		<option value="AL">AL</option>
+											<option value="AK">AK</option>
+											<option value="AZ">AZ</option>
+											<option value="AR">AR</option>
+											<option value="CA">CA</option>
+											<option value="CO">CO</option>
+											<option value="CT">CT</option>
+											<option value="DE">DE</option>
+											<option value="FL">FL</option>
+											<option value="GA">GA</option>
+											<option value="HI">HI</option>
+											<option value="ID">ID</option>
+											<option value="IL">IL</option>
+											<option value="IN">IN</option>
+											<option value="IA">IA</option>
+											<option value="KA">KS</option>
+											<option value="KY">KY</option>
+											<option value="LA">LA</option>
+											<option value="ME">ME</option>
+											<option value="MD">MD</option>
+											<option value="MA">MA</option>
+											<option value="MI">MI</option>
+											<option value="MN">MN</option>
+											<option value="MS">MS</option>
+											<option value="MO">MO</option>
+											<option value="MT">MT</option>
+											<option value="NE">NE</option>
+											<option value="NV">NV</option>
+											<option value="NH">NH</option>
+											<option value="NJ">NJ</option>
+											<option value="NM">NM</option>
+											<option value="NY">NY</option>
+											<option value="NC">NC</option>
+											<option value="ND">ND</option>
+											<option value="OH">OH</option>
+											<option value="OK">OK</option>
+											<option value="OR">OR</option>
+											<option value="PA">PA</option>
+											<option value="RI">RI</option>
+											<option value="SC">SC</option>
+											<option value="SD">SD</option>
+											<option value="TN">TN</option>
+											<option value="TX">TX</option>
+											<option value="UT">UT</option>
+											<option value="VT">VT</option>
+											<option value="VA">VA</option>
+											<option value="WA">WA</option>
+											<option value="WV">WV</option>
+											<option value="WI">WI</option>
+											<option value="WY">WY</option>
+											<option value="DC">DC</option>
+							  		</select>
+								</div>
+								<div class="col-sm-3" style="padding-left:0">
+							      <input type="zipcode" class="form-control" id="zipcode" placeholder="Enter zip...">
+							    </div>
+							  </div>
+							  <div class="form-group">
+							    <label class="control-label col-sm-3" for="make">Car:</label>
+							    <div class="col-sm-3">
+							      <input type="make" class="form-control" id="make" placeholder="Enter make...">
+							    </div>
+							    <div class="col-sm-3" style="padding-left:0">
+							      <input type="model" class="form-control" id="model" placeholder="Car model...">
+							    </div>
+							    <div class="col-sm-2" style="padding-left:0">
+							      <input type="license" class="form-control" id="license" placeholder="License plate...">
+							    </div>
+							  </div>
+							  <div class="form-group">
+							    <label class="control-label col-sm-3" for="phone">Phone:</label>
+							    <div class="col-sm-8">
+							      <input type="phone" class="form-control" id="phone" placeholder="Enter phone number...">
+							    </div>
+							  </div>
+						</form>
+			        </div>
+			        <div class="tab-pane fade" id="B">
+			        	<form class="form-horizontal" role="form" method="post" action="driverDisplay.php" id="driverForm">
+			        		<div class="form-group">
+							    <label class="control-label col-sm-3" for="username">Username:</label>
+							    <div class="col-sm-8">
+							      <input type="username" class="form-control" id="username" placeholder="Enter username...">
+							    </div>
+							  </div>
+							  <div class="form-group">
+							    <label class="control-label col-sm-3" for="password">Password:</label>
+							    <div class="col-sm-8">
+							      <input type="password" class="form-control" id="password" placeholder="Enter password...">
+							    </div>
+							  </div>
+							  <div class="form-group">
+							    <label class="control-label col-sm-3" for="fname">Name:</label>
+							    <div class="col-sm-4">
+							      <input type="fname" class="form-control" id="fname" placeholder="Enter first name...">
+							    </div>
+							    <div class="col-sm-4" style="padding-left:0">
+							    	<input type="lname" class="form-control" id="lname" placeholder="Enter last name...">
+							    </div>
+							  </div>
+							  <div class="form-group">
+							    <label class="control-label col-sm-3" for="email">Email:</label>
+							    <div class="col-sm-8">
+							      <input type="email" class="form-control" id="email" placeholder="Enter email...">
+							    </div>
+							  </div>
+							  <div class="form-group">
+							    <label class="control-label col-sm-3" for="address">Street Address:</label>
+							    <div class="col-sm-8">
+							      <input type="address" class="form-control" id="address" placeholder="Enter address...">
+							    </div>
+							  </div>
+							  <div class="form-group">
+							    <label class="control-label col-sm-3" for="city">City:</label>
+							    <div class="col-sm-4">
+							      <input type="city" class="form-control" id="city" placeholder="Enter city...">
+							    </div>
+							    <div class="col-sm-1" style="padding-left:0">
+							    	<select class="form-control" name="state" style="padding:0"> 
+							    		<option value="AL">AL</option>
+											<option value="AK">AK</option>
+											<option value="AZ">AZ</option>
+											<option value="AR">AR</option>
+											<option value="CA">CA</option>
+											<option value="CO">CO</option>
+											<option value="CT">CT</option>
+											<option value="DE">DE</option>
+											<option value="FL">FL</option>
+											<option value="GA">GA</option>
+											<option value="HI">HI</option>
+											<option value="ID">ID</option>
+											<option value="IL">IL</option>
+											<option value="IN">IN</option>
+											<option value="IA">IA</option>
+											<option value="KA">KS</option>
+											<option value="KY">KY</option>
+											<option value="LA">LA</option>
+											<option value="ME">ME</option>
+											<option value="MD">MD</option>
+											<option value="MA">MA</option>
+											<option value="MI">MI</option>
+											<option value="MN">MN</option>
+											<option value="MS">MS</option>
+											<option value="MO">MO</option>
+											<option value="MT">MT</option>
+											<option value="NE">NE</option>
+											<option value="NV">NV</option>
+											<option value="NH">NH</option>
+											<option value="NJ">NJ</option>
+											<option value="NM">NM</option>
+											<option value="NY">NY</option>
+											<option value="NC">NC</option>
+											<option value="ND">ND</option>
+											<option value="OH">OH</option>
+											<option value="OK">OK</option>
+											<option value="OR">OR</option>
+											<option value="PA">PA</option>
+											<option value="RI">RI</option>
+											<option value="SC">SC</option>
+											<option value="SD">SD</option>
+											<option value="TN">TN</option>
+											<option value="TX">TX</option>
+											<option value="UT">UT</option>
+											<option value="VT">VT</option>
+											<option value="VA">VA</option>
+											<option value="WA">WA</option>
+											<option value="WV">WV</option>
+											<option value="WI">WI</option>
+											<option value="WY">WY</option>
+											<option value="DC">DC</option>
+							  		</select>
+								</div>
+								<div class="col-sm-3" style="padding-left:0">
+							      <input type="zipcode" class="form-control" id="zipcode" placeholder="Enter zip...">
+							    </div>
+							  </div>
+							  <div class="form-group">
+							    <label class="control-label col-sm-3" for="make">Available Spots:</label>
+							    <div class="col-sm-4">
+							    	<input class="form-control" type="text" name="spots" id="spots" placeholder="Number of Spots..."/>
+							    </div>
+							    <div class="col-sm-4" style="padding-left:0">
+							    	<input class="form-control" type="text" name="spots" id="spots" placeholder="Price per spot..."/>
+							    </div>
+							  </div>
+							  <div class="form-group">
+							    <label class="control-label col-sm-3" for="phone">Phone:</label>
+							    <div class="col-sm-8">
+							      <input type="phone" class="form-control" id="phone" placeholder="Enter phone number...">
+							    </div>
+							  </div>
+						</form>
+			        </div>
+			    </div>
+			</div>
+		</div>
+	            
 	        <div class="modal-footer">
-	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        	<button type="button" class="btn btn-success" data-dismiss="modal">Submit </button>
+	          	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	        </div>
 	    </div>
 	  </div>
