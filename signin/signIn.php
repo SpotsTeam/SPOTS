@@ -48,7 +48,13 @@
                 
                 </div>
                 <ul class="nav navbar-nav navbar-right">
+<<<<<<< HEAD
                     <li><a href="/SPOTS/loginPage.php">Register</a></button></li>
+=======
+                    
+                    <li> <form action="/SPOTS/loginPage.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+                        <i class="fa fa-1x fa-street-view"> </i>Register </button></form></li>
+>>>>>>> 1338c8b6e8dc895f13ab873372ba269657bde08a
                     
                 </ul>
             </div>

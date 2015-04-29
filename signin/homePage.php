@@ -121,6 +121,7 @@
 				<div class="maxheight" data-ng-controller="myCtrl">
 					<div class="col-md-12 search">
 						<h3> Search For An Event <a href="../registerEvent.php"><button>+</button></a> </h3>
+
 						<input class="form-control" type="search" ng-model="q" placeholder="Find an event..." />
 		      			<div class="result-container">
 			      			<ul>

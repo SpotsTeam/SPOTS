@@ -58,6 +58,7 @@
 			echo $username;
 		} 
 		mysql_close($conn);
+
 	}
 	
 ?>
