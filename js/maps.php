@@ -13,7 +13,6 @@ L.tileLayer(
     maxZoom: 18,
     }).addTo(map);
 
-
 var RedIcon = L.Icon.Default.extend({
             options: {
             	    iconUrl: '/SPOTS/js/images/marker-icon-red.png' 
