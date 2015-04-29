@@ -19,6 +19,8 @@
     <!-- Custom CSS -->
     <link href="css/styles.css" rel="stylesheet">
 
+    <script type="text/javascript" src="js/functions.js"></script>
+
 </head>
 
 <body>
@@ -45,12 +47,10 @@
 						<a href="#map-scroll">Map</a>
 					</li>
 					<li> 
-						<a href="signin/signIn.php">Log In</a>
+						<a href="" data-toggle="modal" data-target=".login-modal">Register</a>
 					</li>
-					
-					
 					<li>
-						 <a href="loginPage.php"><div class="login-button">Register</div></a>
+						 <a data-toggle="modal" data-target=".register-modal"><div class="login-button">Log In</div></a>
 					</li>
 				</ul>
 			</div>
@@ -65,7 +65,7 @@
 			<div class="vert-center col-md-8">
 				<h1> Welcome to Spots</h1> 
 				<h2> The Revolutionary Parking App </h2>
-				 <div class="col-sm-6 button-left"><a href="#map-scroll"><div class="click-button-left blue-button"> Find Parking Now </div> </a> </div> 
+				 <div class="col-sm-6 button-left"><a href="#map-scroll"><div class="click-button-left blue-button"> Try It Now </div> </a> </div> 
 				 <div class="col-sm-6 button-right"><a href="#about"> <div class="click-button-right red-button"> Find Out More </div> </a> </div>
 			</div>
 			<div class="vert-center col-md-2">
@@ -75,6 +75,9 @@
 
 		<a class="scroll-down">
         	<i class="fa fa-3x fa-arrow-circle-down"></i>
+    	</a>
+    	<a class="scroll-up" href="#top">
+        	<i class="fa fa-3x fa-arrow-circle-up"></i>
     	</a>
 
 		
@@ -95,7 +98,7 @@
 		<div id="about" class="child3 scroll">
 			<div class="container vert-center">
 				<div class="col-md-4">
-					<img class="icon-lg icon-green" src="img/icons/multicolor/Flat/Street-View.svg"/>
+					<img class="icon-lg green" src="img/icons/multicolor/Flat/Street-View.svg"/>
 				</div>
 				<div class="col-md-8">
 					<h1> Drivers </h1>
@@ -108,7 +111,7 @@
 			<div  class="container vert-center">
 				<div class="col-md-8">
 					<h1> Homeowners </h1>
-					<h2> Bacon ipsum dolor amet prosciutto filet mignon shank, ground round biltong brisket sirloin chicken andouille turducken landjaeger ball tip jowl. Landjaeger capicola leberkas pork belly ham pig tail jowl tri-tip.  
+					<h2> We bring customers to your doorstep 
 					</h2>
 				</div>
 				<div class="col-md-4">
@@ -120,22 +123,22 @@
 		<div class="child3 scroll">
 			<div class="container vert-center">
 				<div class="col-md-3">
-					<div class="col-md-12"><div class="icon icon-blue"><i class="fa fa-4x fa-car"></i></div></div>
+					<div class="col-md-12"><div class="icon blue"><i class="fa fa-4x fa-car"></i></div></div>
 					<h2> Icon 1</h2>
 					Bacon ipsum dolor amet prosciutto filet mignon shank, ground round biltong brisket sirloin chicken andouille turducken landjaeger ball tip jowl. Landjaeger capicola leberkas pork belly ham pig tail jowl tri-tip. 
 				</div>
 				<div class="col-md-3">
-					<div class="col-md-12"><div class="icon icon-yellow"><i class="fa fa-4x fa-clock-o"></i></div></div>
+					<div class="col-md-12"><div class="icon yellow"><i class="fa fa-4x fa-clock-o"></i></div></div>
 					<h2>Icon 2</h2>
 					Bacon ipsum dolor amet prosciutto filet mignon shank, ground round biltong brisket sirloin chicken andouille turducken landjaeger ball tip jowl. Landjaeger capicola leberkas pork belly ham pig tail jowl tri-tip. 
 				</div>
 				<div class="col-md-3">
-					<div class="col-md-12"><div class="icon icon-green"><i class="fa fa-4x fa-dollar"></i></div></div>
+					<div class="col-md-12"><div class="icon green"><i class="fa fa-4x fa-dollar"></i></div></div>
 					<h2>Icon 3</h2>
 					Bacon ipsum dolor amet prosciutto filet mignon shank, ground round biltong brisket sirloin chicken andouille turducken landjaeger ball tip jowl. Landjaeger capicola leberkas pork belly ham pig tail jowl tri-tip. 
 				</div>
 				<div class="col-md-3">
-					<div class="col-md-12"><div class="icon icon-red"><i class="fa fa-4x fa-street-view"></i></div></div>
+					<div class="col-md-12"><div class="icon red"><i class="fa fa-4x fa-street-view"></i></div></div>
 					<h2>Icon 4</h2>
 					Bacon ipsum dolor amet prosciutto filet mignon shank, ground round biltong brisket sirloin chicken andouille turducken landjaeger ball tip jowl. Landjaeger capicola leberkas pork belly ham pig tail jowl tri-tip. 
 				</div>
@@ -174,9 +177,97 @@
 
 
 		<div class="footer">
-			We Code Hard So You Don't Have To 
+
+			<a href="https://github.com/SpotsTeam/SPOTS"> <div class="icon-small"><i class="fa fa-1x fa-github"></i></div></a>
+			<a href="" data-toggle="modal" data-target=".contact-modal"><div class="icon-small"><i class="fa fa-1x fa-envelope"></i></div></a>
+			<a href=""><div class="icon-small"><i class="fa fa-1x fa-facebook"></i></div></a>
+			<a href=""> <div class="icon-small"><i class="fa fa-1x fa-twitter"></i></div></a>
+			<br> Bits Please <br> We build it, so you don't have to
+
 		</div>
 	</section>
+
+	<div class="modal fade register-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+	      <div class="modal-header">
+          <h4 class="modal-title" id="gridSystemModalLabel">Log In</h4>
+	        </div>
+	        <div class="modal-body">
+	          <div class="container-fluid">
+	          	<div class="login_form">
+	          	<form method = "POST">
+		        	<span style="padding: 0 20px">&nbsp;</span><label>User Type:  </label> 
+		                <select name="select"> 
+		                        <option value="Driver">Driver</option> 
+		                        <option value="Homeowner">Homeowner</option>
+
+		                </select> 
+		            <input type="text" id="username" name="username" class="form-control" placeholder="Username">
+	            	<input type="password" id="password" name="password" class="form-control" hidden="true" placeholder="Password">
+	            	<br><br><br>
+		         	<input name="submit" id="submit_login" type="submit" class="btn btn-default" value=" Login " class="centered" >
+		         	<br><br><br><br><br><br>
+		         	<span class="login_loading"></span>
+					<span class="errormess"></span>
+		            <!-- <span><br/><br/><br/><?php echo $error; ?></span></div> -->
+		        
+	           	</form>
+	           </div>
+	          </div>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="modal fade login-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+	      <div class="modal-header">
+          <h4 class="modal-title" id="gridSystemModalLabel">Register</h4>
+	        </div>
+	        <div class="modal-body">
+	          <div class="container-fluid">
+	            <input type="text" class="form-control" placeholder="Username">
+	            <input type="password" class="form-control" hidden="true" placeholder="Password">
+	          </div>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="modal fade contact-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+	      <div class="modal-header">
+          <h4 class="modal-title" id="gridSystemModalLabel">Contact us!</h4>
+	        </div>
+	        <div class="modal-body">
+	          <div class="container-fluid">
+	            <h3> 
+	            	JD Francis - jdfrancis@smu.edu  <br>
+	            	Nariana Sands <br>
+	            	D'Marquis Allen <br>
+	            	Erik Gabrielsen <br>
+	            	Aurora Havens <br>
+	            	Blaise Graham <br>
+	            	Alex Hibbard
+	            </h3>
+	          </div>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	    </div>
+	  </div>
+	</div>
+
 
 
 	<!-- jQuery -->
@@ -192,7 +283,9 @@
     <!-- Leaflet Maps -->
     <script src="js/leaflet.js"> </script>
     <script src="js/homeownerMap.php"> </script>
-  
+  	
+  	<script type="text/javascript" src="js/functions.js"></script>
+
 
     <!-- Custom JavaScript -->
     <script src="js/jscript.js"></script>
