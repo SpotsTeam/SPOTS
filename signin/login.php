@@ -42,6 +42,8 @@
 		$password = stripslashes($password);
 		$username = mysql_real_escape_string($username);
 		$password = mysql_real_escape_string($password);
+		$usertype = stripslashes($usertype);
+		$usertype = mysql_real_escape_string($usertype);
 
 		//choose database
 		$db = mysql_select_db("spots", $conn);
@@ -49,9 +51,9 @@
 		//Fetch info for users
 		$query = mysql_query("SELECT * FROM $usertype WHERE password = '$password' AND username = '$username'", $conn);
 
-		$rows = mysql_num_rows($query);
+		$rows = mysql_fetch_assoc($query);
 
-		if ($rows == 1) {
+		if ($rows['username'] == $username) {
 			$_SESSION['login_user'] = $username; // starting session
 			echo $username;
 		} 

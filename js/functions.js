@@ -10,7 +10,7 @@ $(function() {
 	   $('.errormess').html('Please Insert Your Password');	
        return false;
     }
-    var select = $("input#select").val();
+    var select = $("#select").val();
 	var dataString = 'username='+ username + '&password=' + password + '&select=' + select;
 	$.ajax({
       type: "POST",
