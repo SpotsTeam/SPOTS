@@ -80,8 +80,9 @@
 			$price = $_POST['price'];
 			$phone = $_POST['phone'];
 
+			//<h2><br><br><br>You are now a registered Homeowner!<br></h2> 
 			if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-				?> <h2><br><br><br>You are now a registered Homeowner!<br></h2> <?php
+				?> <?php
 			} else {
 				//go back to sign up page
 				//echo "<h3>$email is an invalid email <br>Please enter valid email</h3>";
@@ -107,7 +108,7 @@
 				//if the connection fails then we kill the whole thing
     			die("Connection failed: " . mysql_error());
 			} else {
-				echo "database successfully connected<br>";
+				//echo "database successfully connected<br>";
 			}
 
 			mysql_select_db($database);
@@ -115,7 +116,7 @@
 			$insert = "INSERT INTO Homeowner (username, fname, lname, email, password, phone) values ('$username', '$fname', '$lname', '$email', '$password', '$phone')";
 			
 			if (mysql_query($insert) == TRUE) {
-				echo "Homeowner info entered successfully<br>";
+				//echo "Homeowner info entered successfully<br>";
 			} else {
 				echo "Error: ". $insert . "<br>" . mysql_error();
 			}
@@ -127,7 +128,7 @@
 			$insertHome =  "INSERT INTO Home (userId, address, city, state, zipcode) VALUES ($homeownerId, '$address', '$city', '$state', $zipcode)";
 
 			if (mysql_query($insertHome) === TRUE) {
-				echo "Home info entered successfully<br>";
+				//echo "Home info entered successfully<br>";
 			} else {
 				echo "Error: " . $insertHome . "<br>" . mysql_error();
 			}
@@ -141,11 +142,13 @@
 
 			for ($i = 0; $i < $spots; $i++) {
 				if (mysql_query($insertSpots) == TRUE) {
-					echo "*";
+					//echo "*";
 				} else {
 					echo "Error: " . $insertSpots . "<br>" . mysql_error();
 				}
 			}
+
+			?><h1><br><br><br>Congratulations, you have now registered as a Homeowner. Please return to the home page to login.<br></h1> <?php
 
 			
 		}
