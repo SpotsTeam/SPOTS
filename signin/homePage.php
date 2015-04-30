@@ -3,6 +3,10 @@
 	$choice = "";
 	$choice = $_SESSION['select'];
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1338c8b6e8dc895f13ab873372ba269657bde08a
 ?>
 
 <!DOCTYPE html>
@@ -21,12 +25,12 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
-    <!-- TipueDrop CSS -->
-    <link href="/SPOTS/css/tipuedrop.css" rel="stylesheet">
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="/SPOTS/css/leaflet.css"
     <!-- Custom CSS -->
     <link href="/SPOTS/css/styles.css" rel="stylesheet">
+    <!-- VENMO STUFF -->
+    <script src='https://platform.venmo.com/sdk.js'></script>
 
 </head>
 
@@ -52,11 +56,31 @@
 				</div>
 				<ul class="nav navbar-nav navbar-right">
 					<?php if ($choice == "Homeowner") { ?>
+<<<<<<< HEAD
 					<li> <form action="/SPOTS/signin/Homeowner/manageSpots.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
                         <i class="fa fa-1x fa-street-view"> </i>Manage Spots </button></form></li>
                     <?php } ?>
 					<li> <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none"> 
 						<i class="fa fa-1x fa-car"></i> 
+=======
+					<li> 
+						<a href="/SPOTS/signin/Homeowner/manageSpots.php">Manage Spots </button></a>
+					</li>
+					
+                    <?php } else { ?>
+                    <li> 
+						<a href="Driver/listView.php">Find a Spot </button></a>
+					</li> 
+					<li> 
+						<a href="Driver/editInfo.html">Edit Info </button></a>
+					</li>
+
+					<?php } ?>
+
+					<li> <a data-toggle="modal" href="#myModal">
+
+
+>>>>>>> 1338c8b6e8dc895f13ab873372ba269657bde08a
 						<?php
 						if ($choice === "Driver") {
 							include("Driver/yourCar.php"); 
@@ -69,15 +93,20 @@
 							echo "$user";
 						}
 
+<<<<<<< HEAD
+=======
+
 						
-						?> </button></li>
+						?> </button></a></li>
+>>>>>>> 1338c8b6e8dc895f13ab873372ba269657bde08a
+						
 				</ul>
 			</div>
 		</div>
 	</div>
 
 
-
+	<br><br><br>
 	<!-- Main Body -->
 	<section>
 	<div class="col-md-10 col-md-offset-1 col-body">
@@ -91,30 +120,49 @@
 					}
 
 				?> <img alt="" src="/SPOTS/img/spotslogo2.png" style="width:250px; padding-top:7px"></img> </h1>
+<<<<<<< HEAD
 				
+=======
 
-			<!-- Search Bar -->
-			<div style="margin-top:-20px">
-				<div class="col-md-4 search">
-					<form action="/SPOTS/registerEvent.php" class="inline"><h3> Search For An Event <button class="dlink btn btn-lg btn-info"  style="outline:none"> 
-						+</button></form> </h3> 
-					<form>
-						
-	      					<input type="text" class="form-control" placeholder="Search for..." name="q" autocomplete="off"id="tipue_drop_input" required>
-	      					
-	      				
-	      			</form>
-	      			<br/><div id="tipue_drop_content"></div>
+			</div>
+		</div>
+		</div>
+	</div>
+>>>>>>> 1338c8b6e8dc895f13ab873372ba269657bde08a
+
+
+			<div class="child4 scroll">
+			<br><br><br><br><br><br><br><br><br><br>
+			<!-- Search bar -->
+			<div class="map-block-container">
+			<div ng-app="locations" class="block-height">
+				<div class="maxheight" data-ng-controller="myCtrl">
+					<div class="col-md-12 search">
+						<h3> Search For An Event</h3> 
+						<input class="form-control" type="search" ng-model="q" placeholder="Find an event..." />
+		      			<div class="result-container">
+			      			<ul>
+			      				<li ng-animate="'animate'" ng-repeat="event in locations | filter:q as results">
+			      					<div class="listStyle" ng-click="changeMap(event.loc)">
+			      					<div class="event-title"> {{event.title}}</div>
+			      					<div class="event-text">{{event.text}}</div>
+			      					</div>
+			      				</li>
+			      			</ul>
+			      		</div>
+					</div>
 				</div>
-
+			</div>
+			
 				<!-- Map -->
-				<div class="col-md-8">
-					<div id="map" class="map"></div>
+				<div id="map" class="map">			
 				</div>
 			</div>
 
-		</div>
-	</div>
+			
+			
+
+		
 	</section>
 
 
@@ -133,12 +181,75 @@
 			      			if ($choice =='Driver') {
 								$car = $_SESSION['car'];
 		      					echo "$car";
+<<<<<<< HEAD
 		      					?> 
 		      					<form action="/SPOTS/signin/Driver/editInfo.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
 									<i class="fa fa-1x fa-street-view"> </i>Edit Driver Information </button>
 								</form>
 
 		      			<?php
+=======
+								$currentSpots = $_SESSION['parked'];
+								if ($park == "dfj") {
+									echo "<h2>Currently Not Parked Anywhere</h2>";
+								} else {
+									echo "<h2><b>Spots You Reserved: </b></h2>";
+									?> 
+									<form enctype="multipart/form-data"method = "post" action="Driver/cancelReservation.php">
+									<script>
+								(function () {
+									
+								    
+								    document.write('<table style="width:80%" border="2" cellspacing="100" cellpadding="10" align="center">')
+								    document.write('<tr>')
+								    document.write('<th>Address</th>')
+								    document.write('<th>City</th>')
+								    document.write('<th>State</th>')
+								    document.write('<th>Price</th>')
+								    document.write('<th>Phone Number</th>')
+								    document.write('<th>Email</th>')
+								    document.write('<th>Cancel Reservation</th>')
+									document.write('</tr>')
+									var address = <?php echo json_encode($addressArr)?>;
+									var city = <?php echo json_encode($cityArr)?>;
+									var state = <?php echo json_encode($stateArr)?>;
+									var price = <?php echo json_encode($priceArr)?>;
+									var phone = <?php echo json_encode($phoneArr)?>;
+									var email = <?php echo json_encode($emailArr)?>;
+									var count = <?php echo json_encode($count)?>;
+									var spotId = <?php echo json_encode($spotIdArr)?>;
+									var homeId = <?php echo json_encode($homeIdArr)?>;
+									if (count > 0) {
+									    for (var i = 0; i < count; i++) {
+									    	document.write('<tr>')
+										   	document.write('<td>'+ address[i]+'</td>')
+											document.write('<td>' + city[i] + '</td>')
+									        document.write('<td>' + state[i] + '</td>')
+									        document.write('<td>$' + price[i] + '</td>')
+											document.write('<td>' + phone[i] + '</td>')
+									        document.write('<td>' + email[i] + '</td>') 
+									        var tempArr = [spotId[i], homeId[i]];
+				        					var arr = [];
+				       						arr[i] = tempArr;
+									        document.write('<td><input type="radio" name="cancel" value="'+ arr[i]+'">Cancel</td>')
+								     	    document.write('</tr>')
+									    }
+									    document.write('</table>')
+									} else {
+										document.write('</table>')
+										document.write('<div align="center"><h2>NO RESULTS</h2></div>')
+									}
+								    
+								}());
+								</script>
+								<div style="text-align:center;verticle-align:bottom">
+										<button onclick="return confirm('You sure you want to cancel your reservation?');" data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-bottom: 10px"> 
+														<i class="fa fa-1x fa-car"></i> Cancel </button>
+													</div> </form> 									
+							<?php
+								}
+
+>>>>>>> 1338c8b6e8dc895f13ab873372ba269657bde08a
 							} else {
 								$name = $_SESSION['name'];
 								$home = $_SESSION['home'];
@@ -161,7 +272,6 @@
 		   		<form action="/SPOTS/signin/logout.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
 						<i class="fa fa-1x fa-street-view"> </i>Log Out </button>
 				</form>
-			       
 			    </div>
 		    </div>
 		</div>
@@ -172,6 +282,10 @@
 
 	<!-- jQuery -->
     <script src="/SPOTS/js/jquery.js"></script>
+    <script src="/SPOTS/js/jquery.easing.min.js"></script>
+
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="/SPOTS/js/bootstrap.min.js"></script>
@@ -187,11 +301,22 @@
 
     <!-- Leaflet Maps JavaScript -->
     <script src="/SPOTS/js/leaflet.js"> </script>
-    <script src="/SPOTS/js/maps.js"> </script>
-
+    <?php if ($choice == 'Driver') {  ?>
+    	<script src="/SPOTS/js/maps.php"> </script>
+    <?php } else { ?>
+        <script src="/SPOTS/js/homeownerMap.php"> </script>
+    <?php } ?>
     <!-- Custom JavaScript -->
     <script src="/SPOTS/js/jscript.js"></script>
 
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    
+
+	
+
+    
 </body>
 
 </html>

@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Spots - Find Parking Near Events! </title>
+
+	<!-- Bootstrap CSS -->
+	<link href="/SPOTS/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/SPOTS/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="css/leaflet.css"
+    <!-- Custom CSS -->
+    <link href="/SPOTS/css/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<!-- Static Top Navbar -->
+	<div class="navbar navbar-default navbar-static-top">
+		<div class="container">
+			<div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+                </button>
+                <a class="navbar-brand" href="/SPOTS/signin/homePage.php"> Home Page
+				</a>
+            </div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<div class="navbar-left">
+				
+				</div>
+				<ul class="nav navbar-nav navbar-right">
+
+					<li class="navStyle">
+						<a href="#about"><i class="fa fa-1x fa-car"></i> About </button></a></li>
+					<li class="navStyle"> 
+						<a href="" ><i class="fa fa-1x fa-street-view"> </i>Change Car </a></li>
+					
+					<li class="navStyle"> 
+						<a href="" ><i class="fa fa-1x fa-street-view"> </i>Parking History</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- Main Body -->
+	<section class="col-md-12 col-body">
+		<div class="parent" id="top">
+			<div class="justify">
+				<a href="#editCar"><button class="myButton">Edit Car</button></a>
+			</div>
+			<div class="vert-center justify">
+				<a href="#editAddress"><button class="myButton">Change Address</button></a>
+			</div>
+		</div>
+		
+		<div class="child" id="editCar">
+			<h1>Edit your Car</h1>
+			<form action="editInfo.php" method="post"> 
+				<br><br><br><br>
+				<label>New Car Make: </label><input type="text" name="updateCarMake"/><br/><br/>
+                <label>New Car Model: </label><input type="text" name="updateCarModel" /><br/><br/>
+                <label>New Car License: </label><input type="text" name="updateLicense" /><br/><br/>
+                <label>Current License: </label><input type="text" name="oldLicense" /><br><br><br>
+                <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 600px"> 
+                        <i class="fa fa-1x fa-car"></i> Submit </button>
+            </form>
+            <li class="navStyle"> 
+						<a href="#top" ><i class="fa fa-1x fa-street-view"> </i>Return </a></li>
+			
+			
+		</div>
+
+		<div class="child" id="editAddress">
+			<h1>Change Your Address</h1> <br><br><br><br>
+			<label>New Address: </label><input type="text" name="updateAddress"/><br/><br/>
+                <label>New City: </label><input type="text" name="newCity" /><br/><br/>
+                <label>New State: </label><input type="text" name="newState" /><br/><br/>
+                <label>Username: </label><input type="text" name="username" /><br><br><br>
+                <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 600px"> 
+                        <i class="fa fa-1x fa-car"></i> Submit </button>
+			
+			
+		</div>
+
+
+
+		<div class = "child2">
+			<div id="about" class="col-md-8 col-md-offset-2  vert-center">
+			<h1 > About SPOTS <h1>
+				<h4 class="col-md-5">Have you ever attended an event (football game, concert, festival) and tried to avoid high parking prices by parking in residential or commercial lots for sale near the event location? If this is you, then Spots is the app you need to pursue.</h4>
+				<h4 class="col-md-7"> Spots is a web and mobile app that will help you to find a parking spot
+				at any event in your area.  Spots does this through the help of you, the user.
+				As the user of this app, you can register as both a homeowner and a driver.
+				As a homeowner, you indicate how many spots you have available in your lot.
+				This information is readily available to users if they search for an event in
+				your area.  As a driver, you register your car and you can reserves spots at a
+				lot before the game as well as pull up the app on game day to find which homes have parking spaces available. </h4>
+			</div>
+		</div>
+
+		
+
+		<div class="footer">
+			<h4>Brought to you by HackStreet Boys INC. <br>
+				<i>WE CODE, SO YOU DONT HAVE TO <i></h4> 
+			
+		</div>
+	</section>
+
+
+	<!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+	<!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Leaflet Maps -->
+    <script src="js/leaflet.js"> </script>
+    <script src="js/maps.js"> </script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/jscript.js"></script>
+
+</body>
+
+</html>

@@ -12,14 +12,30 @@
 		$oldLicense = $_POST['oldLicense'];
 
 		$checkLicense = mysql_query("SELECT * from Vehicle where licensePlate = '$newLicense'", $conn);
+<<<<<<< HEAD
 		if (mysql_num_rows($checkLicense) > 0) {
 			$error = "not a valid license plate";
 		} else {
 			$query = "UPDATE Vehicle set carMake = '$newCarMake', carModel = 'newCarModel', set licensePlate = '$newLicense' where licensePlate = '$oldLicense'";
+=======
+		$userId = mysql_query("SELECT userId from Vehicle natural join Driver where licensePlate = '$oldLicense'", $conn);
+		$id = mysql_fetch_row($userId);
+		echo $id[0];
+		if (mysql_num_rows($checkLicense) > 0) {
+			$error = "not a valid license plate";
+		} else {
+			$query = "INSERT into Vehicle values ('$newLicense', '$newCarMake', '$newCarModel', $id[0])";
+>>>>>>> 1338c8b6e8dc895f13ab873372ba269657bde08a
 			mysql_query($query, $conn);
 			$error = "";
 		}
 
+<<<<<<< HEAD
+=======
+		echo $error;
+		echo "$newLicense";
+
+>>>>>>> 1338c8b6e8dc895f13ab873372ba269657bde08a
 		unset($_POST['oldLicense']);
 		unset($_POST['updateCarModel']);
 		unset($_POST['updateLicense']);
@@ -86,6 +102,11 @@
 
 	mysql_close($conn);
 
+<<<<<<< HEAD
+=======
+	header("Location: editInfo.html");
+
+>>>>>>> 1338c8b6e8dc895f13ab873372ba269657bde08a
 
 
 ?>

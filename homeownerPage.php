@@ -67,7 +67,7 @@
 	
 	<form method = "post" action="homeownerDisplay.php">
 		<label>Username:</label> <input type="text" name="username" /><br/>
-		<label>Password:</label> <input type="text" name="password" /><br/>
+		<label>Password:</label> <input type="password" name="password" /><br/>
 		<label>First Name:</label> <input type="text" name="fname" /><br/>
 		<label>Last Name:</label> <input type="text" name="lname" /><br/>
 		<label>Email:</label> <input type="email" name="email" /><br/>
@@ -132,8 +132,15 @@
 		<label>Number of Parking Spots Available: </label> <input type="text" name="spots" /><br/>
 		<label>Price Per Spot:  $</label> <input type="text" name="price" /><br/>
 
+<<<<<<< HEAD
 		<br><br><br><br><br><br><br>
 
+=======
+
+		<br><br><br><br><br><br><br>
+
+
+>>>>>>> 1338c8b6e8dc895f13ab873372ba269657bde08a
 		<button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 150px"> 
 						<i class="fa fa-1x fa-car"></i> Submit </button>
 	</div>

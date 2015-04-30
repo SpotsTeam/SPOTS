@@ -34,6 +34,10 @@
 		$_SESSION['spotsReserved'] = $out;
 		
 		mysql_close($conn);
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> 1338c8b6e8dc895f13ab873372ba269657bde08a
 	}
 ?>
