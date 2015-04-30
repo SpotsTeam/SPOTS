@@ -1,6 +1,12 @@
+function register_driver() {
+	return confirm("Register as Driver?");
+}
+
+
 $(function() {
   $("#submit_login").click(function() {
 	var username = $("input#username").val();
+	alert(username);
 	if (username == "") {
 	   $('.errormess').html('Please Insert Your Username');	
        return false;
@@ -29,3 +35,4 @@ $(function() {
     return false;
 	});
 });
+
