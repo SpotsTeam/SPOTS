@@ -15,12 +15,17 @@
 		$selectSpot = mysql_query("SELECT spotId from Spots where homeId = $homeId and taken = false limit 1", $conn);
 
 		$row = mysql_fetch_array($selectSpot);
-		$spotId = $row[0];
+		if ($row == 0) {
+			?> <script> alert("Parking Currently not Available<br>Please try again later!"); </script> 
+			<?php
+		} else {
+			$spotId = $row[0];
 
-		//make query for registering for a spot
-		$query = "Update Spots set taken = true, license = '$license' where spotId = $spotId and homeId = $homeId";
+			//make query for registering for a spot
+			$query = "Update Spots set taken = true, license = '$license' where spotId = $spotId and homeId = $homeId";
 
-		$result = mysql_query($query, $conn);	
+			$result = mysql_query($query, $conn);	
+		}
 
 		mysql_close();
 		

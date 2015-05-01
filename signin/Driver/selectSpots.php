@@ -61,6 +61,4 @@
 		$address[] = "No results";
 	}
 
-	
-
 ?>
