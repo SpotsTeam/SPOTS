@@ -83,28 +83,30 @@ function myProfile() {
 
 
 function registerDriver() {
-    alert("AYOOOO");
+    alert("yoyoyo");
     $.ajax({ 
         url: "api/Slim/registerDriver",
         type: "post",
         async: false,
         data: {
-            "userId":$("#userId").val(),
             "username":$("#username").val(),
             "fName":$("#fName").val(),
             "lName":$("#lName").val(),
             "email":$("#email").val(),
             "password":$("#password").val(),
-            "street":$("#street").val(),
+            "street":$("#address").val(),
             "city":$("#city").val(),
             "state":$("#state").val(),
-            "zip":$("#zip").val(),
+            "zip":$("#zipcode").val(),
             "phone":$("#phone").val(),
+            "carMake":$("#carMake").val(),
+            "carModel":$("#carModel").val(),
+            "licensePlate":$("#licensePlate").val(),
         },
         dataType: "json",
         success: function(data) {
             if(data.success){
-                alert("SUCCESS");
+                alert(data.fname);
                 window.open("/SPOTS/signin/profile.html");
             }
             else
@@ -154,11 +156,18 @@ function registerHomeowner() {
             "lName":$("#lName").val(),
             "email":$("#email").val(),
             "password":$("#password").val(),
-            "phone":$("#phome").val(),
+            "phone":$("#phone").val(),
+            "address":$("#address").val(),
+            "city":$("#city").val(),
+            "state":$("#state").val(),
+            "zip":$("#zipcode").val(), 
+            "price":$("#price").val(),
+            "spots":$("#spots").val(),
         },
         dataType: "json",
         success: function(data) {
             if(data.success){
+                window.open("/SPOTS/signin/profile.html");
                 alert("SUCCESS");
             }
             else

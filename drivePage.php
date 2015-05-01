@@ -61,15 +61,15 @@
 	<h2>Please Sign Up as Driver</h2>
 
 	<form method = "post" onsubmit = "javascript:registerDriver()">
-		<label>Username:</label> <input type="text" name="username"/><br/>
-		<label>Password:</label> <input type="text" name="password" /><br/>
-		<label>First Name:</label> <input type="text" name="fname" /><br/>
-		<label>Last Name:</label> <input type="text" name="lname" /><br/>
-		<label>Email:</label> <input type="text" name="email" /><br/>
+		<label>Username:</label> <input type="text" id="username"/><br/>
+		<label>Password:</label> <input type="text" id="password" /><br/>
+		<label>First Name:</label> <input type="text" id="fName" /><br/>
+		<label>Last Name:</label> <input type="text" id="lName" /><br/>
+		<label>Email:</label> <input type="text" id="email" /><br/>
 		<label>Enter Address:</label></br>
-		<span style="padding: 0 20px">&nbsp;</span><label>Street:</label> <input type="text" name="address" /><br/>
-		<span style="padding: 0 20px">&nbsp;</span><label>City:</label> <input type="text" name="city" /><br/>
-		<span style="padding: 0 20px">&nbsp;</span><label>State:</label> <select name="state"> 
+		<span style="padding: 0 20px">&nbsp;</span><label>Street:</label> <input type="text" id="address" /><br/>
+		<span style="padding: 0 20px">&nbsp;</span><label>City:</label> <input type="text" id="city" /><br/>
+		<span style="padding: 0 20px">&nbsp;</span><label>State:</label> <select id="state"> 
 						<option value="AL">AL</option>
 						<option value="AK">AK</option>
 						<option value="AZ">AZ</option>
@@ -122,11 +122,11 @@
 						<option value="WY">WY</option>
 						<option value="DC">DC</option>
 					</select></br>
-		<span style="padding: 0 20px">&nbsp;</span><label>ZipCode:</label> <input type="text" name="zipcode" /></br>
-		<span style="padding: 0 20px">&nbsp;</span><label>Car Make:</label> <input type="text" name="carMake" /></br>
-		<span style="padding: 0 20px">&nbsp;</span><label>Car Model:</label> <input type="text" name="carModel" /></br>
-		<span style="padding: 0 20px">&nbsp;</span><label>LicensePlate:</label> <input type="text" name="licensePlate" /></br>
-		<span style="padding: 0 20px">&nbsp;</span><label>Phone Number:</label> <input type="text" name="phone" /></br>
+		<span style="padding: 0 20px">&nbsp;</span><label>ZipCode:</label> <input type="text" id="zipcode" /></br>
+		<span style="padding: 0 20px">&nbsp;</span><label>Car Make:</label> <input type="text" id="carMake" /></br>
+		<span style="padding: 0 20px">&nbsp;</span><label>Car Model:</label> <input type="text" id="carModel" /></br>
+		<span style="padding: 0 20px">&nbsp;</span><label>LicensePlate:</label> <input type="text" id="licensePlate" /></br>
+		<span style="padding: 0 20px">&nbsp;</span><label>Phone Number:</label> <input type="text" id="phone" /></br>
 		<br><br><br><br><br><br><br><br>
 		<button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 150px"> 
 						<i class="fa fa-1x fa-car"></i> Submit </button>
