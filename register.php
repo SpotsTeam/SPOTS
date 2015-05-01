@@ -148,6 +148,11 @@
 				echo "Error: " . $insert2 . "<br>" . mysql_error();
 			}
 		}
+		?>
+		<script> alert("You have successfully Registered as a Driver<br>You may now Log In!"); 
+				window.location = "/SPOTS/index.html";</script>
+		<?php
+
 	}
 
 

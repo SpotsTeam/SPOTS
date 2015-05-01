@@ -6,7 +6,7 @@ function register_driver() {
 $(function() {
   $("#submit_login").click(function() {
 	var username = $("input#username").val();
-	alert(username);
+	alert("Signing in as: " + username);
 	if (username == "") {
 	   $('.errormess').html('Please Insert Your Username');	
        return false;
