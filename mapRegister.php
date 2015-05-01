@@ -29,6 +29,7 @@
 
 		mysql_close();
 		
+		
 		header("Location: signin/homePage.php");
 }
 

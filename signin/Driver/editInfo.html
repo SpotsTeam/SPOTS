@@ -61,42 +61,122 @@
 
 	<!-- Main Body -->
 	<section class="col-md-12 col-body">
-		<div class="parent" id="top">
-			<div class="justify">
-				<a href="#editCar"><button class="myButton">Edit Car</button></a>
+
+		<div class="parent">
+			<div class="vert-top col-md-10">
+				<h1> Edit Info</h1> 
+				 <div class="col-sm-5 button-left"><a data-toggle="modal" data-target="#editCar"><div class="click-button-left blue-button"> Edit Your Car </div> </a> </div> 
+				 <div class="col-sm-5 button-right"><a data-toggle="modal" data-target="#changeAddress"> <div class="click-button-right red-button"> Change Your Address </div> </a> </div>
+				 <div class="col-sm-5 button-left"><a data-toggle="modal" data-target="#changeName"><div class="click-button-left red-button"> Change Name </div> </a> </div> 
+				 <div class="col-sm-5 button-right"><a data-toggle="modal" data-target="#editEmail"> <div class="click-button-right blue-button"> Change Your Email </div> </a> </div>
 			</div>
-			<div class="vert-center justify">
-				<a href="#editAddress"><button class="myButton">Change Address</button></a>
+		</div>
+
+		<div class="modal fade" id="editCar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		 	<div class="modal-dialog modal-lg">
+		   		<div class="modal-content">
+		     		<div class="modal-header">
+		        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        		<h4 class="modal-title" id="myModalLabel">Edit Car</h4>
+			      	</div>
+			      	<div class="modal-body">
+			      		<h2>
+			      			<form action="editInfo.php" method="post"> 
+								<label>New Car Make: </label><input type="text" name="updateCarMake"/><br/><br/>
+				                <label>New Car Model: </label><input type="text" name="updateCarModel" /><br/><br/>
+				                <label>New Car License: </label><input type="text" name="updateLicense" /><br/><br/>
+				                <label>Current License: </label><input type="text" name="oldLicense" /><br><br><br>
+				                <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 600px"> 
+				                        <i class="fa fa-1x fa-car"></i> Submit </button>
+				            </form>
+
+						</h2>
+
+			   		</div>
+			   		<div class="modal-footer">
+			   		
+				    </div>
+			    </div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="changeAddress" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		 	<div class="modal-dialog modal-lg">
+		   		<div class="modal-content">
+		     		<div class="modal-header">
+		        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        		<h4 class="modal-title" id="myModalLabel">Edit Address</h4>
+			      	</div>
+			      	<div class="modal-body">
+			      		<h1>Change Your Address</h1> <br><br><br><br>
+							<label>New Address: </label><input type="text" name="updateAddress"/><br/><br/>
+			                <label>New City: </label><input type="text" name="newCity" /><br/><br/>
+			                <label>New State: </label><input type="text" name="newState" /><br/><br/>
+			                <label>Username: </label><input type="text" name="username" /><br><br><br>
+			                <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 600px"> 
+			                        <i class="fa fa-1x fa-car"></i> Submit </button>
+			   		</div>
+			   		<div class="modal-footer">
+			   		
+				    </div>
+			    </div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="changeName" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		 	<div class="modal-dialog modal-lg">
+		   		<div class="modal-content">
+		     		<div class="modal-header">
+		        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        		<h4 class="modal-title" id="myModalLabel">Change Name</h4>
+			      	</div>
+			      	<div class="modal-body">
+			      		<h2>
+			      			<form action="editInfo.php" method="post"> 
+								<label>New Car Make: </label><input type="text" name="updateCarMake"/><br/><br/>
+				                <label>New Car Model: </label><input type="text" name="updateCarModel" /><br/><br/>
+				                <label>New Car License: </label><input type="text" name="updateLicense" /><br/><br/>
+				                <label>Current License: </label><input type="text" name="oldLicense" /><br><br><br>
+				                <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 600px"> 
+				                        <i class="fa fa-1x fa-car"></i> Submit </button>
+				            </form>
+
+						</h2>
+
+			   		</div>
+			   		<div class="modal-footer">
+			   		
+				    </div>
+			    </div>
 			</div>
 		</div>
 		
-		<div class="child" id="editCar">
-			<h1>Edit your Car</h1>
-			<form action="editInfo.php" method="post"> 
-				<br><br><br><br>
-				<label>New Car Make: </label><input type="text" name="updateCarMake"/><br/><br/>
-                <label>New Car Model: </label><input type="text" name="updateCarModel" /><br/><br/>
-                <label>New Car License: </label><input type="text" name="updateLicense" /><br/><br/>
-                <label>Current License: </label><input type="text" name="oldLicense" /><br><br><br>
-                <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 600px"> 
-                        <i class="fa fa-1x fa-car"></i> Submit </button>
-            </form>
-            <li class="navStyle"> 
-						<a href="#top" ><i class="fa fa-1x fa-street-view"> </i>Return </a></li>
-			
-			
-		</div>
+		<div class="modal fade" id="editEmail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		 	<div class="modal-dialog modal-lg">
+		   		<div class="modal-content">
+		     		<div class="modal-header">
+		        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        		<h4 class="modal-title" id="myModalLabel">Edit Email</h4>
+			      	</div>
+			      	<div class="modal-body">
+			      		<h2>
+			      			<form action="editInfo.php" method="post"> 
+								<label>New Car Make: </label><input type="text" name="updateCarMake"/><br/><br/>
+				                <label>New Car Model: </label><input type="text" name="updateCarModel" /><br/><br/>
+				                <label>New Car License: </label><input type="text" name="updateLicense" /><br/><br/>
+				                <label>Current License: </label><input type="text" name="oldLicense" /><br><br><br>
+				                <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 600px"> 
+				                        <i class="fa fa-1x fa-car"></i> Submit </button>
+				            </form>
 
-		<div class="child" id="editAddress">
-			<h1>Change Your Address</h1> <br><br><br><br>
-			<label>New Address: </label><input type="text" name="updateAddress"/><br/><br/>
-                <label>New City: </label><input type="text" name="newCity" /><br/><br/>
-                <label>New State: </label><input type="text" name="newState" /><br/><br/>
-                <label>Username: </label><input type="text" name="username" /><br><br><br>
-                <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 600px"> 
-                        <i class="fa fa-1x fa-car"></i> Submit </button>
-			
-			
+						</h2>
+
+			   		</div>
+			   		<div class="modal-footer">
+			   		
+				    </div>
+			    </div>
+			</div>
 		</div>
 
 
