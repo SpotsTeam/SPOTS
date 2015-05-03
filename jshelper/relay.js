@@ -1,18 +1,19 @@
 function authenticate() {
-    alert("Driver");
+//    alert("Driver");
     var result = "";
     $.ajax({
         url: "../api/Slim/signinDriver",
         type: "post",
         async: false,
         data: {
-            "email":$("#email").val(), 
-            "password":$("#password").val()
+            "username":$("#username").val(),
+            "password":$("#password").val(),
         },
         dataType: "json",
         success:function(data) {
             result = data;
         }
+
     });
 
     return result;
@@ -26,7 +27,7 @@ function authenticateHomeowner() {
         type: "post",
         async: false,
         data: {
-            "email":$("#email").val(), 
+            "username":$("#username").val(), 
             "password":$("#password").val()
         },
         dataType: "json",
@@ -57,8 +58,8 @@ function myProfile() {
         success: function(data) {
             if(data.success) {
                 //alert("Hello Mr. " + data.fName + " :)" );
-                var temp = data.fName;
-                alert(temp);
+                // var temp = data.fName;
+                // alert(temp);
                 //var myFirstName = "<h4>First name:  <label id = '#fName'>" + data.fName + "</label> </h4>"; 
                 //alert(myFirstName);
                 //$('#fName').append(temp);
@@ -178,19 +179,112 @@ function registerHomeowner() {
 
 
 function signin() {
-
     if(validLogin()) {
-        var data = authenticate();
-        if(data.success) {
-            alert("Welcome, " + data.fName + "!");
-            myProfile();
+        var data2 = authenticate();
+        alert(data2.email);
+        //if(data.success) {
+            $.ajax({
+            type: "post",
+            url: "/SPOTS/signin/homePage.php",
+            // data: {
+            //     // "username":data2.username,
+            //     // "password":data2.password,
+            //     data:data2,
+            //     // "username":$("#username").val(),
+            //     // "password":$("#password").val(),
+            // },
+            async: false,
+            dataType: "html",
+            success: function(data)
+            {
+                if(data.success)
+                {
+                    alert(data2.lName);
+                }
+                else
+                {
+                    alert("ERROR");
+                    alert(data2.lName);
+                    window.open("/SPOTS/signin/homePage.php")
+                }
+            }
+            //passToLogin(data);
+            //alert("Welcome, " + data.fName + "!");
+            //myProfile();
             //window.location = "../signin/homePage.php";
             //window.open("/SPOTS/signin/homePage.php");// = "/SPOTS/index.html";
-        }
-        else
-            alert(data);
-    }
+            //window.open("/SPOTS/signin/login.php");
+            });
+            //}
+            // else
+            // {
+            //     alert("err");
+            // }
+
 }
+}
+
+// function passToLogin(d) {
+//     $.ajax({
+//     url: "/SPOTS/signin/login.php",
+//     type: "post",
+//     //async: false,
+//     // data: {
+//     //     "username":$("#username").val(), 
+//     //     "password":$("#password").val(),
+//     // },
+//     dataType: "html",
+//     success: function(data)
+//     {
+//         if (data.success)
+//         {
+//             alert(data.lName);
+//         document.location.href = '/SPOTS/signin/homePage.php';
+//         }
+//         else 
+//             alert(data.lName);
+//             alert("HDFHS");
+//     }
+
+// });
+// }
+
+
+(function() {
+  $("#submit_login").click(function() {
+    var username = $("input#username").val();
+    alert("Signing in as: " + username);
+    if (username == "") {
+       $('.errormess').html('Please Insert Your Username'); 
+       return false;
+    } 
+    var password = $("input#password").val();
+    if (password == "") {
+       $('.errormess').html('Please Insert Your Password'); 
+       return false;
+    }
+    var select = $("#select").val();
+    var dataString = 'username='+ username + '&password=' + password + '&select=' + select;
+    $.ajax({
+      type: "POST",
+      url: '/SPOTS/signin/login.php',
+      data: dataString,
+      dataType: "html",
+      success: function(data) {
+      if (data == 0) {
+      $('.errormess').html('Wrong Login Data');
+        } else {
+            $('.errormess').html('you are logged. wait for redirection');   
+            document.location.href = '/SPOTS/signin/homePage.php';  
+        }
+      }
+     });
+    return false;
+    });
+});
+
+
+
 
 function signinHomeowner() {
     if(validLogin()) {
@@ -217,15 +311,15 @@ function signOut() {
     });
 }
 
-function validateEmail() {
-    var tempEmail = document.getElementById('email').value;
-    alert(tempEmail);
+function validateUsername() {
+    var tempUsername = document.getElementById('username').value;
+    alert(tempUsername);
     return true;
 }
 
 
 function validLogin() {
-    return (validateEmail() && validatePassword());
+    return (validateUsername() && validatePassword());
 }
 
 function validatePassword() {

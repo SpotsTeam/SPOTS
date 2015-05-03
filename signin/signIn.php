@@ -15,6 +15,16 @@
     <script type = "text/javascript" src = "/SPOTS/jshelper/relay.js"> </script>
     <script type = "text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+
     <!-- Bootstrap CSS -->
     <link href="/SPOTS/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -66,16 +76,16 @@
                 <h2>Sign in to <img alt="" src="/SPOTS/img/spotslogo2.png" class="img-brand"></img> </h2></br></br>
         
         
-        <form method = "post" onsubmit = "javascript:signin()"> 
+        <form method = "post" > 
         	<span style="padding: 0 20px">&nbsp;</span><label>User Type:  </label> 
                 <select name="select"> 
                         <option value="Driver">Driver</option> 
                         <option value="Homeowner">Homeowner</option>
 
                 </select> 
-            <label>email: </label><input type="text" id="email"/><br/><br/>
+            <label>username: </label><input type="text" id="username"/><br/><br/>
             <label>Password: </label><input type="password" id="password" /><br/><br/><br/>
-         	<input name="submit" type="submit" value=" Login " class="centered" >
+         	<input name="submit" id = "submit_login" type="submit" value=" Login " class="centered" >
             <span><br/><br/><br/><?php echo $error; ?></span></div>
         </form>
             
