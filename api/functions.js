@@ -1,7 +1,3 @@
-function register_driver() {
-	return confirm("Register as Driver?");
-}
-
 
 $(function() {
   $("#submit_login").click(function() {
