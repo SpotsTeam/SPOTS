@@ -1,5 +1,6 @@
 <?php
-require '../composer/vendor/autoload.php';
+require 'SPOTS/api/composer/vendor/autoload.php';
+//require 'Slim/Slim.php'
 session_cache_limiter(false);
 session_name("SPOTS");
 session_start();

@@ -86,7 +86,7 @@ function myProfile() {
 function registerDriver() {
     alert("Register?");
     $.ajax({ 
-        url: "/SPOTS/api/Slim/index.php",
+        url: "/SPOTS/api/Slim/registerDriver",
         type: "post",
         async: false,
         data: {
