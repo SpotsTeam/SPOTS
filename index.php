@@ -1,5 +1,10 @@
 <?php
+<<<<<<< HEAD
 require '../composer/vendor/autoload.php';
+=======
+require 'SPOTS/api/composer/vendor/autoload.php';
+//require 'Slim/Slim.php'
+>>>>>>> 03688d131052966f8a6bfb67015cd8e80857ed6f
 session_cache_limiter(false);
 session_name("SPOTS");
 session_start();
