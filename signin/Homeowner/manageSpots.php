@@ -73,9 +73,13 @@
                     
             </form><br>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 1338c8b6e8dc895f13ab873372ba269657bde08a
+=======
+
+>>>>>>> 03688d131052966f8a6bfb67015cd8e80857ed6f
             <form method = "post" action="changeHome_1.php">
                     <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 140px"> 
                     <i class="fa fa-1x fa-car"></i> Change House </button>

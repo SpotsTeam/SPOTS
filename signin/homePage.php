@@ -4,9 +4,13 @@
 	$choice = $_SESSION['select'];
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 1338c8b6e8dc895f13ab873372ba269657bde08a
+=======
+
+>>>>>>> 03688d131052966f8a6bfb67015cd8e80857ed6f
 ?>
 
 <!DOCTYPE html>
@@ -57,12 +61,15 @@
 				<ul class="nav navbar-nav navbar-right">
 					<?php if ($choice == "Homeowner") { ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 					<li> <form action="/SPOTS/signin/Homeowner/manageSpots.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
                         <i class="fa fa-1x fa-street-view"> </i>Manage Spots </button></form></li>
                     <?php } ?>
 					<li> <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none"> 
 						<i class="fa fa-1x fa-car"></i> 
 =======
+=======
+>>>>>>> 03688d131052966f8a6bfb67015cd8e80857ed6f
 					<li> 
 						<a href="/SPOTS/signin/Homeowner/manageSpots.php">Manage Spots </button></a>
 					</li>
@@ -80,7 +87,10 @@
 					<li> <a data-toggle="modal" href="#myModal">
 
 
+<<<<<<< HEAD
 >>>>>>> 1338c8b6e8dc895f13ab873372ba269657bde08a
+=======
+>>>>>>> 03688d131052966f8a6bfb67015cd8e80857ed6f
 						<?php
 						if ($choice === "Driver") {
 							include("Driver/yourCar.php"); 
@@ -94,11 +104,17 @@
 						}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 						
 						?> </button></a></li>
 >>>>>>> 1338c8b6e8dc895f13ab873372ba269657bde08a
+=======
+
+						
+						?> </button></a></li>
+>>>>>>> 03688d131052966f8a6bfb67015cd8e80857ed6f
 						
 				</ul>
 			</div>
@@ -121,14 +137,20 @@
 
 				?> <img alt="" src="/SPOTS/img/spotslogo2.png" style="width:250px; padding-top:7px"></img> </h1>
 <<<<<<< HEAD
+<<<<<<< HEAD
 				
 =======
+=======
+>>>>>>> 03688d131052966f8a6bfb67015cd8e80857ed6f
 
 			</div>
 		</div>
 		</div>
 	</div>
+<<<<<<< HEAD
 >>>>>>> 1338c8b6e8dc895f13ab873372ba269657bde08a
+=======
+>>>>>>> 03688d131052966f8a6bfb67015cd8e80857ed6f
 
 
 			<div class="child4 scroll">
@@ -138,7 +160,7 @@
 			<div ng-app="locations" class="block-height">
 				<div class="maxheight" data-ng-controller="myCtrl">
 					<div class="col-md-12 search">
-						<h3> Search For An Event</h3> 
+						<h3> Search For An Event <a href="../registerEvent.php"><button>+</button></a> </h3>
 						<input class="form-control" type="search" ng-model="q" placeholder="Find an event..." />
 		      			<div class="result-container">
 			      			<ul>
@@ -182,6 +204,7 @@
 								$car = $_SESSION['car'];
 		      					echo "$car";
 <<<<<<< HEAD
+<<<<<<< HEAD
 		      					?> 
 		      					<form action="/SPOTS/signin/Driver/editInfo.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
 									<i class="fa fa-1x fa-street-view"> </i>Edit Driver Information </button>
@@ -189,6 +212,8 @@
 
 		      			<?php
 =======
+=======
+>>>>>>> 03688d131052966f8a6bfb67015cd8e80857ed6f
 								$currentSpots = $_SESSION['parked'];
 								if ($park == "dfj") {
 									echo "<h2>Currently Not Parked Anywhere</h2>";
@@ -249,7 +274,10 @@
 							<?php
 								}
 
+<<<<<<< HEAD
 >>>>>>> 1338c8b6e8dc895f13ab873372ba269657bde08a
+=======
+>>>>>>> 03688d131052966f8a6bfb67015cd8e80857ed6f
 							} else {
 								$name = $_SESSION['name'];
 								$home = $_SESSION['home'];

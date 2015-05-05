@@ -13,10 +13,18 @@ L.tileLayer(
     maxZoom: 18,
     }).addTo(map);
 
+var RedIcon = L.Icon.Default.extend({
+            options: {
+            	    iconUrl: '/SPOTS/js/images/marker-icon-red.png' 
+            }
+         });
+var redIcon = new RedIcon();
+
 for (var i = 0; i < events.length; i++) {
-	marker = new L.marker([events[i]['loc'][0],events[i]['loc'][1]])
+	marker = new L.marker([events[i]['loc'][0],events[i]['loc'][1]], {icon: redIcon})
 		.bindPopup("<b>" + events[i]['title'] + "</b>")
 		.addTo(map);
+	
 }
 
 for (var i = 0; i < homes.length; i++) {
@@ -25,4 +33,7 @@ for (var i = 0; i < homes.length; i++) {
 		.bindPopup(homes[i]['title'] + "<br><form action=\"../mapRegister.php\" method=\"post\"><input type=\"text\" name=\"spot\" value =\""+ homeId + "\" hidden><button type=\"submit\" onclick=\"return confirm(\'Reserve this spot?\')\";>Reserve</button></form>")
 		.addTo(map);
 }
+
+
+
 

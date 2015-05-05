@@ -79,6 +79,7 @@
 			$licensePlate = $_POST['licensePlate'];
 			$email = $_POST['email'];
 			$phone = $_POST['phone'];
+<<<<<<< HEAD
 
 			$servername = "localhost";
 
@@ -134,6 +135,8 @@
 			}
 
 
+=======
+>>>>>>> 03688d131052966f8a6bfb67015cd8e80857ed6f
 
 			$servername = "localhost";
 

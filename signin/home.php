@@ -26,8 +26,11 @@
 		}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		
 =======
+=======
+>>>>>>> 03688d131052966f8a6bfb67015cd8e80857ed6f
 // <<<<<<< HEAD
 		
 // =======
@@ -36,7 +39,10 @@
 // 		$homeRows = mysql_fetch_row($homeQuery);
 // 		$home = $homeRows[0].", " . $homeRows[1] . ", " . $homeRows[2];
 // >>>>>>> 69bef9fb2cfe3cd3e4bed2e53072520b07fb9a77
+<<<<<<< HEAD
 >>>>>>> 1338c8b6e8dc895f13ab873372ba269657bde08a
+=======
+>>>>>>> 03688d131052966f8a6bfb67015cd8e80857ed6f
 
 		$homeIdQuery = mysql_query("SELECT homeId FROM Home where userId = (SELECT userId from Homeowner where username = '$username')", $conn);
 
@@ -59,7 +65,10 @@
 
 		$_SESSION['home'] = $home;		
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 03688d131052966f8a6bfb67015cd8e80857ed6f
 // =======
 // 		// $table = "SELECT price, taken, license from Spots where homeId = (Select homeId from Home where userId = (Select userId from Homeowner where username = '$username'))";
 
@@ -82,7 +91,10 @@
 // 		//$_SESSION['table'] = $out;
 		
 // >>>>>>> 69bef9fb2cfe3cd3e4bed2e53072520b07fb9a77
+<<<<<<< HEAD
 >>>>>>> 1338c8b6e8dc895f13ab873372ba269657bde08a
+=======
+>>>>>>> 03688d131052966f8a6bfb67015cd8e80857ed6f
 		mysql_close($conn);
 		
 	}

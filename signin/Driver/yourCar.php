@@ -1,14 +1,20 @@
 <?php 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	include("login.php");
 =======
+=======
+>>>>>>> 03688d131052966f8a6bfb67015cd8e80857ed6f
 	if (is_file("signin/login.php")) {
 		include("signin/login.php");
 	} else {
 		include("../login.php");
-	}
+	} 
 	
+<<<<<<< HEAD
 >>>>>>> 1338c8b6e8dc895f13ab873372ba269657bde08a
+=======
+>>>>>>> 03688d131052966f8a6bfb67015cd8e80857ed6f
 	$car = "";
 	if (isset($_SESSION['username'])) {
 		
@@ -23,6 +29,7 @@
 
 		//Fetch info for users
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$query = mysql_query("SELECT carMake, carModel FROM Vehicle natural join Driver where Vehicle.userId = (Select userId from Driver where username = '$username')", $conn);
 
 		$rows = mysql_fetch_row($query);
@@ -35,6 +42,8 @@
 		}
 
 =======
+=======
+>>>>>>> 03688d131052966f8a6bfb67015cd8e80857ed6f
 		$query = mysql_query("SELECT carMake, carModel, licensePlate FROM Vehicle natural join Driver where Vehicle.userId = (Select userId from Driver where username = '$username')", $conn);
 
 		$rows = mysql_fetch_row($query);
@@ -75,7 +84,10 @@
 		}
 
 		$_SESSION['parked'] = "None";
+<<<<<<< HEAD
 >>>>>>> 1338c8b6e8dc895f13ab873372ba269657bde08a
+=======
+>>>>>>> 03688d131052966f8a6bfb67015cd8e80857ed6f
 		$_SESSION['car'] = $car;
 		
 		mysql_close($conn);

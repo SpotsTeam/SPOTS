@@ -133,14 +133,20 @@
 		<label>Price Per Spot:  $</label> <input type="text" name="price" /><br/>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<br><br><br><br><br><br><br>
 
 =======
+=======
+>>>>>>> 03688d131052966f8a6bfb67015cd8e80857ed6f
 
 		<br><br><br><br><br><br><br>
 
 
+<<<<<<< HEAD
 >>>>>>> 1338c8b6e8dc895f13ab873372ba269657bde08a
+=======
+>>>>>>> 03688d131052966f8a6bfb67015cd8e80857ed6f
 		<button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 150px"> 
 						<i class="fa fa-1x fa-car"></i> Submit </button>
 	</div>
