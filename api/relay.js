@@ -88,7 +88,7 @@ function registerDriver() {
     alert($("#USERNAME").val());
     $.ajax({ 
 //<<<<<<< HEAD
-        url: "/SPOTS/api/Slim/index.php",
+        //url: "/SPOTS/api/Slim/index.php",
 //=======
         url: "/SPOTS/api/Slim/registerDriver",
 // >>>>>>> 03688d131052966f8a6bfb67015cd8e80857ed6f
