@@ -1,5 +1,5 @@
 function authenticate() {
-//    alert("Driver");
+    alert("Driver");
     var result = "";
     $.ajax({
         url: "../api/Slim/signinDriver",
@@ -85,24 +85,29 @@ function myProfile() {
 
 function registerDriver() {
     alert("Register?");
+    alert($("#USERNAME").val());
     $.ajax({ 
+//<<<<<<< HEAD
+        url: "/SPOTS/api/Slim/index.php",
+//=======
         url: "/SPOTS/api/Slim/registerDriver",
+// >>>>>>> 03688d131052966f8a6bfb67015cd8e80857ed6f
         type: "post",
         async: false,
         data: {
-            "username":$("#username").val(),
-            "fName":$("#fName").val(),
-            "lName":$("#lName").val(),
+            "username":$("#USERNAME").val(),
+            "fname":$("#fname").val(),
+            "lName":$("#lname").val(),
             "email":$("#email").val(),
-            "password":$("#password").val(),
+            "password":$("#PASSWORD").val(),
             "street":$("#address").val(),
             "city":$("#city").val(),
             "state":$("#state").val(),
             "zip":$("#zipcode").val(),
             "phone":$("#phone").val(),
-            "carMake":$("#carMake").val(),
-            "carModel":$("#carModel").val(),
-            "licensePlate":$("#licensePlate").val(),
+            "carMake":$("#make").val(),
+            "carModel":$("#model").val(),
+            "licensePlate":$("#license").val(),
         },
         dataType: "json",
         success: function(data) {
@@ -151,10 +156,9 @@ function registerHomeowner() {
         url: "../api/Slim/registerHomeowner",
         type: "post",
         data: {
-            "userId":$("#userId").val(),
             "username":$("#username").val(),
-            "fName":$("#fName").val(),
-            "lName":$("#lName").val(),
+            "fName":$("#fname").val(),
+            "lName":$("#lname").val(),
             "email":$("#email").val(),
             "password":$("#password").val(),
             "phone":$("#phone").val(),
@@ -163,7 +167,7 @@ function registerHomeowner() {
             "state":$("#state").val(),
             "zip":$("#zipcode").val(), 
             "price":$("#price").val(),
-            "spots":$("#spots").val(),
+            "numberOfSpots":$("#spots").val(),
         },
         dataType: "json",
         success: function(data) {
