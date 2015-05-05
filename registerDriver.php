@@ -8,9 +8,9 @@
 			$city = $_POST['city'];
 			$state = $_POST['state'];
 			$zipcode = $_POST['zipcode'];
-			$carMake = $_POST['carMake'];
-			$carModel = $_POST['carModel'];
-			$licensePlate = $_POST['licensePlate'];
+			$carMake = $_POST['make'];
+			$carModel = $_POST['model'];
+			$licensePlate = $_POST['license'];
 			$email = $_POST['email'];
 			$phone = $_POST['phone'];
 
