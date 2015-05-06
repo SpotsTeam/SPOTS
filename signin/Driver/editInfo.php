@@ -36,23 +36,62 @@
 		$newState = $_POST['newState'];
 		$newCity = $_POST['newCity'];
 		$username = $_SESSION['username'];
+		$password = $_SESSION['password'];
 
-		$query = "UPDATE Driver set street = '$newAddress', city = '$newCity', state = '$newState' where username = '$username'";
+		$query = "UPDATE Driver set street = '$newAddress', city = '$newCity', state = '$newState' where username = '$username' AND password = '$password'";
 		mysql_query($query, $conn);
+
+		echo "$newAddress";
+		echo "$newState";
+		echo "$newCity";
 
 		unset($_POST['updateAddress']);
 
-	} else if (isset($_POST['updateFirstName'])) {  //updating the users name
-		$newFirstName = $_POST['updateFirstName'];
-		$newLastName = $_POST['newLastName'];
-		$username = $_SESSION['username'];
+	} else if (isset($_POST['myCarMake'])) {  //updating the users name
+		$newCarMake = $_POST['myCarMake'];
+		$newCarModel = $_POST['updateCarModel'];
+		$newLicense = $_POST['updateLicense'];
+		$oldCarMake = $_POST['oldCarMake'];
+		$oldCarModel = $_POST['oldCarModel'];
+		$oldLicense = $_POST['oldLicense'];
 
-		$query = "UPDATE Driver set fName = '$newFirstName', lName = '$newLastName' where username = '$username'";
-		mysql_query($query, $conn);
+		$checkLicense = mysql_query("SELECT * from Vehicle where licensePlate = '$newLicense'", $conn);
+		$userId = mysql_query("SELECT userId from Vehicle natural join Driver where licensePlate = '$oldLicense'", $conn);
+		$id = mysql_fetch_row($userId);
+		echo $id[0];
+		if (mysql_num_rows($checkLicense) > 0) {
+			$error = "not a valid license plate";
+		} else {
+			$query = "UPDATE Vehicle SET licensePlate = '$newLicense', carMake = '$newCarMake', carModel = '$newCarModel'";
+			//$queryDelete = "DELETE FROM Vehicle WHERE licensePlate = '$oldLicense'";
+			mysql_query($query, $conn);
+			$error = "";
+		}
 
 
-		unset($_POST['newLastName']);
-		unset($_POST['updateFirstName']);
+		echo $error;
+		echo "$newLicense";
+		echo "$newCarModel";
+		echo "$newCarMake";
+
+		// unset($_POST['oldLicense']);
+		// unset($_POST['updateCarModel']);
+		// unset($_POST['updateLicense']);
+		// unset($_POST['updateCar']);
+
+
+
+
+		// $newFirstName = $_POST['updateFirstName'];
+		// $newLastName = $_POST['newLastName'];
+		// $username = $_SESSION['username'];
+
+		// $query = "UPDATE Driver set fName = '$newFirstName', lName = '$newLastName' where username = '$username'";
+		// mysql_query($query, $conn);
+
+
+		// unset($_POST['newLastName']);
+		// unset($_POST['updateFirstName']);
 
 	} else if (isset($_POST['updateEmail'])) { //updating email information
 		$newEmail = $_POST['updateEmail'];
@@ -92,7 +131,7 @@
 
 	mysql_close($conn);
 
-	header("Location: editInfo.html");
+	//header("Location: editInfo.html");
 
 
 ?>
