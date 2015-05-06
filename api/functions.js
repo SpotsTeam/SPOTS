@@ -1,4 +1,3 @@
-
 $(function() {
   $("#submit_login").click(function() {
 	var username = $("input#username").val();
@@ -31,8 +30,17 @@ $(function() {
     return false;
 	});
 
+  function validateEmail(email) {
+    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    return re.test(email);
+  }
+  function validateAddress(address) {
+  	var re = /^(?=.*\d)[a-zA-Z\s\d\/]+$/;
+  	return re.test(address);
+  }
+
   $("#register_driver").click(function() {
-  	if (confirm("Register as a Driver?")) {
+  	
 	var username = $("input#usernameD").val();
 	var password = $("input#passwordD").val();
 	var fname = $("input#fnameD").val();
@@ -47,8 +55,6 @@ $(function() {
 	var license = $("input#licenseD").val();
 	var phone = $("input#phoneD").val();
 
-
-	alert("Registering as Driver with Username: " + username);
 	if (username == "") {
 	   $('.errormess').html('Please Insert Your Username');	
        return false;
@@ -57,12 +63,33 @@ $(function() {
 	   $('.errormess').html('Please Insert Your Password');	
        return false;
     }
-    if (email == "") {
+    if (email == "me@example.com") {
 	   $('.errormess').html('Please Insert Your Email');	
        return false;
+    } else if(!validateEmail(email)) {
+    	$('.errormess').html('Please Enter a valid email address');
+    	return false;
     }
-    //if ()
-    // var select = $("#select").val();
+    if (license == "") {
+    	$('.errormess').html('Please enter your license plate number');
+    	return false;
+    }
+    if (fname == "") {
+    	fname = null;
+    }
+    if (lname == "") {
+    	lname = null;
+    }
+    if (address =="") {
+    	address = "No Address on Record";
+    } else if (!validateAddress(address)) {
+    	$('.errormess').html('Please enter valid Address');
+    	return false;
+    }
+    if (phone == "") {
+    	phone = null;
+    } 
+    if (confirm("Register as a Driver?")) {
 	var dataString = 'username='+ username + '&password=' + password + '&fname=' + fname + '&lname=' + lname + '&email=' + email + '&address=' + address + '&city=' + city + '&state=' + state + '&zipcode=' + zipcode + '&make=' + make +'&model=' + model + '&license=' + license + '&phone=' + phone;
 	$.ajax({
       type: "POST",
@@ -75,7 +102,7 @@ $(function() {
 		} else {
 			$('.errormess').html('');
 			alert("Congratulations! \nYou have registered as a driver!\nUsername: " + username);	
-			//document.location.href = '/SPOTS/signin/homePage.php';	
+			document.location.href = '/SPOTS/index.html';	
 		}
       }
      });
@@ -84,7 +111,7 @@ $(function() {
 	});
 
 	$("#register_homeowner").click(function() {
-  	if (confirm("Register as a Homeowner?")) {
+  	
 	var username = $("input#usernameH").val();
 	var password = $("input#passwordH").val();
 	var fname = $("input#fnameH").val();
@@ -97,9 +124,7 @@ $(function() {
 	var spots = $("input#spotsH").val();
 	var price = $("input#priceH").val();
 	var phone = $("input#phoneH").val();
-
-
-	alert("Registering as Homeowner with Username: " + username);
+	
 	if (username == "") {
 	   $('.errormess').html('Please Insert Your Username');	
        return false;
@@ -111,9 +136,33 @@ $(function() {
     if (email == "") {
 	   $('.errormess').html('Please Insert Your Email');	
        return false;
+    } else if (!validateEmail(email)) {
+    	$('.errormess').html('Please enter a valid Email');
+    	return false;
     }
-    //if ()
-    // var select = $("#select").val();
+    if (address =="") {
+    	$('.errormess').html('Please enter an Address');
+    	return false;
+    } else if (!validateAddress(address)) {
+    	$('.errormess').html('Please enter valid Address');
+    	return false;
+    }
+    if (city =="") {
+    	$('.errormess').html('Please enter a City');
+    	return false;
+    }
+    if (spots == "") {
+    	$('.errormess').html('Please enter number of parking spots you have available');
+    	return false;
+    }
+    if (price =="") {
+    	$('.errormess').html('Please enter a price per spot. If Free type "0"');
+    	return false;
+    } 
+    if (confirm("Register as a Homeowner?")) {
+
+
+	// alert("Registering as Homeowner with Username: " + username);    
 	var dataString = 'username='+ username + '&password=' + password + '&fname=' + fname + '&lname=' + lname + '&email=' + email + '&address=' + address + '&city=' + city + '&state=' + state + '&zipcode=' + zipcode + '&spots=' + spots +'&price=' + price + '&phone=' + phone;
 	$.ajax({
       type: "POST",
@@ -126,7 +175,7 @@ $(function() {
 		} else {
 			$('.errormess').html('');
 			alert("Congratulations! \nYou have registered as a Homeowner!\nUsername: " + username);	
-			//document.location.href = '/SPOTS/signin/homePage.php';	
+			document.location.href = '/SPOTS/index.html';	
 		}
       }
      });
@@ -135,7 +184,7 @@ $(function() {
 	});
 
 	$("#register_event").click(function() {
-  	if (confirm("Register this event?")) {
+  	
 	var eventName = $("#eventName").val();
 	var startMonth = $("#startMonth").val();
 	var startDay = $("#startDay").val();
@@ -150,7 +199,7 @@ $(function() {
 	var state = $("#state").val();
 
 
-	alert("Registering Event " + eventName);
+	if (confirm("Register this event?")) {
     //if ()
     // var select = $("#select").val();
 	var dataString = 'eventName='+ eventName + '&startMonth=' + startMonth + '&startDay=' + startDay + '&startYear=' + startYear + '&endMonth=' + endMonth + '&endDay=' + endDay + '&endYear=' + endYear + '&state=' + state + '&zipcode=' + zipcode + '&address=' + address +'&city=' + city + '&category=' + category;
