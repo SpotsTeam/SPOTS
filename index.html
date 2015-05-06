@@ -20,8 +20,9 @@
     <link href="css/styles.css" rel="stylesheet">
 
     <script type="text/javascript" src="api/functions.js"></script>
+   <!-- 
     <script type="text/javascript" src="api/registerDriver.js"></script>
-
+ -->
     <script type="text/javascript" src="api/relay.js"></script>
     <script type = "text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 
@@ -244,33 +245,20 @@
 			    <!-- Tab panes -->
 			    <div class="tab-content">
 			        <div class="tab-pane fade in active" id="A">
-<<<<<<< HEAD
-<!-- <<<<<<< HEAD -->
-<!-- 			        	<form method="POST" onsubmit="javascript:registerDriver()">
-=======
-			        	<form method="post" onsubmit="javascript:registerDriver()"> -->
-<!-- >>>>>>> 03688d131052966f8a6bfb67015cd8e80857ed6f -->
-=======
+
 			        	 <form method="POST"> <!--onsubmit="javascript:registerDriver()"> -->
->>>>>>> 911f8d5282ce1cd9929a4605024df66bc2c7697e
 			        		<div class="form-group">
 							    <label class="control-label col-sm-3" for="usernameD">Username:</label>
 							    <div class="col-sm-8">
-<!-- <<<<<<< HEAD
-							      <input type="text" class="form-control" id="USERNAME" name="username" placeholder="Enter username...">
-======= -->
+
 							      <input type="text" class="form-control" id="usernameD" name="usernameD" placeholder="Enter username...">
->>>>>>> 911f8d5282ce1cd9929a4605024df66bc2c7697e
 							    </div>
 							  </div>
 							  <div class="form-group">
 							    <label class="control-label col-sm-3" for="passwordD">Password:</label>
 							    <div class="col-sm-8">
-<!-- <<<<<<< HEAD
-							      <input type="password" class="form-control" id="PASSWORD" name="password" placeholder="Enter password...">
-======= -->
+
 							      <input type="password" class="form-control" id="passwordD" name="passwordD" placeholder="Enter password...">
->>>>>>> 911f8d5282ce1cd9929a4605024df66bc2c7697e
 							    </div>
 							  </div>
 							  <div class="form-group">
@@ -303,8 +291,8 @@
 
 							    	<select class="form-control" id="state" name="state" style="padding:0"> 
 
-<!-- 							    	<select class="form-control" id="stateD" name="stateD" style="padding:0"> 
- -->
+ 							    	<select class="form-control" id="stateD" name="stateD" style="padding:0"> 
+ 
 							    		<option value="AL">AL</option>
 										<option value="AK">AK</option>
 										<option value="AZ">AZ</option>
@@ -377,11 +365,8 @@
 							  <div class="form-group">
 							    <label class="control-label col-sm-3" for="phoneD" >Phone:</label>
 							    <div class="col-sm-8">
-<!-- <<<<<<< HEAD
-							      <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter phone number (only digits)...">
-======= -->
+
 							      <input type="phone" class="form-control" id="phoneD" name="phoneD" placeholder="Enter phone number...">
->>>>>>> 911f8d5282ce1cd9929a4605024df66bc2c7697e
 							    </div>
 							  </div>
 							  <div class="form-group">
@@ -395,47 +380,47 @@
 						</form>
 			        </div>
 			        <div class="tab-pane fade" id="B">
-			        	<form class="form-horizontal" role="form" method="post" action="register.php" id="driverForm">
+			        	<form class="form-horizontal" role="form" method="post" >
 			        		<div class="form-group">
-							    <label class="control-label col-sm-3" for="username">Username:</label>
+							    <label class="control-label col-sm-3" for="usernameH">Username:</label>
 							    <div class="col-sm-8">
-							      <input type="username" class="form-control" id="username" placeholder="Enter username...">
+							      <input type="username" class="form-control" id="usernameH" placeholder="Enter username...">
 							    </div>
 							  </div>
 							  <div class="form-group">
-							    <label class="control-label col-sm-3" for="password">Password:</label>
+							    <label class="control-label col-sm-3" for="passwordH">Password:</label>
 							    <div class="col-sm-8">
-							      <input type="password" class="form-control" id="password" placeholder="Enter password...">
+							      <input type="password" class="form-control" id="passwordH" placeholder="Enter password...">
 							    </div>
 							  </div>
 							  <div class="form-group">
-							    <label class="control-label col-sm-3" for="fname">Name:</label>
+							    <label class="control-label col-sm-3" for="fnameH">Name:</label>
 							    <div class="col-sm-4">
-							      <input type="fname" class="form-control" id="fname" placeholder="Enter first name...">
+							      <input type="fnameH" class="form-control" id="fnameH" placeholder="Enter first name...">
 							    </div>
 							    <div class="col-sm-4" style="padding-left:0">
-							    	<input type="lname" class="form-control" id="lname" placeholder="Enter last name...">
+							    	<input type="lname" class="form-control" id="lnameH" placeholder="Enter last name...">
 							    </div>
 							  </div>
 							  <div class="form-group">
-							    <label class="control-label col-sm-3" for="email">Email:</label>
+							    <label class="control-label col-sm-3" for="emailH">Email:</label>
 							    <div class="col-sm-8">
-							      <input type="email" class="form-control" id="email" placeholder="Enter email...">
+							      <input type="email" class="form-control" id="emailH" placeholder="Enter email...">
 							    </div>
 							  </div>
 							  <div class="form-group">
-							    <label class="control-label col-sm-3" for="address">Street Address:</label>
+							    <label class="control-label col-sm-3" for="addressH">Street Address:</label>
 							    <div class="col-sm-8">
-							      <input type="address" class="form-control" id="address" placeholder="Enter address...">
+							      <input type="address" class="form-control" id="addressH" placeholder="Enter address...">
 							    </div>
 							  </div>
 							  <div class="form-group">
-							    <label class="control-label col-sm-3" for="city">City:</label>
+							    <label class="control-label col-sm-3" for="cityH">City:</label>
 							    <div class="col-sm-4">
-							      <input type="city" class="form-control" id="city" placeholder="Enter city...">
+							      <input type="city" class="form-control" id="cityH" placeholder="Enter city...">
 							    </div>
 							    <div class="col-sm-1" style="padding-left:0">
-							    	<select class="form-control" name="state" style="padding:0"> 
+							    	<select class="form-control" id="stateH" name="stateH" style="padding:0"> 
 							    		<option value="AL">AL</option>
 											<option value="AK">AK</option>
 											<option value="AZ">AZ</option>
@@ -490,31 +475,31 @@
 							  		</select>
 								</div>
 								<div class="col-sm-3" style="padding-left:0">
-							      <input type="zipcode" class="form-control" id="zipcode" placeholder="Enter zip...">
+							      <input type="zipcode" class="form-control" id="zipcodeH" placeholder="Enter zip...">
 							    </div>
 							  </div>
 							  <div class="form-group">
 							    <label class="control-label col-sm-3" for="make">Available Spots:</label>
 							    <div class="col-sm-4">
-							    	<input class="form-control" type="text" name="spots" id="spots" placeholder="Number of Spots..."/>
+							    	<input class="form-control" type="text" name="spotsH" id="spotsH" placeholder="Number of Spots..."/>
 							    </div>
 							    <div class="col-sm-4" style="padding-left:0">
-<!-- <<<<<<< HEAD
-							    	<input class="form-control" type="text" name="price" id="price" placeholder="Price per spot (omit $)..."/>
-======= -->
-							    	<input class="form-control" type="text" name="price" id="price" placeholder="Price per spot..."/>
->>>>>>> 911f8d5282ce1cd9929a4605024df66bc2c7697e
+
+							    	<input class="form-control" type="text" name="priceH" id="priceH" placeholder="Price per spot..."/>
+
 							    </div>
 							  </div>
 							  <div class="form-group">
-							    <label class="control-label col-sm-3" for="phone">Phone:</label>
+							    <label class="control-label col-sm-3" for="phoneH">Phone:</label>
 							    <div class="col-sm-8">
-							      <input type="phone" class="form-control" id="phone" placeholder="Enter phone number (only digits)...">
+
+							      <input type="phone" class="form-control" id="phoneH" placeholder="Enter phone number...">
+
 							    </div>
 							  </div>
 							  <div class="form-group">
 							    <div class="col-sm-8">
-							      <input type="submit" name="homeownerSubmit" class="btn btn-success" id="homeowner_submit" placeholder="Enter phone number...">
+							      <input type="submit" name="homeownerSubmit" class="btn btn-success" id="register_homeowner" placeholder="Enter phone number...">
 							    </div>
 							  </div>
 						</form>
@@ -574,9 +559,10 @@
     <script src="js/homeownerMap.php"> </script>
   	
   	<script type="text/javascript" src="api/functions.js"></script>
+  	<!-- 
   	<script type="text/javascript" src="api/registerDriver.js"></script>
 
-
+ -->
     <!-- Custom JavaScript -->
     <script src="js/jscript.js"></script>
 
