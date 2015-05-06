@@ -134,5 +134,43 @@ $(function() {
     return false;
 	});
 
+	$("#register_event").click(function() {
+  	if (confirm("Register this event?")) {
+	var eventName = $("#eventName").val();
+	var startMonth = $("#startMonth").val();
+	var startDay = $("#startDay").val();
+	var startYear = $("#startYear").val();
+	var endMonth = $("#endMonth").val();
+	var endDay = $("#endDay").val();
+	var endYear = $("#endYear").val();
+	var category = $("#category").val();
+	var address = $("#address").val();
+	var city = $("#city").val();
+	var zipcode = $("#zipcode").val();
+	var state = $("#state").val();
+
+
+	alert("Registering Event " + eventName);
+    //if ()
+    // var select = $("#select").val();
+	var dataString = 'eventName='+ eventName + '&startMonth=' + startMonth + '&startDay=' + startDay + '&startYear=' + startYear + '&endMonth=' + endMonth + '&endDay=' + endDay + '&endYear=' + endYear + '&state=' + state + '&zipcode=' + zipcode + '&address=' + address +'&city=' + city + '&category=' + category;
+	$.ajax({
+      type: "POST",
+      url: '/SPOTS/registerEvent.php',
+      data: dataString,
+	  dataType: "html",
+      success: function(data) {
+	  if (data == 0) {
+	  $('.errormess').html('Wrong Login Data');
+		} else {
+			$('.errormess').html('');
+			alert("Congratulations! \nYou have registered an Event!\nEvent: " + eventName);	
+			document.location.href = '/SPOTS/registerEvent.html';	
+		}
+      }
+     });
+	}
+    return false;
+	});
 });
 
