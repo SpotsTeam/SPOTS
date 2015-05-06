@@ -2,6 +2,7 @@
 <body>
 	<?php 
 		
+<<<<<<< HEAD
 		if(isset($_REQUEST['email'])) {
 			$email = $_REQUEST['email'];
 			$select = $_REQUEST['select'];
@@ -14,6 +15,14 @@
 			// } else {
 			// 	echo "mail not sent";
 			// }
+=======
+
+
+		if(isset($_POST['email'])) {
+			$email = $_POST['email'];
+			$select = $_POST['select'];
+
+>>>>>>> d0bcf384cc69d14ea4b2a026d40bc1cd0c663fa2
 			
 			$servername = "localhost";
 			$databaseUsername = "spotsuser";
@@ -39,23 +48,40 @@
 			$driverQuery = "Select username, password from Driver where email = '$email'";
 			$homeQuery = "Select username, password from Homeowner where email = '$email'";
 
+<<<<<<< HEAD
 			$email_from = "erik.gabe@gmail.com";
+=======
+>>>>>>> d0bcf384cc69d14ea4b2a026d40bc1cd0c663fa2
 
 			if ($select == 'Driver') {
 				echo "Driver";
 				$result = mysql_query($driverQuery);
 				$row = mysql_fetch_row($result);
+<<<<<<< HEAD
 				$msg = 'username = ' . $row[0] . '\n password = ' .$row[1];
 				$msg = wordwrap($msg,70);
 				@mail($email, "SPOTS Driver Username/Password", $msg);
 
+=======
+
+				$msg = 'username = $row[0] \n password = $row[1]';
+				$msg = wordwrap($msg,70);
+				mail("$email", "SPOTS Driver Username/Password", $msg);
+>>>>>>> d0bcf384cc69d14ea4b2a026d40bc1cd0c663fa2
 			} else if ($select == 'Homeowner') {
 				echo "Homeowner";
 				$result = mysql_query($homeQuery);
 				$row = mysql_fetch_row($result);
+<<<<<<< HEAD
 				$msg = 'username = ' . $row[0] . '\n password = ' .$row[1];				
 				$msg = wordwrap($msg,70);
 				mail($email, "SPOTS Homeowner Username/Password", $msg);
+=======
+
+				$msg ='username = $row[0] \n password = $row[1]';
+				$msg = wordwrap($msg,70);
+				mail('$email', 'SPOTS Homeowner Username/Password', $msg);
+>>>>>>> d0bcf384cc69d14ea4b2a026d40bc1cd0c663fa2
 				
 			}
 
