@@ -87,7 +87,6 @@ function registerDriver() {
     alert("Register?");
     alert($("#USERNAME").val());
     $.ajax({ 
-
         url: "/SPOTS/api/Slim/registerDriver",
         type: "post",
         async: false,
