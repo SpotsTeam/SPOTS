@@ -93,6 +93,7 @@
 			$fullAddress = "$address" . ", " . "$city" . ", " . "$state";
 			$homeLonLat = get_lonlat($fullAddress);
 			$home['title'] = "Parking By: " . $homeownerName . "<br>Spots Available: " . $spotsAvailable . "<br>Price: $" . $price;
+			$home['spotsAvailable'] = $spotsAvailable;
 			$home['thumb'] = 'img&#47drop.png';
 			$home['text'] = "$homeownerContact";
 		 	$home['tags'] = "Parking";

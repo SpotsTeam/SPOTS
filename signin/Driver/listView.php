@@ -71,7 +71,7 @@
 	</div>
 	</section>
 	<?php include("selectSpots.php"); ?>	
-	<form method="post" action="Driver/registerSpot.php">
+	<form method="post" action="">
 	<span style="padding: 0 20px">&nbsp;</span><label>Enter a City to Search:</label><input type="Search" name="city"></input>
 	<span style="padding: 0 20px">&nbsp;</span><label>Order By: </label> <select name="groupBy"> 
 						<option value="spotNumber">spotId</option>
@@ -81,7 +81,7 @@
 						<option value="state">State</option>
 						<option value="zipcode">Zipcode</option>
 		</select>
-		<button style="outline:bold; margin-left: 60px">Search</button><br><br><br>
+		<input type="submit" style="outline:bold; margin-left: 60px"><br><br><br>
 	</form>
 	<form enctype="multipart/form-data"method = "post" action="registerSpot.php">
 		<script>
@@ -132,7 +132,7 @@
 		
 		<br><br>
 		<div style="text-align:center;verticle-align:bottom">
-		<button onclick="return confirm('Reserve this spot?');" data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-bottom: 10px"> 
+		<button onclick="if (confirm('Reserve this spot?')) { alert('Spot is registered'); return true; } else { alert('Could not Register Spot, Try Again!'); return false; }" data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-bottom: 10px"> 
 						<i class="fa fa-1x fa-car"></i> Reserve </button>
 						
 					</div> </form> 

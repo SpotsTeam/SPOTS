@@ -120,7 +120,7 @@
 			<div ng-app="locations" class="block-height">
 				<div class="maxheight" data-ng-controller="myCtrl">
 					<div class="col-md-12 search">
-						<h3> Search For An Event</h3> 
+						<h3> Search For An Event <a href="../registerEvent.html"><button>+</button></a> </h3>
 						<input class="form-control" type="search" ng-model="q" placeholder="Find an event..." />
 		      			<div class="result-container">
 			      			<ul>
@@ -164,7 +164,7 @@
 								$car = $_SESSION['car'];
 		      					echo "$car";
 								$currentSpots = $_SESSION['parked'];
-								if ($park == "None") {
+								if ($park == "dfj") {
 									echo "<h2>Currently Not Parked Anywhere</h2>";
 								} else {
 									echo "<h2><b>Spots You Reserved: </b></h2>";

@@ -22,7 +22,7 @@
 
 		mysql_close();
 		
-		header("Location: listView.php");
-}
+	} 
+	header("Location: listView.php");
 
 ?>

@@ -95,5 +95,4 @@
 	header("Location: editInfo.html");
 
 
-
 ?>
