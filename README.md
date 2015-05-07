@@ -9,7 +9,10 @@ Spots is a web and mobile app that will help you to find a parking spot at any e
 
 1. Type in IP Address (52.10.141.9)
 2. To Search for an event, type in the search box for an event near you
-3. To learn more about Spots, click the about SPOTS button in the top right
+3. To learn more about Spots, click the about Spots button in the top right
 4. To Sign in, click the sign in button
 5. Once you click the sign in button, you can sign in as a driver or homeowner.
 6. Once you click driver or homeowner, fill in your information
+
+Click on the link below to read our functional specification documents.
+https://docs.google.com/spreadsheets/d/1lxTHFT6aFMvpzGCGPYtMiCivb3G0gt9NFkopzhG2z38/edit#gid=2071913344
