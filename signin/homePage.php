@@ -54,6 +54,9 @@
 				<ul class="nav navbar-nav navbar-right">
 					<?php if ($choice == "Homeowner") { ?>
 					<li> 
+						<a href="" data-toggle="modal" data-target=".changeHome-modal">Change Home</a>
+					</li>
+					<li> 
 						<a href="/SPOTS/signin/Homeowner/manageSpots.php">Manage Spots </button></a>
 					</li>
 					
@@ -150,6 +153,61 @@
 
 
 		<!-- Modal -->
+
+	<div class="modal fade changeHome-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	 	<div class="modal-dialog modal-lg">
+	   		<div class="modal-content">
+	     		<div class="modal-header">
+	        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        		<h4 class="modal-title" id="myModalLabel">Choose Current Home</h4>
+		      	</div>
+		      	<div class="modal-body">
+		      		<div style="margin-top:80px" class="centered">
+						<h2>Choose Home</h2>
+						
+						<form method = "post" action="changeHome.php">
+							
+							<span style="padding: 0 20px">&nbsp;</span><label>Select Home:</label> 
+							<select name="Home" id="selectHome">
+										
+							</select>
+
+							<?php include("changeHome.php"); 
+							?>
+							<script>
+								(function () {
+									
+								    var elm = document.getElementById('selectHome'),
+								        df = document.createDocumentFragment();
+								    var homes = <?php echo json_encode($address); ?>;
+								    var count = <?php echo json_encode($count); ?>;
+								    var homeId = <?php echo json_encode($homeId); ?>;
+								    for (var i = 0; i < count; i++) {
+								        var option = document.createElement('option');
+								        option.value = homeId[i];  //the value that is sent in the post
+								        option.appendChild(document.createTextNode(homes[i]));  //what the select option is
+								        df.appendChild(option);
+								    }
+								    elm.appendChild(df);
+								}());
+							</script>
+								
+							<br><br><br>
+							<button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 150px"> 
+											<i class="fa fa-1x fa-car"></i> Select </button>
+						</div>
+
+
+		      		</div>
+		   		<div class="modal-footer">
+		   		<form action="/SPOTS/signin/logout.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+						<i class="fa fa-1x fa-street-view"> </i>Log Out </button>
+				</form>
+			    </div>
+		    </div>
+		</div>
+	</div>
+
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	 	<div class="modal-dialog modal-lg">
 	   		<div class="modal-content">
@@ -227,7 +285,7 @@
 								$name = $_SESSION['name'];
 								$home = $_SESSION['home'];
 								echo "$name";
-								echo "<h2>Current address: $home </h2>";
+								echo "<h2>Current address: $home </h2>"; 
 								include("Homeowner/yourHome.php");
 								$spotsA = $_SESSION['spotsAvailable'];
 								$spotsT = $_SESSION['spotsTaken'];
