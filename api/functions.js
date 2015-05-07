@@ -74,21 +74,20 @@ $(function() {
     	$('.errormess').html('Please enter your license plate number');
     	return false;
     }
-    if (fname == "") {
-    	fname = null;
+    if (address == "") {
+	    if (!validateAddress(address)) {
+	    	$('.errormess').html('Please enter valid Address');
+	    	return false;
+	    }
     }
-    if (lname == "") {
-    	lname = null;
-    }
-    if (address =="") {
-    	address = "No Address on Record";
-    } else if (!validateAddress(address)) {
-    	$('.errormess').html('Please enter valid Address');
+    if (city =="") {
+    	$('.errormess').html('Please enter a city');
     	return false;
     }
-    if (phone == "") {
-    	phone = null;
-    } 
+    if (zipcode == "") {
+    	$('.errormess').html('Please enter your zipcode');
+    	return false;
+    }
     if (confirm("Register as a Driver?")) {
 	var dataString = 'username='+ username + '&password=' + password + '&fname=' + fname + '&lname=' + lname + '&email=' + email + '&address=' + address + '&city=' + city + '&state=' + state + '&zipcode=' + zipcode + '&make=' + make +'&model=' + model + '&license=' + license + '&phone=' + phone;
 	$.ajax({
