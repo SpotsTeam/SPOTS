@@ -108,7 +108,7 @@
 				</div>
 				<div class="col-md-8">
 					<h1> Drivers </h1>
-					<h2> We Find Parking, So you don't have to </h2>
+					<h2> We find parking so you don't have to </h2>
 				</div>
 			</div>
 		</div>
@@ -245,16 +245,19 @@
 			    <!-- Tab panes -->
 			    <div class="tab-content">
 			        <div class="tab-pane fade in active" id="A">
+
 			        	 <form method="POST"> <!--onsubmit="javascript:registerDriver()"> -->
 			        		<div class="form-group">
 							    <label class="control-label col-sm-3" for="usernameD">Username:</label>
 							    <div class="col-sm-8">
+
 							      <input type="text" class="form-control" id="usernameD" name="usernameD" placeholder="Enter username...">
 							    </div>
 							  </div>
 							  <div class="form-group">
 							    <label class="control-label col-sm-3" for="passwordD">Password:</label>
 							    <div class="col-sm-8">
+
 							      <input type="password" class="form-control" id="passwordD" name="passwordD" placeholder="Enter password...">
 							    </div>
 							  </div>
@@ -270,7 +273,7 @@
 							  <div class="form-group">
 							    <label class="control-label col-sm-3" for="emailD">Email:</label>
 							    <div class="col-sm-8">
-							      <input type="email" class="form-control" id="emailD" name="emailD" placeholder="Enter email...">
+							      <input type="email" class="form-control" id="emailD" name="emailD" placeholder="me@example.com">
 							    </div>
 							  </div>
 							  <div class="form-group">
@@ -285,7 +288,9 @@
 							      <input type="city" class="form-control" id="cityD" name="cityD" placeholder="Enter city...">
 							    </div>
 							    <div class="col-sm-1" style="padding-left:0">
-							    	<select class="form-control" id="stateD" name="stateD" style="padding:0"> 
+
+ 							    	<select class="form-control" id="stateD" name="stateD" style="padding:0"> 
+ 
 							    		<option value="AL">AL</option>
 										<option value="AK">AK</option>
 										<option value="AZ">AZ</option>
@@ -358,15 +363,15 @@
 							  <div class="form-group">
 							    <label class="control-label col-sm-3" for="phoneD" >Phone:</label>
 							    <div class="col-sm-8">
-							      <input type="phone" class="form-control" id="phoneD" name="phoneD" placeholder="Enter phone number...">
+							      <input type="phone" class="form-control" id="phoneD" name="phoneD" placeholder="Enter phone number... ">
 							    </div>
 							  </div>
 							  <div class="form-group">
 							    <div class="col-sm-8">
-							      <input name="submit" id="register_driver" type="submit" class="btn btn-default" value=" Register " class="centered" >
+							      <input name="submit" id="register_driver" type="submit" class="btn btn-default" value=" Register " class="centered" > <span class="errormess"></span>
 							    </div>
 							    <!-- <span class="login_loading"></span> -->
-								<span class="errormess"></span>
+								
 							  </div>
 
 						</form>
@@ -476,18 +481,22 @@
 							    	<input class="form-control" type="text" name="spotsH" id="spotsH" placeholder="Number of Spots..."/>
 							    </div>
 							    <div class="col-sm-4" style="padding-left:0">
+
 							    	<input class="form-control" type="text" name="priceH" id="priceH" placeholder="Price per spot..."/>
+
 							    </div>
 							  </div>
 							  <div class="form-group">
 							    <label class="control-label col-sm-3" for="phoneH">Phone:</label>
 							    <div class="col-sm-8">
+
 							      <input type="phone" class="form-control" id="phoneH" placeholder="Enter phone number...">
+
 							    </div>
 							  </div>
 							  <div class="form-group">
 							    <div class="col-sm-8">
-							      <input type="submit" name="homeownerSubmit" class="btn btn-success" id="register_homeowner" placeholder="Enter phone number...">
+							      <input type="submit" name="homeownerSubmit" class="btn btn-success" id="register_homeowner" placeholder="Enter phone number..."> <span class="errormess"></span>
 							    </div>
 							  </div>
 						</form>
