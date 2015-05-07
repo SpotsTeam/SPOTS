@@ -338,7 +338,7 @@
         <script src="/SPOTS/js/homeownerMap.php"> </script>
     <?php } ?>
     <!-- Custom JavaScript -->
-    <script src="/SPOTS/js/jscript.js"></script>
+    <script src="/SPOTS/js/jquery.php"></script>
 
 
     <!-- jQuery -->
