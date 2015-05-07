@@ -1,5 +1,5 @@
 $(function () {
-    $("#submit_login").click(function () {
+    $("#submit_login").on('click', function () {
         var username = $("input#username").val();
         alert("Signing in as: " + username);
         if (username === "") {
