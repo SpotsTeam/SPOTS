@@ -1,5 +1,5 @@
 
-//Angular functions
+//Angular functions (Event search/filtering)
 angular.module('locations', []).controller('myCtrl', function($scope, $http){
     $http.get("loc-data.php")
       .success(function(response) {$scope.locations = response.data;});
@@ -21,17 +21,17 @@ $(function() {
     });
 });
 
-
-
 //Pop up the scroll bar button
 $(function(){
  
   $(document).on('scroll', function(){
  
-    if ($(window).scrollTop() > 600) {
+    if ($(window).scrollTop() > 500) {
       $('.scroll-down').addClass('show');
+      $('.scroll-up').addClass('show');
     } else {
       $('.scroll-down').removeClass('show');
+      $('.scroll-up').removeClass('show');
     }
   });
 });
