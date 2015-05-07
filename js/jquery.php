@@ -6,14 +6,26 @@ angular.module('locations', []).controller('myCtrl', function($scope, $http){
     // $.getJson('getEvents.php',function(jsonData){
     //   $scope.locations == jsonData; 
     // });       
-    <?php include("getEvents.php"); ?>
-    var data = <?php json_encode($events) ?>;
+   
+    var data = <?php include("../getEvents.php"); json_encode($events) ?>;
      $scope.locations = data;
 
-    $scope.changeMap = function(loc){
-  		//L.marker(loc).addTo(map);
+    var RedIcon = L.Icon.Default.extend({
+        options: {
+              iconUrl: '/SPOTS/js/images/marker-icon-red.png' 
+        }
+     });
+    var redIcon = new RedIcon();
+
+    $scope.changeMap = function(loc, title){
+  		var marker = new L.marker(loc, {icon:redIcon});
+      map.addLayer(marker);
+      marker.bindPopup("<b> Here!! </b>").openPopup();
   		map.setView(loc, 15);
+      setInterval(function(){map.removeLayer(marker)},1500);
   	}
+
+
 });
 
 

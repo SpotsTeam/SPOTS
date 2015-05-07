@@ -114,7 +114,7 @@
 		//echo "<br>";
 	}
 
-
+	echo json_encode($events);
 	
 
 	
