@@ -44,12 +44,7 @@
 		$query = "UPDATE Driver set street = '$newAddress', city = '$newCity', state = '$newState', zip = '$newZip' where username = '$username' AND password = '$password'";
 		mysql_query($query, $conn);
 
-		echo "$newAddress";
-		echo "$newState";
-		echo "$newCity";
-		echo "$newZip";
-		echo "$username";
-		echo "$password";
+	
 
 		unset($_POST['updateAddress']);
 
@@ -76,9 +71,7 @@
 
 
 		echo $error;
-		echo "$newLicense";
-		echo "$newCarModel";
-		echo "$newCarMake";
+
 
 		// unset($_POST['oldLicense']);
 		// unset($_POST['updateCarModel']);
@@ -99,20 +92,19 @@
 		// unset($_POST['newLastName']);
 		// unset($_POST['updateFirstName']);
 
-	// } else if (isset($_POST['changeEmail'])) { //updating email information
-	// 	$newEmail = $_POST['changeEmail'];
-	// 	$username = $_POST['USERNAME'];
-	// 	$password = $_POST['PASSWORD']
+	} else if (isset($_POST['updateEmail'])) { //updating email information
+		$oldEmail = $_POST['updateEmail'];
+		$newEmail = $_POST['newEmail'];
+		$username = $_POST['USERNAME'];
+		$password = $_POST['PASSWORD'];
 
-	// 	$query = "UPDATE Driver set email = '$newEmail' where username = '$username' AND password = '$password'";
-	// 	mysql_query($query, $conn);
+		$query = "UPDATE Driver set email = '$newEmail' where username = '$username' AND password = '$password'";
+		mysql_query($query, $conn);
 
 
-	// 	unset($_POST['updateEmail']);
+		unset($_POST['updateEmail']);
 
-	// 	echo"$changeEmail";
-	// 	echo"$username";
-	// 	echo"$password";
+
 
 	} else if (isset($_POST['updatePhone'])) { //updating phone number
 		$newPhone = $_POST['updatePhone'];
@@ -142,7 +134,7 @@
 
 	mysql_close($conn);
 
-	//header("Location: editInfo.html");
+	header("Location: editInfo.html");
 
 
 ?>
