@@ -150,7 +150,7 @@
 
 
 		<!-- Modal -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 	 	<div class="modal-dialog modal-lg">
 	   		<div class="modal-content">
 	     		<div class="modal-header">
@@ -158,17 +158,23 @@
 	        		<h4 class="modal-title" id="myModalLabel">Your Spots</h4>
 		      	</div>
 		      	<div class="modal-body">
+		      		<div class="container">
+		      		
+
 		      		<h2>
 		      			<?php 
 			      			if ($choice =='Driver') {
 								$car = $_SESSION['car'];
 		      					echo "$car";
 								$currentSpots = $_SESSION['parked'];
-								if ($park == "dfj") {
+								if ($currentSpots == "None") {
 									echo "<h2>Currently Not Parked Anywhere</h2>";
 								} else {
-									echo "<h2><b>Spots You Reserved: </b></h2>";
 									?> 
+								<div style="text-align:center;verticle-align:bottom">
+									<h2><b><u>Spots You Have Reserved: </u></b></h2> 
+								</div>
+									
 									<form enctype="multipart/form-data"method = "post" action="Driver/cancelReservation.php">
 									<script>
 								(function () {
@@ -195,31 +201,71 @@
 									var homeId = <?php echo json_encode($homeIdArr)?>;
 									if (count > 0) {
 									    for (var i = 0; i < count; i++) {
-									    	document.write('<tr>')
-										   	document.write('<td>'+ address[i]+'</td>')
-											document.write('<td>' + city[i] + '</td>')
-									        document.write('<td>' + state[i] + '</td>')
-									        document.write('<td>$' + price[i] + '</td>')
-											document.write('<td>' + phone[i] + '</td>')
-									        document.write('<td>' + email[i] + '</td>') 
-									        var tempArr = [spotId[i], homeId[i]];
-				        					var arr = [];
-				       						arr[i] = tempArr;
-									        document.write('<td><input type="radio" name="cancel" value="'+ arr[i]+'">Cancel</td>')
-								     	    document.write('</tr>')
+									    	if (address[i] != undefined) {
+										    	document.write('<tr>')
+											   	document.write('<td>'+ address[i]+'</td>')
+												document.write('<td>' + city[i] + '</td>')
+										        document.write('<td>' + state[i] + '</td>')
+										        document.write('<td>$' + price[i] + '</td>')
+												document.write('<td>' + phone[i] + '</td>')
+										        document.write('<td>' + email[i] + '</td>') 
+										        var tempArr = [spotId[i], homeId[i]];
+					        					var arr = [];
+					       						arr[i] = tempArr;
+										        document.write('<td><input type="radio" name="cancel" value="'+ arr[i]+'">Cancel</td>')
+									     	    document.write('</tr>')
+								     		}
 									    }
 									    document.write('</table>')
 									} else {
 										document.write('</table>')
 										document.write('<div align="center"><h2>NO RESULTS</h2></div>')
 									}
+
 								    
 								}());
 								</script>
-								<div style="text-align:center;verticle-align:bottom">
+								<div style="text-align:center;verticle-align:bottom"> <br>
 										<button onclick="return confirm('You sure you want to cancel your reservation?');" data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-bottom: 10px"> 
 														<i class="fa fa-1x fa-car"></i> Cancel </button>
-													</div> </form> 									
+													</div> </form> 	
+
+						<div style="text-align:center;verticle-align:bottom">
+							<h2><b><u>Select Vehicle to Park </u></b></h2> 
+	
+								<form method = "post" action="Driver/changeCar.php">
+									
+									<span style="padding: 0 20px">&nbsp;</span><label>Select Car:</label> 
+									<select name="chooseCar" id="selectCar">
+												
+									</select>
+
+									<?php include("Driver/changeCar.php"); 
+									?>
+									<script>
+										(function () {
+											
+										    var elm = document.getElementById('selectCar'),
+										        df = document.createDocumentFragment();
+										    var license = <?php echo json_encode($licensePlate); ?>;
+										    var count = <?php echo json_encode($count); ?>;
+										    var car = <?php echo json_encode($carModel); ?>;
+										    for (var i = 0; i < count; i++) {
+										        var option = document.createElement('option');
+										        option.value = license[i];  //the value that is sent in the post
+										        option.appendChild(document.createTextNode(license[i] + " " + car[i]));  //what the select option is
+										        df.appendChild(option);
+										    }
+										    elm.appendChild(df);
+										}());
+									</script>
+										
+									<br><br>
+									<button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-bottom: 10px"> 
+													<i class="fa fa-1x fa-car"></i> Select Car</button><br>
+
+									</form></div>
+								
 							<?php
 								}
 
@@ -240,7 +286,7 @@
 
 					</h2>
 
-		   		</div>
+		   		</div></div>
 		   		<div class="modal-footer">
 		   		<form action="/SPOTS/signin/logout.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
 						<i class="fa fa-1x fa-street-view"> </i>Log Out </button>
