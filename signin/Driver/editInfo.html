@@ -65,10 +65,10 @@
 		<div class="parent">
 			<div class="vert-top col-md-10">
 				<h1> Edit Info</h1> 
-				 <div class="col-sm-5 button-left"><a data-toggle="modal" data-target="#editCar"><div class="click-button-left blue-button"> Edit Your Car </div> </a> </div> 
-				 <div class="col-sm-5 button-right"><a data-toggle="modal" data-target="#changeAddress"> <div class="click-button-right red-button"> Change Your Address </div> </a> </div>
-				 <div class="col-sm-5 button-left"><a data-toggle="modal" data-target="#changeName"><div class="click-button-left red-button"> Change Name </div> </a> </div> 
-				 <div class="col-sm-5 button-right"><a data-toggle="modal" data-target="#editEmail"> <div class="click-button-right blue-button"> Change Your Email </div> </a> </div>
+				 <div class="col-sm-5 button-left"><a data-toggle="modal" data-target="#editCar"><div class="click-button-left blue-button"> Add Car </div> </a> </div> 
+				 <div class="col-sm-5 button-right"><a data-toggle="modal" data-target="#changeAddress"> <div class="click-button-right red-button"> Change Address </div> </a> </div>
+				 <div class="col-sm-5 button-left"><a data-toggle="modal" data-target="#changeName"><div class="click-button-left red-button"> Change Car </div> </a> </div> 
+				 <div class="col-sm-5 button-right"><a data-toggle="modal" data-target="#editEmail"> <div class="click-button-right blue-button"> Change Email </div> </a> </div>
 			</div>
 		</div>
 
@@ -77,14 +77,14 @@
 		   		<div class="modal-content">
 		     		<div class="modal-header">
 		        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        		<h4 class="modal-title" id="myModalLabel">Edit Car</h4>
+		        		<h4 class="modal-title" id="myModalLabel">Add Car</h4>
 			      	</div>
 			      	<div class="modal-body">
 			      		<h2>
 			      			<form action="editInfo.php" method="post"> 
 								<label>New Car Make: </label><input type="text" name="updateCarMake" class="form-control"/><br/><br/>
 				                <label>New Car Model: </label><input type="text" name="updateCarModel" /><br/><br/>
-				                <label>New Car License: </label><input type="text" name="updateLicense" /><br/><br/>
+				                <label>New Car License Plate: </label><input type="text" name="updateLicense" /><br/><br/>
 				                <label>Current License: </label><input type="text" name="oldLicense" /><br><br><br>
 				                <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 600px"> 
 				                        <i class="fa fa-1x fa-car"></i> Submit </button>
@@ -125,19 +125,78 @@
 			            <div class="form-group">
 						    <label class="control-label col-sm-3" for="newState">New State:</label>
 						    <div class="col-sm-8">
-						      <input type="text" class="form-control" id="newState" name="newState" placeholder="Enter new state...">
+						    	<select class="form-control" name="state" style="padding:0"> 
+							    		<option value="AL">AL</option>
+											<option value="AK">AK</option>
+											<option value="AZ">AZ</option>
+											<option value="AR">AR</option>
+											<option value="CA">CA</option>
+											<option value="CO">CO</option>
+											<option value="CT">CT</option>
+											<option value="DE">DE</option>
+											<option value="FL">FL</option>
+											<option value="GA">GA</option>
+											<option value="HI">HI</option>
+											<option value="ID">ID</option>
+											<option value="IL">IL</option>
+											<option value="IN">IN</option>
+											<option value="IA">IA</option>
+											<option value="KA">KS</option>
+											<option value="KY">KY</option>
+											<option value="LA">LA</option>
+											<option value="ME">ME</option>
+											<option value="MD">MD</option>
+											<option value="MA">MA</option>
+											<option value="MI">MI</option>
+											<option value="MN">MN</option>
+											<option value="MS">MS</option>
+											<option value="MO">MO</option>
+											<option value="MT">MT</option>
+											<option value="NE">NE</option>
+											<option value="NV">NV</option>
+											<option value="NH">NH</option>
+											<option value="NJ">NJ</option>
+											<option value="NM">NM</option>
+											<option value="NY">NY</option>
+											<option value="NC">NC</option>
+											<option value="ND">ND</option>
+											<option value="OH">OH</option>
+											<option value="OK">OK</option>
+											<option value="OR">OR</option>
+											<option value="PA">PA</option>
+											<option value="RI">RI</option>
+											<option value="SC">SC</option>
+											<option value="SD">SD</option>
+											<option value="TN">TN</option>
+											<option value="TX">TX</option>
+											<option value="UT">UT</option>
+											<option value="VT">VT</option>
+											<option value="VA">VA</option>
+											<option value="WA">WA</option>
+											<option value="WV">WV</option>
+											<option value="WI">WI</option>
+											<option value="WY">WY</option>
+											<option value="DC">DC</option>
+							  		</select>
+						      <!-- <input type="text" class="form-control" id="newState" name="newState" placeholder="Enter new state..."> -->
+						    </div>
+						</div>
+						<div class="form-group">
+						    <label class="control-label col-sm-3" for="newCity">New Zip:</label>
+						    <div class="col-sm-8">
+						      <input type="text" class="form-control" id="newZip" name="newZip" placeholder="Enter new zip...">
 						    </div>
 						</div>
 			            <div class="form-group">
 						    <label class="control-label col-sm-3" for="username">Username:</label>
 						    <div class="col-sm-8">
-						      <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username...">
+						      <input type="text" class="form-control" id = "USERNAME" name="USERNAME" placeholder="Enter your username...">
 						    </div>
 						</div>
 						<div class="form-group">
 						    <label class="control-label col-sm-3" for="password">Password:</label>
 						    <div class="col-sm-8">
-						      <input type="password" class="form-control" id="password" name="password" placeholder="Enter password...">
+						      <input type="password" class="form-control" id = "PASSWORD" name="PASSWORD" placeholder="Enter password...">
 						    </div>
 						</div>
 			            
@@ -157,15 +216,17 @@
 		   		<div class="modal-content">
 		     		<div class="modal-header">
 		        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        		<h4 class="modal-title" id="myModalLabel">Change Name</h4>
+		        		<h4 class="modal-title" id="myModalLabel">Update Car</h4>
 			      	</div>
 			      	<div class="modal-body">
 			      		<h2>
 			      			<form action="editInfo.php" method="post"> 
-								<label>New Car Make: </label><input type="text" name="updateCarMake"/><br/><br/>
+								<label>New Car Make: </label><input type="text" name="myCarMake"/><br/><br/>
 				                <label>New Car Model: </label><input type="text" name="updateCarModel" /><br/><br/>
-				                <label>New Car License: </label><input type="text" name="updateLicense" /><br/><br/>
-				                <label>Current License: </label><input type="text" name="oldLicense" /><br><br><br>
+				                <label>New Car License Plate: </label><input type="text" name="updateLicense" /><br/><br/>
+				                <label>Old Car Make: </label><input type="text" name="oldCarMake" /><br>
+				                <label>Old Car Model: </label><input type="text" name="oldCarModel" /><br>
+				                <label>Current License: </label><input type="text" name="oldLicense" /><br>
 				                <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 600px"> 
 				                        <i class="fa fa-1x fa-car"></i> Submit </button>
 				            </form>
@@ -190,10 +251,10 @@
 			      	<div class="modal-body">
 			      		<h2>
 			      			<form action="editInfo.php" method="post"> 
-								<label>New Car Make: </label><input type="text" name="updateCarMake"/><br/><br/>
-				                <label>New Car Model: </label><input type="text" name="updateCarModel" /><br/><br/>
-				                <label>New Car License: </label><input type="text" name="updateLicense" /><br/><br/>
-				                <label>Current License: </label><input type="text" name="oldLicense" /><br><br><br>
+								<label>Current Email: </label><input type="text" name="updateEmail"/><br/><br/>
+				                <label>New Email: </label><input type="text" name="newEmail" /><br/><br/>
+<!-- 				                <label>New Car License: </label><input type="text" name="updateLicense" /><br/><br/>
+				                <label>Current License: </label><input type="text" name="oldLicense" /><br><br><br> -->
 				                <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 600px"> 
 				                        <i class="fa fa-1x fa-car"></i> Submit </button>
 				            </form>

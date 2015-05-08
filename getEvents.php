@@ -200,11 +200,16 @@
 	}
 
 
+<<<<<<< HEAD
 	
 <<<<<<< HEAD
 >>>>>>> 1338c8b6e8dc895f13ab873372ba269657bde08a
 =======
 >>>>>>> 03688d131052966f8a6bfb67015cd8e80857ed6f
+=======
+	//echo json_encode($homes);
+	echo json_encode($events);
+>>>>>>> a76aa055580d6c8469897ae901cda7639fccd065
 
 	
 	

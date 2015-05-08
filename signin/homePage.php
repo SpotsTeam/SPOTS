@@ -160,7 +160,7 @@
 			<div ng-app="locations" class="block-height">
 				<div class="maxheight" data-ng-controller="myCtrl">
 					<div class="col-md-12 search">
-						<h3> Search For An Event <a href="../registerEvent.php"><button>+</button></a> </h3>
+						<h3> Search For An Event <a href="../registerEvent.html"><button>+</button></a> </h3>
 						<input class="form-control" type="search" ng-model="q" placeholder="Find an event..." />
 		      			<div class="result-container">
 			      			<ul>
@@ -335,11 +335,8 @@
         <script src="/SPOTS/js/homeownerMap.php"> </script>
     <?php } ?>
     <!-- Custom JavaScript -->
-    <script src="/SPOTS/js/jscript.js"></script>
+    <script src="/SPOTS/js/jquery.php"></script>
 
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
     
 
 	
