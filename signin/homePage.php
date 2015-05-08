@@ -161,7 +161,7 @@
 		      		<div class="container">
 		      		
 
-		      		<h2>
+		      		
 		      			<?php 
 			      			if ($choice =='Driver') {
 								$car = $_SESSION['car'];
@@ -235,10 +235,11 @@
 	
 								<form method = "post" action="Driver/changeCar.php">
 									
-									<span style="padding: 0 20px">&nbsp;</span><label>Select Car:</label> 
-									<select name="chooseCar" id="selectCar">
+									<div class="col-sm-8" style="padding-left:260px">
+									<select name="chooseCar" id="selectCar" class="form-control" style="text-align:center">
 												
 									</select>
+								</div>
 
 									<?php include("Driver/changeCar.php"); 
 									?>

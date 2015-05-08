@@ -31,7 +31,7 @@
 			$car = "You have no cars registered. You can register them on your home page";
 			$spotsParked = "None";
 		} else {
-			$car = "<h2><b>Current Vehicle: </b>" .$rows[0]. " ".  $rows[1]."</h2>";
+			$car = "<div style=\"text-align:center;verticle-align:bottom\"><h2><b><u>Current Vehicle: </b></u><br>" .$rows[0]. " ".  $rows[1]."</h2></div>";
 			if (!isset($_SESSION['licenseP'])) {
 				$_SESSION['licenseP'] = $rows[2];
 				$license = $rows[2];
