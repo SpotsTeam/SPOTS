@@ -203,28 +203,32 @@
 	          <div class="container-fluid">
 	          	<div class="login_form">
 	          	<form method = "POST">
-		        	<span style="padding: 0 20px">&nbsp;</span><label>User Type:  </label> 
-		                <select id="select"> 
+		  			<div class="col-sm-8" style="padding-left:260px">
+		                <select id="select" class="form-control" style="padding-left:0"> 
+		                		<option value="" disabled selected>Select User Type</option>
 		                        <option value="Driver">Driver</option> 
 		                        <option value="Homeowner">Homeowner</option>
 
 		                </select> 
+		            </div>
 		            <input type="text" id="username" name="username" class="form-control" placeholder="Username">
 	            	<input type="password" id="password" name="password" class="form-control" hidden="true" placeholder="Password">
 	            	<br><br><br>
-		         	<input name="submit" id="submit_login" type="submit" class="btn btn-default" value=" Login " class="centered" >
+		         	
 		         	<br><br><br><br><br><br>
 		         	<span class="login_loading"></span>
-					<span class="errormess"></span>
+					<span class="errormess" style="color:red"></span>
 		            <!-- <span><br/><br/><br/><?php echo $error; ?></span></div> -->
 		        
-	           	</form>
+	           	
 	           </div>
 	          </div>
 	        </div>
 	        <div class="modal-footer">
+	          <input name="submit" id="submit_login" type="submit" class="btn btn-success" value=" Login " >
 	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	        </div>
+	        </form>
 	    </div>
 	  </div>
 	</div>
@@ -368,7 +372,7 @@
 							  </div>
 							  <div class="form-group">
 							    <div class="col-sm-8">
-							      <input name="submit" id="register_driver" type="submit" class="btn btn-default" value=" Register " class="centered" > <span class="errormess"></span>
+							      <label></label><input name="submit" id="register_driver" type="submit" class="btn btn-success" value=" Register " class="centered" > <span class="errormess" style="color:red"></span>
 							    </div>
 							    <!-- <span class="login_loading"></span> -->
 								
@@ -496,7 +500,7 @@
 							  </div>
 							  <div class="form-group">
 							    <div class="col-sm-8">
-							      <input type="submit" name="homeownerSubmit" class="btn btn-success" id="register_homeowner" placeholder="Enter phone number..."> <span class="errormess"></span>
+							      <label></label><input type="submit" name="homeownerSubmit" class="btn btn-success" id="register_homeowner" placeholder="Enter phone number..."> <span class="errormess" style="color:red"></span>
 							    </div>
 							  </div>
 						</form>
