@@ -1,5 +1,5 @@
 <?php 
-
+	include("../login.php");
 	$conn = mysql_connect("localhost", "spotsuser", "spots123");
 
 	//choose database
@@ -57,21 +57,18 @@
 		$newCarMake = $_POST['myCarMake'];
 		$newCarModel = $_POST['updateCarModel'];
 		$newLicense = $_POST['updateLicense'];
-		$oldCarMake = $_POST['oldCarMake'];
-		$oldCarModel = $_POST['oldCarModel'];
-		$oldLicense = $_POST['oldLicense'];
+		$oldLicense = $_SESSION['licenseP'];
 
 		//$checkLicense = mysql_query("SELECT * from Vehicle where licensePlate = '$newLicense'", $conn);
 		$userId = mysql_query("SELECT userId from Vehicle natural join Driver where licensePlate = '$oldLicense'", $conn);
 		$id = mysql_fetch_row($userId);
-		echo $id[0];
+		//echo $id[0];
 		// if (mysql_num_rows($checkLicense) > 0) {
 		// 	$error = "not a valid license plate";
 		//} else {
-			$query = "SELECT carMake, carModel FROM Vehicle WHERE licensePlate = '$newLicense'";
-			//$queryDelete = "DELETE FROM Vehicle WHERE licensePlate = '$oldLicense'";
-			mysql_query($query, $conn);
-			$error = "";
+		$query = "INSERT into Vehicle values ('$newLicense', '$newCarMake', '$newCarModel', $id[0])";
+		mysql_query($query, $conn);			//$queryDelete = "DELETE FROM Vehicle WHERE licensePlate = '$oldLicense'";
+		$error = "";
 		//}
 
 
@@ -116,9 +113,11 @@
 
 	} else if (isset($_POST['updatePhone'])) { //updating phone number
 		$newPhone = $_POST['updatePhone'];
-		$username = $_SESSION['username'];
+		$oldLicense = $_SESSION['licenseP'];
+		$userId = mysql_query("SELECT userId from Vehicle natural join Driver where licensePlate = '$oldLicense'", $conn);
+		$id = mysql_fetch_row($userId);
 
-		$query = "UPDATE Driver set phone = '$newPhone' where username = '$username'";
+		$query = "UPDATE Driver set phone = '$newPhone' where userId = $id[0]";
 		mysql_query($query, $conn);
 
 		unset($_POST['updatePhone']);
@@ -142,7 +141,7 @@
 
 	mysql_close($conn);
 
-	//header("Location: editInfo.html");
+	header("Location: editInfo.html");
 
 
 ?>

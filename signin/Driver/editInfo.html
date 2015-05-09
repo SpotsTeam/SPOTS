@@ -65,7 +65,7 @@
 				<div style="padding-top:30px">
 				 <div class="col-sm-6 button-left"><a data-toggle="modal" data-target="#editCar"><div class="click-button-left blue-button"> Add Car </div> </a> </div> 
 				 <div class="col-sm-6 button-right"><a data-toggle="modal" data-target="#changeAddress"> <div class="click-button-right red-button"> Change Address </div> </a> </div>
-				 <div class="col-sm-6 button-left"><a data-toggle="modal" data-target="#changeName"><div class="click-button-left red-button"> Change Car </div> </a> </div> 
+				 <div class="col-sm-6 button-left"><a data-toggle="modal" data-target="#changeName"><div class="click-button-left red-button"> Update Phone Number </div> </a> </div> 
 				 <div class="col-sm-6 button-right"><a data-toggle="modal" data-target="#editEmail"> <div class="click-button-right blue-button"> Change Email </div> </a> </div>
 				</div>
 			</div>
@@ -98,13 +98,8 @@
 							      <input type="text" class="form-control" id="updateLicense" name="updateLicense" placeholder="Enter new car license plate...">
 							    </div>
 							</div>
-							<div class="form-group">
-								    <label class="control-label col-sm-3" for="oldLicense">Old Car License:</label>
-								    <div class="col-sm-8">
-								      <input type="text" class="form-control" id="oldLicense" name="oldLicense" placeholder="Enter old car license plate...">
-								    </div>
-							</div>
-				            <div class="col-md-12"style="text-align:center"><button class="button green-button" style="width:150px"> Submit </button></div>
+							
+				            <div class="col-md-12"style="text-align:center"><button class="button green-button" style="width:150px" onclick="alert('New Car has been added');"> Submit </button></div>
 				        </form>
 
 			   		</div>
@@ -229,47 +224,18 @@
 		   		<div class="modal-content">
 		     		<div class="modal-header">
 		        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        		<h4 class="modal-title" id="myModalLabel">Update Car</h4>
+		        		<h4 class="modal-title" id="myModalLabel">Update Phone Number</h4>
 			      	</div>
 			      	<div class="modal-body"><br><br>
 			      			<form action="editInfo.php" method="post">
 								<div class="form-group">
-								    <label class="control-label col-sm-3" for="myCarMake">New Car Make:</label>
+								    <label class="control-label col-sm-3" for="updatePhone">New Car Make:</label>
 								    <div class="col-sm-8">
-								      <input type="text" class="form-control" id="myCarMake" name="myCarMake" placeholder="Enter new car make...">
+								      <input type="text" class="form-control" id="updatePhone" name="updatePhone" placeholder="Enter new phone number...">
 								    </div>
 								</div>
-								<div class="form-group">
-								    <label class="control-label col-sm-3" for="updateCarModel">New Car Model:</label>
-								    <div class="col-sm-8">
-								      <input type="text" class="form-control" id="updateCarModel" name="updateCarModel" placeholder="Enter new car model...">
-								    </div>
-								</div>
-				                <div class="form-group">
-								    <label class="control-label col-sm-3" for="updateLicense">New Car License:</label>
-								    <div class="col-sm-8">
-								      <input type="text" class="form-control" id="updateLicense" name="updateLicense" placeholder="Enter new car license plate...">
-								    </div>
-								</div>
-				                <div class="form-group">
-								    <label class="control-label col-sm-3" for="oldCarMake">Old Car Make:</label>
-								    <div class="col-sm-8">
-								      <input type="text" class="form-control" id="oldCarMake" name="oldCarMake" placeholder="Enter old car make...">
-								    </div>
-								</div>
-				                <div class="form-group">
-								    <label class="control-label col-sm-3" for="oldCarModel">Old Car Model:</label>
-								    <div class="col-sm-8">
-								      <input type="text" class="form-control" id="oldCarModel" name="oldCarModel" placeholder="Enter old car model...">
-								    </div>
-								</div>
-				                <div class="form-group">
-								    <label class="control-label col-sm-3" for="oldLicense">Old Car License:</label>
-								    <div class="col-sm-8">
-								      <input type="text" class="form-control" id="oldLicense" name="oldLicense" placeholder="Enter old car license plate...">
-								    </div>
-								</div>
-								<div class="col-md-12"style="text-align:center"><button class="button green-button" style="width:150px"> Submit </button></div>
+								
+								<div class="col-md-12"style="text-align:center"><button class="button green-button" style="width:150px" onclick="alert('Phone number has been updated');"> Submit </button></div>
 							</div>
 				                
 				            </form>
