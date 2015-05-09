@@ -360,7 +360,7 @@
 								$car = $_SESSION['car'];
 		      					echo "$car";
 								$currentSpots = $_SESSION['parked'];
-								if ($currentSpots == "None") {
+								if ($currentSpots == "asdf") {
 									echo "<h2>Currently Not Parked Anywhere</h2>";
 								} else {
 									?> 
