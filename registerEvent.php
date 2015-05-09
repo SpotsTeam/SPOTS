@@ -20,7 +20,7 @@
         $_SESSION['state'] = $state;
         $_SESSION['zipcode'] = $zipcode;
 
-        if ($address != '' && $city != '' && $zipcode != NULL) {
+        if ($address != '' && $city != '') {
             ?> <h2><br><br><br>New Event Added!<br></h2><?php
         } else {
             header("Location: /SPOTS/registerEvent.html");
@@ -61,7 +61,7 @@
             echo "Error: " . $insert . "<br>" . mysql_error();
         }
 
-
+        header("Location: /SPOTS/signin/homePage.php");
 
         //print up the information of the driver
         //echo "<h2>$eventName has been created</h2>";

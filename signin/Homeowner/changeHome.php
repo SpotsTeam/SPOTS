@@ -1,5 +1,5 @@
 <?php 
-	include("login.php");
+	include("../login.php");
 	$user = $_SESSION['username'];
 
 	$conn = mysql_connect("localhost", "spotsuser", "spots123");
@@ -29,7 +29,7 @@
 		$_SESSION['homeId'] = $_POST['Home'];
 		echo $_SESSION['homeId'];
 		unset($_POST['Home']);
-		header("Location: /SPOTS/signin/Homeowner/manageSpots.php");
+		header("Location: manageSpots.php");
 		
 	}
 ?>

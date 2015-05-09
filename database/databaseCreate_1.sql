@@ -127,8 +127,8 @@ CREATE TABLE IF NOT EXISTS `spots`.`Events` (
 ENGINE = InnoDB;
 
 -- Insert Events into table
-INSERT INTO Events values(1, "SMU Basketball Game", '2015-03-29', NULL, '2015-03-30', NULL, "Basketball", "6024 Airline Road", "Dallas", "TX", 75275);
-INSERT INTO Events values(2, "SMU Football Game", '2015-09-15', NULL, '2015-09-16', NULL, "Football", "5801 Airline Road", "Dallas", "TX", 75275);
+INSERT INTO Events values(1, "SMU Basketball Game", '2015-03-29', NULL, '2015-03-30', NULL, "Basketball", "3009 Binkley Avenue", "Dallas", "TX", 75275);
+INSERT INTO Events values(2, "SMU Football Game", '2015-09-15', NULL, '2015-09-16', NULL, "Football", "5800 Ownby Drive", "Dallas", "TX", 75275);
 INSERT INTO Events values(3, "Meadows Dance Recital", '2015-04-02', NULL, '2015-04-03', NULL, "Dance", "6101 Bishop Boulevard", "Dallas", "TX", 75205);
 INSERT INTO Events values(4, "Basketball", '2015-04-11', NULL, '2015-04-12', NULL, "Basketball", "810 Barton Creek Drive", "Dripping Springs", "TX", 78620);
 INSERT INTO Events values(5, "ACL", '2015-04-10', NULL, '2015-04-20', NULL, "Music", "2100 Barton Springs Road", "Austin", "TX", 78704);

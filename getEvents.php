@@ -115,7 +115,8 @@
 	}
 
 
-	
+	//echo json_encode($homes);
+	echo json_encode($events);
 
 	
 	

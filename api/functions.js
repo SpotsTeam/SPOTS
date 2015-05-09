@@ -196,7 +196,7 @@ $(function() {
 	var city = $("#city").val();
 	var zipcode = $("#zipcode").val();
 	var state = $("#state").val();
-
+	//alert("Hello" + eventName);
 
 	if (confirm("Register this event?")) {
     //if ()

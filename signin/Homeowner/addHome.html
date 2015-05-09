@@ -14,8 +14,6 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
-    <!-- TipueDrop CSS -->
-    <link href="/SPOTS/css/tipuedrop.css" rel="stylesheet">
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="/SPOTS/css/leaflet.css"
     <!-- Custom CSS -->
@@ -44,9 +42,11 @@
 				
 				</div>
 				<ul class="nav navbar-nav navbar-right">
-					
-					<li> <form action="/SPOTS/signin/Homeowner/manageSpots.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
-						<i class="fa fa-1x fa-street-view"> </i>Back </button></form></li>
+					<li> <form action="/SPOTS/signin/Homeowner/manageSpots.php" class="inline">
+						<button class="button nav-button blue-button"> 
+                            <span class="col-sm-10 text-right">Back </span>
+        				</button> 
+					</form> </li>
 					
 				</ul>
 			</div>
@@ -56,72 +56,97 @@
 
 	<!-- Main Body -->	
 
-	<div style="margin-top:80px" class="centered">
-	<h2>Add a new Home to your <img alt="" src="/SPOTS/img/spotslogo2.png" class="img-brand"></img></h2>
+	<div class="addHomeContainer">
+	<h1>Add a new Home</h1>
+	<legend>Enter a new address:</legend>
+	<form class="form-horizontal" role="form" method="POST"  action="addHome.php">
+		<div class="form-group">
+	    <label class="control-label col-sm-3" for="address">Street Address:</label>
+	    <div class="col-sm-8">
+	      <input type="text" class="form-control" id="address" name="address" placeholder="Enter street address...">
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label class="control-label col-sm-3" for="city">City:</label>
+	    <div class="col-sm-7">
+	      <input type="text" class="form-control" id="city" name="city" placeholder="Enter a city...">
+	    </div>
+	    <div class="col-sm-1" style="margin-left:-14px; padding-right:0">
+	      <select name="state" class="form-control"> 
+		  	<option value="AL">AL</option>
+		  	<option value="AK">AK</option>
+		  	<option value="AZ">AZ</option>
+		  	<option value="AR">AR</option>
+		  	<option value="CA">CA</option>
+		  	<option value="CO">CO</option>
+		  	<option value="CT">CT</option>
+		  	<option value="DE">DE</option>
+		  	<option value="FL">FL</option>
+		  	<option value="GA">GA</option>
+		  	<option value="HI">HI</option>
+		  	<option value="ID">ID</option>
+		  	<option value="IL">IL</option>
+		  	<option value="IN">IN</option>
+		  	<option value="IA">IA</option>
+		  	<option value="KA">KS</option>
+		  	<option value="KY">KY</option>
+		  	<option value="LA">LA</option>
+		  	<option value="ME">ME</option>
+		  	<option value="MD">MD</option>
+		  	<option value="MA">MA</option>
+		  	<option value="MI">MI</option>
+		  	<option value="MN">MN</option>
+		  	<option value="MS">MS</option>
+		  	<option value="MO">MO</option>
+		  	<option value="MT">MT</option>
+		  	<option value="NE">NE</option>
+		  	<option value="NV">NV</option>
+		  	<option value="NH">NH</option>
+		  	<option value="NJ">NJ</option>
+		  	<option value="NM">NM</option>
+		  	<option value="NY">NY</option>
+		  	<option value="NC">NC</option>
+		  	<option value="ND">ND</option>
+		  	<option value="OH">OH</option>
+		  	<option value="OK">OK</option>
+		  	<option value="OR">OR</option>
+		  	<option value="PA">PA</option>
+		  	<option value="RI">RI</option>
+		  	<option value="SC">SC</option>
+		  	<option value="SD">SD</option>
+		  	<option value="TN">TN</option>
+		  	<option value="TX">TX</option>
+		  	<option value="UT">UT</option>
+		  	<option value="VT">VT</option>
+		  	<option value="VA">VA</option>
+		  	<option value="WA">WA</option>
+		  	<option value="WV">WV</option>
+		  	<option value="WI">WI</option>
+		  	<option value="WY">WY</option>
+		  	<option value="DC">DC</option>
+		  </select>
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label class="control-label col-sm-3" for="zipcode">Zip-Code:</label>
+	    <div class="col-sm-8">
+	      <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="Enter a valid zip-code...">
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label class="control-label col-sm-3" for="spots">Available Parking Spots:</label>
+	    <div class="col-sm-4">
+	      <input type="text" class="form-control" id="spots" name="spots" placeholder="Enter number of available parking spots...">
+	    </div>
+	    <div class="col-sm-4">
+	      <input type="text" class="form-control" id="price" name="price" placeholder="Enter a price...">
+	  	</div>
+	  </div>
 	
-	<form method = "post" action="addHome.php">
-		<label>Enter Address:</label></br>
-		<span style="padding: 0 20px">&nbsp;</span><label>Street:</label> <input type="text" name="address" /><br/>
-		<span style="padding: 0 20px">&nbsp;</span><label>City:</label> <input type="text" name="city" /><br/>
-		<span style="padding: 0 20px">&nbsp;</span><label>State:</label> <select name="state"> 
-						<option value="AL">AL</option>
-						<option value="AK">AK</option>
-						<option value="AZ">AZ</option>
-						<option value="AR">AR</option>
-						<option value="CA">CA</option>
-						<option value="CO">CO</option>
-						<option value="CT">CT</option>
-						<option value="DE">DE</option>
-						<option value="FL">FL</option>
-						<option value="GA">GA</option>
-						<option value="HI">HI</option>
-						<option value="ID">ID</option>
-						<option value="IL">IL</option>
-						<option value="IN">IN</option>
-						<option value="IA">IA</option>
-						<option value="KA">KS</option>
-						<option value="KY">KY</option>
-						<option value="LA">LA</option>
-						<option value="ME">ME</option>
-						<option value="MD">MD</option>
-						<option value="MA">MA</option>
-						<option value="MI">MI</option>
-						<option value="MN">MN</option>
-						<option value="MS">MS</option>
-						<option value="MO">MO</option>
-						<option value="MT">MT</option>
-						<option value="NE">NE</option>
-						<option value="NV">NV</option>
-						<option value="NH">NH</option>
-						<option value="NJ">NJ</option>
-						<option value="NM">NM</option>
-						<option value="NY">NY</option>
-						<option value="NC">NC</option>
-						<option value="ND">ND</option>
-						<option value="OH">OH</option>
-						<option value="OK">OK</option>
-						<option value="OR">OR</option>
-						<option value="PA">PA</option>
-						<option value="RI">RI</option>
-						<option value="SC">SC</option>
-						<option value="SD">SD</option>
-						<option value="TN">TN</option>
-						<option value="TX">TX</option>
-						<option value="UT">UT</option>
-						<option value="VT">VT</option>
-						<option value="VA">VA</option>
-						<option value="WA">WA</option>
-						<option value="WV">WV</option>
-						<option value="WI">WI</option>
-						<option value="WY">WY</option>
-						<option value="DC">DC</option>
-					</select></br>		
-		<span style="padding: 0 20px">&nbsp;</span><label>ZipCode:</label> <input type="text" name="zipcode" /></br>
-		<label>Number of Parking Spots Available: </label> <input type="text" name="spots" /><br/>
-		<label>Price Per Spot:  $</label> <input type="text" name="price" /><br/>
-		<br><br><br><br><br><br><br>
-		<button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 150px"> 
-						<i class="fa fa-1x fa-car"></i> Submit </button>
+		<button class="button green-button"> 
+            <span class="col-sm-10 text-right">Submit </span>
+        </button>
+    </form>
 	</div>
 </body>
 
