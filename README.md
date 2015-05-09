@@ -15,7 +15,7 @@ Spots is a web and mobile app that will help you to find a parking spot at any e
 6. Once you click driver or homeowner, fill in your information
 
 Click on the link below to read our functional specification documents.
-https://docs.google.com/spreadsheets/d/1lxTHFT6aFMvpzGCGPYtMiCivb3G0gt9NFkopzhG2z38/edit#gid=2071913344
+https://drive.google.com/open?id=1lxTHFT6aFMvpzGCGPYtMiCivb3G0gt9NFkopzhG2z38&authuser=0
 
 Click on the link below to read our final report.
 https://docs.google.com/document/d/1fQ9xopvqhzM5s0Ib-Y8NtuMObzUHnXCVvjedQG5Kwyc/edit?usp=sharing
