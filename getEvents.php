@@ -76,6 +76,7 @@
 	//echo "<br> HOMES <br>";
 
 	$homes = array();
+	$searchHomes = array();
 	if (mysql_num_rows($homeResult) > 0) {
 		while ($row = mysql_fetch_assoc($homeResult)) {
 			$address = $row['address']; 
@@ -89,7 +90,7 @@
 			$price = $row2['price'];
 			$homeownerPhone = $row['phone'];
 			$homeownerEmail = $row['email'];
-			$homeownerContact = "Phone number: " . $homeownerPhone . " Email: " . $homeownerEmail;
+			$homeownerContact = "Phone number: " . $homeownerPhone . "Email: \n" . $homeownerEmail;
 			$fullAddress = "$address" . ", " . "$city" . ", " . "$state";
 			$homeLonLat = get_lonlat($fullAddress);
 			$home['title'] = "Parking By: " . $homeownerName . "<br>Spots Available: " . $spotsAvailable . "<br>Price: $" . $price;
@@ -102,6 +103,16 @@
 		 	$home['loc'][] = $homeLonLat->lng;
 		 	$home['homeId'] = $homeId;
 		 	$homes[] = $home;
+		 	$home1['title'] = "Parking at " . $homeownerName;
+			$home1['spotsAvailable'] = $spotsAvailable;
+			$home1['thumb'] = 'img&#47drop.png';
+			$home1['text'] = "Spots Available: " . $spotsAvailable ." || Price: $" . $price;
+		 	$home1['tags'] = "Parking";
+		 	unset($home1['loc']);
+		 	$home1['loc'][] = $homeLonLat->lat; 
+		 	$home1['loc'][] = $homeLonLat->lng;
+		 	$home1['homeId'] = $homeId;
+		 	$searchHomes[] = $home1;
 		}
 		
 	} else {
@@ -114,9 +125,9 @@
 		//echo "<br>";
 	}
 
-
+	$data = array_merge($events, $searchHomes);
+	echo json_encode($data);
 	//echo json_encode($homes);
-	echo json_encode($events);
 
 	
 	
