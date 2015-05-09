@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,9 +15,14 @@
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
     <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="css/leaflet.css"
+    <link rel="stylesheet" href="css/leaflet.css">
     <!-- Custom CSS -->
     <link href="css/styles.css" rel="stylesheet">
+
+    <script type="text/javascript" src="api/functions.js"></script>
+     <script type="text/javascript" src="api/relay.js"></script>
+    <script type = "text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
 
 </head>
 
@@ -40,16 +44,16 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-						<a id="link" href="#about">About</a>
+						<a href="#about">About </button></a>
 					</li>
 					<li> 
-						<a id="link" href="#map-scroll">Map</a>
+						<a href="#map-scroll">Map</a>
 					</li>
 					<li> 
-						<a href="" data-toggle="modal" data-target=".login-modal">Log In</a>
+						<a href="" data-toggle="modal" data-target=".register-modal">Register</a>
 					</li>
 					<li>
-						 <a data-toggle="modal" data-target=".register-modal"><div class="login-button">Register</div></a>
+						 <a data-toggle="modal" data-target=".login-modal"><div class="login-button">Log In</div></a>
 					</li>
 				</ul>
 			</div>
@@ -76,18 +80,24 @@
 				 <div class="col-sm-6 button-right"><a href="#about"> <div class="click-button-right red-button"> Find Out More </div> </a> </div>
 			</div>
 			<div class="vert-center col-md-2">
-				<img class="right-image" src="img/mobile-icon.png"/>
+				<img class="right-image" src="img/mobile-icon-white.png"/>
 			</div>
 		</section>
+
+		
+
 		
 		<section class = "child2 scroll">
 			<div id="about" class="col-md-8 col-md-offset-2  vert-center">
 			<h1> About SPOTS <h1>
 				<h4 class="col-md-5">Have you ever attended an event (football game, concert, festival) and tried to avoid high parking prices by parking in residential or commercial lots for sale near the event location? If this is you, then Spots is the app you need to pursue.</h4>
 				<h4 class="col-md-7"> Spots is a web and mobile app that will help you to find a parking spot
-				at any event in your area. Spots does this through the help of you, the user.
+				at any event in your area.  Spots does this through the help of you, the user.
 				As the user of this app, you can register as both a homeowner and a driver.
-				</h4>
+				As a homeowner, you indicate how many spots you have available in your lot.
+				This information is readily available to users if they search for an event in
+				your area.  As a driver, you register your car and you can reserves spots at a
+				lot before the game as well as pull up the app on game day to find which homes have parking spaces available. </h4>
 			</div>
 		</section>
 
@@ -99,8 +109,6 @@
 				<div class="col-md-8">
 					<h1> Drivers </h1>
 					<h2> We Find Parking, So you don't have to </h2>
-					<h4> As a driver, you register your car and you can reserves spots at a
-					lot before the game as well as pull up the app on game day to find which homes have parking spaces available. </h4>
 				</div>
 			</div>
 		</section>
@@ -111,9 +119,6 @@
 					<h1> Homeowners </h1>
 					<h2> We bring customers to your doorstep 
 					</h2>
-					<h4> As a homeowner, you indicate how many spots you have available in your lot.
-					This information is readily available to users if they search for an event in
-					your area. </h4>
 				</div>
 				<div class="col-md-4">
 					<img class="icon-lg icon-no-border" src="img/icons/multicolor/Round/Apartment.svg"/>
@@ -125,29 +130,29 @@
 			<div class="container vert-center">
 				<div class="col-md-3">
 					<div class="col-md-12"><div class="icon blue"><i class="fa fa-4x fa-car"></i></div></div>
-					<h2> Icon 1</h2>
+					<h2>We find a spot for your Car</h2>
 					Bacon ipsum dolor amet prosciutto filet mignon shank, ground round biltong brisket sirloin chicken andouille turducken landjaeger ball tip jowl. Landjaeger capicola leberkas pork belly ham pig tail jowl tri-tip. 
 				</div>
 				<div class="col-md-3">
 					<div class="col-md-12"><div class="icon yellow"><i class="fa fa-4x fa-clock-o"></i></div></div>
-					<h2>Icon 2</h2>
+					<h2>We save you time!</h2>
 					Bacon ipsum dolor amet prosciutto filet mignon shank, ground round biltong brisket sirloin chicken andouille turducken landjaeger ball tip jowl. Landjaeger capicola leberkas pork belly ham pig tail jowl tri-tip. 
 				</div>
 				<div class="col-md-3">
 					<div class="col-md-12"><div class="icon green"><i class="fa fa-4x fa-dollar"></i></div></div>
-					<h2>Icon 3</h2>
+					<h2>We save you money!</h2>
 					Bacon ipsum dolor amet prosciutto filet mignon shank, ground round biltong brisket sirloin chicken andouille turducken landjaeger ball tip jowl. Landjaeger capicola leberkas pork belly ham pig tail jowl tri-tip. 
 				</div>
 				<div class="col-md-3">
 					<div class="col-md-12"><div class="icon red"><i class="fa fa-4x fa-street-view"></i></div></div>
-					<h2>Icon 4</h2>
+					<h2>Use our interactive map</h2>
 					Bacon ipsum dolor amet prosciutto filet mignon shank, ground round biltong brisket sirloin chicken andouille turducken landjaeger ball tip jowl. Landjaeger capicola leberkas pork belly ham pig tail jowl tri-tip. 
 				</div>
 			</div>
 		</section>
 
 		<section class="child4 scroll">
-			<h1 id="map-scroll"> Try it out </h1>
+			<div id="map-scroll"> </div>
 			<!-- Search bar -->
 			<div class="map-block-container">
 			<div ng-app="locations" class="block-height">
@@ -176,13 +181,54 @@
 		</section>
 		
 
+
 		<div class="footer">
+
 			<a href="https://github.com/SpotsTeam/SPOTS"> <div class="icon-small"><i class="fa fa-1x fa-github"></i></div></a>
 			<a href="" data-toggle="modal" data-target=".contact-modal"><div class="icon-small"><i class="fa fa-1x fa-envelope"></i></div></a>
 			<a href=""><div class="icon-small"><i class="fa fa-1x fa-facebook"></i></div></a>
 			<a href=""> <div class="icon-small"><i class="fa fa-1x fa-twitter"></i></div></a>
 			<br> Bits Please <br> We build it, so you don't have to
+
 		</div>
+	</section>
+
+	<div class="modal fade login-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+	      <div class="modal-header">
+          <h4 class="modal-title" id="gridSystemModalLabel">Log In</h4>
+	        </div>
+	        <div class="modal-body">
+	          <div class="container-fluid">
+	          	<div class="login_form">
+	          	<form method = "POST">
+		        	<label>User Type:  </label> 
+		                <select class="dropdown" id="select"> 
+		                        <option value="Driver">Driver</option> 
+		                        <option value="Homeowner">Homeowner</option>
+		                </select> 
+		            <input type="text" id="username" name="username" class="form-control" placeholder="Username">
+	            	<input type="password" id="password" name="password" class="form-control" hidden="true" placeholder="Password">
+	            	<div class="col-sm-6">
+		            	<div class="login_loading"></div>
+					  	<div class="errormess"></div>
+				  	</div>
+		         	<div class="col-sm-6">
+		         		<div class="center">
+		         			<input name="submit" id="submit_login" type="submit" class="btn btn-lg btn-success" value=" Login ">
+		         		</div>
+		         	</div>
+		         	
+	           	</form>
+	           </div>
+
+	          </div>
+	        </div>
+	        <div class="modal-footer">
+	        </div>
+	    </div>
+	  </div>
 	</div>
 
 	<div class="modal fade register-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -201,126 +247,133 @@
 			    <!-- Tab panes -->
 			    <div class="tab-content">
 			        <div class="tab-pane fade in active" id="A">
-			        	<form class="form-horizontal" role="form" method="post" action="driverDisplay.php" id="driverForm">
+			        	<form method="POST" onsubmit="javascript:registerDriver()">
+			        	<form method="post" onsubmit="javascript:registerDriver()">
 			        		<div class="form-group">
 							    <label class="control-label col-sm-3" for="username">Username:</label>
 							    <div class="col-sm-8">
-							      <input type="username" class="form-control" id="username" placeholder="Enter username...">
+							      <input type="text" class="form-control" id="USERNAME" name="username" placeholder="Enter username...">
 							    </div>
 							  </div>
 							  <div class="form-group">
 							    <label class="control-label col-sm-3" for="password">Password:</label>
 							    <div class="col-sm-8">
-							      <input type="password" class="form-control" id="password" placeholder="Enter password...">
+							      <input type="password" class="form-control" id="PASSWORD" name="password" placeholder="Enter password...">
 							    </div>
 							  </div>
 							  <div class="form-group">
 							    <label class="control-label col-sm-3" for="fname">Name:</label>
 							    <div class="col-sm-4">
-							      <input type="fname" class="form-control" id="fname" placeholder="Enter first name...">
+							      <input type="fname" class="form-control" id="fname" name="fname" placeholder="Enter first name...">
 							    </div>
 							    <div class="col-sm-4" style="padding-left:0">
-							    	<input type="lname" class="form-control" id="lname" placeholder="Enter last name...">
+							    	<input type="lname" class="form-control" id="lname" name="lname" placeholder="Enter last name...">
 							    </div>
 							  </div>
 							  <div class="form-group">
 							    <label class="control-label col-sm-3" for="email">Email:</label>
 							    <div class="col-sm-8">
-							      <input type="email" class="form-control" id="email" placeholder="Enter email...">
+							      <input type="email" class="form-control" id="email" name="email" placeholder="Enter email...">
 							    </div>
 							  </div>
 							  <div class="form-group">
 							    <label class="control-label col-sm-3" for="address">Street Address:</label>
 							    <div class="col-sm-8">
-							      <input type="address" class="form-control" id="address" placeholder="Enter address...">
+							      <input type="address" class="form-control" id="address" name="address" placeholder="Enter address...">
 							    </div>
 							  </div>
 							  <div class="form-group">
 							    <label class="control-label col-sm-3" for="city">City:</label>
 							    <div class="col-sm-4">
-							      <input type="city" class="form-control" id="city" placeholder="Enter city...">
+							      <input type="city" class="form-control" id="city" name="city" placeholder="Enter city...">
 							    </div>
 							    <div class="col-sm-1" style="padding-left:0">
-							    	<select class="form-control" name="state" style="padding:0"> 
+							    	<select class="form-control" id="state" name="state" style="padding:0"> 
 							    		<option value="AL">AL</option>
-											<option value="AK">AK</option>
-											<option value="AZ">AZ</option>
-											<option value="AR">AR</option>
-											<option value="CA">CA</option>
-											<option value="CO">CO</option>
-											<option value="CT">CT</option>
-											<option value="DE">DE</option>
-											<option value="FL">FL</option>
-											<option value="GA">GA</option>
-											<option value="HI">HI</option>
-											<option value="ID">ID</option>
-											<option value="IL">IL</option>
-											<option value="IN">IN</option>
-											<option value="IA">IA</option>
-											<option value="KA">KS</option>
-											<option value="KY">KY</option>
-											<option value="LA">LA</option>
-											<option value="ME">ME</option>
-											<option value="MD">MD</option>
-											<option value="MA">MA</option>
-											<option value="MI">MI</option>
-											<option value="MN">MN</option>
-											<option value="MS">MS</option>
-											<option value="MO">MO</option>
-											<option value="MT">MT</option>
-											<option value="NE">NE</option>
-											<option value="NV">NV</option>
-											<option value="NH">NH</option>
-											<option value="NJ">NJ</option>
-											<option value="NM">NM</option>
-											<option value="NY">NY</option>
-											<option value="NC">NC</option>
-											<option value="ND">ND</option>
-											<option value="OH">OH</option>
-											<option value="OK">OK</option>
-											<option value="OR">OR</option>
-											<option value="PA">PA</option>
-											<option value="RI">RI</option>
-											<option value="SC">SC</option>
-											<option value="SD">SD</option>
-											<option value="TN">TN</option>
-											<option value="TX">TX</option>
-											<option value="UT">UT</option>
-											<option value="VT">VT</option>
-											<option value="VA">VA</option>
-											<option value="WA">WA</option>
-											<option value="WV">WV</option>
-											<option value="WI">WI</option>
-											<option value="WY">WY</option>
-											<option value="DC">DC</option>
+										<option value="AK">AK</option>
+										<option value="AZ">AZ</option>
+										<option value="AR">AR</option>
+										<option value="CA">CA</option>
+										<option value="CO">CO</option>
+										<option value="CT">CT</option>
+										<option value="DE">DE</option>
+										<option value="FL">FL</option>
+										<option value="GA">GA</option>
+										<option value="HI">HI</option>
+										<option value="ID">ID</option>
+										<option value="IL">IL</option>
+										<option value="IN">IN</option>
+										<option value="IA">IA</option>
+										<option value="KA">KS</option>
+										<option value="KY">KY</option>
+										<option value="LA">LA</option>
+										<option value="ME">ME</option>
+										<option value="MD">MD</option>
+										<option value="MA">MA</option>
+										<option value="MI">MI</option>
+										<option value="MN">MN</option>
+										<option value="MS">MS</option>
+										<option value="MO">MO</option>
+										<option value="MT">MT</option>
+										<option value="NE">NE</option>
+										<option value="NV">NV</option>
+										<option value="NH">NH</option>
+										<option value="NJ">NJ</option>
+										<option value="NM">NM</option>
+										<option value="NY">NY</option>
+										<option value="NC">NC</option>
+										<option value="ND">ND</option>
+										<option value="OH">OH</option>
+										<option value="OK">OK</option>
+										<option value="OR">OR</option>
+										<option value="PA">PA</option>
+										<option value="RI">RI</option>
+										<option value="SC">SC</option>
+										<option value="SD">SD</option>
+										<option value="TN">TN</option>
+										<option value="TX">TX</option>
+										<option value="UT">UT</option>
+										<option value="VT">VT</option>
+										<option value="VA">VA</option>
+										<option value="WA">WA</option>
+										<option value="WV">WV</option>
+										<option value="WI">WI</option>
+										<option value="WY">WY</option>
+										<option value="DC">DC</option>
 							  		</select>
 								</div>
 								<div class="col-sm-3" style="padding-left:0">
-							      <input type="zipcode" class="form-control" id="zipcode" placeholder="Enter zip...">
+							      <input type="zipcode" class="form-control" id="zipcode" name="zipcode" placeholder="Enter zip...">
 							    </div>
 							  </div>
 							  <div class="form-group">
 							    <label class="control-label col-sm-3" for="make">Car:</label>
 							    <div class="col-sm-3">
-							      <input type="make" class="form-control" id="make" placeholder="Enter make...">
+							      <input type="make" class="form-control" id="make" name="make" placeholder="Enter make...">
 							    </div>
 							    <div class="col-sm-3" style="padding-left:0">
-							      <input type="model" class="form-control" id="model" placeholder="Car model...">
+							      <input type="model" class="form-control" id="model" name="model" placeholder="Car model...">
 							    </div>
 							    <div class="col-sm-2" style="padding-left:0">
-							      <input type="license" class="form-control" id="license" placeholder="License plate...">
+							      <input type="license" class="form-control" id="license" name="license" placeholder="License plate...">
 							    </div>
 							  </div>
 							  <div class="form-group">
-							    <label class="control-label col-sm-3" for="phone">Phone:</label>
+							    <label class="control-label col-sm-3" for="phone" >Phone:</label>
 							    <div class="col-sm-8">
-							      <input type="phone" class="form-control" id="phone" placeholder="Enter phone number...">
+							      <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter phone number...">
 							    </div>
 							  </div>
+							  <div class="form-group">
+							    <div class="col-sm-8">
+							      <button type="submit" name="driverSubmit" class="btn btn-success">Submit </button>
+							    </div>
+							  </div>
+
 						</form>
 			        </div>
 			        <div class="tab-pane fade" id="B">
-			        	<form class="form-horizontal" role="form" method="post" action="driverDisplay.php" id="driverForm">
+			        	<form class="form-horizontal" role="form" method="post" action="register.php" id="driverForm">
 			        		<div class="form-group">
 							    <label class="control-label col-sm-3" for="username">Username:</label>
 							    <div class="col-sm-8">
@@ -424,13 +477,18 @@
 							    	<input class="form-control" type="text" name="spots" id="spots" placeholder="Number of Spots..."/>
 							    </div>
 							    <div class="col-sm-4" style="padding-left:0">
-							    	<input class="form-control" type="text" name="spots" id="spots" placeholder="Price per spot..."/>
+							    	<input class="form-control" type="text" name="price" id="price" placeholder="Price per spot..."/>
 							    </div>
 							  </div>
 							  <div class="form-group">
 							    <label class="control-label col-sm-3" for="phone">Phone:</label>
 							    <div class="col-sm-8">
 							      <input type="phone" class="form-control" id="phone" placeholder="Enter phone number...">
+							    </div>
+							  </div>
+							  <div class="form-group">
+							    <div class="col-sm-8">
+							      <input type="submit" name="homeownerSubmit" class="btn btn-success" id="phone" placeholder="Enter phone number...">
 							    </div>
 							  </div>
 						</form>
@@ -440,71 +498,7 @@
 		</div>
 	            
 	        <div class="modal-footer">
-	        	<button type="button" class="btn btn-success" data-dismiss="modal">Submit </button>
 	          	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        </div>
-	    </div>
-	  </div>
-	</div>
-
-	<div class="modal fade login-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-	  <div class="modal-dialog modal-md">
-	    <div class="modal-content">
-	      <div class="modal-header">
-          <h4 class="modal-title" id="gridSystemModalLabel">Login</h4>
-	        </div>
-	        <div class="modal-body">
-	          <div class="container-fluid">
-	           <form class="form-horizontal" role="form" method="get" action="signin.php" id="loginForm">
-			   	  <div class="form-group">
-			   	    <label class="control-label col-sm-2" for="username">Username:</label>
-			   	    <div class="col-sm-10">
-			   	      <input type="username" class="form-control" id="username" placeholder="Enter username">
-			   	    </div>
-			   	  </div>
-			   	  <div class="form-group">
-			   	    <label class="control-label col-sm-2" for="password">Password:</label>
-			   	    <div class="col-sm-10"> 
-			   	      <input type="password" class="form-control" id="password" placeholder="Enter password">
-			   	    </div>
-			   	  </div>
-			   </form>
-			   <a data-toggle="collapse" data-target="forgot-modal">Forgot your username or password?</a>
-	          </div>
-	        </div>
-	        <div class="modal-footer">
-	          <button type="submit" class="btn btn-success" data-dismiss="modal" form="loginForm">Submit</button>
-	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        </div>
-	    </div>
-	  </div>
-	</div>
-
-	<div class="modal fade forgot-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-	  <div class="modal-dialog modal-md">
-	    <div class="modal-content">
-	      <div class="modal-header">
-          <h4 class="modal-title" id="gridSystemModalLabel">Login</h4>
-	        </div>
-	        <div class="modal-body">
-	          <div class="container-fluid">
-	           <form class="form-horizontal" role="form" method="post" action="signin/forgot.php" id="forgotPass">
-			   	  <div class="form-group">
-			   	  	<select class="form-control" name="select"> 
-                        <option value="Driver">Driver</option> 
-                        <option value="Homeowner">Homeowner</option>
-                	</select> 
-			   	    <label class="control-label col-sm-2" for="email">Email:</label>
-			   	    <div class="col-sm-10">
-			   	      <input type="email" class="form-control" id="email" placeholder="Enter email...">
-			   	    </div>
-			   	  </div>
-			   </form>
-	          </div>
-	        </div>
-	        <div class="modal-footer">
-	          <button type="submit" class="btn btn-success" data-dismiss="modal" form="forgotPass">Submit</button>
-	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	        </div>
 	    </div>
 	  </div>
@@ -550,7 +544,10 @@
 
     <!-- Leaflet Maps -->
     <script src="js/leaflet.js"> </script>
-    <script src="js/maps.js"> </script>
+    <script src="js/homeownerMap.php"> </script>
+  	
+  	<script type="text/javascript" src="api/functions.js"></script>
+
 
     <!-- Custom JavaScript -->
     <script src="js/jscript.js"></script>

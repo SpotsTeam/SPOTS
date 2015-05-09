@@ -68,8 +68,6 @@ a, a:hover, a:active, a:visited, a.active {
 	padding-left:10px;
 }
 
-
-
 .login-button {
 	font-size:26px;
 	border:solid;
@@ -100,7 +98,7 @@ a, a:hover, a:active, a:visited, a.active {
 .child {
 	color:black;
 	height:80%;
-	min-height:700px;
+	min-height:600px;
 }
 .child3 {
 	display:block;
@@ -138,6 +136,15 @@ a, a:hover, a:active, a:visited, a.active {
 .child2 h4 {
 	line-height:1.35;
 }
+.child4 {
+	color:black;
+	height:80%;
+	min-height:600px;
+	padding-top:30px;
+	padding-left:10%; 
+	padding-right:10%;
+	padding-bottom:10px;
+}
 
 .btn {
 	outline:none;
@@ -173,6 +180,10 @@ a, a:hover, a:active, a:visited, a.active {
 	width:100px;
 }
 
+.modal-body {
+	height:400px;
+}
+
 .map {
 	position:relative;
 	border:0;
@@ -195,7 +206,7 @@ a, a:hover, a:active, a:visited, a.active {
 	border-width:2px;
 	border-color:#7f7f7f;
 	width:100%;
-	height:75%;
+	height:80%;
 }
 
 .result-container {
@@ -404,10 +415,7 @@ input, select {
 	padding-top:3%;
 }
 .child3 .container {
-	padding:40px;
 	font-size:12pt;
-	margin-left:auto;
-	margin-right:auto;
 	text-align:center;
 }
 .child3 .container h1,
@@ -417,9 +425,9 @@ input, select {
 }
 .child3 .container h2,
 .child .container h2 {
-	font-size:28pt;
+	font-size:23pt;
 	font-weight:500;
-	padding-bottom:15px;
+	padding-bottom:10px;
 }
 .icon {
 	border-radius:100px;
@@ -471,12 +479,127 @@ input, select {
 	background-color:#FFD866;
 	color:#485660;
 }
+@media screen and (max-width: 1000px) {
+	.right-image {
+		visibility:hidden;
+	}
+	.child3 {
+		height:1200px;
+	}
+	#about {
+		height:600px;
+	}
+	#about > div > div.col-md-4 {
+		position:block;
+		text-align: center;
+	}
+}
+@media screen and (max-width: 780px) {
+	.child4 {
+		margin-bottom:500px;
+		height:600px;
+	}
+	.button-left {
+		padding: 20px;
+		padding-top:3px;
+	}
+	.button-right {
+		padding: 20px;
+		padding-top:3px;
+	}
+	.navbar-collapse {
+		background-color:#314555;
+		height:185px;
+	}
+	#bs-example-navbar-collapse-1 > ul > li {
+		text-align:center;
+		margin:0;
+		height:40px;
+	}
+	#bs-example-navbar-collapse-1 > ul > li:nth-child(4) > a > div {
+		border:none;
+		transition: all 0.2s linear 0s;
+	}
+	#bs-example-navbar-collapse-1 > ul > li:nth-child(4) > a > div:hover {
+		background:none;
+		text-decoration: none;
+		color:white;
+		font: 28px 'Montserrat', sans-serif;
+		margin-top:-7px;
+	}
+	#top > section.child4.scroll > div.map-block-container {
+		padding:8px;
+		width:100%;
+	}
+	#top > section.child4.scroll > div.map-block-container > div.block-height.ng-scope > div > div {
+		width:100%;	
+		height:50%;
+	}
+	#top > section.child4.scroll > div.map-block-container > div.block-height.ng-scope {
+		margin-bottom:20px;
+	}
+	.search {
+		margin:0;
+		border:0;
+		padding:0;
+	}
+	.map-block-container {
+		height:90%;
+	}
+	.map {
+		border-width:2px;
+		border-radius:15px;
+		width:105%;
+		height:100%;
+		border-color:#7f7f7f;
+		margin-left:-9px;
+	}
+	#top > section.child4.scroll > div.map-block-container > div.block-height.ng-scope {
+		width:100%;
+	}
+	body > section > div > div.block-height.ng-scope {
+		width: 100%;
+	}
+	body > section > div {
+		padding:12px;
+	}
+	body > section > div > div.block-height.ng-scope {
+		margin-bottom:25px;
+	}
+	.maxheight {
+		height:201%;
+	}
+	body > section > div > div.block-height.ng-scope > div {
+		height:101%;
+	}
+}
+@media screen and (max-width: 500px) {
+	#about > h1:nth-child(1) {
+		line-height:1.1;
+	}
+	.parent {
+		padding-top:55px;
+		height:700px;
+	}
+	.child2 {
+		height:720px;
+	}
+	.child3 {
+		height:1500px;
+	}
+}
+@media screen and (max-width: 395px) {
+	body > section > div > div.block-height.ng-scope > div {
+		height:91%;
+	}
+}
+
 
 .right-image {
-	width:240%;
+	width:400px;
 	margin:0;
 	padding:0;
-	margin-left:-100px;
+	margin-left:-50px;
 	padding-top:60px;
 	height:100%;
 	overflow:visible;
@@ -541,17 +664,12 @@ input, select {
   top: -50px;
   height: 0px;
 }
-.child4 {
-	color:black;
-	height:80%;
-	min-height:600px;
-	padding-top:20px;
-	padding-left:150px; 
-	padding-right:150px;
-	padding-bottom:10px;
+
+#map-scroll {
+	margin-bottom:40px;
 }
 .scroll-down {
-    position: fixed;
+   position: fixed;
     z-index:2;
     opacity: 0;
     visibility: hidden;
@@ -577,6 +695,7 @@ input, select {
 .scroll-down:hover {
     background-color: #54c63e;
 }
+
 .scroll-down i.fa {
     line-height: inherit;
 }
@@ -632,6 +751,7 @@ input, select {
 .footer a {
 	color:#e6e6e6;
 }
+
 .modal-footer {
 	height:auto;
 	border-bottom-left-radius:20px;
@@ -661,7 +781,7 @@ input, select {
 	font-size:20pt;
 }
 .modal-body {
-	padding-top:4px;
+	padding:40px;
 	height:400px;
 }
 .tab-pane {
@@ -671,4 +791,70 @@ input, select {
 	text-align:right;
 	line-height:2;
 
+}
+#top > div.modal.fade.login-modal.in > div.modal-dialog.modal-lg > div > div.modal-body > div > div {
+	font-size:14pt;
+}
+#submit_login {
+	text-align:center;
+	display:block;
+	margin: 0 auto;
+}
+.center {
+	display:inline-block;
+	position:relative;
+	float:right;
+	text-align:right;
+	margin:0 auto;
+}
+#submit_login {
+	outline:none;
+}
+#top > div.modal.fade.login-modal.in > div.modal-dialog.modal-lg > div > div.modal-body > div.container-fluid > div > form > div {
+	padding:0;
+	padding-top:20px;
+}
+
+.modal-footer {
+	height:80px;
+}
+
+#top > div.modal.fade.login-modal.in > div.modal-dialog.modal-lg > div > div.modal-body > div > div > form > div:nth-child(5), .errormess, .login_loading {
+	color:red;
+	animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
 }
