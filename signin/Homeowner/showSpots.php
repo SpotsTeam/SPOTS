@@ -17,11 +17,11 @@
 
 		$result = mysql_query($table, $conn);
 
-		$tab = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-		$out = "<h4>Spot ID $tab &nbsp;&nbsp; Price<br>";
+	
+		$out = "<thead> <th>Spot ID</th> <th>Price</th></thead><tbody>";
 		if (mysql_num_rows($result) > 0) {
 			while($row = mysql_fetch_assoc($result)) {
-				$out .= $row["spotId"]. "$tab $tab". "$".$row["price"]."<br>";
+				$out .= "<tr><td>". $row["spotId"]."<td>".  "$".$row["price"]."</td></tr>";
 			}
 		} else {
 			$out .= "<h4>No results";

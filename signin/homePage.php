@@ -505,13 +505,7 @@
     <script src="/SPOTS/js/bootstrap.min.js"></script>
 
     <!-- TipueDrop JavaScript -->
-    <script src="/SPOTS/js/tipuedrop.js"></script>
-    <script src="/SPOTS/js/tipuedrop_content.js"></script>
-    <script>
-		$(document).ready(function() {
-		     $('#tipue_drop_input').tipuedrop();
-		});
-	</script>
+    
 
     <!-- Leaflet Maps JavaScript -->
     <script src="/SPOTS/js/leaflet.js"> </script>

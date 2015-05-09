@@ -7,8 +7,10 @@ angular.module('locations', []).controller('myCtrl', function($scope, $http){
     //   $scope.locations == jsonData; 
     // });       
    
+
     var data = <?php include("../getEvents.php"); json_encode($data); ?>;
     $scope.locations = data;
+
 
     var RedIcon = L.Icon.Default.extend({
         options: {

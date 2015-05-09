@@ -16,8 +16,6 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
-    <!-- TipueDrop CSS -->
-    <link href="/SPOTS/css/tipuedrop.css" rel="stylesheet">
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="/SPOTS/css/leaflet.css"
     <!-- Custom CSS -->
@@ -49,42 +47,32 @@
         </div>
     </div>
 
-    <div style="margin-top:80px" class="centered">
-        <h2>Manage Spots</h2></br></br>
-    </div>
-    
-    <div style="margin-left:80px" class="centered">
-        <div style="margin-right:80px" class="centered">
+    <div class="editHomeContainer">
+
+        <h1>Manage Your Spots</h1>
+
+        <div class="editHomeSection">
             <fieldset>
                 <legend>Your Home</legend> 
+                <?php 
+                    include("../home.php");
+                    $address = $_SESSION['home'];
+                    echo "<h4>Current House Address: $address</h4>";    
+                ?>
+                 <form method = "post" action="addHome.html">
+                        <button data-toggle="modal" data-target="#myModal" class="button green-button"> 
+                            <span class="col-sm-1 button-icon"><i class="fa fa-2x fa-home "></i></span>
+                            <span class="col-sm-10 text-right">Add House </span>
+                        </button>
+                </form>
+            </fieldset>
         </div>
-    </div>
-    
-    <div style="margin-left:80px" class="left">
-        <div style="margin-right:80px" class="right">
-            <?php 
-                include("../home.php");
-                $address = $_SESSION['home'];
-                echo "<h4>Current House Address: $address</h4>";    
-            ?>
-             <form method = "post" action="addHome.html">
-                    <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 150px"> 
-                    <i class="fa fa-1x fa-car"></i> Add House </button>
-                    
-            </form><br>
 
-            <div style="margin-top:80px" class="centered">
-    <h2>Choose Home for Managing <img alt="" src="/SPOTS/img/spotslogo2.png" class="img-brand"></img></h2>
-    
-    <form method = "post" action="changeHome.php">
-        
-        <span style="padding: 0 20px">&nbsp;</span><label>Select Home:</label> 
-        <select name="Home" id="selectHome">
-                    
-        </select>
-
-        <?php include("changeHome.php"); 
-        ?>
+    <form method="post" action="changeHome.php"> 
+        <div style="padding:30px 0">
+        <label style="line-height:2.3; margin-left:-60px;">Select Home:</label> 
+        <select name="Home" id="selectHome" class="form-control" style="width:200px"> </select> <br><br>
+        <?php include("changeHome.php"); ?>
         <script>
             (function () {
                 
@@ -103,91 +91,62 @@
             }());
         </script>
             
-        <br><br><br>
-        <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 150px"> 
-                        <i class="fa fa-1x fa-car"></i> Select </button>
+        <button data-toggle="modal" data-target="#myModal" class="button blue-button"> 
+            <span class="col-sm-1 button-icon"><i class="fa fa-2x fa-home "></i></span>
+            <span class="col-sm-10 text-right">Change House </span>
+        </button>
     </div>
-            </fieldset><br><br><br><br>
-        </div>
-    </div>
+    </form>
 
-    <div style="margin-left:80px" class="centered">
-        <div style="margin-right:80px" class="centered">
-                
+        <!-- Next Section -->
+        <div class="editHomeSection" >
+            <legend style="font-size: 22pt">Available Spots</legend>
+            <fieldset class="tableContainer1">
+
+                <table class="table">
+                    <?php 
+                        include("showSpots.php");
+                        $spots = $_SESSION['spots'];
+                        echo "$spots";
+                    ?>
+                </tbody>
+                </table>
+            </fieldset>
+        </div>
+
+        <!-- Next Section -->
+            <div class="editHomeSection">
+            <legend style="font-size:22pt">Spots Reserved</legend>
+            <fieldset class="tableContainer2">
+                <table class="table">
+                <?php 
+                    include("reservedSpots.php");
+                    $spots = $_SESSION['spotsReserved'];
+                    echo "$spots";
+                    
+                ?>
+                </tbody>
+            </table>
+            </fieldset>
+        </div>
+               
+        <!-- Next Section -->
+        <div class="editHomeSection">  
             <fieldset>
-                <legend>Available Spots</legend>
-        </div>
-    </div>
-
-    <div style="margin-left:80px" class="left">
-        <div style="margin-right:80px" class="right">
-            <?php 
-                include("showSpots.php");
-                $spots = $_SESSION['spots'];
-                echo "$spots";
-            ?>
-            </fieldset><br><br><br><br>
-        </div>
-    </div>
-
-    <div style="margin-left:80px" class="centered">
-        <div style="margin-right:80px" class="centered">
-            <fieldset>
-                <legend>Spots Reserved</legend>
-        </div>
-    </div>
-
-    <div style="margin-left:80px" class="left">
-        <div style="margin-right:80px" class="right">
-            <?php 
-                include("reservedSpots.php");
-                $spots = $_SESSION['spotsReserved'];
-                echo "$spots";
-                
-            ?>
-            </fieldset><br><br><br><br>
-        </div>
-    </div>
-
-    <div style="margin-left:80px" class="centered">
-        <div style="margin-right:80px" class="centered">       
-            <fieldset>
-                <legend>Add/Remove Spots</legend>
-        </div>
-    </div>
-
-    <div style="margin-left:80px" class="left">
-        <div style="margin-right:80px" class="right">
-            <?php 
-                
-            ?>
-            </fieldset><br><br><br><br>
-        </div>
-    </div>
-                
-    <div style="margin-left:80px" class="centered">
-        <div style="margin-right:80px" class="centered">       
-                <fieldset>
-                    <legend>Edit Spots Pricing</legend>
+                <legend>Edit Spots Pricing</legend>
                 <form method = "post" action="changePrice.php">
-                    <label >New Price: </label> <input type="text" name="newPrice"><br><br>
-                    <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 150px"> 
-                    <i class="fa fa-1x fa-car"></i> Change </button>
+                    <label>New Price: </label> <input type="text" name="newPrice" class="form-control" style="width:75px"><br><br>
+                    <button data-toggle="modal" data-target="#myModal" class="red-button button"> 
+                        <span class="col-sm-1 button-icon"><i class="fa fa-2x fa-dollar "></i></span>
+                        <span class="col-sm-10 text-right">Change Price </span>
+                    </button>
                     
                 </form>
-                    
-        </div>
-    </div>
-
-    <div style="margin-left:80px" class="left">
-        <div style="margin-right:80px" class="right">
-                    <?php 
+                <?php 
                         
                     ?>
-                </fieldset><br><br><br><br>
+            </fieldset>
         </div>
-    </div>
-
         
 </body>
 
