@@ -16,3 +16,9 @@ Spots is a web and mobile app that will help you to find a parking spot at any e
 
 Click on the link below to read our functional specification documents.
 https://docs.google.com/spreadsheets/d/1lxTHFT6aFMvpzGCGPYtMiCivb3G0gt9NFkopzhG2z38/edit#gid=2071913344
+
+Click on the link below to read our final report.
+https://docs.google.com/document/d/1fQ9xopvqhzM5s0Ib-Y8NtuMObzUHnXCVvjedQG5Kwyc/edit?usp=sharing
+
+Click on the link below to view our Github repository for our mobile app prototype.
+https://github.com/SpotsTeam/SPOTS_MOBILE2
