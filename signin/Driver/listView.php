@@ -81,8 +81,8 @@
 						<option value="state">State</option>
 						<option value="zipcode">Zipcode</option>
 		</select>
-		<input type="submit" style="outline:bold; margin-left: 60px"><br><br><br>
-	</form>
+		<input type="submit" class = "btn btn-success" style="outline:bold; margin-left: 60px"><br><br><br>
+	</form> <br><br><br><br><br><br><br><br>
 	<form enctype="multipart/form-data"method = "post" action="registerSpot.php">
 		<script>
 			(function () {
@@ -132,7 +132,7 @@
 		
 		<br><br>
 		<div style="text-align:center;verticle-align:bottom">
-		<button onclick="if (confirm('Reserve this spot?')) { alert('Spot is registered'); return true; } else { alert('Could not Register Spot, Try Again!'); return false; }" data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-bottom: 10px"> 
+		<button onclick="if (confirm('Reserve this spot?')) { alert('Spot is registered'); return true; } else { alert('Could not Register Spot, Try Again!'); return false; }" data-toggle="modal" data-target="#myModal" class="btn btn-success" style="outline:none; margin-bottom: 10px"> 
 						<i class="fa fa-1x fa-car"></i> Reserve </button>
 						
 					</div> </form> 

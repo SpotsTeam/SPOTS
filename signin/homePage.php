@@ -120,7 +120,7 @@
 			<div ng-app="locations" class="block-height">
 				<div class="maxheight" data-ng-controller="myCtrl">
 					<div class="col-md-12 search">
-						<h3> Search For An Event <a href="../registerEvent.html"><button>+</button></a> </h3>
+						<h3> Search For An Event <a href="../registerEvent.html"><button class="btn btn-success">+</button></a> </h3>
 						<input class="form-control" type="search" ng-model="q" placeholder="Find an event..." />
 		      			<div class="result-container">
 			      			<ul>
@@ -226,7 +226,7 @@
 								}());
 								</script>
 								<div style="text-align:center;verticle-align:bottom"> <br>
-										<button onclick="return confirm('You sure you want to cancel your reservation?');" data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-bottom: 10px"> 
+										<button onclick="return confirm('You sure you want to cancel your reservation?');" data-toggle="modal" data-target="#myModal" class=" btn btn-success" style="outline:none; margin-bottom: 10px"> 
 														<i class="fa fa-1x fa-car"></i> Cancel </button>
 													</div> </form> 	
 
@@ -262,7 +262,7 @@
 									</script>
 										
 									<br><br>
-									<button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-bottom: 10px"> 
+									<button data-toggle="modal" data-target="#myModal" class=" btn btn-success" style="outline:none; margin-bottom: 10px"> 
 													<i class="fa fa-1x fa-car"></i> Select Car</button><br>
 
 									</form></div>
@@ -289,7 +289,7 @@
 
 		   		</div></div>
 		   		<div class="modal-footer">
-		   		<form action="/SPOTS/signin/logout.php" class="inline"><button class="dlink btn btn-lg btn-info"  style="outline:none"> 
+		   		<form action="/SPOTS/signin/logout.php" class="inline"><button class="btn btn-success"  style="outline:none"> 
 						<i class="fa fa-1x fa-street-view"> </i>Log Out </button>
 				</form>
 			    </div>
