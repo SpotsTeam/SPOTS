@@ -73,11 +73,40 @@
                     
             </form><br>
 
-            <form method = "post" action="changeHome_1.php">
-                    <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 140px"> 
-                    <i class="fa fa-1x fa-car"></i> Change House </button>
+            <div style="margin-top:80px" class="centered">
+    <h2>Choose Home for Managing <img alt="" src="/SPOTS/img/spotslogo2.png" class="img-brand"></img></h2>
+    
+    <form method = "post" action="changeHome.php">
+        
+        <span style="padding: 0 20px">&nbsp;</span><label>Select Home:</label> 
+        <select name="Home" id="selectHome">
                     
-                </form>
+        </select>
+
+        <?php include("changeHome.php"); 
+        ?>
+        <script>
+            (function () {
+                
+                var elm = document.getElementById('selectHome'),
+                    df = document.createDocumentFragment();
+                var homes = <?php echo json_encode($address); ?>;
+                var count = <?php echo json_encode($count); ?>;
+                var homeId = <?php echo json_encode($homeId); ?>;
+                for (var i = 0; i < count; i++) {
+                    var option = document.createElement('option');
+                    option.value = homeId[i];  //the value that is sent in the post
+                    option.appendChild(document.createTextNode(homes[i]));  //what the select option is
+                    df.appendChild(option);
+                }
+                elm.appendChild(df);
+            }());
+        </script>
+            
+        <br><br><br>
+        <button data-toggle="modal" data-target="#myModal" class=" btn-lg btn btn-info" style="outline:none; margin-left: 150px"> 
+                        <i class="fa fa-1x fa-car"></i> Select </button>
+    </div>
             </fieldset><br><br><br><br>
         </div>
     </div>
