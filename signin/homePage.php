@@ -94,35 +94,13 @@
 	</div>
 
 
-	<br><br><br>
-	<!-- Main Body -->
-	<section>
-	<div class="col-md-10 col-md-offset-1 col-body">
-		<div class="container">
-			<div class="centered">
-				<h1> <?php 
-					if ($choice == "Driver") {
-						echo "Driver";
-					} else {
-						echo "Homeowner";
-					}
-
-				?> <img alt="" src="/SPOTS/img/spotslogo2.png" style="width:250px; padding-top:7px"></img> </h1>
-
-			</div>
-		</div>
-		</div>
-	</div>
-
-
-			<div class="child4 scroll">
-			<br><br><br><br><br><br><br><br><br><br>
+	<section class="child4 scroll" style=" padding-top:110px">
 			<!-- Search bar -->
-			<div class="map-block-container">
+			<div class="map-block-container" style="height:100%">
 			<div ng-app="locations" class="block-height">
 				<div class="maxheight" data-ng-controller="myCtrl">
 					<div class="col-md-12 search">
-						<h3> Search For An Event <a data-toggle="modal" href="#event"><button class="btn btn-success">+</button></a> </h3>
+						<h3> Search For An Event <a data-toggle="modal" href="#event"><button class="btn btn-success">+</button></a> </h3> 
 						<input class="form-control" type="search" ng-model="q" placeholder="Find an event..." />
 		      			<div class="result-container">
 			      			<ul>
@@ -141,13 +119,8 @@
 				<!-- Map -->
 				<div id="map" class="map">			
 				</div>
-			</div>
-
-			
-			
-
-		
-	</section>
+			</div>		
+		</section>
 
 	<div class="modal fade" id="event" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 	 	<div class="modal-dialog modal-lg">

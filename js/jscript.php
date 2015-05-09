@@ -29,15 +29,33 @@ angular.module('locations', []).controller('myCtrl', function($scope, $http){
 });
 
 
-//Smooth scrolling function
 $(function() {
-    $('a').bind('click', function(event) {
+    $('a').on('click', function() {
         var $anchor = $(this);
+        var myOffset = 90;
+        if ($($anchor.attr('href')).is("#about")){
+          myOffset=150;
+        }
         $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top - 90
-        }, 1500, 'easeInOutExpo');
-        event.preventDefault();
+            scrollTop: $($anchor.attr('href')).offset().top - myOffset
+        }, 1200, 'easeInOutExpo');
     });
+});
+
+//Button transition to next section
+$('.scroll-down').click(function() {
+    alert("Click");
+    var target;
+    console.log("Clicked");
+    $("section").each(function(i, element) {
+      target = $(element).offset().top;
+      if (target - 70 > $(document).scrollTop()) {
+        return false; // break
+      }
+    });
+    $("html, body").animate({
+      scrollTop: target - 45
+  }, 900, 'easeInOutExpo');
 });
 
 //Pop up the scroll bar button

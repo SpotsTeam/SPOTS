@@ -183,7 +183,7 @@ a, a:hover, a:active, a:visited, a.active {
 	border-left-width:3px;
 	border-style:solid;
 	border-color: #C1C1BB;
-	height:500px;
+	height:100%;
 	width:auto;
 	border-top-right-radius:20px;
 	border-bottom-right-radius:20px;
@@ -199,7 +199,7 @@ a, a:hover, a:active, a:visited, a.active {
 	border-width:2px;
 	border-color:#7f7f7f;
 	width:100%;
-	height:75%;
+	height:80%;
 }
 
 .result-container {
@@ -477,10 +477,10 @@ input, select {
 }
 
 .right-image {
-	width:240%;
+	width:400px;
 	margin:0;
 	padding:0;
-	margin-left:-100px;
+	margin-left:-50px;
 	padding-top:60px;
 	height:100%;
 	overflow:visible;
@@ -676,5 +676,120 @@ input, select {
 .left-form {
 	text-align:right;
 	line-height:2;
+}
 
+
+@media screen and (max-width: 1000px) {
+	.right-image {
+		visibility:hidden;
+	}
+	.child3 {
+		height:1200px;
+	}
+	#about {
+		height:600px;
+	}
+	#about > div > div.col-md-4 {
+		position:block;
+		text-align: center;
+	}
+}
+@media screen and (max-width: 780px) {
+	.child4 {
+		margin-bottom:500px;
+		height:600px;
+	}
+	.button-left {
+		padding: 20px;
+		padding-top:3px;
+	}
+	.button-right {
+		padding: 20px;
+		padding-top:3px;
+	}
+	.navbar-collapse {
+		background-color:#314555;
+		height:185px;
+	}
+	#bs-example-navbar-collapse-1 > ul > li {
+		text-align:center;
+		margin:0;
+		height:40px;
+	}
+	#bs-example-navbar-collapse-1 > ul > li:nth-child(4) > a > div {
+		border:none;
+		transition: all 0.2s linear 0s;
+	}
+	#bs-example-navbar-collapse-1 > ul > li:nth-child(4) > a > div:hover {
+		background:none;
+		text-decoration: none;
+		color:white;
+		font: 28px 'Montserrat', sans-serif;
+		margin-top:-7px;
+	}
+	#top > section.child4.scroll > div.map-block-container {
+		padding:8px;
+		width:100%;
+	}
+	#top > section.child4.scroll > div.map-block-container > div.block-height.ng-scope > div > div {
+		width:100%;	
+		height:50%;
+	}
+	#top > section.child4.scroll > div.map-block-container > div.block-height.ng-scope {
+		margin-bottom:20px;
+	}
+	.search {
+		margin:0;
+		border:0;
+		padding:0;
+	}
+	.map-block-container {
+		height:90%;
+	}
+	.map {
+		border-width:2px;
+		border-radius:15px;
+		width:105%;
+		height:100%;
+		border-color:#7f7f7f;
+		margin-left:-9px;
+	}
+	#top > section.child4.scroll > div.map-block-container > div.block-height.ng-scope {
+		width:100%;
+	}
+	body > section > div > div.block-height.ng-scope {
+		width: 100%;
+	}
+	body > section > div {
+		padding:12px;
+	}
+	body > section > div > div.block-height.ng-scope {
+		margin-bottom:25px;
+	}
+	.maxheight {
+		height:201%;
+	}
+	body > section > div > div.block-height.ng-scope > div {
+		height:101%;
+	}
+}
+@media screen and (max-width: 500px) {
+	#about > h1:nth-child(1) {
+		line-height:1.1;
+	}
+	.parent {
+		padding-top:55px;
+		height:700px;
+	}
+	.child2 {
+		height:720px;
+	}
+	.child3 {
+		height:1500px;
+	}
+}
+@media screen and (max-width: 395px) {
+	body > section > div > div.block-height.ng-scope > div {
+		height:91%;
+	}
 }
