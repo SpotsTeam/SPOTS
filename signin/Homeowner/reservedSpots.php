@@ -16,15 +16,14 @@
 
 		$result = mysql_query($table, $conn);
 
-		$tab = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-		$out = "<h4>Spot ID $tab &nbsp;&nbsp; Price $tab Reserved By $tab License Plate # $tab Phone #<br>";
+		$out = "<thead> <th>Spot ID</th> <th>Price</th> <th>Reserved By</th> <th>License Plate</th> <th>Phone</th></thead><tbody>";
 		if (mysql_num_rows($result) > 0) {
 			while($row = mysql_fetch_assoc($result)) {
 				$lic = $row["license"];
 				$driverQuery = mysql_query("SELECT username, phone from Driver where userId = (Select userId from Vehicle where licensePlate = '$lic')", $conn);
 				$driver = mysql_fetch_row($driverQuery);
 
-				$out .= $row["spotId"]. "$tab $tab". "$".$row["price"]. "$tab". $driver[0]. "$tab $tab" . $row["license"]. "$tab". $driver[1] ."<br>";
+				$out .= "<tr><td>". $row["spotId"]. "</td><td>". "$".$row["price"]. "</td><td>". $driver[0]. "</td><td>". $row["license"]. "</td><td>". $driver[1] ."</td></tr>";
 			}
 		} else {
 			$out = "<h4>No Results";

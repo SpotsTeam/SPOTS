@@ -68,7 +68,37 @@ a, a:hover, a:active, a:visited, a.active {
 	padding-left:10px;
 }
 
-
+.button {
+	text-align:center;
+	margin:10px;
+	width:auto;
+	height:70px;
+	background-color:gray;
+	border:none;
+	border-bottom: solid;
+	border-width: 4px;
+	border-radius: 9px;
+	outline:none;
+	cursor: pointer;
+	font: 20px/1.7 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	line-height:2.6;
+	padding: 8px 5px;
+	transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-webkit-transition: all 0.3s ease 0s;
+	text-align: center;
+	text-decoration: none;
+	color:white;
+}
+.nav-button {
+	margin-top:-20px; 
+	height:50px; 
+	font-size:15pt;
+	line-height: 1.5;
+	border-bottom:none;
+}
 
 .login-button {
 	font-size:26px;
@@ -90,6 +120,7 @@ a, a:hover, a:active, a:visited, a.active {
 }
 
 .vert-center {
+	height:auto;
 	position: relative;
   	top: 50%;
     -webkit-transform: translateY(-50%);
@@ -183,7 +214,7 @@ a, a:hover, a:active, a:visited, a.active {
 	border-left-width:3px;
 	border-style:solid;
 	border-color: #C1C1BB;
-	height:500px;
+	height:100%;
 	width:auto;
 	border-top-right-radius:20px;
 	border-bottom-right-radius:20px;
@@ -199,7 +230,7 @@ a, a:hover, a:active, a:visited, a.active {
 	border-width:2px;
 	border-color:#7f7f7f;
 	width:100%;
-	height:75%;
+	height:80%;
 }
 
 .result-container {
@@ -337,21 +368,27 @@ input, select {
 	
 }
 
+.text-right {
+	padding-right:10px;
+}
+.button-icon {
+	line-height:3;
+}
+
 .green-button:hover, 
 .green-button:active,  
 .green-button:visited 
 {
 	text-decoration:none;
-	color:white;
-	border-color:#5D9E5D;
-	color: white;
-	background-color: #66CC66;
+	border-color:#528C52;
+	background-color: #5DBA5D;
 }
 
 .green-button
 {
+	color:white;
 	border-color:#63A563;
-	background-color: #7FD87F;
+	background-color: #79CE79;
 }
 .red-button:hover, 
 .red-button:active,  
@@ -376,12 +413,12 @@ input, select {
 {
 	text-decoration:none;
 	color:white;
-	background-color:#F2D243;
+	background-color:#FFE138;
 	border-color: #C6A537;
 }
 .yellow-button
 {
-	background-color:#FFD866;
+	background-color:#FFE95B;
 	border-color:#D3B03B;
 }
 .blue-button:hover,
@@ -477,10 +514,10 @@ input, select {
 }
 
 .right-image {
-	width:240%;
+	width:400px;
 	margin:0;
 	padding:0;
-	margin-left:-100px;
+	margin-left:-50px;
 	padding-top:60px;
 	height:100%;
 	overflow:visible;
@@ -581,7 +618,6 @@ input, select {
 .scroll-down:hover {
     background-color: #54c63e;
 }
-
 .scroll-down i.fa {
     line-height: inherit;
 }
@@ -642,7 +678,6 @@ input, select {
 	height:auto;
 	border-bottom-left-radius:20px;
 	border-bottom-right-radius:20px;
-
 }
 .modal-body .container {
 	width:auto;
@@ -677,4 +712,190 @@ input, select {
 	text-align:right;
 	line-height:2;
 
+}
+
+
+@media screen and (max-width: 1000px) {
+	.right-image {
+		visibility:hidden;
+	}
+	.child3 {
+		height:1200px;
+	}
+	#about {
+		height:600px;
+	}
+	#about > div > div.col-md-4 {
+		position:block;
+		text-align: center;
+	}
+}
+@media screen and (max-width: 780px) {
+	.child4 {
+		margin-bottom:500px;
+		height:600px;
+	}
+	.button-left {
+		padding: 20px;
+		padding-top:3px;
+	}
+	.button-right {
+		padding: 20px;
+		padding-top:3px;
+	}
+	.navbar-collapse {
+		background-color:#314555;
+		height:185px;
+	}
+	#bs-example-navbar-collapse-1 > ul > li {
+		text-align:center;
+		margin:0;
+		height:40px;
+	}
+	#bs-example-navbar-collapse-1 > ul > li:nth-child(4) > a > div {
+		border:none;
+		transition: all 0.2s linear 0s;
+	}
+	#bs-example-navbar-collapse-1 > ul > li:nth-child(4) > a > div:hover {
+		background:none;
+		text-decoration: none;
+		color:white;
+		font: 28px 'Montserrat', sans-serif;
+		margin-top:-7px;
+	}
+	#top > section.child4.scroll > div.map-block-container {
+		padding:8px;
+		width:100%;
+	}
+	#top > section.child4.scroll > div.map-block-container > div.block-height.ng-scope > div > div {
+		width:100%;	
+		height:50%;
+	}
+	#top > section.child4.scroll > div.map-block-container > div.block-height.ng-scope {
+		margin-bottom:20px;
+	}
+	.search {
+		margin:0;
+		border:0;
+		padding:0;
+	}
+	.map-block-container {
+		height:90%;
+	}
+	.map {
+		border-width:2px;
+		border-radius:15px;
+		width:105%;
+		height:100%;
+		border-color:#7f7f7f;
+		margin-left:-9px;
+	}
+	#top > section.child4.scroll > div.map-block-container > div.block-height.ng-scope {
+		width:100%;
+	}
+	body > section > div > div.block-height.ng-scope {
+		width: 100%;
+	}
+	body > section > div {
+		padding:12px;
+	}
+	body > section > div > div.block-height.ng-scope {
+		margin-bottom:25px;
+	}
+	.maxheight {
+		height:201%;
+	}
+	body > section > div > div.block-height.ng-scope > div {
+		height:101%;
+	}
+}
+@media screen and (max-width: 500px) {
+	#about > h1:nth-child(1) {
+		line-height:1.1;
+	}
+	.parent {
+		padding-top:55px;
+		height:700px;
+	}
+	.child2 {
+		height:720px;
+	}
+	.child3 {
+		height:1500px;
+	}
+}
+@media screen and (max-width: 395px) {
+	body > section > div > div.block-height.ng-scope > div {
+		height:91%;
+	}
+}
+.editHomeContainer {
+	padding:80px;
+	text-align:center;
+	background-color:white;
+	height:auto;
+	width:83%;
+	margin:0 auto;
+	margin-bottom:0px;
+}
+.addHomeContainer {
+	height:100%;
+	padding:80px;
+	text-align:center;
+	background-color:white;
+	width:83%;
+	margin:0 auto;
+	margin-bottom:0px;
+}
+.editHomeSection {
+	padding:25px 50px;
+	font-size:13pt;
+}
+body > div.editHomeContainer > div > fieldset > legend {
+	font-size: 22pt;
+}
+body > div.editHomeContainer > div > fieldset > h4 {
+	font-size:14pt;
+}
+body > div.editHomeContainer > div > fieldset > table > thead > tr > th {
+	text-align:center;
+}
+.tableContainer1 {
+	padding:0 180px;
+}
+.tableContainer2 {
+	padding:0 70px;
+}
+
+body > div.editHomeContainer > div:nth-child(3) > fieldset > table > thead {
+	margin-right:40px;
+}
+body > div.editHomeContainer > div:nth-child(3) > fieldset > table > tbody > tr:nth-child(1) > td {
+	width:50%;
+}
+body > div.editHomeContainer > div:nth-child(6) > fieldset > form > label {
+	line-height:1.8;
+	font-weight:500;
+	padding-right:10px;
+}
+body > div.editHomeContainer > div:nth-child(3) > fieldset > table > tbody > tr:nth-child(even) {
+	background-color:#f7f7f7;
+}
+#bs-example-navbar-collapse-1 > ul > li > a {
+	text-decoration:none;
+	outline:none;
+	color:white;
+}
+body > div.addHomeContainer > legend {
+	margin-top:30px;
+}
+
+body > div.addHomeContainer > div > h1 {
+	padding-bottom:50px;
+}
+body > section > div > div.block-height.ng-scope > div > div > h3 > a {
+	outline:none;
+}
+.control-label {
+	padding-top:5px;
 }
