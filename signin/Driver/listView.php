@@ -132,7 +132,7 @@
 		
 		<br><br>
 		<div style="text-align:center;verticle-align:bottom">
-		<button onclick="if (confirm('Reserve this spot?')) { alert('Spot is registered'); return true; } else { alert('Could not Register Spot, Try Again!'); return false; }" data-toggle="modal" data-target="#myModal" class="btn btn-success" style="outline:none; margin-bottom: 10px"> 
+		<button onclick="if (confirm('Reserve this spot?')) { alert('Spot is registered'); return true; } else { return false; }" data-toggle="modal" data-target="#myModal" class="btn btn-success" style="outline:none; margin-bottom: 10px"> 
 						<i class="fa fa-1x fa-car"></i> Reserve </button>
 						
 					</div> </form> 
